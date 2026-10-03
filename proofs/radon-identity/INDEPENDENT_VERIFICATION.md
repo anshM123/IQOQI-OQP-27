@@ -16,19 +16,19 @@ cosmetic or labelling points. Independent numerics confirm every identity to 34-
 | Item | Verdict | What was checked |
 |---|---|---|
 | s.0 setup | OK | (P-tau)^{-1} = P/(1-tau) - B/tau; leading coefficient (-(1-tau))^{M-r} tau^r, independent of c; r in {0, M} trivial. Lean `Hyp_RI M` (StripBMV.lean) states exactly Theorem RI. |
-| Lemma A(a) | OK | Im c = a Im y with a = |Pv|^2 - tau in [-tau, 1-tau]; one eigenvector per eigenvalue suffices (Jordan blocks harmless). Sharp. |
+| Lemma A(a) | OK | Im c = a Im y with a = \|Pv\|^2 - tau in [-tau, 1-tau]; one eigenvector per eigenvalue suffices (Jordan blocks harmless). Sharp. |
 | Lemma A(b) | OK | homotopy sH: leading coefficient fixed and nonzero, roots never real, so the C_+ count is constant; at s = 0 it is M - r. |
 | Lemma A(c) | OK | pinched pencil is block diagonal. |
-| Lemma B(i)-(iii) | OK | |(P-tau)v| >= min(tau, 1-tau); |(P-tau)v|^2 = tau(1-tau) + a(1-2tau), valid exactly for (C_+, tau <= 1/2) and (C_-, tau >= 1/2); trace identity; the majorant depends on c only through ||H|| + |c|, uniform in Im c in (0,1]. |
+| Lemma B(i)-(iii) | OK | \|(P-tau)v\| >= min(tau, 1-tau); \|(P-tau)v\|^2 = tau(1-tau) + a(1-2tau), valid exactly for (C_+, tau <= 1/2) and (C_-, tau >= 1/2); trace identity; the majorant depends on c only through \|\|H\|\| + \|c\|, uniform in Im c in (0,1]. |
 | Lemma C | OK | the disc D (centre iT, radius T - eta/2, T = rho^2/eta + 1) lies in {Im >= eta/2}; (1.1) holds; p_tau = y p_c; exact derivative. |
 | Lemma D(a), (b) | OK | (1-tau)Y -> P(H+c); Log(z/(1-tau)) = Log z - log(1-tau) exactly; Schur: p0 = det_B(BHB+c) det_P(T_0 - y), degree M - r; Hurwitz: M - r roots stay bounded, r roots ~ -(beta+c)/tau escape in C_-; spec T_0 in C_+; exp Theta = det(H+c)/det(H_d+c). |
 | Lemma E | OK | real polynomial, conjugate pairs, continuity in c; Sylvester inertia for H + c0 > 0. |
-| Steps 1-4 | OK | FTC on [delta, 1-delta]; c-uniform tails; Weierstrass; Psi' = -Theta; Theta - Theta_1 in 2 pi i Z constant; dominated convergence; z Log z -> t log|t| + i pi min(t,0); k = 0 from c0 > ||H||. |
-| Prop 2.1 (kappa = 0) | OK | Ky Fan with D_tau <= P/(1-tau); Schur-complement frame; E(c0) = -||BHP||_F^2/c0 + O(c0^{-2}). |
+| Steps 1-4 | OK | FTC on [delta, 1-delta]; c-uniform tails; Weierstrass; Psi' = -Theta; Theta - Theta_1 in 2 pi i Z constant; dominated convergence; z Log z -> t log\|t\| + i pi min(t,0); k = 0 from c0 > \|\|H\|\|. |
+| Prop 2.1 (kappa = 0) | OK | Ky Fan with D_tau <= P/(1-tau); Schur-complement frame; E(c0) = -\|\|BHP\|\|_F^2/c0 + O(c0^{-2}). |
 | Cor 2.2 | OK* | Nevanlinna property and Stieltjes formula hold (Schwarz reflection needs the standard continuity of the Cauchy transform of the Lipschitz profile). |
 | Rem 3.2 | misprint | see B1; final formula correct. |
 | Rem 3.3 (a)-(d) | OK | (d) follows from (c) alone (B4). |
-| 3.5 (A')-(E') | OK | count m^+; sigma >= d_+d_-/(d_+ + d_-); |(B-tau)v|^2 >= d_+d_-/2 on the half-gap; interior cancellation at b_k (one-sided limits agree; numerically <= 1.8e-33 at 10 interior points incl. multiplicities 2 and 3); kappa = 0. |
+| 3.5 (A')-(E') | OK | count m^+; sigma >= d_+d_-/(d_+ + d_-); \|(B-tau)v\|^2 >= d_+d_-/2 on the half-gap; interior cancellation at b_k (one-sided limits agree; numerically <= 1.8e-33 at 10 interior points incl. multiplicities 2 and 3); kappa = 0. |
 | s.4 (i)-(iv) | OK | slice reduction; Laplace transform of a slice = D(a, a xi)/a^2; Tonelli; entire functions; identity theorem in a, then in t. |
 | s.4.1 | OK | spec(A_d - xi B) = union_k (spec Pi_k A Pi_k - xi b_k); D_B(0,t) = d_a D_B(0,t) = 0. |
 | s.5 | OK | Lemma 6 holomorphic version; step (b); Lemma U (identity theorem + Gaussian approximate identity), applied with c = pi, J = (0, pi). |
@@ -53,12 +53,13 @@ Optional: two-line proof of Lemma C via d_tau Lam_+ = -(1/2 pi i) oint p_tau/(y 
 |---|---|---|
 | RI, L = R (rc01, rc07) | 22 instances, M = 2-8; r = 1, M-1; repeated spectra; H1 (+) H1; BHB = 0; singular H; off-diagonal 1e-6, 1e-9; spread 1e-3..1e3; scale 1e4; M = 8, r = 4 | <= 9.2e-40 absolute (scale 1e4: relative 8.8e-41) |
 | Shifted RI (rc01, rc07b) | 32 values of c0 across all kinks | <= 1.3e-34 |
-| RI-C, Psi = E (rc02, rc07d) | 40 (instance, c) pairs, Im c/||H|| from 1/300 to 6 | <= 2.8e-39 |
+| RI-C, Psi = E (rc02, rc07d) | 40 (instance, c) pairs, Im c/\|\|H\|\| from 1/300 to 6 | <= 2.8e-39 |
 | Lemmas A-E, Step 1 (rc02, rc02b, rc03, rc08) | 400 + 245 samples | trace identity 2.8e-61; Step 1 to 8.7e-41; Lemma C defect < 1e-60; Theta = Theta_1 to 3.8e-60 |
 | Prop 2.1, Cor 2.2, Rem 3.2 (rc04) | 36 cases | 0 violations; Stieltjes formula to 1.3e-39; B1 confirmed |
 | Rem 3.3 (rc04b) | 3 instances | (a) 1.8e-25, (c) 7.5e-24, (d) 4.8e-23 |
 | RI-B, Psi_B = E (rc05, rc07*, ) | 7 B-spectra x 2 c0; 14 values of c | <= 2.3e-40; Psi_B = E <= 9.1e-39 (one point 1.2e-31) |
 | s.4 / s.4.1 by direct 2D quadrature (rc06b) | 6 (a,t) per instance incl. t = +-ia | projections 7.5e-14..7.8e-11; general B <= 2.7e-9; sum rule to 1e-15 |
+
 Quadrature artifacts (signature |GL - TS| ~ |L - R|) were all recomputed adaptively and agree to 0..5e-44.
 
 Overall verdict: the elementary proof of RI is correct, and so are the derived results (RI-C with kappa = 0, RI-B, Theorem 1 (2BMV)

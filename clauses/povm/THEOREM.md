@@ -6,7 +6,7 @@ Authors: Ansh Mishra, Aryan Senthilkumar. Independent verification: `INDEPENDENT
 
 | Target | Current claim | Evidence | Missing lemma | Status |
 |---|---|---|---|---|
-| Step 1: do the published max-ent certificates (`publish/CGLMP/certificates/maxent`, d = 3..20) cover POVMs? | No. Their identity lives in the group algebra C[Z_d*Z_d*Z_d*Z_d] and uses the group law R^n R^m = R^{n+m}, R^d = 1 (so R^*R = 1: projectivity) in ~25% of its terms; on non-projective POVMs the identity fails (LHS - RHS = 2.4..4.0) | `cert_relations.py`, `cert_relations.log` | -- | settled: they prove nothing for POVMs |
+| Step 1: do the published max-ent certificates (`publish/CGLMP/certificates/maxent`, d = 3..20) cover POVMs? | No. Their identity lives in the group algebra C[Z_d\*Z_d\*Z_d\*Z_d] and uses the group law R^n R^m = R^{n+m}, R^d = 1 (so R^\*R = 1: projectivity) in ~25% of its terms; on non-projective POVMs the identity fails (LHS - RHS = 2.4..4.0) | `cert_relations.py`, `cert_relations.log` | -- | settled: they prove nothing for POVMs |
 | C1 bound, d = 3, 4, 5, 6, 7, 8 | For every D and all d-outcome POVMs on Phi_D: I_d <= I_ME(d) | exact certificates `certs/cert_povm_d{d}.pkl`, independent checker `verify_povm.py` (logs `certs/verify_d{d}.log`, `certs/verify_iv_d{d}.log`), `objective_identity.py` | -- | **PROVED** (computer-assisted, exact) |
 | C1 uniqueness, same d | Equality forces all four POVMs to be projective; then (A2 = math paper Thm B) d divides D and the strategy is DKZ (x) 1 up to u (x) conj(u) | `verify_povm.py` (equality-case vectors) + Thm B | -- (uses A2) | **PROVED** (given A2) |
 | C1, d = 9, 10 | same | relaxation expected tight (tight for all d = 3..8); certificates queued (`chain_9_10.sh`) | exact certificates (running) | OPEN (computation running) |
@@ -20,7 +20,7 @@ Global search: 6660 starts over d = 3..8, D = 2..2d: no POVM strategy above I_ME
 Let d in {3, 4, 5, 6, 7, 8}, D >= 1, Phi_D = D^{-1/2} sum_k |kk>, and let A^0, A^1 (Alice) and B^0, B^1 (Bob) be arbitrary d-outcome
 POVMs on C^D (positive semidefinite effects summing to 1; no projectivity or rank assumption). Let
 p(a,b|x,y) = <Phi_D| A^x_a (x) B^y_b |Phi_D> and I_d(p) the CGLMP expression of OQP 27 (papers/math, eq. (1)). Then
-  I_d(p) <= I_ME(d) = 4/(d(d-1)) sum_{j=1}^{d-1} (d-j) sec(pi j/(2d)),
+  I_d(p) <= I_ME(d) = 4/(d(d-1)) sum\_{j=1}^{d-1} (d-j) sec(pi j/(2d)),
 with equality iff all four POVMs are projective, d divides D, and the strategy is DKZ (x) 1 on C^d (x) C^{D/d} up to
 u (x) conj(u) (the last step is the PVM rigidity theorem, A2 / math paper Theorem B, all d).
 Equivalently: no measurements whatsoever, on any pair of systems sharing a pure state with flat Schmidt spectrum
@@ -31,36 +31,36 @@ is >= 2/I_ME(d) for all POVMs, with equality only for DKZ (x) 1 (since I(u) = 0)
 ### 2.2 Proof
 (a) *Objective.* p(a,b|x,y) = tau(A^x_a B'^y_b), tau = Tr/D, B'^y_b = (B^y_b)^T (again POVMs). Chain order
 E^0 = A^0 (X1), E^1 = B'^0 (Y1), E^2 = A^1 (X2), E^3 = B'^1 (Y2); Z^g_n = sum_a w^{na} E^g_a (w = e^{2 pi i/d}), so
-Z^g_0 = 1, (Z^g_n)^* = Z^g_{-n}, E^g_a = d^{-1} sum_n w^{-na} Z^g_n. S_op = 2(d-1) + sum_{n=1}^{d-1} c_n [Z^0_n Z^1_{-n}
-+ Z^1_n Z^2_{-n} + Z^2_n Z^3_{-n} + w^{-n} Z^3_n Z^0_{-n}], c_n = -1/(1-w^{-n}) (the operator of
+Z^g_0 = 1, (Z^g_n)^\* = Z^g\_{-n}, E^g_a = d^{-1} sum_n w^{-na} Z^g_n. S_op = 2(d-1) + sum\_{n=1}^{d-1} c_n [Z^0_n Z^1\_{-n}
++ Z^1_n Z^2\_{-n} + Z^2_n Z^3\_{-n} + w^{-n} Z^3_n Z^0\_{-n}], c_n = -1/(1-w^{-n}) (the operator of
 publish/CGLMP/verify/verify_tracial.py). Sawtooth identity (exact): (d-1)/2 + sum_n c_n w^{nk} = k (k = 0..d-1;
-proof: sum_{k<d} k z^k = -d/(1-z) for z^d = 1 != z, Fourier inversion), so tau(S_op) = S(p) := E<X1-Y1>_d +
-E<Y1-X2>_d + E<X2-Y2>_d + E<Y2-X1-1>_d (<t>_d = residue in 0..d-1). `objective_identity.py` checks exactly, on all d^4
+proof: sum\_{k<d} k z^k = -d/(1-z) for z^d = 1 != z, Fourier inversion), so tau(S_op) = S(p) := E<X1-Y1>\_d +
+E<Y1-X2>\_d + E<X2-Y2>\_d + E<Y2-X1-1>\_d (<t>\_d = residue in 0..d-1). `objective_identity.py` checks exactly, on all d^4
 deterministic strategies, I_d(p') = 4 - 2 S(p)/(d-1) with p' = p with both setting labels exchanged; both sides are
 affine and deterministic points affinely span the no-signalling set, so it holds for all quantum p. Relabelling
 settings maps strategies to strategies, so it suffices to show S(p) >= lam_d := S(DKZ); `verify_povm.py` checks
-exactly in Q(zeta_{4d}) (zeta = e^{2 pi i/4d}) that 4 - 2 lam_d/(d-1) = I_ME(d) and that DKZ attains lam_d.
+exactly in Q(zeta\_{4d}) (zeta = e^{2 pi i/4d}) that 4 - 2 lam_d/(d-1) = I_ME(d) and that DKZ attains lam_d.
 (b) *Symmetrisation.* rho: (E^0,E^1,E^2,E^3) -> (E^1,E^2,E^3, E^0 with outcomes shifted by one), sigma: E^g_b ->
-E^{3-g}_{-b}, rev: E -> E^T map POVM 4-tuples to POVM 4-tuples, generate a finite group G (|G| <= 16d) and act on
-words by *-(anti)automorphisms with phases (rho: Z^3_n -> w^n Z^0_n). tau(S_op) is G-invariant (checked). The direct
-sum of all images g.E is a POVM strategy on Phi_{|G|D} with the same S and a G-invariant tracial functional L~:
+E^{3-g}\_{-b}, rev: E -> E^T map POVM 4-tuples to POVM 4-tuples, generate a finite group G (|G| <= 16d) and act on
+words by \*-(anti)automorphisms with phases (rho: Z^3_n -> w^n Z^0_n). tau(S_op) is G-invariant (checked). The direct
+sum of all images g.E is a POVM strategy on Phi\_{|G|D} with the same S and a G-invariant tracial functional L~:
 L~(w) = zeta^e L~(rep(w)) along symmetry orbits and L~(w) = 0 if an orbit forces two different phases.
-(c) *Identity (checked exactly by `verify_povm.py`).* In the free *-algebra generated by the Z^g_n (n = 1..d-1,
+(c) *Identity (checked exactly by `verify_povm.py`).* In the free \*-algebra generated by the Z^g_n (n = 1..d-1,
 letters never merged), modulo cyclic rotation and the symmetry relations,
-  S_op - lam_d = sum_{b in M} sum_{ij} X^b_ij e_j^* e_i  +  sum_{c in Z_d} sum_{ij} X^c_ij u_j^* E^0_c u_i E^1_0,
-e_i = symmetry-adapted (charge q, chain-rotation sector t) combinations of {1, Z^g_n, Z^g_n Z^{g+-1}_m} (NPA level
-"1+AB"), u_i in {1, Z^g_n}; X^b = N_b Y_b N_b^* with exact entries in Q(zeta_{4d}), N_b = exact kernel of block b
+  S_op - lam_d = sum\_{b in M} sum\_{ij} X^b_ij e_j^\* e_i  +  sum\_{c in Z_d} sum\_{ij} X^c_ij u_j^\* E^0_c u_i E^1_0,
+e_i = symmetry-adapted (charge q, chain-rotation sector t) combinations of {1, Z^g_n, Z^g_n Z^{g+-1}\_m} (NPA level
+"1+AB"), u_i in {1, Z^g_n}; X^b = N_b Y_b N_b^\* with exact entries in Q(zeta\_{4d}), N_b = exact kernel of block b
 at the symmetrised DKZ functional.
-(d) *Positivity.* Every Y_b is Hermitian positive definite (exact LDL^T over Q(zeta_{4d}) with interval pivot signs,
+(d) *Positivity.* Every Y_b is Hermitian positive definite (exact LDL^T over Q(zeta\_{4d}) with interval pivot signs,
 and independently a rigorous interval Cholesky of the exact blocks; both for d = 3..8), so X^b >= 0. Apply L~ to (c): S(p) - lam_d = sum_b tr(X^b G^b) + sum_c tr(X^c H^c), G^b Gram matrices,
-H^c_{ji} = L~(u_j^* E^0_c u_i E^1_0) with sum conj(a_j) a_i H^c_{ji} = tau~(f^* E f F) = tau~(F^{1/2} f^* E f F^{1/2})
+H^c\_{ji} = L~(u_j^\* E^0_c u_i E^1_0) with sum conj(a_j) a_i H^c\_{ji} = tau~(f^\* E f F) = tau~(F^{1/2} f^\* E f F^{1/2})
 >= 0 (E = E^0_c, F = E^1_0, f = sum_i a_i u_i). Hence S(p) >= lam_d, i.e. I_d <= I_ME(d).
-(e) *Equality.* If S(p) = lam_d every term vanishes; Y_c > 0 gives N_c^* H^c N_c = 0, i.e. E^0_c f E^1_0 = 0 (faithful
+(e) *Equality.* If S(p) = lam_d every term vanishes; Y_c > 0 gives N_c^\* H^c N_c = 0, i.e. E^0_c f E^1_0 = 0 (faithful
 trace) for all f in range(N_c). `verify_povm.py` checks exactly that f = Z^0_n - w^{nc} and f = Z^1_n - 1 lie in
 range(N_c). In the outcome-shifted components of the direct sum this gives, for all c, b,
 E^0_c Z^0_n E^1_b = w^{nc} E^0_c E^1_b and E^0_c Z^1_n E^1_b = w^{nb} E^0_c E^1_b, hence (Fourier inversion)
-E^0_c E^0_{c'} E^1_b = delta_{cc'} E^0_c E^1_b and E^0_c E^1_{b'} E^1_b = delta_{bb'} E^0_c E^1_b; summing over b
-(resp. c): E^0_c E^0_{c'} = delta_{cc'} E^0_c, E^1_{b'} E^1_b = delta_{bb'} E^1_b. The rho-rotated components give
+E^0_c E^0\_{c'} E^1_b = delta\_{cc'} E^0_c E^1_b and E^0_c E^1\_{b'} E^1_b = delta\_{bb'} E^0_c E^1_b; summing over b
+(resp. c): E^0_c E^0\_{c'} = delta\_{cc'} E^0_c, E^1\_{b'} E^1_b = delta\_{bb'} E^1_b. The rho-rotated components give
 the same for E^2, E^3. So the strategy is projective and Theorem B applies. DKZ (x) 1 attains I_ME(d). QED.
 
 ### 2.3 Files and how to run (Python 3 + mpmath; gmpy2 optional)
@@ -88,7 +88,7 @@ the same for E^2, E^3. So the strategy is projective and Theorem B applies. DKZ 
 ## 3. Numerical results
 
 ### 3.1 Global search over genuine POVMs (`povm_core.py`, `povm_search.py`, `sweep.sh`; logs `runs/`)
-E_a = K^{-1/2} M_a^* M_a K^{-1/2}, K = sum_a M_a^* M_a (every POVM), exact gradient, L-BFGS, re-polish from
+E_a = K^{-1/2} M_a^\* M_a K^{-1/2}, K = sum_a M_a^\* M_a (every POVM), exact gradient, L-BFGS, re-polish from
 M_a = E_a^{1/2}; 6 initialisation families (Gaussian, random rank patterns, rank-one/overcomplete, harmonic frames =
 trine/SIC-like for D < d, DKZ (x) 1 + noise, DKZ compressed by a random isometry); 150 starts per (d, D) for d <= 5,
 90 for d = 6..8. Entries: 10^3 (best I - I_ME(d)); **0** = I_ME reached (|diff| <= 1e-13). Full table with all
@@ -114,8 +114,8 @@ SDP solver tolerance): they are see-saw fixed points.
 
 ### 3.2 SDP upper bounds (`povm_sdp.py`, `analyze_dual.py`; validated by `validate_sdp.py`)
 Tracial moment relaxation of max-ent correlations with POVM constraints only (moment matrix >= 0, localising
-L(u^* E v) >= 0, doubly-localising L(u^* X v Y) >= 0 as in Lang-Vertesi-Navascues Def. 13; no idempotence), symmetry
-reduced (charge x chain-rotation blocks). Values I* - I_ME(d), in-house HKM interior point (accuracy ~1e-8):
+L(u^\* E v) >= 0, doubly-localising L(u^\* X v Y) >= 0 as in Lang-Vertesi-Navascues Def. 13; no idempotence), symmetry
+reduced (charge x chain-rotation blocks). Values I\* - I_ME(d), in-house HKM interior point (accuracy ~1e-8):
 
 | relaxation | d = 3 | d = 4 | d = 5 | d = 6 | d = 7 | d = 8 |
 |---|---|---|---|---|---|---|
@@ -133,7 +133,7 @@ DKZ in every block, which is what makes the exact certificates possible.
 ## 4. Failed routes and why
 - Reusing the PVM certificates directly: impossible (Step 1, group law used essentially).
 - Lifting them by a universal "reduction-defect" lemma: a single junction merge has a positive defect
-  (sum_{mn} y_m^*(Z_{n-m} - Z_m^* Z_n) y_n = sum_a (Y_a - Phi)^* E_a (Y_a - Phi)), and the free product (Boca) of the
+  (sum\_{mn} y_m^\*(Z\_{n-m} - Z_m^\* Z_n) y_n = sum_a (Y_a - Phi)^\* E_a (Y_a - Phi)), and the free product (Boca) of the
   UCP maps n -> Z^g_n is CP, but the TRACIAL functional phi(gamma) = tau(Z(cyclically reduced gamma)) is not positive
   definite: its moment matrices on words of length <= 2 (3) have eigenvalues -0.43 (-0.98) for non-projective POVMs
   (d = 3, D = 2). So no general lifting; certificates must be built per d.

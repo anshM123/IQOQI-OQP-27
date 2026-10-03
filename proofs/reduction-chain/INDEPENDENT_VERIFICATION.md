@@ -1,4 +1,4 @@
-# Re-verification report: the reduction chain from (*) and CONE_d to the CGLMP bound, and rigidity (OQP 27B, max-ent clause)
+# Re-verification report: the reduction chain from (\*) and CONE_d to the CGLMP bound, and rigidity (OQP 27B, max-ent clause)
 
 Scripts and logs: this folder (k00_core.py ... k10_Fcheck.py with .log files; spot/ holds verbatim copies of QD2/verify_gauss.py and
 QD2/verify_fixedpoint.py, sha256-identical, with private logs).  All re-implementations are independent (no programme imports);
@@ -11,8 +11,8 @@ d = 203, 300, 600.  The fixed-point sweep completed during the review (audit_all
 
 ## Item 1 -- strategy -> clock model -> Q-configuration -> linear form: OK
 Re-derived by hand: Lemma 2.1 (including the shift by one in the (B1, A2) term); the Fourier coefficients c_n = -1/(1-w^{-n});
-Theorem 2.3(1) via 4 c_n z^{-n} = -h_n and i h_{d-m} = conj(h_m); Theorem 2.3(2) (the twirl rho has rho^{4d} = id; the ladder
-Z = W^4 gives M = 4D and V_k^4 = 1); the projection form F = <A,B>/2 - d/2; N(d) = d, N(2d-m) = N(m); F = sum_{m<d} csc(pi m/2d) N(m).
+Theorem 2.3(1) via 4 c_n z^{-n} = -h_n and i h\_{d-m} = conj(h_m); Theorem 2.3(2) (the twirl rho has rho^{4d} = id; the ladder
+Z = W^4 gives M = 4D and V_k^4 = 1); the projection form F = <A,B>/2 - d/2; N(d) = d, N(2d-m) = N(m); F = sum\_{m<d} csc(pi m/2d) N(m).
 Numerics (k01, 80 random strategies, d = 3..8, D = 2..6 including D < d and rank-deficient measurements): I_d direct vs via F(V)
 5.6e-15; direct vs the N(m) linear form 1.0e-14; twirl/basis residuals 4.8e-14; other identities <= 1.5e-13.  Conventions: the CGLMP
 measurements give I_ME(d) to 2e-15 for d = 2..8 (also DKZ (x) 1_2); gradient ascent never exceeds I_ME; at (d,D) = (3,4) the best
@@ -22,16 +22,16 @@ value found is 2.6547 < I_ME(3) = 2.8729, as rigidity predicts.
 Harmonicity: the operator constraint keeps the numerical range of Re H(z) in (0,1) (also with zero-length cells), so the spectrum
 stays in the open strip where phi_lam is holomorphic.  Boundary values for step fields: the closed-form Herglotz function is
 continuous up to the boundary except at cell endpoints, where the conjugate function has log singularities; the domination is in
-every L^p, h_lam <= (y-lam)_+ + C; dominated convergence gives int u*_lam = M h_lam(1/4).  Concavity step correct (and unnecessary
-under the operator identity int B = (1/4) 1).  Legendre: lam* = log2/(2pi), lam*/4 + h_{lam*}(1/4) = G/pi^2 exactly (closed form of
+every L^p, h_lam <= (y-lam)\_+ + C; dominated convergence gives int u\*\_lam = M h_lam(1/4).  Concavity step correct (and unnecessary
+under the operator identity int B = (1/4) 1).  Legendre: lam\* = log2/(2pi), lam\*/4 + h\_{lam\*}(1/4) = G/pi^2 exactly (closed form of
 Li2((1-i)/2)).  Numerics (k03): Herglotz closed form vs integral <= 5e-15; h_lam via Li2 vs strip Poisson integral 2e-16; mean value on
 circles r = 0.3, 0.7, 0.95 <= 5e-15; Q^ell/N^2 vs int tau(A g) dm (incl. a zero cell) <= 1.2e-13; boundary mean-value identity ~1e-7
 (quadrature-limited; 1.2e-8 with a smooth integrand, k03c).
 
 ## Item 3 -- cell inequalities (QD2-L1) and window-sum form (QD2-L2): OK
 Re-derived: the operator constraint int Btilde = d 1 for every cell vector (zero cells included); kernel invariance under the double
-shift by d (L_{x+d} = L_x + d), so averaging over d rotations equals averaging over Z_N; windows embed as two adjacent arcs with value
-N^2 G/pi^2 for every cell vector; the window-sum form via S_r(2d-j) = 2d - S_{r+d-j}(j).  Numerics (k02, d = 3..8, M = 2, 3, 5, random
+shift by d (L\_{x+d} = L_x + d), so averaging over d rotations equals averaging over Z_N; windows embed as two adjacent arcs with value
+N^2 G/pi^2 for every cell vector; the window-sum form via S_r(2d-j) = 2d - S\_{r+d-j}(j).  Numerics (k02, d = 3..8, M = 2, 3, 5, random
 Dirichlet, zero-cell and rational cells, all rotations): max [rotated cell value - N^2 Phi_c] = -3.6e-15, attained only by two-residue
 embeddings whose two visible sites commute (the blind spot of Remark 4.3); with all cells positive the maximum was <= -1.2.  The
 rotation-averaging identity (1.4) holds to 6e-15 (relative); u^ell agrees with the window-sum form to 3e-16; windows and commuting
@@ -51,9 +51,9 @@ d <= 200: exact finite representations, verified in interval arithmetic in verif
 bound for the exact weights); d = 2 included.  201 <= d <= 2000: v = E_mu[u^ell] + sum w_s t_s with w_s >= 0, exact at the
 Poincare-Miranda zero; continuity on the box (the boundary of the event E is null since Var eta_r = Phi(1) > 0); sign conditions from
 a certified sign change plus a certified derivative bound.  Re-derived: the regular-part coefficients g_i (incl. g_1 and the odd-index
-formula), the tail bounds, the Bell-polynomial bound, |F_r^{(k)}| <= 8 k! d^2/(d)_k, the remainder bound on kappa_16 and the truncated
+formula), the tail bounds, the Bell-polynomial bound, |F_r^{(k)}| <= 8 k! d^2/(d)\_k, the remainder bound on kappa_16 and the truncated
 Gaussian moments, P(E^c), "at_k >= 0 <=> positive-definite covariance", Lemma R2.  Independent re-implementation at d = 50 (k08, direct
-Beta-density quadrature, no series): reproduces Phi* to ~1e-11 and the minimum variogram coefficient 0.0654767/d^2 at k = 25.
+Beta-density quadrature, no series): reproduces Phi\* to ~1e-11 and the minimum variogram coefficient 0.0654767/d^2 at k = 25.
 Enclosures of F, F'', F'''' at d = 60 match direct quadrature to 18, 11, 6 digits (k10).  Monte Carlo of the Dirichlet aggregation in
 Lemma R3 consistent (k05b: all |z| <= 3.2 over 27 values).  Logged certificates reproduce bit-for-bit at d = 201, 202, 204, 250, 300,
 400, 500, 600, 601, 777, 1500.
@@ -61,7 +61,7 @@ d >= 2001: Lemma P and the QD2-L11 identity (4.4e-14); QD2-L12 at 40 digits for 
 a_0 - 2a_1 + a_2 = 0.1054879, max m^2 a(m) = 0.0722217 <= 13/180); boundary-layer coefficient 0.12626 >= claimed 0.12034 (d = 2001,
 2002, 3001, 5000); the eps^4 terms of the Euler-Maclaurin defect cancel (1/240 - 1/144 + 1/360 = 0), so the defect is O(eps^6); inner
 and outer zones overlap; all audit items pass.  Boundary cross-check: the regime-2 verifier certifies d = 2001 directly
-(d^2 min at_k = 0.1264, d min slack = 0.666, fixed-point ratio 4.001), and its Phi* gives D_B(1) = -2.747 eps^2, D_B(2) = 208.4 eps^3,
+(d^2 min at_k = 0.1264, d min slack = 0.666, fixed-point ratio 4.001), and its Phi\* gives D_B(1) = -2.747 eps^2, D_B(2) = 208.4 eps^3,
 D_B(m) >= 9.9 eps^3 (m >= 3), consistent with the regime-3 bounds.  Coverage: 2..200 LP; 201..2000 Gaussian + fixed point; >= 2001
 analytic; no hole at 200/201 or 2000/2001.
 Trivial directions t_s (d >= 201): confirmed nonpositive, by (1) the pair form N(s) + N(d-s) - d = sum over d pairs of
@@ -72,7 +72,7 @@ certificates (d <= 200) contain no t_s terms.
 ## Item 6 -- rigidity: OK
 Step 1: exact representation, every term <= 0, so equality forces tightness for mu-a.e. cell vector; for d <= 200 all atoms have
 positive cells (k07), for d >= 201 mu charges positive cells fully (Dirichlet parameters >= 1/4).  Step 2: equality carries through
-(3.5) at the fixed lam*; Theorem 2(d) of Q_2bmv (equality at one, equivalently all, lam) was re-verified as correct.  Step 3: the residue lemma
+(3.5) at the fixed lam\*; Theorem 2(d) of Q_2bmv (equality at one, equivalently all, lam) was re-verified as correct.  Step 3: the residue lemma
 is correct (simple poles with residues 2J_j; distinct endpoints exactly when all cells are positive).  Steps 4-5 correct (conjugation
 identity X^r W_0 X^{-r} in Corollary C; translation to u (x) conj(u)); near-optimal numerics (k06) consistent.
 

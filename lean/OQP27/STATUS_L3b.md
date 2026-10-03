@@ -29,14 +29,14 @@ Paper references: Q_2bmv = `proofs/strip-inequality/PROOF.md`; Q_RI = `proofs/ra
 
 | Lean name (file) | paper statement | status |
 |---|---|---|
-| `integral_log_norm_sub`, `tendsto_logPot` (StripJensen) | `∫_{-L}^L log|x - z| dx` in closed form; asymptotics `→ π|Im z|` | PROVED |
+| `integral_log_norm_sub`, `tendsto_logPot` (StripJensen) | `∫_{-L}^L log\|x - z\| dx` in closed form; asymptotics `→ π\|Im z\|` | PROVED |
 | `tendsto_integral_log_norm_eval` (StripJensen) | real-line Jensen asymptotics for a polynomial | PROVED |
-| `jensen_identity` (StripJensen) | **Lemma 2** (Q_2bmv): `∫_ℝ log|p/q| = π ∑ |Im x_i|`, with integrability | PROVED |
+| `jensen_identity` (StripJensen) | **Lemma 2** (Q_2bmv): `∫_ℝ log\|p/q\| = π ∑ \|Im x_i\|`, with integrability | PROVED |
 | `pencilRoots_eq_roots_det`, `det_pencil` (StripPencil) | pencil roots = roots of `det(H - y(P - τ))`; leading coefficient `det(-(P - τ))` | PROVED |
 | `pencilRoots_pinch_im` (StripPencil) | **Lemma 1(d)**: the pinched pencil has only real roots | PROVED |
 | `sum_pencilRoots_pinch` (StripPencil) | **Lemma 1(e)**: equal root sums (and equal leading coefficients) | PROVED |
 | `measurable_stripF`, `stripF_nonneg` (StripPencil) | `F ≥ 0`, `F` measurable on `ℝ²` (Lemma 1(f) is replaced by measurability) | PROVED |
-| `stripF_eq_jensen` (StripPencil) | eq. (3.4): `F = (1/2π²) ∫ log|p/q|` | PROVED |
+| `stripF_eq_jensen` (StripPencil) | eq. (3.4): `F = (1/2π²) ∫ log\|p/q\|` | PROVED |
 | `normSq_nonreal_root_le`, `stripF_le` (StripBounds) | **Lemma 1(b)** (with the Frobenius norm): `F ≤ M‖g - s‖_F/(2π√(τ(1-τ)))` | PROVED |
 | `pencilRoots_im_of_posSemidef`, `stripF_eq_zero_of_semidef` (StripBounds) | **Lemma 1(c)**: `F(s,τ) = 0` unless `λ_min < s < λ_max` | PROVED |
 | `stripF_support`, `stripF_bound` (StripBounds) | compact support in `s`; `F ≤ C/√(τ(1-τ))` | PROVED |
@@ -62,13 +62,13 @@ resp. of their logarithms, in `ℂ₊`/`ℂ₋`); `A_d = pinch P A`; `F = S_+(A)
 | `root_im_identity`, `pencilRoot_im_bounds` (StripRIPencil) | **Lemma A(a)**: `Im c = a Im y`; no real roots; `Im y ≥ Im c/(1 - τ)` in `ℂ₊`, `≤ -Im c/τ` in `ℂ₋` | PROVED |
 | `pencilRoot_norm_bound` (StripRIPencil) | **Lemma B(ii)** | PROVED |
 | `pencilRoot_norm_bound_all` (StripRISmooth) | **Lemma B(i)** | PROVED |
-| `Sup_add_Slo`, `sum_Rt_pinch`, `norm_Sup_sub_le` (StripRISums) | **Lemma B(iii)**: trace identity and `|S_+ - S⁰_+| ≤ 2M√K/√(τ(1-τ))` | PROVED |
+| `Sup_add_Slo`, `sum_Rt_pinch`, `norm_Sup_sub_le` (StripRISums) | **Lemma B(iii)**: trace identity and `\|S_+ - S⁰_+\| ≤ 2M√K/√(τ(1-τ))` | PROVED |
 | `upper_global`, `lower_global` (StripRISmooth) | **Lemma C**: regularity of `S_±`, `Λ_±` on `(0,1) × ℂ₊` and `∂_τ Λ_± = ∂_c S_±` | PROVED |
 | `upper_end` (StripRIEnds) | **Lemma D(a)**: `Λ_+(A) - Λ_+(A_d) → 0` as `τ → 1`, uniformly on compacts | PROVED |
 | `lower_end` (StripRIEnds) | mirror of D(a): `Λ_-(A) - Λ_-(A_d) → 0` as `τ → 0`, uniformly on compacts (replaces D(b), see below) | PROVED |
 | `jensen_error`, `logPot_error` (StripRIBoundary) | quantitative real-line Jensen: error `≤ 10 n R²/L` | PROVED |
-| `norm_det_add_I_mono` (StripRIBoundary) | `ε ↦ |det(N + iε)|` nondecreasing (`N` Hermitian) | PROVED |
-| `tendsto_imAbsSum_vertical` (StripRIBoundary) | **Lemma E** (imaginary parts): `∑|Im y(τ, c₀ + iε)| → ∑|Im y(τ, c₀)|` | PROVED |
+| `norm_det_add_I_mono` (StripRIBoundary) | `ε ↦ \|det(N + iε)\|` nondecreasing (`N` Hermitian) | PROVED |
+| `tendsto_imAbsSum_vertical` (StripRIBoundary) | **Lemma E** (imaginary parts): `∑\|Im y(τ, c₀ + iε)\| → ∑\|Im y(τ, c₀)\|` | PROVED |
 | `exp_Gup_add_Glo`, `exists_int_Gup_add_Glo` (StripRIAssembly) | `exp(Λ_+ + Λ_-)(A) / exp(Λ_+ + Λ_-)(A_d) = det(A + c)/det(A_d + c) = exp Θ₁`; the `2πiℤ` constant `k` | PROVED |
 | `hasDerivAt_PsiD`, `tendsto_PsiD` (StripRIAssembly) | **Step 1**: `Ψ_δ' = G(1-δ, c) - G(δ, c)`; `Ψ_δ → Ψ` | PROVED |
 | `hasDerivAt_Efun`, `tendsto_im_omegaF` (StripRIAssembly) | `E' = -Θ₁`; `Im (t + iε) Log(t + iε) → π min(t, 0)` | PROVED |

@@ -70,12 +70,12 @@ continuous inequality for `κ̄` and the junction inequality for `e = κ - κ̄`
 | `one_le_wind`, `eq_ico_of_wind_eq_one` (ClassicalWinding) | Corollary `cor:monotone`: `w ≥ 1`; `w = 1` gives `(r + [0,a), r + [-b,0))` | PROVED |
 | `wind_count_le`, `pairK_le_wind`, `pairK_ico_ge` (ClassicalWinding) | Lemma `lem:junctionineq`: `E(A,B) ≤ w e(1) + w sc` for cyclically ordered `(A,B)`, `E(A₀,B₀) ≥ e(1) - fw` | PROVED |
 | `cot_le_kbarR`, `ejun_nonpos` (ClassicalJunction) | Lemma `lem:junction`(3): `e(m) ≤ 0` for `1 ≤ m ≤ N/2` | PROVED |
-| `kbarR_sub_cot_le` (ClassicalJunction) | `|e(m)| ≤ (N/π)/(6m(m²-1))`, `2 ≤ m ≤ N/2 - 1` (variant of Lemma `lem:junction`(1),(3)) | PROVED |
-| `kbarR_one_sub_cot` (ClassicalJunction) | `|e(1)| > (7/24) N/π`, `N ≥ 8` (variant of Lemma `lem:junction`(3)) | PROVED |
-| `junction_margin` (ClassicalJunction) | the margin `2 sc + fw < |e(1)|` (eq. `eq:margin`) | PROVED |
+| `kbarR_sub_cot_le` (ClassicalJunction) | `\|e(m)\| ≤ (N/π)/(6m(m²-1))`, `2 ≤ m ≤ N/2 - 1` (variant of Lemma `lem:junction`(1),(3)) | PROVED |
+| `kbarR_one_sub_cot` (ClassicalJunction) | `\|e(1)\| > (7/24) N/π`, `N ≥ 8` (variant of Lemma `lem:junction`(3)) | PROVED |
+| `junction_margin` (ClassicalJunction) | the margin `2 sc + fw < \|e(1)\|` (eq. `eq:margin`) | PROVED |
 | `kap_neg`, `kbar_neg`, `ejun_neg`, `kap_strictAnti` (ClassicalJunction) | `κ`, `κ̄`, `e` odd; `cot` strictly decreasing on `(0, π)` | PROVED |
 | `starAt_one` (ClassicalContinuum) | the strip inequality `(*)` for `1 × 1` matrices (an equality) | PROVED |
-| `kbar_pair_le`, `kbar_continuum`, `pairK_kbar_ico` (ClassicalContinuum) | Proposition `prop:cont` for unit cells, `N = 4d`, `|A| = |B| = d`: `⟨A,B⟩_κ̄ ≤ ⟨[0,d),[-d,0)⟩_κ̄ = (N²/π²) Cl₂(π/2)` | PROVED |
+| `kbar_pair_le`, `kbar_continuum`, `pairK_kbar_ico` (ClassicalContinuum) | Proposition `prop:cont` for unit cells, `N = 4d`, `\|A\| = \|B\| = d`: `⟨A,B⟩_κ̄ ≤ ⟨[0,d),[-d,0)⟩_κ̄ = (N²/π²) Cl₂(π/2)` | PROVED |
 | `Sa`, `card_Sa`, `card_Sa_sub`, `disjoint_Sa`, `clockFa_eq_pairK`, `FDKZ_eq_pairK`, `isOneStep_of_Sa_eq` (ClassicalCot) | Lemma `lem:cot`: `F(a) = ⟨S_a, S_a - d⟩/2 - d/2`, `F_DKZ = ⟨[0,d),[-d,0)⟩/2 - d/2`, `S_a` an interval ⟹ `a` one-step | PROVED |
 | `thmA_abstract`, `card_ico`, `disjoint_ico_ico` (ClassicalTheoremA) | conclusion of the proof of Theorem A (abstract kernel, `N = 4d`, `a = b = d`) | PROVED |
 | `classical_thmA` (ClassicalTheoremB) | **Theorem A**, `N = 4d`, `a = b = d`, `d ≥ 2`, with its equality case | PROVED |

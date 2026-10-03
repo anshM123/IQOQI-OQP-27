@@ -20,19 +20,19 @@ highest resistance to Gill's literal uniform-outcome noise on Phi_d, for every d
 Conventions: x, y in {0,1}; a, b in Z_d; L_d = convex hull of the d^4 deterministic behaviours; u = 1/d^2;
 v_c(p) = max{v in [0,1] : v p + (1-v) u in L_d} (attained, L_d closed); local post-processing preserves locality.
 Competitor: real qubit projectors, outcome 0 = |theta><theta| with theta_A0 = 0, theta_A1 = pi/4, theta_B0 = pi/8,
-theta_B1 = -pi/8 (entries in Q(sqrt2)); even d: P (x) 1_{d/2} on outcomes 0, 1; odd d: the block construction (extra
+theta_B1 = -pi/8 (entries in Q(sqrt2)); even d: P (x) 1\_{d/2} on outcomes 0, 1; odd d: the block construction (extra
 dimension on outcome 1). Exact checks over Q(sqrt2), d = 2..9: real symmetric idempotent effects summing to 1_d; ranks
 (d/2, d/2, 0, ...) / ((d-1)/2, (d+1)/2, 0, ...); even d: p_C = P_CHSH with P_CHSH(a,b|x,y) = (1 + (-1)^{a+b+xy}/sqrt2)/4
-on {0,1}^2 and 0 elsewhere; odd d: p_C = ((d-1)/d) P_CHSH + (1/d) delta_(1,1).
-DKZ_d: |k>_{A,x} = d^{-1/2} sum_j w^{j(k+alpha_x)}|j>, |l>_{B,y} = d^{-1/2} sum_j w^{j(-l+beta_y)}|j>, alpha = (0, 1/2),
-beta = (1/4, -1/4); p(k,l|x,y) = 1/(2 d^3 sin^2(pi(k - l + alpha_x + beta_y)/d)); checked exactly in Q(zeta_{4d}) for
+on {0,1}^2 and 0 elsewhere; odd d: p_C = ((d-1)/d) P_CHSH + (1/d) delta\_(1,1).
+DKZ_d: |k>\_{A,x} = d^{-1/2} sum_j w^{j(k+alpha_x)}|j>, |l>\_{B,y} = d^{-1/2} sum_j w^{j(-l+beta_y)}|j>, alpha = (0, 1/2),
+beta = (1/4, -1/4); p(k,l|x,y) = 1/(2 d^3 sin^2(pi(k - l + alpha_x + beta_y)/d)); checked exactly in Q(zeta\_{4d}) for
 d = 2..9; CGLMP value = I_ME(d) to 30 digits (d = 3..9); hence v_c(DKZ_d) <= 2/I_ME(d).
 
 ## 2. Competitor
 2.1 Validity: pi(0) = 0, pi(n) = 1 (n >= 1), E_xy = sum (-1)^{pi(a)+pi(b)} p(a,b|x,y), S = E00 + E01 + E10 - E11. On a
 deterministic strategy S = A0(B0 + B1) + A1(B0 - B1) = +-2; S is linear, so S <= 2 on L_d (also checked on all d^4
 deterministic strategies for d = 2..12).
-2.2 Threshold: S(u) = 2c with c = (d-2)^2/d^2; S(P_CHSH) = 2 sqrt2; S(delta_(1,1)) = 2. S(v p_C + (1-v) u) is affine
+2.2 Threshold: S(u) = 2c with c = (d-2)^2/d^2; S(P_CHSH) = 2 sqrt2; S(delta\_(1,1)) = 2. S(v p_C + (1-v) u) is affine
 in v with positive slope; violation iff v > v_thr, v_thr = 4(d-1)/(4(d-1) + (sqrt2-1) d^2) (even d) and
 4/(4 + (sqrt2-1) d) (odd d; uses d^2 - 5d + 4 = (d-1)(d-4)); verified symbolically.
 2.3 Reduction to three outcomes: merging outcomes 2..d-1 (Gamma) and re-randomising them uniformly (Ref) are local
@@ -40,19 +40,19 @@ post-processings with q_v = Ref(Gamma(q_v)); hence locality of q_v is equivalent
 R_v = v P + (1-v) nu (x) nu in L_3, nu = (s, s, 1-2s), s = 1/d.
 2.4 Theorem (explicit local model at the threshold). For s in (0, 1/2] let T(s) = 4s(1-s)/(sqrt2 - (1-2s)^2); at
 v = T(s) put rho = (1-v)(1-2s), sig = (1-v)(1-2s)^2. The mixture of
- (1) weight sig: all four outputs *;
- (2) weight (rho - sig)/2 for each of the 4 single-star patterns and each root r in {0,1}: A0 = *: (A1, B0, B1) =
-     (r, r, 1-r); A1 = *: (A0, B0, B1) = (r, r, r); B0 = *: (A0, A1, B1) = (r, 1-r, r); B1 = *: (A0, A1, B0) = (r, r, r);
+ (1) weight sig: all four outputs \*;
+ (2) weight (rho - sig)/2 for each of the 4 single-star patterns and each root r in {0,1}: A0 = \*: (A1, B0, B1) =
+     (r, r, 1-r); A1 = \*: (A0, B0, B1) = (r, r, r); B0 = \*: (A0, A1, B1) = (r, 1-r, r); B1 = \*: (A0, A1, B0) = (r, r, r);
  (3) weight pi0/8 for each of the 8 deterministic {0,1} strategies with sum_xy s_xy (-1)^{a_x + b_y} = 2,
      s = (1, 1, 1, -1), pi0 = 1 - 4 rho + 3 sig,
-is a local model of R_{T(s)} with P = P_CHSH. Link-by-link: (*,*) only in (1) with weight sig = target; (*, b) only in
+is a local model of R\_{T(s)} with P = P_CHSH. Link-by-link: (\*,\*) only in (1) with weight sig = target; (\*, b) only in
 the pattern with the star at A_x, weight (rho - sig)/2 = (1-v)(1-2s)s = target; for (a,b) in {0,1}^2 the entry is
 [v + 4(1-v)s^2]/4 + (-1)^{a+b} s_xy (1 - sig)/8 versus the target v(1 + (-1)^{a+b} s_xy/sqrt2)/4 + (1-v)s^2: equal iff
 1 - (1-v)(1-2s)^2 = sqrt2 v iff v = T(s). Nonnegativity: sig >= 0; rho - sig = 2s(1-v)(1-2s) >= 0;
 pi0 = 4s[(1-s) - (sqrt2-1)(1-3s)]/(sqrt2 - (1-2s)^2) > 0 (for s <= 1/3, (sqrt2-1)(1-3s) < 1-3s <= 1-s; for s > 1/3 the
 bracket's second term is negative). QED
 2.5 Corollary: v_c(C_d) = v_thr(d) exactly for every d >= 2. Even d: T(1/d) = v_even(d). Odd d:
-R_v = v s delta_(1,1) + (1 - vs)[v'' P_CHSH + (1 - v'') nu (x) nu], v'' = v(1-s)/(1 - vs), and
+R_v = v s delta\_(1,1) + (1 - vs)[v'' P_CHSH + (1 - v'') nu (x) nu], v'' = v(1-s)/(1 - vs), and
 v_odd (1-s)/(1 - v_odd s) = T(s) identically; the delta term is deterministic. Independent exact full-scenario check
 (not using 2.3), d = 2..12: model weights in Q(sqrt2), all >= 0; entry-by-entry equality with v_thr p_C + (1 - v_thr) u;
 coarse CHSH exactly 2 at v_thr. Float LP cross-check (full polytope d = 3..8, reduction d = 3..9): agreement to 3e-16.

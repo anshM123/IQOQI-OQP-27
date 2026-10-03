@@ -54,9 +54,9 @@ For d ≥ 21 one input, a cone condition, is certified by interval arithmetic ou
 - **Theorem 2 (rigidity / self-testing, every d ≥ 2).** If projective measurements on Φ_D attain I_ME(d), then d divides D,
   and up to a local unitary u ⊗ ū the strategy is DKZ ⊗ 1. If d does not divide D, the maximum on Φ_D is strictly below I_ME(d).
 - **Theorem 3 (a strip inequality for projections, every matrix size M).** Let B be an orthogonal projection on C^M,
-  P = 1 − B, g Hermitian and λ real. Let h_λ be the harmonic function on the strip 0 < Re ν < 1 with boundary values (Im ν − λ)_+
-  on the left edge and 0 on the right edge. Then
-  Σ_{ν ∈ spec(B + ig)} h_λ(ν) ≥ Tr[(P(g − λ)P)_+],
+  P = 1 − B, g Hermitian and λ real. Let h_λ be the harmonic function on the strip 0 < Re ν < 1 with boundary values
+  (Im ν − λ)₊ on the left edge and 0 on the right edge. Then
+  Σ<sub>ν ∈ spec(B + ig)</sub> h_λ(ν) ≥ Tr[(P(g − λ)P)₊],
   with an exact formula for the difference, which is zero only when B and g commute.
 - **Theorem 4 (a two-variable Bessis–Moussa–Villani theorem for projections).** The function
   Tr e^{ag − tP} − e^{−t} Tr_P e^{aPgP} − Tr_B e^{aBgB} equals a² times the Laplace transform of the explicit nonnegative
@@ -92,7 +92,7 @@ uniqueness, by exact certificates in `clauses/povm/`); and the CGLMP maximum ove
 
 Scope of Theorems 1 and 2: projective measurements (PVMs), as in the problem's "observables". For d = 3, ..., 8 the
 same holds for arbitrary POVMs, in every local dimension ([`clauses/povm/`](clauses/povm/)); for
-d >= 9 general POVMs are not covered.
+d ≥ 9 general POVMs are not covered.
 
 ## How the proof fits together
 

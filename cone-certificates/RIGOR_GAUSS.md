@@ -49,18 +49,18 @@ For a given d, `verify_cert.py d` computes in one process, with `iv.prec = 160` 
 2. Root boxes [a_m, b_m] (1 <= m < d/2) with a certified sign change Hc_m(a_m) < tau_m < Hc_m(b_m).  The search (Newton on
    midpoints, step doubling) is untrusted; only the two interval evaluations at the end count.
 3. The tail quantities of Lemma R4 in logarithms, and a box radius r = 2^e (e an integer, r >= 8 eps_t/c1min, r >= 2^-100).
-4. The Poincare-Miranda box of Lemma B, Q = prod_{1 <= m < d/2} [lo_m, hi_m] with lo_m = lower endpoint of the interval
+4. The Poincare-Miranda box of Lemma B, Q = prod\_{1 <= m < d/2} [lo_m, hi_m] with lo_m = lower endpoint of the interval
    a_m - r and hi_m = upper endpoint of b_m + r (so [a_m - r, b_m + r] is contained in [lo_m, hi_m]); for even d, Phi(d/2) is a
    fixed exact number (the antisymmetric equation is vacuous there; same choice as before: a smooth extrapolation).
 5. ON Q (Phi(m) ranges over the whole interval [lo_m, hi_m] in every evaluation; no margin is taken from another run):
    * (B1)  min_k at_k(Phi) > 0 for all Phi in Q (interval DFT, all k = 1..d/2);
-   * (D)   c_D := min_m inf_{t in [lo_m, hi_m]} Hc_m'(t) > 0 and c_D r > 2 eps_t; with the sign changes and a_m - lo_m >= r this
+   * (D)   c_D := min_m inf\_{t in [lo_m, hi_m]} Hc_m'(t) > 0 and c_D r > 2 eps_t; with the sign changes and a_m - lo_m >= r this
            gives (B3): Hc_m(lo_m) <= Hc_m(a_m) - c_D r < tau_m - 2 eps_t, and symmetrically at hi_m;
    * (B3') (B3) also directly: Hc_m(lo_m) - tau_m < -2 eps_t and Hc_m(hi_m) - tau_m > 2 eps_t, by interval evaluation at the faces;
-   * (ii)  min_m Delta^2 W_H > 4 eps_t on Q, W_H = (P_v - H(., Phi))_S, so that W = (P_v - P)_S of the exact process (|P - H| <= eps_t
+   * (ii)  min_m Delta^2 W_H > 4 eps_t on Q, W_H = (P_v - H(., Phi))\_S, so that W = (P_v - P)\_S of the exact process (|P - H| <= eps_t
            pointwise, Lemma R4) has Delta^2 W > 0;
    * all boxes lie in t > 0, and P(E^c) is bounded with Phi(1) <= hi_1 (the upper end of the widened box).
-   By Lemma B there is Phi# in Q solving the exact equations (i) of Lemma R1; (B1) makes Pi_{Phi#} a well-defined cell process,
+   By Lemma B there is Phi# in Q solving the exact equations (i) of Lemma R1; (B1) makes Pi\_{Phi#} a well-defined cell process,
    and (ii) holds for it.  Lemma R1 gives CONE_d.
 
 The JSON file stores each certified bound as the EXACT decimal expansion of the binary interval endpoint (strings; a binary
@@ -77,11 +77,11 @@ information, `dHmax_hi`, `root_width_max`, `tail_gr1_hi`, `tail_Fr_hi`.  The fie
 | gap | what it was | fix in `verify_cert.py` |
 |---|---|---|
 | G1 | min at_k and min Delta^2 W came from the `vg` run, the derivative condition (D) from the `fp` run, on boxes of different runs (not nested; shift 7.9e-14 at d = 201); the perturbation to one box was not performed by any script. | One run computes the root boxes, the widened box Q, and then min at_k, min Delta^2 W, (D), (B3) and the tails ON Q.  The audit checks the code hash of every file. |
-| G2 | P_{v,r}(d) = d^2 g_r(1) used the truncated series sum_{i <= IMAX} g_i without a tail (omitted error about 3e-34 in tau_m for NSER = 60). | g_r(1) = sum_{i <= 141} g_i + [0, T], T = (2 pi/3) sum_{n > 70} 4^-n/(n(2n+1)) <= 4.93e-47 (all g_i > 0 for i >= 3; section 4.1); test: the enclosure contains -16 G/pi^2 (G Catalan's constant). |
+| G2 | P\_{v,r}(d) = d^2 g_r(1) used the truncated series sum\_{i <= IMAX} g_i without a tail (omitted error about 3e-34 in tau_m for NSER = 60). | g_r(1) = sum\_{i <= 141} g_i + [0, T], T = (2 pi/3) sum\_{n > 70} 4^-n/(n(2n+1)) <= 4.93e-47 (all g_i > 0 for i >= 3; section 4.1); test: the enclosure contains -16 G/pi^2 (G Catalan's constant). |
 | G3 | `trunc_mom` returned t^j 10^6 when a^2 <= 2j; this is below the full moment t^8 15!! = 2027025 t^8 at j = 8. | The fallback is the full moment t^j (2j-1)!!, valid for every j; the formula branch is used only when a^2 > 2j.  Fallback uses are counted in the JSON: 0 in all 1800 runs. |
-| G4 | `verify_gauss.py` used the non-certified slack perturbation 4(r sup|F''| + eps_t). | No perturbation term: the slack is evaluated on Q.  The only correction is 4 eps_t (exact process vs H, Lemma R4). |
+| G4 | `verify_gauss.py` used the non-certified slack perturbation 4(r sup\|F''\| + eps_t). | No perturbation term: the slack is evaluated on Q.  The only correction is 4 eps_t (exact process vs H, Lemma R4). |
 | G5 | 840 `vg` files predated the last edit of `verify_gauss.py`. | All 1800 certificates come from one file version; the audit compares the stored SHA-256 with the current `verify_cert.py`. |
-| G6 | Factorials entered intervals after rounding to the mpmath working precision (`iv.mpf(mpmath.factorial(2n+1))` at 200 bits is inexact from 57!; at 140 bits, in the 100-bit runs, from 45!). | Every integer (n!, (2j-1)!!, 2^j j!, C(i,k), (d)_k, the Euler-Maclaurin and Bernoulli data) is a Python integer or Fraction, converted with outward rounding (`iv.mpf(int)` rounds outward; p/q is the interval quotient).  Tests check containment of the exact values (2431 integers, 2000 random rationals, all certifier tables); a regression test shows that the old pattern does not contain 25! at 53 bits. |
+| G6 | Factorials entered intervals after rounding to the mpmath working precision (`iv.mpf(mpmath.factorial(2n+1))` at 200 bits is inexact from 57!; at 140 bits, in the 100-bit runs, from 45!). | Every integer (n!, (2j-1)!!, 2^j j!, C(i,k), (d)\_k, the Euler-Maclaurin and Bernoulli data) is a Python integer or Fraction, converted with outward rounding (`iv.mpf(int)` rounds outward; p/q is the interval quotient).  Tests check containment of the exact values (2431 integers, 2000 random rationals, all certifier tables); a regression test shows that the old pattern does not contain 25! at 53 bits. |
 | G7 | Decisions on floats; `min_at`, `wmin`, `ptail` stored as floats (ptail underflowed to 0.0 for d >~ 1865, so the old audit's ptail filter was vacuous there). | All decisions are exact comparisons of interval endpoints (mpmath `mpf_lt`/`mpf_gt` on raw endpoints).  P(E^c) and eps_t are carried as logarithms; every bound is stored as an exact decimal string; the audit works with Fractions and intervals, and compares tiny quantities through logarithms. |
 
 Further items found in a second review of `verify_gauss.py` / `verify_fixedpoint.py` (all closed in `verify_cert.py`):
@@ -90,9 +90,9 @@ Further items found in a second review of `verify_gauss.py` / `verify_fixedpoint
 |---|---|---|
 | zeta values | `mp.zeta(s)` at PREC+40 bits widened by a relative 2^-PREC: relies on mpmath's accuracy claim, not an enclosure. | zeta(s), 2 <= s <= 17, by Euler-Maclaurin in exact rational arithmetic with its remainder bound (section 4.3); width <= 5.5e-48; tests against 1200-bit values and, for even s, the Bernoulli formula. |
 | Bernoulli numbers | `mpmath.bernfrac` (exact in practice). | Exact Fraction recurrence; test: identical to `bernfrac` for B_0..B_140. |
-| regular part F_r^(k), k <= 8 | Bell polynomials in the logarithmic derivatives of (b)_i; tail with the float `max(1, i/mm)` and an ad hoc cut-off of the tail sum at i < IMAX + 600 plus 2^-(IMAX+500) (valid: the omitted part is smaller than 2^-(IMAX+500) by a factor > 250 for IMAX = 121 and 141, but this was not justified in code). | Exact truncated products for the Taylor coefficients of (m+h)_i/(d)_i (no cancellation, all terms >= 0) for k <= 14; tail bound from p_i^(k) <= k! C(i,k)/(d)_k and a ratio test in exact rationals (section 4.2).  Test: the coefficients contain the exact rationals for 6 (d, m) pairs. |
-| F_r^(k), k = 10, 12, 14 | the crude bound 8 k! d^2/(d)_k. | the exact series (k <= 14). |
-| sup|F_r^(k)| <= 8 k! d^2/(d)_k (k = 1, 16) | stated without proof in the code and logs. | Proved in section 4.2 with the sharper computed constant S_k = sum_i |g_i| C(i,k): S_1 <= 1.88838, S_16 <= 0.00531 (asserted <= 8 at run time). |
+| regular part F_r^(k), k <= 8 | Bell polynomials in the logarithmic derivatives of (b)\_i; tail with the float `max(1, i/mm)` and an ad hoc cut-off of the tail sum at i < IMAX + 600 plus 2^-(IMAX+500) (valid: the omitted part is smaller than 2^-(IMAX+500) by a factor > 250 for IMAX = 121 and 141, but this was not justified in code). | Exact truncated products for the Taylor coefficients of (m+h)\_i/(d)\_i (no cancellation, all terms >= 0) for k <= 14; tail bound from p_i^(k) <= k! C(i,k)/(d)\_k and a ratio test in exact rationals (section 4.2).  Test: the coefficients contain the exact rationals for 6 (d, m) pairs. |
+| F_r^(k), k = 10, 12, 14 | the crude bound 8 k! d^2/(d)\_k. | the exact series (k <= 14). |
+| sup\|F_r^(k)\| <= 8 k! d^2/(d)\_k (k = 1, 16) | stated without proof in the code and logs. | Proved in section 4.2 with the sharper computed constant S_k = sum_i \|g_i\| C(i,k): S_1 <= 1.88838, S_16 <= 0.00531 (asserted <= 8 at run time). |
 | transcendental functions | mpmath `iv.sin/cos/exp/log/sqrt`, `iv.pi` as returned. | Same functions, each result widened outward by a further 16 units in the last place (guards against a last-bit error of directed rounding); tests against 1200-bit values. |
 | tail block | eps_t, P(E^c) and r computed in `mp` (round to nearest); c rho = 2 eps_t held with equality at the design point; `lo = a - r` rounded to nearest, so the box need not contain [a - r, b + r]. | All tail quantities in interval arithmetic and logarithms; r = 2^e exact; lo_m, hi_m rounded outward; (D) is checked as c_D r > 2 eps_t with c_D the certified infimum (margin >= 10^0.61 = 4.1). |
 | t^(3/2) | `tl ** iv.mpf(1.5)` (through exp/log). | `tl * sqrt(tl)`. |
@@ -101,48 +101,48 @@ Further items found in a second review of `verify_gauss.py` / `verify_fixedpoint
 ## 4. The bounds used by the code, with proofs
 
 Notation as in `CONE_PROOF.md`: F(b) = E Ghat(d X_b), X_b ~ Beta(b, d-b); F = F_s + F_r with F_s(b) = (4d/pi) b [psi(b+1) - psi(d+1)],
-F_r(b) = d^2 E g_r(X_b); p_i(b) := (b)_i/(d)_i = E X_b^i.
+F_r(b) = d^2 E g_r(X_b); p_i(b) := (b)\_i/(d)\_i = E X_b^i.
 
 ### 4.1 The coefficients of g_r
-g_r(x) = -(8/pi^2)[Cl2(pi x/2) + Cl2(pi - pi x/2)] - (4/pi) x log x = sum_{i odd} g_i x^i on |x| < 2, with g_1 = -(4/pi)(1 + log(4/pi))
-and, for n >= 1, g_{2n+1} = 8 |B_2n| (1/2 - 4^-n) pi^(2n-1)/(2n (2n+1)!) = (8/pi) zeta(2n)(1/2 - 4^-n)/(4^n n(2n+1)).
-Hence 0 < g_{2n+1} < (2 pi/3) 4^-n/(n(2n+1)) (zeta(2n) <= pi^2/6, 1/2 - 4^-n < 1/2).  The code forms the rational factor
+g_r(x) = -(8/pi^2)[Cl2(pi x/2) + Cl2(pi - pi x/2)] - (4/pi) x log x = sum\_{i odd} g_i x^i on |x| < 2, with g_1 = -(4/pi)(1 + log(4/pi))
+and, for n >= 1, g\_{2n+1} = 8 |B_2n| (1/2 - 4^-n) pi^(2n-1)/(2n (2n+1)!) = (8/pi) zeta(2n)(1/2 - 4^-n)/(4^n n(2n+1)).
+Hence 0 < g\_{2n+1} < (2 pi/3) 4^-n/(n(2n+1)) (zeta(2n) <= pi^2/6, 1/2 - 4^-n < 1/2).  The code forms the rational factor
 |B_2n|(1/2 - 4^-n)/(2n(2n+1)!) exactly and multiplies by the enclosure of pi^(2n-1).
 
 ### 4.2 The regular part
-p_i(b) = prod_{q<i} (b+q)/(d+q) is a polynomial in b with nonnegative coefficients, so for 0 <= b <= d and k >= 0:
-0 <= p_i^(k)(b) <= p_i^(k)(d) = k! e_k(1/d, 1/(d+1), ..., 1/(d+i-1)) <= k! C(i,k)/(d)_k,
+p_i(b) = prod\_{q<i} (b+q)/(d+q) is a polynomial in b with nonnegative coefficients, so for 0 <= b <= d and k >= 0:
+0 <= p_i^(k)(b) <= p_i^(k)(d) = k! e_k(1/d, 1/(d+1), ..., 1/(d+i-1)) <= k! C(i,k)/(d)\_k,
 because each of the C(i,k) products in e_k has factors 1/(d+q_1) ... 1/(d+q_k) with q_j >= j-1.
 (a) Taylor coefficients at integers: [h^k] p_i(m+h) is computed for k <= 14 by the recurrence
-    c^(i+1)_k = (c^(i)_k (m+i) + c^(i)_{k-1})/(d+i) (exact truncated products; all terms >= 0, so no cancellation), and
-    F_r^(k)(m) = d^2 sum_{i odd <= 141} g_i k! [h^k] p_i(m+h) + theta d^2 k!/(d)_k sum_{i > 141, odd} |g_i| C(i,k), |theta| <= 1.
-(b) Tail: with u_n = 4^-n C(2n+1,k)/(n(2n+1)), u_{n+1}/u_n <= rho_k := (1/4)(2N0+3)(2N0+2)/((2N0+3-k)(2N0+2-k)) for n >= N0 = 71
-    (x/(x-k) decreases in x; n(2n+1)/((n+1)(2n+3)) <= 1), so sum_{n >= N0} u_n <= u_{N0}/(1 - rho_k), an exact rational.
-    For k = 0 the tail of F_r(m) is <= d^2 (2 pi/3) sum_{n > 70} 4^-n/(n(2n+1)) (p_i <= 1).
-(c) Uniform bound: |F_r^(k)(b)| <= k! d^2 S_k/(d)_k on [0, d], S_k := sum_{i odd} |g_i| C(i,k) (explicit sum to 141 plus (b)).
-    This proves the bound "8 k! d^2/(d)_k" quoted in `LOG.md` (QD2-T2) and used by the old code; the code uses the computed
+    c^(i+1)\_k = (c^(i)\_k (m+i) + c^(i)\_{k-1})/(d+i) (exact truncated products; all terms >= 0, so no cancellation), and
+    F_r^(k)(m) = d^2 sum\_{i odd <= 141} g_i k! [h^k] p_i(m+h) + theta d^2 k!/(d)\_k sum\_{i > 141, odd} |g_i| C(i,k), |theta| <= 1.
+(b) Tail: with u_n = 4^-n C(2n+1,k)/(n(2n+1)), u\_{n+1}/u_n <= rho_k := (1/4)(2N0+3)(2N0+2)/((2N0+3-k)(2N0+2-k)) for n >= N0 = 71
+    (x/(x-k) decreases in x; n(2n+1)/((n+1)(2n+3)) <= 1), so sum\_{n >= N0} u_n <= u\_{N0}/(1 - rho_k), an exact rational.
+    For k = 0 the tail of F_r(m) is <= d^2 (2 pi/3) sum\_{n > 70} 4^-n/(n(2n+1)) (p_i <= 1).
+(c) Uniform bound: |F_r^(k)(b)| <= k! d^2 S_k/(d)\_k on [0, d], S_k := sum\_{i odd} |g_i| C(i,k) (explicit sum to 141 plus (b)).
+    This proves the bound "8 k! d^2/(d)\_k" quoted in `LOG.md` (QD2-T2) and used by the old code; the code uses the computed
     S_1 <= 1.888378 (sup|F'|) and S_16 <= 0.005306 (order-16 remainder) and asserts S_k <= 8.
     Term-by-term differentiation is justified by the same domination.
 
 ### 4.3 zeta(s) by Euler-Maclaurin
 For integers s >= 2, N >= 1, K >= 1 (Concrete Mathematics (9.67) with m = 2K, b -> infinity):
-zeta(s) = sum_{n<N} n^-s + N^(1-s)/(s-1) + N^-s/2 + sum_{j=1}^{K} B_2j/(2j)! (s)_{2j-1} N^(-s-2j+1) + R,
-|R| <= |B_2K|/(2K)! int_N^inf |f^(2K)| = |B_2K|/(2K)! (s)_{2K-1} N^(-s-2K+1)
+zeta(s) = sum\_{n<N} n^-s + N^(1-s)/(s-1) + N^-s/2 + sum\_{j=1}^{K} B_2j/(2j)! (s)\_{2j-1} N^(-s-2j+1) + R,
+|R| <= |B_2K|/(2K)! int_N^inf |f^(2K)| = |B_2K|/(2K)! (s)\_{2K-1} N^(-s-2K+1)
 (f(x) = x^-s, |B_2K(x)| <= |B_2K| on [0,1], f^(2K) > 0, f^(2K-1)(inf) = 0).  All terms are exact rationals; N = 64, K = 40.
-The polygamma values at integers are psi^(n)(m+1) = (-1)^(n+1) n! [zeta(n+1) - H^(n+1)_m] with interval harmonic sums.
+The polygamma values at integers are psi^(n)(m+1) = (-1)^(n+1) n! [zeta(n+1) - H^(n+1)\_m] with interval harmonic sums.
 
 ### 4.4 The singular part of F^(16)
-|psi^(n)(z)| = n! sum_{k>=0} (z+k)^-(n+1) <= n!/z^(n+1) + (n-1)!/z^n (z > 0), hence for b >= 0
-|kappa_16(b)| = |16 psi^(15)(b+1) + b psi^(16)(b+1)| <= 31 * 14!/(b+1)^15 + 32 * 15!/(b+1)^16  (b/(b+1) <= 1).
-F_s^(16) = (4d/pi) kappa_16.  With 4.2(c): S(rad) = sup_{|z| <= rad} |F^(16)(m+z)| is bounded with b >= m - rad >= m/4.
+|psi^(n)(z)| = n! sum\_{k>=0} (z+k)^-(n+1) <= n!/z^(n+1) + (n-1)!/z^n (z > 0), hence for b >= 0
+|kappa_16(b)| = |16 psi^(15)(b+1) + b psi^(16)(b+1)| <= 31 \* 14!/(b+1)^15 + 32 \* 15!/(b+1)^16  (b/(b+1) <= 1).
+F_s^(16) = (4d/pi) kappa_16.  With 4.2(c): S(rad) = sup\_{|z| <= rad} |F^(16)(m+z)| is bounded with b >= m - rad >= m/4.
 
 ### 4.5 H(m,t) - F(m) and its t-derivative
 H(m,t) - F(m) = E[(F(m+z) - F(m)) 1{|z| < L}], z ~ N(0,t), L = (3/4) min(m, d-m).  Taylor to order 15 with Lagrange remainder
 |R16(z)| <= S |z|^16/16!; odd terms vanish by symmetry; E[z^(2j) 1{|z|<L}] = t^j (2j-1)!! - T_j.  The code encloses
-sum_{j<=7} t^j F^(2j)(m)/(2^j j!) (interval in t) and bounds the rest by
+sum\_{j<=7} t^j F^(2j)(m)/(2^j j!) (interval in t) and bounds the rest by
 sum_j |F^(2j)(m)| T_j/(2j)! + [S_near 15!! t^8 + S_far T_8(L_near)]/16!,  L_near = min(m, d-m)/2,
 with T_j <= t^j 2/sqrt(2 pi) a^(2j-1) e^(-a^2/2)/(1 - (2j-1)/a^2), a = L/sqrt(t), when a^2 > 2j (integration by parts:
-I_n(a) = a^(n-1) e^(-a^2/2) + (n-1) I_{n-2}(a) and I_{n-2} <= I_n/a^2), and T_j <= t^j (2j-1)!! otherwise.  Every error term
+I_n(a) = a^(n-1) e^(-a^2/2) + (n-1) I\_{n-2}(a) and I\_{n-2} <= I_n/a^2), and T_j <= t^j (2j-1)!! otherwise.  Every error term
 increases with t, so it is evaluated at the upper end of the t-interval.
 For (D): d/dt E[z^(2j) 1{|z|<L}] = j t^(j-1)(2j-1)!! - T_j' with 0 <= T_j' <= j t^(j-1) m_j(a) + L^(2j+1) phi(a)/t^(3/2), and,
 by d/dt phi_t = phi_t''/2 and two integrations by parts on [-L, L],
@@ -150,7 +150,7 @@ by d/dt phi_t = phi_t''/2 and two integrations by parts on [-L, L],
 on a t-interval the code uses a = L/sqrt(t_hi), phi(a) at that a, and 1/t at t_lo (all worst cases).
 
 ### 4.6 Tails (Lemma R4) in logarithms
-sup_{(0,d)} |F'| <= (4d/pi)(H_d + 1) + d S_1 (F_s'(b) = (4d/pi)[psi(b+1) - psi(d+1) + b psi'(b+1)], -H_d <= psi(b+1) - psi(d+1) <= 0,
+sup\_{(0,d)} |F'| <= (4d/pi)(H_d + 1) + d S_1 (F_s'(b) = (4d/pi)[psi(b+1) - psi(d+1) + b psi'(b+1)], -H_d <= psi(b+1) - psi(d+1) <= 0,
 0 <= b psi'(b+1) <= 1; |F_r'| <= d S_1 by 4.2(c)).  log P(E^c) <= log(2d) - 9/(32 Phi(1)) with Phi(1) <= hi_1;
 log eps_t <= log(3d/8) + log sup|F'| + log P(E^c).  All in interval arithmetic; mpmath numbers have no exponent limit, and the
 JSON stores the logarithms (no underflow at d = 2000, where eps_t ~ 10^-369).
@@ -258,7 +258,7 @@ The old box radius was r = max(8 eps_t/c1min, 1e-30) (7.7e-29 at d = 201); the n
 ## 9. Trusted base and scope
 
 * Trusted: Python 3.14.3 integers and `fractions.Fraction`; mpmath 1.3.0 (gmpy backend) interval arithmetic: outward-rounded
-  +, -, *, /, integer powers, conversion of Python integers, and the interval elementary functions `iv.sin`, `iv.cos`,
+  +, -, \*, /, integer powers, conversion of Python integers, and the interval elementary functions `iv.sin`, `iv.cos`,
   `iv.exp`, `iv.log`, `iv.sqrt`, `iv.pi` (whose results are additionally widened by 16 ulp).  Floats occur nowhere in the
   certified path; the untrusted root search uses 200-bit mpmath numbers only to propose candidate points.
 * On paper (unchanged): Lemmas R1-R4 and Lemma B of `CONE_PROOF.md` (including continuity of Phi -> Pi_Phi on Q and the

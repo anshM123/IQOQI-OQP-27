@@ -20,11 +20,11 @@ noise on the state (Lemma S3a), and the clause is open for d >= 4; it holds for 
   [0, v_c(p)] (L is closed and convex and u is local, being a product behaviour), so v p + (1-v) u is local for
   v <= v_c(p) and nonlocal for v > v_c(p). A strategy is MORE resistant to noise when its v_c is SMALLER (its
   violation survives more admixture 1 - v of noise); the clause asserts that DKZ minimises v_c.
-* Projective strategy on Phi_D = D^{-1/2} sum_i |ii>: projection-valued measures {P^x_a}_a, {Q^y_b}_b on C^D
+* Projective strategy on Phi_D = D^{-1/2} sum_i |ii>: projection-valued measures {P^x_a}\_a, {Q^y_b}\_b on C^D
   (zero projectors allowed), p(a,b|x,y) = <Phi_D| P^x_a (x) Q^y_b |Phi_D> = Tr((P^x_a)^T Q^y_b)/D.
 * CGLMP expression I_d exactly as in the mathematical paper (papers/math, eq. (1)); local bound 2; I_d(u) = 0.
-  I_ME(d) = 4/(d(d-1)) sum_{j=1}^{d-1} (d-j) sec(pi j/(2d)).
-* DKZ_d (D = d): Alice |a>_x = d^{-1/2} sum_k w^{k(a + alpha_x)} |k>, Bob |b>_y = d^{-1/2} sum_k w^{-k(b + beta_y)} |k>,
+  I_ME(d) = 4/(d(d-1)) sum\_{j=1}^{d-1} (d-j) sec(pi j/(2d)).
+* DKZ_d (D = d): Alice |a>\_x = d^{-1/2} sum_k w^{k(a + alpha_x)} |k>, Bob |b>\_y = d^{-1/2} sum_k w^{-k(b + beta_y)} |k>,
   w = e^{2 pi i/d}, alpha = (0, 1/2), beta = (-1/4, 1/4). (This is the orientation in which the CGLMP expression of
   the mathematical paper takes the value I_ME(d); any relabelling of outcomes/settings/parties has the same v_c, because
   relabellings map L onto L and fix u.)
@@ -36,14 +36,14 @@ noise on the state (Lemma S3a), and the clause is open for d >= 4; it holds for 
 ## 1. Core theorem
 
 **Competitor C_d (projective, on Phi_d).** Let A_0 = sigma_z, A_1 = sigma_x, B_0 = (sigma_z + sigma_x)/sqrt2,
-B_1 = (sigma_z - sigma_x)/sqrt2 (the optimal CHSH qubit observables) and Pi^x_{+-} = (1 +- A_x)/2,
-Pi'^y_{+-} = (1 +- B_y)/2 (real symmetric rank-one projectors on C^2).
+B_1 = (sigma_z - sigma_x)/sqrt2 (the optimal CHSH qubit observables) and Pi^x\_{+-} = (1 +- A_x)/2,
+Pi'^y\_{+-} = (1 +- B_y)/2 (real symmetric rank-one projectors on C^2).
 
-* even d: identify C^d = C^2 (x) C^{d/2} by |i>|j> -> |i d/2 + j>, so that Phi_d = Phi_2 (x) Phi_{d/2}; put
-  P^x_0 = Pi^x_+ (x) 1, P^x_1 = Pi^x_- (x) 1, P^x_a = 0 (a >= 2), and Q^y_b likewise with Pi'^y.
+* even d: identify C^d = C^2 (x) C^{d/2} by |i>|j> -> |i d/2 + j>, so that Phi_d = Phi_2 (x) Phi\_{d/2}; put
+  P^x_0 = Pi^x\_+ (x) 1, P^x_1 = Pi^x\_- (x) 1, P^x_a = 0 (a >= 2), and Q^y_b likewise with Pi'^y.
   Ranks (d/2, d/2, 0, ..., 0).
-* odd d: C^d = (+)_{k=1}^{(d-1)/2} span{|2k-2>, |2k-1>} (+) span{|d-1>}; put
-  P^x_0 = ((+)_k Pi^x_+) (+) |d-1><d-1|, P^x_1 = ((+)_k Pi^x_-) (+) 0, P^x_a = 0 (a >= 2), and Q^y_b likewise.
+* odd d: C^d = (+)\_{k=1}^{(d-1)/2} span{|2k-2>, |2k-1>} (+) span{|d-1>}; put
+  P^x_0 = ((+)\_k Pi^x\_+) (+) |d-1><d-1|, P^x_1 = ((+)\_k Pi^x\_-) (+) 0, P^x_a = 0 (a >= 2), and Q^y_b likewise.
   Ranks ((d+1)/2, (d-1)/2, 0, ..., 0). (The extra dimension gives the deterministic outcome 0 to every
   measurement; outcome 1 instead gives the same v_c, by the 0 <-> 1 symmetry; checked in competitor.py.)
 
@@ -61,10 +61,10 @@ Pi'^y_{+-} = (1 +- B_y)/2 (real symmetric rank-one projectors on C^2).
 
 (c) Consequently v_c(C_d) < v_c(DKZ_d) for every d >= 4: on the maximally entangled state Phi_d, the DKZ
     measurements do NOT realise the highest resistance of the violation of local realism (the whole polytope
-    L(2,2,d)) to Gill's uniform noise. The same holds on every Phi_{kd} (C_d (x) 1_k and DKZ_d (x) 1_k have the
+    L(2,2,d)) to Gill's uniform noise. The same holds on every Phi\_{kd} (C_d (x) 1_k and DKZ_d (x) 1_k have the
     behaviours of C_d and DKZ_d).
 
-**Corollary 2 (other local dimensions).** Let d >= 3 and let D be even. The strategy "CHSH qubit PVMs (x) 1_{D/2}"
+**Corollary 2 (other local dimensions).** Let d >= 3 and let D be even. The strategy "CHSH qubit PVMs (x) 1\_{D/2}"
 on Phi_D (outcomes 0, 1 with ranks D/2, D/2; outcomes 2, ..., d-1 unused) has v_c = v_even(d) exactly (Proposition 5
 with q = CH covers t = 1/d for all d >= 3), and v_even(d) < v_c(DKZ_d): for even d this is Theorem 1(c); for odd
 d >= 5, v_even(d) < v_odd(d) (since d^2 > d(d-1)) and Theorem 1(c) applies; for d = 3 see Supplement S2.
@@ -123,10 +123,10 @@ versus even D).
 ### 2.1 The competitor's behaviour (Lemma 1)
 
 **Lemma 1.** Let CH(a,b|x,y) = (1 + (-1)^{a+b} s_xy/sqrt2)/4 for a, b in {0,1} and 0 otherwise. Then
-p_{C_d} = CH for even d, and p_{C_d} = ((d-1)/d) CH + (1/d) delta_0 for odd d, where delta_0(a,b|x,y) = [a = b = 0].
+p\_{C_d} = CH for even d, and p\_{C_d} = ((d-1)/d) CH + (1/d) delta_0 for odd d, where delta_0(a,b|x,y) = [a = b = 0].
 
 *Proof.* All matrices are real symmetric, so (P^x_a)^T = P^x_a. For two qubit projectors,
-Tr(Pi^x_{e} Pi'^y_{f})/2 = (1/8) Tr((1 + e A_x)(1 + f B_y)) = (1 + e f Tr(A_x B_y)/2)/4 with e, f = +-1, and
+Tr(Pi^x\_{e} Pi'^y\_{f})/2 = (1/8) Tr((1 + e A_x)(1 + f B_y)) = (1 + e f Tr(A_x B_y)/2)/4 with e, f = +-1, and
 Tr(A_x B_y)/2 = s_xy/sqrt2 (Tr(sigma_z sigma_z) = Tr(sigma_x sigma_x) = 2, Tr(sigma_z sigma_x) = 0). Even d:
 Tr((Pi (x) 1)(Pi' (x) 1))/d = (d/2) Tr(Pi Pi')/d = Tr(Pi Pi')/2. Odd d: the trace splits over the (d-1)/2 blocks and
 the last dimension: ((d-1)/2) Tr(Pi Pi')/d + [a = 0][b = 0]/d. Outcomes >= 2 have zero projectors. QED
@@ -137,8 +137,8 @@ the last dimension: ((d-1)/2) Tr(Pi Pi')/d + [a = 0][b = 0]/d. Outcomes >= 2 hav
 Let sigma(0) = +1, sigma(a) = -1 (a >= 1), E_xy(p) = sum_ab sigma(a) sigma(b) p(a,b|x,y),
 CHSH(p) = E_00 + E_01 + E_10 - E_11.
 
-**Lemma 2.** (i) CHSH(p) <= 2 for every p in L(2,2,d). (ii) CHSH(u) = 2(d-2)^2/d^2; CHSH(p_{C_d}) = 2 sqrt2 (even d),
-((d-1)/d) 2 sqrt2 + 2/d (odd d). (iii) v p_{C_d} + (1-v) u violates (i) iff v > v_even(d) (even d), resp. v > v_odd(d)
+**Lemma 2.** (i) CHSH(p) <= 2 for every p in L(2,2,d). (ii) CHSH(u) = 2(d-2)^2/d^2; CHSH(p\_{C_d}) = 2 sqrt2 (even d),
+((d-1)/d) 2 sqrt2 + 2/d (odd d). (iii) v p\_{C_d} + (1-v) u violates (i) iff v > v_even(d) (even d), resp. v > v_odd(d)
 (odd d). Hence v_c(C_d) <= v_even(d), resp. v_odd(d).
 
 *Proof.* (i) For a deterministic behaviour, A_x = sigma(a_x), B_y = sigma(b_y) in {+-1} and
@@ -158,10 +158,10 @@ above.
 ### 2.3 Reduction to three outcomes (Lemma 3)
 
 Let pi: Z_d -> {0, 1, R}, pi(0) = 0, pi(1) = 1, pi(a) = R (a >= 2); kappa(0) = kappa(1) = 1, kappa(a) = 1/(d-2) for
-a >= 2. For a behaviour p on Z_d let pi_* p denote its coarse-graining on {0,1,R}.
+a >= 2. For a behaviour p on Z_d let pi\_\* p denote its coarse-graining on {0,1,R}.
 
 **Lemma 3.** Let d >= 3, let p be a behaviour with p(a,b|x,y) = 0 whenever a >= 2 or b >= 2, and p_v = v p + (1-v) u.
-Then p_v in L(2,2,d) iff q_v := pi_* p_v in L(2,2,3). Moreover q_v = v q + (1-v) n_t with q = pi_* p (= p restricted to
+Then p_v in L(2,2,d) iff q_v := pi\_\* p_v in L(2,2,3). Moreover q_v = v q + (1-v) n_t with q = pi\_\* p (= p restricted to
 {0,1}^2) and n_t = product behaviour with all four marginals (t, t, 1 - 2t), t = 1/d.
 
 *Proof.* "only if": coarse-graining maps deterministic behaviours to deterministic behaviours and is linear.
@@ -171,7 +171,7 @@ summing over those d-2 values gives q_v(R, pi(b)|x,y) (same for b >= 2, and for 
 q_v = sum_lambda w_lambda delta_lambda over {0,1,R}^4, let each party answer alpha_x (resp. beta_y) if it is 0 or 1 and a
 uniformly random element of {2, ..., d-1} (fresh local randomness) if it is R. This is a local model whose behaviour is
 sum_lambda w_lambda kappa(a) kappa(b) [pi(a) = alpha_x][pi(b) = beta_y] = kappa(a) kappa(b) q_v(pi(a), pi(b)|x,y) = p_v.
-The formula for q_v: pi_* is linear and pi_* u has independent marginals (1/d, 1/d, (d-2)/d). QED
+The formula for q_v: pi\_\* is linear and pi\_\* u has independent marginals (1/d, 1/d, (d-2)/d). QED
 (Exact symbolic check d = 4..9: item C4.)
 
 For C_d: q = CH for even d, q = (1-t) CH + t delta_0 (t = 1/d) for odd d (Lemma 1; the delta_0 part stays at outcome 0).
@@ -211,19 +211,19 @@ CG coordinates of q_t and n_t are polynomials in t with coefficients in Q(sqrt2)
 
 **Proposition 5.** For every facet F and every t in [0, 1/3]: G_F(t) >= 0. Moreover f_c(n_t) = 8 k t (1 - t) > 0 and
 f_c(q_t) < 0 for t in (0, 1/3]. Consequently, for every d >= 3 (t = 1/d) and both constructions,
-    v_c = v*(t) := f_c(n_t) / (f_c(n_t) - f_c(q_t)),
-and v*(1/d) = v_even(d) for q = CH, v_odd(d) for q = (1-t) CH + t delta_0.
+    v_c = v\*(t) := f_c(n_t) / (f_c(n_t) - f_c(q_t)),
+and v\*(1/d) = v_even(d) for q = CH, v_odd(d) for q = (1-t) CH + t delta_0.
 
-*Proof.* Fix d and t = 1/d. Each f is affine, so f(v q + (1-v) n) = v f(q) + (1-v) f(n). At v = v* the identity
-    f(v* q + (1-v*) n) = (f_c(n) f(q) - f_c(q) f(n)) / (f_c(n) - f_c(q)) = G_F(t) / (f_c(n) - f_c(q))
-holds (expand v* and 1 - v* = -f_c(q)/(f_c(n) - f_c(q))). The denominator is positive. If all G_F(t) >= 0, the point
-q_{v*} (a no-signalling behaviour, as a mixture of two) satisfies every facet inequality, hence lies in L(2,2,3)
+*Proof.* Fix d and t = 1/d. Each f is affine, so f(v q + (1-v) n) = v f(q) + (1-v) f(n). At v = v\* the identity
+    f(v\* q + (1-v\*) n) = (f_c(n) f(q) - f_c(q) f(n)) / (f_c(n) - f_c(q)) = G_F(t) / (f_c(n) - f_c(q))
+holds (expand v\* and 1 - v\* = -f_c(q)/(f_c(n) - f_c(q))). The denominator is positive. If all G_F(t) >= 0, the point
+q\_{v\*} (a no-signalling behaviour, as a mixture of two) satisfies every facet inequality, hence lies in L(2,2,3)
 (Lemma 4: complete list), and by Lemma 3 the
-behaviour v* p + (1-v*) u is local, i.e. v_c >= v*. Since G_{F_c} = 0, f_c(q_{v*}) = 0, and f_c(q_v) = v f_c(q) +
-(1-v) f_c(n) is strictly decreasing in v, so f_c(q_v) < 0 for v > v*: nonlocal. Thus v_c = v*. The closed forms
+behaviour v\* p + (1-v\*) u is local, i.e. v_c >= v\*. Since G\_{F_c} = 0, f_c(q\_{v\*}) = 0, and f_c(q_v) = v f_c(q) +
+(1-v) f_c(n) is strictly decreasing in v, so f_c(q_v) < 0 for v > v\*: nonlocal. Thus v_c = v\*. The closed forms
 follow from f_c(n) = k (2 - CHSH(u)) and f_c(q) = k (2 - CHSH(q)) and Lemma 2(iii) (also verified as polynomial
 identities: f_c(n) ((sqrt2 - 1) + 4(t - t^2)) = 4 (t - t^2)(f_c(n) - f_c(q)) for q = CH, and
-f_c(n) ((sqrt2 - 1) + 4t) = 4t (f_c(n) - f_c(q)) for the odd construction, which are v* = v_even(1/t), v_odd(1/t)
+f_c(n) ((sqrt2 - 1) + 4t) = 4t (f_c(n) - f_c(q)) for the odd construction, which are v\* = v_even(1/t), v_odd(1/t)
 after multiplying numerator and denominator by d^2 resp. d).
 
 Certificate for G_F >= 0: for each F the polynomial G_F (degree <= 3) is written in the Bernstein basis of
@@ -232,9 +232,9 @@ a + b sqrt2 is decided by comparing a^2 and 2 b^2). For 8 facets (lifted CHSH fa
 behaviours) G_F vanishes identically; for the other 1108 no subdivision is needed. The negativity of f_c(q_t) is
 certified the same way (-f_c(q_t) - 10^-6 >= 0 on [0, 1/3]). Done for q = CH, q = (1-t) CH + t delta_0 and
 q = (1-t) CH + t delta_1. QED (competitor.py; item C5, which also re-checks d = 3..12 by direct exact evaluation of
-all 1116 facets at v*.)
+all 1116 facets at v\*.)
 
-**Facet-free alternative proof of the lower bound v_c >= v* (independent of Lemma 4).** independent-check-B/REPORT.md
+**Facet-free alternative proof of the lower bound v_c >= v\* (independent of Lemma 4).** independent-check-B/REPORT.md
 (sec. 2.4) gives an explicit local model of the reduced behaviour v CH + (1-v) nu (x) nu, nu = (s, s, 1-2s), at
 v = T(s) = 4s(1-s)/(sqrt2 - (1-2s)^2) (= v_even(1/s)) with 17 deterministic strategies: weight
 sigma = (1-v)(1-2s)^2 on "all four outputs R"; weight (rho - sigma)/2, rho = (1-v)(1-2s), on each of 8 strategies with
@@ -274,11 +274,11 @@ DKZ_d has uniform marginals (for a rank-one PVM on Phi_d, sum_b p(a,b|x,y) = <Ph
 **Lemma 7 (closed form).** p_DKZ(a,b|x,y) = h_xy(b - a)/d with
     h_xy(m) = 1 / (2 d^2 sin^2(pi (m - delta_xy)/d)),   delta_xy = alpha_x - beta_y:
     delta_00 = 1/4, delta_01 = -1/4, delta_10 = 3/4, delta_11 = 1/4.
-*Proof.* p = |<Phi_d| a_x, b_y>|^2 = (1/d)|sum_k <k|a_x><k|b_y>|^2 = d^{-3} |sum_{k=0}^{d-1} e^{i k theta}|^2 with
+*Proof.* p = |<Phi_d| a_x, b_y>|^2 = (1/d)|sum_k <k|a_x><k|b_y>|^2 = d^{-3} |sum\_{k=0}^{d-1} e^{i k theta}|^2 with
 theta = 2 pi (a - b + delta_xy)/d, and |sum_k e^{ik theta}|^2 = sin^2(d theta/2)/sin^2(theta/2) (theta/2 is not in
 pi Z because delta_xy is not an integer). sin^2(d theta/2) = sin^2(pi(a - b) + pi delta_xy) = sin^2(pi delta_xy) = 1/2.
 QED (Float cross-check against the explicit bases and of I_d = I_ME(d): item C7.) In particular sum_m h_xy(m) = 1
-(orthonormality of the bases; equivalently sum_{m=0}^{d-1} csc^2(x + m pi/d) = d^2 csc^2(d x)).
+(orthonormality of the bases; equivalently sum\_{m=0}^{d-1} csc^2(x + m pi/d) = d^2 csc^2(d x)).
 
 **Lemma 8 (covariant local models).** Let P_00, P_01, P_10, P_11 be probability distributions on Z_d and mu a
 probability distribution on M = {(m_00, m_01, m_10, m_11) in Z_d^4 : m_00 - m_01 - m_10 + m_11 = 0 mod d} whose
@@ -291,7 +291,7 @@ P(A_x = a, B_y = b) = (1/d) P(m_xy = b - a) = P_xy(b - a)/d. QED
 **Lemma 9 (absorption).** Let T^v = v p + (1-v) u with p as in Lemma 6 (uniform marginals). Let Q be a local
 behaviour with uniform marginals and 0 < v0 < v1 <= 1 with |Q(a,b|x,y) - T^{v1}(a,b|x,y)| <= (v1 - v0)/(2 d^2 v0) for
 all entries. Then T^{v0} is local. (Covariant form: if p = h_xy(b - a)/d and Q = Q_xy(b - a)/d, the condition reads
-|Q_xy(m) - T^{v1}_xy(m)| <= (v1 - v0)/(2 d v0), with T^{v1}_xy(m) = v1 h_xy(m) + (1 - v1)/d.)
+|Q_xy(m) - T^{v1}\_xy(m)| <= (v1 - v0)/(2 d v0), with T^{v1}\_xy(m) = v1 h_xy(m) + (1 - v1)/d.)
 *Proof.* T^{v0} = (v0/v1) T^{v1} + (1 - v0/v1) u. With E = T^{v1} - Q (all marginals of E vanish, since T^{v1} and Q
 have uniform marginals) and kappa = v0/(v1 - v0):
     T^{v0} = (v0/v1) Q + (1 - v0/v1) (u + kappa E),     u + kappa E = (u + S)/2,   S := u + 2 kappa E.
@@ -302,7 +302,7 @@ behaviour. QED
 **Proposition 10 (certificates).** For each d in {3, ..., 20} the file certificates/dkz_d{d}.json contains rationals
 v0 < v1 and a probability distribution mu with rational weights (common denominator 10^16) on triples (m_00, m_01,
 m_10) (m_11 := m_01 + m_10 - m_00 mod d), such that the marginals Q_xy of mu satisfy Lemma 9 for DKZ_d. Hence
-v_c(DKZ_d) >= v0(d) (values in the table, v0(d) > 2/I_ME(d) - 1.02 * 10^-7), and v_c(DKZ_d) >= r(d) for d = 4..9.
+v_c(DKZ_d) >= v0(d) (values in the table, v0(d) > 2/I_ME(d) - 1.02 \* 10^-7), and v_c(DKZ_d) >= r(d) for d = 4..9.
 *Verification (exact).* mu >= 0 and sum mu = 1 are checked with integers. Q_xy(m) is computed exactly. The numbers
 h_xy(m) are enclosed in rational intervals: pi in [PI_LO, PI_HI] from Machin's formula
 pi = 16 arctan(1/5) - 4 arctan(1/239) (alternating series, consecutive partial sums bracket the limit; width < 10^-50);
@@ -317,23 +317,23 @@ The supports have about 4d - 3 points (basic solutions). QED
 **Upper bound.** I_d(p_DKZ) = I_ME(d) (direct computation, CGLMP 2002; checked numerically in item C7 and exactly in
 radicals for d = 3 in item S1) and I_d(u) = 0, so I_d(v p + (1-v) u) = v I_ME(d) > 2
 for v > 2/I_ME(d): v_c(DKZ_d) <= 2/I_ME(d). (Not needed for Theorem 1; it shows that the certified lower bounds are
-within 1.02 * 10^-7 of the truth for 3 <= d <= 20, i.e. CGLMP is, up to 10^-7, the optimal witness for DKZ.)
+within 1.02 \* 10^-7 of the truth for 3 <= d <= 20, i.e. CGLMP is, up to 10^-7, the optimal witness for DKZ.)
 
 **Proposition 11 (exact value for small d; not needed for Theorem 1).** v_c(DKZ_d) = 2/I_ME(d) exactly for
 d = 3, 4, 5, 6; i.e. for these d the CGLMP inequality is an optimal witness for DKZ against the whole local polytope.
-*Proof.* Let K_d = conv{(e_{m00}, e_{m01}, e_{m10}, e_{m11}) : m00 - m01 - m10 + m11 = 0 mod d} in coordinates
+*Proof.* Let K_d = conv{(e\_{m00}, e\_{m01}, e\_{m10}, e\_{m11}) : m00 - m01 - m10 + m11 = 0 mod d} in coordinates
 mu_xy(m), m = 1..d-1 (dimension 4(d-1); full-dimensional, rank check). Its complete facet list is computed by the exact
 double description (two insertion orders, every facet re-verified): 66 (d = 3), 216 (d = 4), 1020 (d = 5), 2462
 (d = 6) facets.
-Let v* = 2/I_ME(d) and T = (T^{v*}_xy(m)). All numbers lie in the field Q(c), c = cos(pi/(4d)): with theta = pi/(4d),
-pi (m - delta_xy)/d = k theta with k = 4m - 4 delta_xy an odd integer, sin^2(k theta) = (1 - T_{2|k|}(c))/2, and
-sec(pi j/(2d)) = 1/T_{2j}(c) (T_n = Chebyshev polynomials). Elements are represented as polynomials in c of degree
-< deg m, m = minimal polynomial of c (degrees 4, 8, 8, 8); m(c) = 0 is certified independently (m divides T_{2d}, and m
-changes sign on a rational enclosure of c of width < 10^-45, while the roots of T_{2d} are farther apart). Inverses are
+Let v\* = 2/I_ME(d) and T = (T^{v\*}\_xy(m)). All numbers lie in the field Q(c), c = cos(pi/(4d)): with theta = pi/(4d),
+pi (m - delta_xy)/d = k theta with k = 4m - 4 delta_xy an odd integer, sin^2(k theta) = (1 - T\_{2|k|}(c))/2, and
+sec(pi j/(2d)) = 1/T\_{2j}(c) (T_n = Chebyshev polynomials). Elements are represented as polynomials in c of degree
+< deg m, m = minimal polynomial of c (degrees 4, 8, 8, 8); m(c) = 0 is certified independently (m divides T\_{2d}, and m
+changes sign on a rational enclosure of c of width < 10^-45, while the roots of T\_{2d} are farther apart). Inverses are
 verified by a z = 1 mod m. Each facet value at T is an integer combination of the T values: it is either the zero
 polynomial (exactly 0) or its sign is decided by rational interval evaluation at the enclosure of c. Result: every
 facet is >= 0 at T, exactly one (the covariant CGLMP facet) with value exactly 0, all others >= 0.0234. Hence T is in
-K_d, so a distribution mu as in Lemma 8 exists and T^{v*} is local: v_c(DKZ_d) >= 2/I_ME(d); the upper bound above
+K_d, so a distribution mu as in Lemma 8 exists and T^{v\*} is local: v_c(DKZ_d) >= 2/I_ME(d); the upper bound above
 gives equality. QED (dkz_exact.py; item C11 runs d = 3, 4, 5 in 10 s; d = 6 takes about 9 minutes:
 `python dkz_exact.py 6`, log logs/dkz_exact_d6.log. d = 3 agrees with Theorem 3. d = 7 (343 vertices) was not run to
 completion.)
@@ -377,9 +377,9 @@ the same inequality after flipping the polarity of one party's two binarisations
 Quantum part: A_x = sum_a sigma^F_x(a) P^x_a and B_y = sum_b sigma^F_y(b) Q^y_b are Hermitian involutions on C^3 (any
 traces) and E^F_xy(p) = Tr(A_x^T B_y)/3. With one minus sign among the four s_xy, one row of s is (+-1)(1, 1) and the
 other (+-1)(1, -1), so CHSH_F(p) = (1/3)[+-Tr(A_0^T (B_0 + B_1)) +- Tr(A_1^T (B_0 - B_1))] up to exchanging the
-rows, and Hoelder (||A_x^T||_inf = 1) gives CHSH_F(p) <= (1/3)(||B_0 + B_1||_1 + ||B_0 - B_1||_1). By Jordan's lemma
+rows, and Hoelder (||A_x^T||\_inf = 1) gives CHSH_F(p) <= (1/3)(||B_0 + B_1||\_1 + ||B_0 - B_1||\_1). By Jordan's lemma
 B_0, B_1 have a common invariant orthogonal decomposition of C^3 into subspaces of dimension <= 2; on a 2-dimensional
-one on which neither is scalar they act as two reflections at an angle t, and ||B_0 + B_1||_1 + ||B_0 - B_1||_1
+one on which neither is scalar they act as two reflections at an angle t, and ||B_0 + B_1||\_1 + ||B_0 - B_1||\_1
 restricted there equals 4|cos(t/2)| + 4|sin(t/2)| <= 4 sqrt2; on a 1-dimensional one b_0, b_1 in {+-1} contribute
 |b_0 + b_1| + |b_0 - b_1| = 2. As C^3 splits as 2 + 1 or 1 + 1 + 1, CHSH_F(p) <= max(4 sqrt2 + 2, 6)/3 =
 (4 sqrt2 + 2)/3. Noise part: each binarised outcome has mean +-1/3 under u, so CHSH_F(u) = (1/9) sum_xy s_xy (+-1)(+-1)
@@ -402,14 +402,14 @@ noise.
 
 ### S2. d = 3 on other maximally entangled states: the clause FAILS (Phi_2 and every even D)
 
-**Proposition S2.** On Phi_2 let P^x_0 = Pi^x_+, P^x_1 = Pi^x_-, P^x_2 = 0 and Q^y_b likewise (outcome 2 unused).
+**Proposition S2.** On Phi_2 let P^x_0 = Pi^x\_+, P^x_1 = Pi^x\_-, P^x_2 = 0 and Q^y_b likewise (outcome 2 unused).
 Then v_c = 8/(9 sqrt2 - 1) = 0.682132773235... < 2/I_ME(3) = v_c(DKZ_3) = 0.696152422707.... The same behaviour arises
-on every Phi_D with D even (tensor with 1_{D/2}), in particular on Phi_6, where DKZ_3 (x) 1_2 is available. On Phi_D
+on every Phi_D with D even (tensor with 1\_{D/2}), in particular on Phi_6, where DKZ_3 (x) 1_2 is available. On Phi_D
 with D odd, (D-1)/2 CHSH blocks plus one deterministic dimension give v_c <= (16/9)/((16/9) + ((D-1)/D)(2 sqrt2 - 2)),
 which is < 2/I_ME(3) iff D >= 17 (exact). (D = 3: Theorem 3; D = 5, 7, ..., 15: not decided.)
 
 *Proof.* The behaviour is CH (Lemma 1 with D = 2), so Lemma 3 (d = 3, R = {2}) and Proposition 5 with q = CH at
-t = 1/3 give v_c = 4 * 2/((sqrt2 - 1) 9 + 8) = 8/(9 sqrt2 - 1). The comparisons and the statement for odd D are exact
+t = 1/3 give v_c = 4 \* 2/((sqrt2 - 1) 9 + 8) = 8/(9 sqrt2 - 1). The comparisons and the statement for odd D are exact
 comparisons of algebraic numbers (phi3.py). QED
 
 So for d = 3 the literal clause is true when the state is fixed to Phi_3 and false when any maximally entangled state
@@ -430,19 +430,19 @@ M^x_a = (1 - eps) P^x_a + (eps/d) 1, N^y_b = (1 - eps) Q^y_b + (eps/d) 1 with (P
     v_c(C_d) <= v_c(M, N) <= w_eps(d) < v_c(DKZ_d),
 where w_eps(d) = (2 - 2e^2)/(CHSH_eps - 2e^2), e = (2-d)/d, CHSH_eps = (1-eps)^2 2 sqrt2 + 2 eps^2 e^2 (even d),
 CHSH_eps = (1-eps)^2 ((d-1)/d 2 sqrt2 + 2/d) + (1-eps) eps 4e/d + 2 eps^2 e^2 (odd d).
-*Proof.* The behaviour is (L (x) L) p_{C_d}, with the local outcome channel L(a|a') = (1-eps)[a = a'] + eps/d, and
+*Proof.* The behaviour is (L (x) L) p\_{C_d}, with the local outcome channel L(a|a') = (1-eps)[a = a'] + eps/d, and
 (L (x) L) u = u; local post-processing preserves locality, so v_c(M, N) >= v_c(C_d). After binarising as in Lemma 2,
 L keeps the binary outcome with probability 1 - eps and otherwise replaces it by an independent one with mean e; with
 the marginal means 0 (even d) resp. 1/d (odd d) of C_d this gives E_xy(eps) = (1-eps)^2 E_xy + (1-eps) eps e
 (<A_x> + <B_y>) + eps^2 e^2 and the stated CHSH_eps; Lemma 2(iii) gives the bound w_eps. CHSH_eps is decreasing in eps
 on [0, 1/100]: its derivative is -4 sqrt2 (1 - eps) + 4 eps e^2 <= -4 sqrt2 (0.99) + 0.04 < 0 (even d), resp.
--2 (1 - eps) CHSH(p_{C_d}) + (1 - 2 eps) 4e/d + 4 eps e^2 <= -2 (0.99) 2 + 0 + 0.04 < 0 (odd d; CHSH(p_{C_d}) >= 2,
-e < 0); povm.py also certifies this exactly for d = 4..10, so w_eps <= w_{1/100}. Finally
-w_{1/100}(d) < v0(d) for d = 4..10 and w_{1/100}(d) < 1/2 for all d >= 11 (exact, povm.py; the latter as positivity
-of a polynomial in d - 11 with positive coefficients). Numerically w_{1/100} = 0.6602 (d=4), 0.6790 (5), 0.5900 (6),
+-2 (1 - eps) CHSH(p\_{C_d}) + (1 - 2 eps) 4e/d + 4 eps e^2 <= -2 (0.99) 2 + 0 + 0.04 < 0 (odd d; CHSH(p\_{C_d}) >= 2,
+e < 0); povm.py also certifies this exactly for d = 4..10, so w_eps <= w\_{1/100}. Finally
+w\_{1/100}(d) < v0(d) for d = 4..10 and w\_{1/100}(d) < 1/2 for all d >= 11 (exact, povm.py; the latter as positivity
+of a polynomial in d - 11 with positive coefficients). Numerically w\_{1/100} = 0.6602 (d=4), 0.6790 (5), 0.5900 (6),
 0.6003 (7), 0.5312 (8), 0.5380 (9). QED
 
-**Remark S3c (PVMs on Phi_D, D > d, every outcome used).** P^x_0 = Pi^x_+ (x) 1_k (+) 0, P^x_1 = Pi^x_- (x) 1_k (+) 0,
+**Remark S3c (PVMs on Phi_D, D > d, every outcome used).** P^x_0 = Pi^x\_+ (x) 1_k (+) 0, P^x_1 = Pi^x\_- (x) 1_k (+) 0,
 P^x_a = |e_a><e_a| (a = 2, ..., d-1, on d - 2 extra basis vectors), D = 2k + d - 2, Bob likewise. The behaviour is
 (2k/D) CH + ((d-2)/D) tau (tau: perfectly correlated uniform outcome in {2, ..., d-1}); its coarse-grained CHSH threshold
 tends to v_even(d) as k -> infinity and is already below the certified v0(DKZ_d) for (d, D) = (4, 12), (5, 11),
@@ -454,29 +454,29 @@ state. So once D > d the counterexample needs no zero projectors, only unbalance
 Question: with rho_v = v Phi_D + (1-v) 1/D^2 and arbitrary PVMs, the noise term is n = p_A (x) p_B,
 n(a,b|x,y) = tr(P^x_a) tr(Q^y_b)/D^2; is the CGLMP-witnessed threshold still >= 2/I_ME(d), i.e.
     (B1)   I_d(p) <= I_ME(d) - ((I_ME(d) - 2)/2) I_d(p_A (x) p_B)      for all PVM strategies on all Phi_D?
-Equivalently: the isotropic state at v* = 2/I_ME(d) never violates CGLMP_d with PVMs. Write F = v* I_d(p) +
-(1-v*) I_d(n); (B1) is F <= 2.
+Equivalently: the isotropic state at v\* = 2/I_ME(d) never violates CGLMP_d with PVMs. Write F = v\* I_d(p) +
+(1-v\*) I_d(n); (B1) is F <= 2.
 
 Proved parts (elementary):
 * The marginals tr(P^x_a)/D are fixed by the rank pattern r, so n = n_r is constant on each pattern and (B1) reads
-  v* I_max(r) + (1-v*) I_d(n_r) <= 2, with I_max(r) = max of I_d over PVMs with pattern r.
+  v\* I_max(r) + (1-v\*) I_d(n_r) <= 2, with I_max(r) = max of I_d over PVMs with pattern r.
 * Balanced patterns (all ranks D/d), and more generally all patterns with I_d(n_r) <= 0: (B1) follows from Theorem A.
 * Patterns with a deterministic measurement (one projector equal to 1): p is local (a party with only one non-trivial
   setting always admits a local model), so I_d(p) <= 2 and I_d(n_r) <= 2 give F <= 2. The same holds for every
   pattern with I_max(r) <= 2.
 * Direct sums with DKZ blocks: if p = w p_DKZ + (1-w) p' (block-diagonal; w = dimension fraction), then, because DKZ
   has uniform marginals and I_d(u_A (x) q_B) = I_d(q_A (x) u_B) = 0 for every q (each link term of I_d depends only on
-  the law of b - a, which is uniform), F(p) = 2w + (1-w)[v* I_d(p') + (1-v*)(1-w) I_d(n')]; hence F(p') <= 2 implies
-  F(p) <= 2 (if I_d(n') < 0 use v* I_d(p') <= 2). DKZ blocks never help.
+  the law of b - a, which is uniform), F(p) = 2w + (1-w)[v\* I_d(p') + (1-v\*)(1-w) I_d(n')]; hence F(p') <= 2 implies
+  F(p) <= 2 (if I_d(n') < 0 use v\* I_d(p') <= 2). DKZ blocks never help.
 Numerical evidence (no counterexample found):
 * D = 2, all d <= 6, all patterns, with the angle optimisation reduced exactly to one variable
   (white_qubit_scan.py): max F = 1.97676 (d=3), 1.96878 (4), 1.96473 (5), 1.96229 (6).
 * Block mixtures of DKZ, all d^4 deterministic strategies and all optimal nonlocal qubit blocks (white_mixture.py,
   d = 3, 4): max F = 2, attained only by DKZ or deterministic strategies.
-* All rank patterns enumerated for (d, D) = (3, 2..9), (4, 2..8), (5, 2..6), (6, 2..5) (up to 4.0 * 10^9 patterns per
+* All rank patterns enumerated for (d, D) = (3, 2..9), (4, 2..8), (5, 2..6), (6, 2..5) (up to 4.0 \* 10^9 patterns per
   case), pruned by the bound I_d(p) <= min(I_ME, N(r)), N(r) = sum of four transportation LPs with the marginals of r
   (floating-point LPs); for each (d, D) the 200 surviving patterns with the largest bound plus 200 random survivors
-  were optimised by Riemannian gradient ascent (3 starts) (white_search.py, logs/white_d*_D*.log): the largest F found
+  were optimised by Riemannian gradient ascent (3 starts) (white_search.py, logs/white_d\*\_D\*.log): the largest F found
   is 1.98569 (d = 4, D = 3); never above 2.
 Status: NUMERICAL. A proof for all D would need a quantitative version of Theorem A near uniform marginals: there the
 no-signalling bound is useless, while I_d(n_r) is quadratic in the distance of the marginals from uniform.
@@ -492,7 +492,7 @@ no-signalling bound is useless, while I_d(n_r) is quadratic in the distance of t
 | C1 | Lemma 4: 1116 facets, classes, two DD insertion orders, = facets223.txt | exact integers |
 | C2 | Lemma 1: projectors, ranks, behaviour of C_d, d = 4..9 | sympy, exact |
 | C3 | Lemma 2: local bound 2 (all d^4 strategies, d = 4..9), CHSH values, v_even/v_odd symbolically | sympy, exact |
-| C4 | Lemma 3: p_v = kappa kappa q_v, q_v = v q + (1-v) n_{1/d}, d = 4..9, symbolic v | sympy, exact |
+| C4 | Lemma 3: p_v = kappa kappa q_v, q_v = v q + (1-v) n\_{1/d}, d = 4..9, symbolic v | sympy, exact |
 | C5 | Proposition 5: Bernstein certificates for all 1116 G_F on [0, 1/3]; per-d recheck d = 3..12 | Q(sqrt2), exact |
 | C5b | facet-free: explicit 17-strategy model (REF_noise_B 2.4), d = 2..40; exact LP-vertex models, d = 3..16 | Q(sqrt2), exact |
 | C6 | Lemma 6: two-model construction on random rational behaviours, d = 2..5 | Fractions, exact |
@@ -505,7 +505,7 @@ no-signalling bound is useless, while I_d(n_r) is quadratic in the distance of t
 | S1 | Theorem 3: facet-class data, CHSH_F(u) = +-2/9, I_F(u) = 0, thresholds, I_3(DKZ_3) in radicals | exact (phi3.py) |
 | S2 | Proposition S2: 8/(9 sqrt2 - 1) and comparisons; odd D >= 17 | exact |
 | S3 | Proposition S3b (all d >= 4) and Remark S3c (d = 4..9) | exact (povm.py) |
-| S4 | ledger B1 search summary from logs/white_d*_D*.log | numerical, informational |
+| S4 | ledger B1 search summary from logs/white_d\*\_D\*.log | numerical, informational |
 
 Files: exact.py (Q(sqrt2), polynomials, Bernstein, rigorous pi/sin), facets223.py (double description, classes),
 facets223.txt (facet list), competitor.py (Proposition 5), dkz_cert.py (Proposition 10; `make` = LP generation,

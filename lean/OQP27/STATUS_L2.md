@@ -27,7 +27,7 @@ Paper references: `CGLMP/paper-classical-all-d/main.tex` ("paper"); QD-L7 = `SHA
 | `IsPVM.mul_eq_zero`, `pvmU_pow`, `pvmU_unitary`, `pvmU_pow_d` | PVM calculus: `U = sum_a w^a P_a`, `U^n = sum_a w^{na} P_a`, `U` unitary, `U^d = 1` | PROVED | ReductionChain |
 | `chainR` | chain unitaries eq. (chainR): `R_1 = U_2, R_2 = (U'_2)^T, R_3 = U_1, R_4 = (U'_1)^T` | DEF | ReductionChain |
 | `chainS_trace` | eq. (Strace): `S = 2(d-1) + sum_n c_n Lambda_n(R)` for max-ent probabilities `Tr(A^T B)/D` | PROVED | ReductionChain |
-| `Vred` | reduced family of Thm 2.3(2) (twirl + Stone-von Neumann in the explicit basis `f_{s,v}` of `H_0`): `V_k = sum_s |s><s+1| (x) z^{-k} R_{s+1}^{-k} R_{s+2}^k`, `M = 4D` | DEF | ReductionClock |
+| `Vred` | reduced family of Thm 2.3(2) (twirl + Stone-von Neumann in the explicit basis `f_{s,v}` of `H_0`): `V_k = sum_s \|s><s+1\| (x) z^{-k} R_{s+1}^{-k} R_{s+2}^k`, `M = 4D` | DEF | ReductionClock |
 | `Vred_unitary`, `Vred_pow_four` | `V_k` unitary, `V_k^4 = 1` | PROVED | ReductionClock |
 | `ntr_Vred` | `tr(V_j V_k^*) = z^{k-j} Lambda_{k-j}(R)/4` | PROVED | ReductionClock |
 | `clockF` | clock functional eq. (F): `F(V) = sum_{j<k} Re[h_{k-j} tr(V_j V_k^*)]` | DEF | ReductionClock |

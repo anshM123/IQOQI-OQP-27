@@ -32,7 +32,7 @@ here (namespace `OQP27`, names prefixed `cone`), and `Skeleton.lean` now imports
 
 | Lean | mathematics | Python (`QD2/cells.py`) |
 |---|---|---|
-| `clausen2 θ = ∑' k, sin((k+1)θ)/(k+1)^2` | Cl2(θ) = sum_{k>=1} sin(kθ)/k^2 | `cl2` (Im Li2(e^{iθ})) |
+| `clausen2 θ = ∑' k, sin((k+1)θ)/(k+1)^2` | Cl2(θ) = sum\_{k>=1} sin(kθ)/k^2 | `cl2` (Im Li2(e^{iθ})) |
 | `coneG d u = -((4d)^2/(2π^2)) * clausen2 (2πu/(4d))` | G(u), N = 4d | `Gfun` |
 | `coneGhat d u = coneG d u + coneG d (2d - u)` | Ĝ(u) | `Ghat_vec` |
 | `coneWindowSum d ℓ r m = ∑_{i<m} ℓ((r+i) mod d)` | S_r(m) | `cs[r+m]-cs[r]` in `u_window` |
@@ -40,7 +40,7 @@ here (namespace `OQP27`, names prefixed `cone`), and `Skeleton.lean` now imports
 | `coneU d ℓ m = P(m+1) - 2P(m) + P(m-1)` | u^ℓ_m (QD2-L2), m = 1..d-1 | `u_window` |
 | `coneV d m = 2/sin(πm/(2d))` | v_m = 2 csc(πm/(2d)) | `v_vector` |
 | `IsConeCell d ℓ`: `ℓ r >= 0` (r < d), `∑_{r<d} ℓ r = d` | cell vector | — |
-| `ConeCert d`: ∃ K, cells ℓ^(k), λ_k >= 0 with ∑_k λ_k u^{ℓ^(k)}_m = v_m (1 <= m <= d-1) | CONE_d | — |
+| `ConeCert d`: ∃ K, cells ℓ^(k), λ_k >= 0 with ∑\_k λ_k u^{ℓ^(k)}\_m = v_m (1 <= m <= d-1) | CONE_d | — |
 
 A cell vector is a function `ℕ → ℝ` of which only `ℓ 0, …, ℓ (d-1)` are used.  Cells may have zero entries
 (QD2-L1 assumes only ℓ_r >= 0); the Lean certificates for d <= 20 use integer cells, some with zeros, and all
@@ -61,12 +61,12 @@ Build logs: `OQP27/logs/<File>.log` (stdout of `leanrun.sh`).
 | `OQP27.piLo_lt_pi`, `OQP27.pi_lt_piHi` | 3.14159265358979323846 < π < 3.14159265358979323847 (Mathlib `Real.pi_gt_d20`, `pi_lt_d20`) | PROVED | CertTrig |
 | `OQP27.sinTaylor_le_sin`, `sin_le_sinTaylor`, `cosTaylor_le_cos`, `cos_le_cosTaylor` | for 0 <= x <= 1, Taylor partial sums of sin, cos with an even (odd) number of terms are lower (upper) bounds | PROVED | CertTrig |
 | `OQP27.mem_sinSmall`, `mem_cosSmall`, `mem_sinPi` | enclosures of sin(πr), cos(πr); `sinPi r` is sound for every rational r | PROVED | CertTrig |
-| `OQP27.g7_tele`, `g5_tele`, `tail_bounds` | g5(y) <= ∑_{i>=0} 1/(i+y)^2 <= g7(y) for y >= 1 | PROVED | CertClausen |
-| `OQP27.hurwitzQ_split`, `mem_hEnc` | enclosure of H(Q,b) = ∑_{i>=0} 1/(b+Qi)^2 | PROVED | CertClausen |
-| `OQP27.clausen2_rat` | Cl2(2πc/Q) = ∑_{a<Q} sin(2πc(a+1)/Q) H(Q, a+1) | PROVED | CertClausen |
+| `OQP27.g7_tele`, `g5_tele`, `tail_bounds` | g5(y) <= ∑\_{i>=0} 1/(i+y)^2 <= g7(y) for y >= 1 | PROVED | CertClausen |
+| `OQP27.hurwitzQ_split`, `mem_hEnc` | enclosure of H(Q,b) = ∑\_{i>=0} 1/(b+Qi)^2 | PROVED | CertClausen |
+| `OQP27.clausen2_rat` | Cl2(2πc/Q) = ∑\_{a<Q} sin(2πc(a+1)/Q) H(Q, a+1) | PROVED | CertClausen |
 | `OQP27.mem_clEnc`, `mem_clTab`, `mem_factorEnc`, `coneGhat_rat`, `mem_gEnc` | enclosures of Cl2(2πc/Q) and of Ĝ(J/q), 0 <= J <= 2dq | PROVED | CertClausen |
 | `OQP27.winN_le`, `mem_gTab`, `mem_pEnc`, `mem_uList`, `mem_vEnc` | enclosures of P(m), u^ℓ_m (cells n/q with ∑ n = dq) and v_m | PROVED | CertPipeline |
-| `OQP27.exists_solve_of_approx_inverse` | ‖I - RW‖_∞ <= eps < 1 and ‖Rb‖_∞ <= beta give y with Wy = b, ‖y‖_∞ <= beta/(1-eps) | PROVED | CertCheck |
+| `OQP27.exists_solve_of_approx_inverse` | ‖I - RW‖\_∞ <= eps < 1 and ‖Rb‖\_∞ <= beta give y with Wy = b, ‖y‖\_∞ <= beta/(1-eps) | PROVED | CertCheck |
 | `OQP27.coneCheckCore_sound` | residual-correction check (Section 4) gives x > 0 with Ux = v | PROVED | CertCheck |
 | `OQP27.ConeCertificate.sound`, `sound_strong` | **interface**: valid cells + passing check for supplied enclosures give `ConeCert d` (all weights > 0) | PROVED | CertCheck |
 | `OQP27.ConeCertificate.fullCheck_sound`, `fullCheck_sound_strong` | `fullCheck c = true` gives `ConeCert c.d` (all weights > 0) | PROVED | CertPipeline |
@@ -90,17 +90,17 @@ is the `hcone` argument of `OQP27.maxEntClause_all_d` (`Skeleton.lean`); for a s
 ## 4. The certificate format and the verified interface (`CertCheck.lean`)
 
 `OQP27.ConeCertificate`: `d`; a denominator `q > 0`; cells `n^(1..K)` (lists of naturals, ℓ^(k) = n^(k)/q, checked
-∑_{r<d} n^(k)_r = d q); rational approximate weights `λ̃_k`; a rational (d-1)×(d-1) matrix `R`; rationals `eps`,
-`beta`.  With U the real (d-1)×K matrix U_{m,k} = u^{ℓ^(k)}_{m+1} and rational interval enclosures `UI`, `vI` of U
+∑\_{r<d} n^(k)\_r = d q); rational approximate weights `λ̃_k`; a rational (d-1)×(d-1) matrix `R`; rationals `eps`,
+`beta`.  With U the real (d-1)×K matrix U\_{m,k} = u^{ℓ^(k)}\_{m+1} and rational interval enclosures `UI`, `vI` of U
 and v, the check (`coneCheckCore`, exact rational interval arithmetic) is the scheme of `QD2/verify_cone.py`
 (function `verify`):
 1. 0 <= eps < 1 and 0 <= beta;
-2. for every row i: ∑_j |I - R W|_{ij} <= eps, where W = U Uᵀ is enclosed entrywise;
-3. for every row i: |R (v - U λ̃)|_i <= beta;
-4. for every column k: λ̃_k - (∑_m |U_{m,k}|) · beta/(1-eps) > 0.
+2. for every row i: ∑\_j |I - R W|\_{ij} <= eps, where W = U Uᵀ is enclosed entrywise;
+3. for every row i: |R (v - U λ̃)|\_i <= beta;
+4. for every column k: λ̃\_k - (∑\_m |U\_{m,k}|) · beta/(1-eps) > 0.
 
 Soundness: by (2), RW is injective, so W is invertible (finite dimension); the solution y of W y = v - U λ̃
-satisfies y = (I - RW) y + R(v - U λ̃), hence ‖y‖_∞ <= beta/(1-eps); then λ = λ̃ + Uᵀ y solves U λ = v exactly, and
+satisfies y = (I - RW) y + R(v - U λ̃), hence ‖y‖\_∞ <= beta/(1-eps); then λ = λ̃ + Uᵀ y solves U λ = v exactly, and
 λ_k > 0 by (4).  (`verify_cone.py` writes the same bound as |y| <= |R res|/(1 - |I - RW|); here the two maxima are
 certificate data checked row by row.)
 
@@ -112,7 +112,7 @@ All arithmetic is exact over ℚ with outward rounding of intermediate results t
   (10 / 11 terms) at the rational endpoints piLo·r, piHi·r; other r are reduced to [0, 1/4] by periodicity and
   sin(x+π) = -sin x, sin(π-x) = sin x, sin x = cos(π/2-x).  Width about 1e-20.
 * Cl2(2πc/Q): grouping the series by residues mod Q (`Nat.sumByResidueClasses`) gives exactly
-  Cl2(2πc/Q) = ∑_{a=0}^{Q-1} sin(2πc(a+1)/Q) H(Q, a+1); H(Q,b) = ∑_{i<20} 1/(b+Qi)^2 + Q^-2 ∑_{i>=0} 1/(i+y)^2 with
+  Cl2(2πc/Q) = ∑\_{a=0}^{Q-1} sin(2πc(a+1)/Q) H(Q, a+1); H(Q,b) = ∑\_{i<20} 1/(b+Qi)^2 + Q^-2 ∑\_{i>=0} 1/(i+y)^2 with
   y = 20 + b/Q, and the tail lies between g5(y) and g7(y), g5(t) = 1/t + 1/(2t^2) + 1/(6t^3) - 1/(30t^5),
   g7 = g5 + 1/(42t^7), by the exact telescoping identities
   g7(t) - g7(t+1) - 1/t^2 = (63t^4+126t^3+98t^2+35t+5)/(210 t^7 (t+1)^7) and
@@ -130,7 +130,7 @@ Clausen table is assembled from separately checked chunks (`CertChunked.lean`).
 ## 6. The certificates for 2 <= d <= 20
 
 Generated by `certdata/explore.py` (exhaustive, d <= 7), `certdata/explore2.py` / `certdata/explore3.py` (random
-integer cells; `explore3` forces the uniform cell into the basis): square bases of d-1 *integer* cells (q = 1,
+integer cells; `explore3` forces the uniform cell into the basis): square bases of d-1 \*integer\* cells (q = 1,
 zero entries allowed) with v = U λ, λ > 0.  `certdata/gencert.py` computes λ̃ (22 digits), R = (U Uᵀ)^{-1}
 (22 digits), and eps, beta (4x the values found by `certdata/leanemu.py`, an exact re-implementation of the Lean
 checker, rounded up); `certdata/mkfiles.py` (d <= 12) and `certdata/mkstaged.py` (d >= 13) write the Lean files and
@@ -159,7 +159,7 @@ check counts.
 | 19 | 18 | 3/20000 | 67/1000000000 | 0.007977 | CertD19 | 475 |
 | 20 | 19 | 63/1000000 | 1/40000000 | 0.003398 | CertD20 | 543 |
 
-"certified min λ_k" is λ̃_k - colsum·beta/(1-eps) from the exact emulation (the kernel check establishes > 0).
+"certified min λ_k" is λ̃\_k - colsum·beta/(1-eps) from the exact emulation (the kernel check establishes > 0).
 Build times are wall-clock for the whole file on the shared machine (the files for d >= 19 ran under memory
 pressure); `CertSmall` and `CertMid` are single-stage, `CertD13` … `CertD20` two-stage.
 
@@ -181,13 +181,13 @@ changes a conclusion (the margins exceed the possible errors by large factors), 
   note); logs `logs/verify_2_100.log`, `verify_101_145.log`, `verify_146_178.log`, `verify_179_200.log`,
   `verify_rev_168_178.log`, `verify_rev_192_200.log`.
 * Interval arithmetic: `mpmath.iv` at 160 bits.  Cl2(t), 0 < t <= π, by
-  t - t log t + ∑_{n<=70} |B_2n| t^{2n+1}/(2n(2n+1)!) + [0, t(π^2/6)4^-71/((3/4)·71·143)] (exact rational coefficients
+  t - t log t + ∑\_{n<=70} |B_2n| t^{2n+1}/(2n(2n+1)!) + [0, t(π^2/6)4^-71/((3/4)·71·143)] (exact rational coefficients
   from `mpmath.bernfrac`; tail from ζ(2n) <= π^2/6); Cl2(0) = Cl2(π) = 0 exactly.  Ĝ(j/16) on the grid, u^ℓ by the
   window-sum form with exact integer window indices, v_m = 2/iv.sin(πm/(2d)).
 * Linear algebra: the scheme of Section 4, with R = `mp.inverse(mid W)` (untrusted; any R is admissible) and
   the maxima computed instead of checked against given eps, beta.  The column search (scipy HiGHS, float Clausen
   values) is untrusted and only proposes candidates.
-* Certified statement, for each d: explicit cells with all n_r >= 1 and λ_k > 0 with ∑_k λ_k u^{ℓ^(k)} = v exactly.
+* Certified statement, for each d: explicit cells with all n_r >= 1 and λ_k > 0 with ∑\_k λ_k u^{ℓ^(k)} = v exactly.
   This is literally `ConeCert d`, and `ConeCertPos d`.
 * Status: every 2 <= d <= 200 verified on the first attempt; certified d·min λ_k in [0.0816, 0.2572];
   |y| <= 2.1e-11, ‖I - RW‖ <= 9.4e-34.  The JSON files do not store R or any interval; re-verification means
@@ -198,10 +198,10 @@ changes a conclusion (the margins exceed the possible errors by large factors), 
 ### 7.2 Gaussian regime, 201 <= d <= 2000 (QD2-T2)
 * Construction (`CONE_PROOF.md`): the cell process Π_Φ: ℓ = d·Dir(1 + η) on E = {max_r |η_r| < 3/4} and
   ℓ = d·Dir(1, …, 1) on the complement, η a stationary Gaussian field on Z_d with ∑ η_r = 0 and window-sum
-  variance Φ(m) (Φ symmetric, Φ(0) = Φ(d) = 0, cosine coefficients at_k >= 0).  Lemma R1: E_{Π_Φ}[u^ℓ] + Δ²W = v
+  variance Φ(m) (Φ symmetric, Φ(0) = Φ(d) = 0, cosine coefficients at_k >= 0).  Lemma R1: E\_{Π_Φ}[u^ℓ] + Δ²W = v
   (scale c = 1) splits into (i) decoupled scalar equations Hc_m(Φ(m)) + e_m(Φ) = τ_m for the antisymmetric part
   (m < d/2; e_m = effect of the complement of E) and (ii) Δ²W >= 0 for the symmetric part, and
-  Δ²W = ∑_s w_s t_s with t_s = e_s + e_{d-s}.
+  Δ²W = ∑\_s w_s t_s with t_s = e_s + e\_{d-s}.
 * `verify_gauss.py` (intervals, 100 bits for d <= 600, 160 bits above) encloses: F^(2j)(m), j <= 7, where
   F(b) = E Ĝ(d X_b), X_b ~ Beta(b, d-b) (singular part exactly through polygamma values = zeta values minus harmonic
   sums; regular part by an exact series plus derivative bounds); the targets τ_m; root boxes [a_m, b_m] of
@@ -209,9 +209,9 @@ changes a conclusion (the margins exceed the possible errors by large factors), 
   remainder); every cosine coefficient at_k > 0; the slack Δ²W > 0; the tail bounds
   P(E^c) <= 2d·exp(-9/(32 Φ(1))), ε_t, r.  Output `logs/vg_d{d}.json`.
 * `verify_fixedpoint.py` certifies inf Hc_m' >= c1min/4 on the widened boxes [a_m - r, b_m + r] (condition (D) of
-  Lemma B) and a bound on sup |∂_t H|.  Output `logs/fp_d{d}.json`.
+  Lemma B) and a bound on sup |∂\_t H|.  Output `logs/fp_d{d}.json`.
 * Lemma B (`CONE_PROOF.md`, Poincaré-Miranda): (D), the sign changes and |e_m| <= 2ε_t give Φ# in the boxes with
-  (i) exactly; with the slack bound, (ii) holds.  Hence E_{Π_{Φ#}}[u^ℓ] + ∑_s w_s t_s = v with w_s >= 0.
+  (i) exactly; with the slack bound, (ii) holds.  Hence E\_{Π\_{Φ#}}[u^ℓ] + ∑\_s w_s t_s = v with w_s >= 0.
 * Margins (all 1800 values of d): d^2 min_k at_k >= 0.0285 (even d) / 0.0798 (odd d); d·min Δ²W >= 0.6336;
   P(E^c) <= 4.2e-37; (D) holds with ratio >= 4.001 (1 needed).  Sweeps complete: 1800 `vg` and 1800 `fp` files,
   all ok; `logs/audit_certs_final.log`: ALL CERTIFIED.
@@ -234,7 +234,7 @@ changes a conclusion (the margins exceed the possible errors by large factors), 
   D_B[Φ_e](m) >= βε^3 (2 <= m <= d/2) and |Φ - Φ_e| <= δ_max.
 * Interval Taylor models (`a01`-`a12`, `iv.prec` = 120, `a08` at 160), uniform in ε ∈ [0, 1/2001]: Q_O >= 7.4192,
   Λ(R2) >= 6.0224, A_2(1) ∈ [-2.75594562462218, -2.75594562462217], A_2(m) > 0 for m >= 2,
-  D_B(1) >= -2.765192 ε^2, D_B(2) >= 206.884 ε^3, |Φ* - Φ_e| <= 6.645e-4 ε^2 (unique model root), slack densities
+  D_B(1) >= -2.765192 ε^2, D_B(2) >= 206.884 ε^3, |Φ\* - Φ_e| <= 6.645e-4 ε^2 (unique model root), slack densities
   >= 0.6509, F' >= 0.15204.  `audit_alld.py` prints ALL-D CERTIFIED (`logs/audit_alld_final.log`):
   at_k >= 0.118695 w_k ε^2, slack >= 0.617 ε, tail lemma and fixed point (log ρ <= -837).
 * On paper only: Lemma P, QD2-L11, the Fejér/Pólya step of QD2-L12, identity I1, **identity I2 (b^3 U1 = φ_2;
@@ -245,16 +245,16 @@ changes a conclusion (the margins exceed the possible errors by large factors), 
 
 ### 7.4 From the Python output to `ConeCert d` and `ConeCertPos d`
 * d <= 200: direct (explicit cells, all weights > 0, all cells with n_r >= 1).
-* d >= 201: the output is v = E_Π[u^ℓ] + ∑_s w_s t_s with Π = Π_{Φ#} a probability measure on cell vectors and
+* d >= 201: the output is v = E_Π[u^ℓ] + ∑\_s w_s t_s with Π = Π\_{Φ#} a probability measure on cell vectors and
   w_s >= 0.  The finite statement follows by an argument not written in `QD2` (supplied here):
   (a) t_s = u^{ℓ(s)}/κ_s for the two-residue cell ℓ(s) (mass on residues 0 and s), κ_s > 0 (QD2-R2; κ_s >= 0
   since u_m = ∫ Ĝ'' p_m with Ĝ'' > 0 (QD2-L5), and ≠ 0; numerically κ = 3.91, 6.59, 2.43 for s = 1, 2, 3 at d = 7);
   (b) ℓ ↦ u^ℓ is continuous and bounded on the simplex, Π is carried by the open simplex (Dirichlet laws), and the
   mean of a probability measure on R^{d-1} carried by a set A lies in conv(A) (finite dimension: induction on the
-  dimension with a supporting hyperplane); by Carathéodory, E_Π[u^ℓ] = ∑_{j<=d} α_j u^{ℓ_j} with α_j >= 0,
-  ∑ α_j = 1 and every ℓ_j strictly positive.  Hence v = ∑_j α_j u^{ℓ_j} + ∑_s (w_s/κ_s) u^{ℓ(s)}: `ConeCert d`;
+  dimension with a supporting hyperplane); by Carathéodory, E_Π[u^ℓ] = ∑\_{j<=d} α_j u^{ℓ_j} with α_j >= 0,
+  ∑ α_j = 1 and every ℓ_j strictly positive.  Hence v = ∑\_j α_j u^{ℓ_j} + ∑\_s (w_s/κ_s) u^{ℓ(s)}: `ConeCert d`;
   and some all-positive ℓ_j has α_j > 0: `ConeCertPos d`.  The cells are not explicit (existence only).
-  (`CONE_PROOF.md` defines CONE_d as membership in the *closed* convex cone; this step gives the finite form.)
+  (`CONE_PROOF.md` defines CONE_d as membership in the \*closed\* convex cone; this step gives the finite form.)
 
 ## 8. Reproduction
 

@@ -56,25 +56,25 @@ L6 `OQP27.RigidityStrip` (`Rig.Hyp_CellIneqSinglePos`, `Rig.Hyp_CellIneqSingle`,
 | `eventually_roots_near` | upper semicontinuity of the spectrum | PROVED |
 | `differentiableOn_charpoly_coeff`, `eval_derivative_charpoly` | coefficients of `charpoly (X z)` holomorphic; `p'/p = ∑ 1/(ζ - ν)` | PROVED |
 | **CellContour** | holomorphic functional calculus via contours (layer 2) | |
-| `circleIntegral_logDeriv_charpoly` | `∮ (p'/p) f = 2πi ∑_{ν ∈ spec, |ν-c|<ε} f(ν)` | PROVED |
+| `circleIntegral_logDeriv_charpoly` | `∮ (p'/p) f = 2πi ∑_{ν ∈ spec, \|ν-c\|<ε} f(ν)` | PROVED |
 | `differentiableOn_circleIntegral_param` | circle integrals of holomorphic families are holomorphic (Cauchy formula + Fubini) | PROVED |
 | `harmonicOnNhd_sum_roots` | `X` holomorphic on `U`, spectra in open `S`, `h` harmonic on `S` ⇒ `z ↦ ∑_{ν∈spec X(z)} h(ν)` harmonic on `U` (Q-T1 (ii), RIGIDITY_ALLD 3.4) | PROVED |
 | **CellHerglotz** | Herglotz functions of arcs (layer 1) | |
 | `arcH`, `differentiableOn_arcH`, `arcH_zero`, `sum_arcH` | `φ_{a,b}(z) = (b-a)/2π + (i/π)(Log(1-ze^{-ia}) - Log(1-ze^{-ib}))`; holomorphic on the disc; `φ(0) = (b-a)/2π`; partition sums to `1` | PROVED |
 | `re_arcH_pos` | harmonic measure of a nonempty arc is `> 0` inside the disc | PROVED |
-| `re_arcH_boundary`, `im_arcH_boundary`, `continuousAt_arcH_boundary` | boundary values: `Re = 1_{(a,b)}`, `Im = (ℓ(θ-a) - ℓ(θ-b))/π`, `ℓ(u) = log|2 sin(u/2)|` (RIGIDITY_ALLD (3.1)) | PROVED |
+| `re_arcH_boundary`, `im_arcH_boundary`, `continuousAt_arcH_boundary` | boundary values: `Re = 1_{(a,b)}`, `Im = (ℓ(θ-a) - ℓ(θ-b))/π`, `ℓ(u) = log\|2 sin(u/2)\|` (RIGIDITY_ALLD (3.1)) | PROVED |
 | `norm_arcH_le`, `intervalIntegrable_domH` | domination (RIGIDITY_ALLD (3.2)) | PROVED |
 | **CellMeanValue** | mean value and boundary limit (layers 3-4) | |
 | `roots_mem_strip`, `roots_mem_cstrip` | spectrum of `∑ w_k B_k` in the open/closed strip (RIGIDITY_ALLD 3.3) | PROVED |
 | `herg`, `herg_zero`, `continuousAt_herg_boundary` | `F(z) = ∑_k φ_k(z) B_k`, `F(0) = β 1` | PROVED |
 | `mean_value_boundary` | `∫₀^{2π} ∑_{ν∈spec F(e^{iθ})} h(ν) dθ = 2π M h(β)` for `h` harmonic on the open strip, continuous on the closed strip, of linear growth (RIGIDITY_ALLD (3.3)) | PROVED |
 | **CellClausen** | the Clausen function as an integral | |
-| `clausen2_eq_neg_integral`, `integral_ell_sub` | `Cl₂(x) = -∫₀ˣ log|2 sin(u/2)| du` for L4's Fourier-series `clausen2` | PROVED |
+| `clausen2_eq_neg_integral`, `integral_ell_sub` | `Cl₂(x) = -∫₀ˣ log\|2 sin(u/2)\| du` for L4's Fourier-series `clausen2` | PROVED |
 | `continuous_clausen2`, `clausen2_neg`, `clausen2_add_two_pi`, `clausen2_zero`, `clausen2_pi` | elementary properties | PROVED |
 | **CellQT1** | Q-T1 for step fields | |
 | `re_trace_mul_le_posPart`, `trace_compress`, `pointwise_star` | `Re Tr(A(g-λ)) ≤ Tr[(P(g-λ)P)_+] ≤ ∑ h(spec(B+ig))` (RIGIDITY_ALLD (3.4)) | PROVED (uses `(*)` as an argument) |
 | `herg_boundary_eq` | on the arc `J_x` the boundary value is `B_x + i g(θ)` | PROVED |
-| `stepField_ineq` | `(1/π)∑ κ(x,y) Re Tr(A_xB_y) - λ ∑|J_x| Re Tr A_x ≤ 2πM h(β)` (RIGIDITY_ALLD (3.5)) | PROVED (given `(*)` at `λ`) |
+| `stepField_ineq` | `(1/π)∑ κ(x,y) Re Tr(A_xB_y) - λ ∑\|J_x\| Re Tr A_x ≤ 2πM h(β)` (RIGIDITY_ALLD (3.5)) | PROVED (given `(*)` at `λ`) |
 | **CellLegendre** | Legendre step (layer 5) | |
 | `window_value` | `h(1/4) + λ*/4 = Cl₂(π/2)/π² = Φ_c(1/4,1/4)`, `λ* = log 2/(2π)`, via the one-dimensional window and the same mean-value identity (no dilogarithm needed) | PROVED |
 | **CellEmbedding** | cell embedding (layer 6) | |
@@ -88,13 +88,13 @@ L6 `OQP27.RigidityStrip` (`Rig.Hyp_CellIneqSinglePos`, `Rig.Hyp_CellIneqSingle`,
 | `continuumCell_of_regular` | `Hyp_hStripRegular → Hyp_ContinuumCell d` | PROVED |
 | **CellStripFn** | regularity of L1's `hStrip` (Poisson integral) | |
 | `stripKernel_eq_re`, `hStrip_eq_re`, `harmonicOnNhd_hStrip` | `K_x(y-s) = Re(i/(e^{iπw+πs}-1))`; `h_λ = Re H` with `H` holomorphic (differentiation under the integral); `h_λ` harmonic on the open strip | PROVED |
-| `continuousOn_hStrip`, `abs_hStrip_le` | continuity on the closed strip (mass `1-x` and decay of `∫K_x|u|` as `x→0⁺`, `x→1⁻`); `|h_λ(w)| ≤ C(1+|w|)` | PROVED |
+| `continuousOn_hStrip`, `abs_hStrip_le` | continuity on the closed strip (mass `1-x` and decay of `∫K_x\|u\|` as `x→0⁺`, `x→1⁻`); `\|h_λ(w)\| ≤ C(1+\|w\|)` | PROVED |
 | `hStrip_regular` | `Hyp_hStripRegular` | PROVED |
 | **`continuumCell`** | **`Hyp_ContinuumCell d` for every `d ≥ 1`** | **PROVED** |
 | **CellRigidity** | continuum inputs of rigidity (RIGIDITY_ALLD s.3.7) | |
 | `stepField_tight` | equality in Q-T1 for a step field ⇒ equality in `(*)` a.e. on every arc (vanishing integrated slack) | PROVED (given `(*)` at `λ`) |
 | `cellFunctional_le_of_strip`, `cellIneqSinglePos_of_strip`, `cellIneqSingle_of_strip` | (1.3) in L6's form, positive cells / all cells | PROVED |
-| `conjField_eq_gconj` | L6's conjugate function (3.1) `(1/π)∑_j (B_j - B_{j-1}) log|sin((θ-t_j)/2)|` equals `∑_y g_y(θ) B_y` | PROVED |
+| `conjField_eq_gconj` | L6's conjugate function (3.1) `(1/π)∑_j (B_j - B_{j-1}) log\|sin((θ-t_j)/2)\|` equals `∑_y g_y(θ) B_y` | PROVED |
 | `continuumTight_of_strip` | L6's `Rig.Hyp_ContinuumTight d` from `(*)` | PROVED |
 | **`continuumCellEq`** | **L1's `Hyp_ContinuumCellEq d` for every `d ≥ 1`** | **PROVED** |
 
