@@ -1,0 +1,9 @@
+d=200: attempt 0: ncols 8050 support 1164  VERIFIED True  min certified lambda >= 4.6201e-04 (|y| <= 1.58e-11, |I-RW| <= 9.37e-34, K = 1164)  [253s]
+d=199: attempt 0: ncols 8010 support 1143  VERIFIED True  min certified lambda >= 4.4461e-04 (|y| <= 1.68e-11, |I-RW| <= 8.37e-34, K = 1143)  [210s]
+d=198: attempt 0: ncols 7970 support 1136  VERIFIED True  min certified lambda >= 4.2544e-04 (|y| <= 1.34e-11, |I-RW| <= 6.65e-34, K = 1136)  [288s]
+d=197: attempt 0: ncols 7930 support 1152  VERIFIED True  min certified lambda >= 4.8196e-04 (|y| <= 1.48e-11, |I-RW| <= 7.67e-34, K = 1152)  [257s]
+d=196: certificate exists, skipped
+d=195: certificate exists, skipped
+d=194: certificate exists, skipped
+d=193: certificate exists, skipped
+d=192: certificate exists, skipped

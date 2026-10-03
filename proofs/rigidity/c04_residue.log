@@ -1,0 +1,10 @@
+(a) |g formula - p.v. quadrature| max over 6 points: 1.92e-15
+(b) derivative formula rel. error max: 2.20e-10
+(c) r=0.9: ||H(r e^ith) - (B + i g)|| = 1.76e-01
+(c) r=0.99: ||H(r e^ith) - (B + i g)|| = 1.74e-02
+(c) r=0.999: ||H(r e^ith) - (B + i g)|| = 1.73e-03
+(c) r=0.99999: ||H(r e^ith) - (B + i g)|| = 1.73e-05
+(c) closed form vs Herglotz integral at z = (0.3+0.2j): 2.38e-16;  ||H(0) - I/4|| = 0.00e+00
+(d) d=5: F(Vb) - F_DKZ = -5.4389;  max ||[Q_x,Q_y]|| = 0.654
+    zero-cell vector ell (ell_3 = 0): Q^ell - N^2 Phi_c = -1.07e-13  (tight: blind)
+    positive certificate cell vector     : Q^ell - N^2 Phi_c = -5.2999  (strict)

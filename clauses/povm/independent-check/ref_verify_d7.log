@@ -1,0 +1,7 @@
+d=7:   lam: exact closed form 4 - 2 lam/(d-1) = I_ME(d): OK  (lam ~ 3.21851717272637, Im ~ 3.0e-41, I_ME ~ 2.92716094242454)
+d=7:   denominators: Y lcm 258 bits, kernels 1, elements 1
+d=7:   identity: 842 orbit classes (P 842, T 7), 270152 expanded word terms, 28 moment + 7 doubly-localizing blocks, |G| = 112, forced-zero orbits met: 3846 -> OK
+d=7:   (identity time 1.7 s)
+d=7:   positivity: every Y_b positive definite (exact rational LDL of the 2k x 2k real embedding minus mu I; min pivot 5.9534e-04)
+d=7:   equality case: 84 vectors (Z^0_n - w^(nc), Z^1_n - 1) lie in range(N_c) of the doubly-localizing blocks (exact elimination over Q(zeta_28))
+d=7: RESULT PASS (lam True, identity True, pd True, eq True)  total 68.0 s

@@ -1,0 +1,11 @@
+[E1] exact q0 and first derivatives computed
+[E2] min over deterministic strategies of sum g' = 2; facet has 30 strategies
+[E3] DKZ_3: q0(a,b|xy) = Q_{g'}/3 exactly, Q = (2(2+sqrt3)/9, 2(2-sqrt3)/9, 1/9)
+[E4] exact criticality: d_i Pi_k = 0 for k = 0,1,2 and all 36 directions
+[E5] gauge tangent space has rank 20 (exact); slice coordinates [0, 1, 3, 4, 5, 6, 9, 10, 12, 13, 14, 15, 18, 19, 21, 22]: gauge + slice = R^36 (exact)
+[E6] dim V = 23 (facet direction space), dim V0 = 20
+[E7] the 30 facet strategies span an affine space of dimension 23 (exact): aff(F) = p* + V
+[I1] beta in [0.321377886721663, 0.321377886721663]; S(DKZ_3) = 0.0577830254933 bits; P* = (0.714528, 0.070944, 0.214528), sum = 1, P*_1 + 2 P*_2 = 1/2
+[I2] Hbar on the slice: float eigenvalues max -0.009732, min -0.390139; max interval width 2.3e-50
+[I3] interval Cholesky of -Hbar - (1/200) I succeeds: True  =>  Hbar <= -0.005 I on the slice (certified)
+THEOREM 3 certificate: PASSED

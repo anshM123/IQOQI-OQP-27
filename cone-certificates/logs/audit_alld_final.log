@@ -1,0 +1,18 @@
+D_B zones: outer [0.011, 0.501] min Q_O >= 7.419184;  inner (x <= 0.0130, b >= 1) min Lambda(R2) >= 6.022431
+slack: min density (Delta^2 W_e / eps) >= 0.651054
+m = 1, 2: D_B(1) >= -2.765192 eps^2, D_B(2) >= 206.884 eps^3;  pointwise |Phi_* - Phi_e| <= 6.6468e-04 eps^2
+constants (a13): |G - G_4| <= 138.1028 eps^3, |d_t G_4| <= 11.5703 d, Dd = 235.5916, F_A tail <= 2.023e-11 eps^3;  A_min >= 0.105487899758 (t35)
+Lemma P: gamma = 2.765192, beta = 6.022431, P >= 0.962733394;  at_k >= w_k eps^2 * 0.1186944
+slack: Delta^2 W / eps >= 0.651054 - 0.030900 = 0.620154
+tail lemma (d = 2001, decreasing in d): log P(E^c) <= -864.18, log eps_t <= -847.31;  fixed point: Fp_min >= 0.15204, Hc' >= 9.6744e-05, log rho <= -837.37
+   log-margins (> 0 needed): at_k vs 2 rho 819.3, slack vs 4(eps_t + rho d^2) 812.7, rho vs 1e-6 eps 816.0
+d >= 2001: CERTIFIED
+2 <= d <= 200 (LP certificates, QD2-T1): 199/199 valid with a matching VERIFIED record; min d * certified weight = 0.0816
+   [audit_cert_g] verify_cert.py sha256 = ff56740d15d40a07c99deb6433fb1b0f40b5a2d5b356b3ec9da0270ff1fab6a7
+   [audit_cert_g] certificates 201..2000: 1800/1800 OK; missing 0 []; failed 0 []
+   [audit_cert_g] margins (lower endpoints; argmin d):  d^2 min at_k = 0.0631932 (even d, d = 2000), 0.126387 (odd d, d = 1999);  d min Delta^2 W = 0.660025 (d = 201)
+   [audit_cert_g]   (D): min inf Hc'/(c1min/4) = 4.00099 (d = 2000);  min log10[c_D r/(2 eps_t)] = 0.616942 (d = 201);  min log10[|face value|/(2 eps_t)] = 16.7768 (d = 201)
+   [audit_cert_g]   tails: max log10 eps_t = -31.1695 (d = 201);  min log10[min Delta^2 W/(4 eps_t)] = 28.0838 (d = 201);  truncation-moment fallbacks used: 0
+201 <= d <= 2000 (cert_g, audit_cert_g.py): ALL CERTIFIED
+FAILS: none
+ALL-D CERTIFIED (every d >= 2)

@@ -1,0 +1,12 @@
+(i) d = 10: Var eta_0 = 0.03658 (Phi(1) = 0.03646); sum eta = 6.8e-08; P(E^c) ~ 0.0008
+    m:               1        2        3        4        5        6        7        8        9
+    E u (MC):  12.6716   6.3643   4.4276   3.4135   2.7954   2.4460   2.1875   1.9924   1.9345
+    Delta^2P:  12.7206   6.4765   4.3658   3.3265   2.8207   2.5035   2.2049   1.9882   1.9119
+    v:         12.7849   6.4721   4.4054   3.4026   2.8284   2.4721   2.2447   2.1029   2.0249
+    max |E u - Delta^2 P| / max|v| = 8.78e-03  (MC + subsample noise ~ 1e-3 expected)
+(ii) QD2-L11 identity: max relative error 4.4e-14
+(iii) a(m) = 1/6 - f(m): a(1..4) = [0.03768545 0.01419213 0.00710848 0.00420042], convex on 1..2000: False; min_th A(th) (truncated at m = 2e4, coarse grid) = 0.110592; 2 f(1) - f(2) = 0.105488
+    d = 2001: min_k at_k(F_A)/(w_k eps^2) = 0.12626  vs claimed lower bound 0.12034
+    d = 2002: min_k at_k(F_A)/(w_k eps^2) = 0.12626  vs claimed lower bound 0.12034
+    d = 3001: min_k at_k(F_A)/(w_k eps^2) = 0.12626  vs claimed lower bound 0.12037
+    d = 5000: min_k at_k(F_A)/(w_k eps^2) = 0.12626  vs claimed lower bound 0.12039

@@ -1,0 +1,5 @@
+c02_quick: LP certificates d = 2..200 (QD2/certs, read only)
+  failures: none
+  every cell vector has n_r >= 1 for all r (min over all certs: 1 ), q = 16, sum n = 16 d
+  min certified lambda bound over d: 0.00042544  at d = 198
+  sample (d, K, min n_r, min lam float, certified bound): [(2, 7, 1, np.float64(0.12858895314614355), 0.12859), (3, 14, 1, np.float64(0.07356694803255688), 0.073567), (10, 53, 1, np.float64(0.015812680396060316), 0.015813), (50, 304, 1, np.float64(0.0018301243788684616), 0.0018301), (100, 616, 1, np.float64(0.0009318710524157263), 0.00093187), (150, 907, 1, np.float64(0.0006007882207797831), 0.00060077), (200, 1164, 1, np.float64(0.00046203138948919454), 0.00046201)]

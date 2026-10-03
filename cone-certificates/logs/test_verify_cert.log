@@ -1,0 +1,25 @@
+PASS  integers -> intervals contain the exact integer (factorials to 200!, n!!, C(i,k), (d)_k, 2^j j!)  2431 values
+PASS  certifier tables FACT, TCO, DFF, FACT2J, 13!!, 15!! contain the exact integers  
+PASS  rationals -> intervals contain the exact rational  
+PASS  regression (G6): iv.mpf(mpmath.factorial(25)) at 53 bits does NOT contain 25! (the old pattern)  
+PASS  Bernoulli numbers (exact recurrence) agree with mpmath.bernfrac  B_0..B_140
+PASS  zeta(s), 2 <= s <= 17: Euler-Maclaurin enclosures contain zeta(s) (1200-bit reference; even s also B_2n formula)  max width 5.5e-48
+PASS  pi, sqrt(2 pi), sin, cos, exp, log, sqrt (widened) contain the 1200-bit values  300 random arguments
+PASS  g_i (i <= 141) contain (8/pi) zeta(2n)(1/2 - 4^-n)/(4^n n(2n+1)); bound |g_i| <= (2pi/3)4^-n/(n(2n+1)) holds  
+PASS  g_r(1) enclosure (series + tail) contains -16 G/pi^2  width 2.3e-46
+PASS  g_r(0.7) by the series contains the Clausen-function value  
+PASS  tail sums: sum_{n>NSER} 4^-n C(2n+1,k)/(n(2n+1)) <= gtail_frac(k), k = 0..16 (exact partial sums)  
+PASS  S_1, S_16 <= 8 (the constant of |F_r^(k)| <= 8 k! d^2/(d)_k)  S_1 <= 1.888378, S_16 <= 5.305e-03
+PASS  fr_series: truncated-product coefficients contain the exact [h^k] (m+h)_i/(d)_i (k <= 14)  6 (d,m)
+PASS  F_r tail bound and p_i^(k)(m) <= k! C(i,k)/(d)_k hold (exact p_i^(k), i up to IMAX + 40)  
+PASS  |F_r^(k)(b)| <= k! d^2 S_k/(d)_k at non-integer b (k = 1, 16; numerical)  
+PASS  psi^(n)(m+1) = (-1)^(n+1) n! [zeta(n+1) - H^(n+1)_m] and kappa_k enclosures contain the 1200-bit values (d = 300)  
+PASS  |psi^(n)(z)| <= (n-1)!/z^n + n!/z^(n+1) and the kappa_16 bound (spot values)  
+PASS  E[z^(2j) 1{|z| >= L}] <= trunc_mom_ub and m_j(a) <= mj_ub, j = 1..8, incl. the fallback branch (G3)  20 fallback cases tested
+PASS  raw_to_dec gives the exact value of the endpoint (3000 random intervals, round trip through Fraction)  
+PASS  F(m), F''(m) at d = 201 agree with direct Beta-density quadrature (40 digits)  deviations 8.3e-39 1.8e-39 3.4e-37 5.2e-40 1.0e-36 1.1e-40 1.5e-37 3.2e-40
+PASS  H(m,t) - F(m) (order-14 expansion + remainders) agrees with Gauss-Hermite x Beta quadrature (d = 201, m = 6, t = 0.05)  deviation 1.1e-16
+d=203: F derivatives enclosed [9s]
+   Phi_* enclosed; max width 2.73e-08; Phi(1) d = 0.629957 [24s]
+PASS  previous implementation (verify_gauss.py head, 160 bits, d = 203): F^(2j)(m), j <= 4, and tau_m enclosures overlap  
+22/22 tests passed  [105s]

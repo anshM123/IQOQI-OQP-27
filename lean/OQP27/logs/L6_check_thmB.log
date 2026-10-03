@@ -1,0 +1,7 @@
+d=2: max F-FDKZ=0.00e+00, violations=0, #equality=8, #onestep=8, equality==onestep: True
+d=3: max F-FDKZ=8.88e-16, violations=0, #equality=12, #onestep=12, equality==onestep: True
+d=4: max F-FDKZ=0.00e+00, violations=0, #equality=16, #onestep=16, equality==onestep: True
+d=5: max F-FDKZ=0.00e+00, violations=0, #equality=20, #onestep=20, equality==onestep: True
+d=6: max F-FDKZ=0.00e+00, violations=0, #equality=24, #onestep=24, equality==onestep: True
+d=7: max F-FDKZ=3.55e-15, violations=0, #equality=28, #onestep=28, equality==onestep: True
+d=8: max F-FDKZ=7.11e-15, violations=0, #equality=32, #onestep=32, equality==onestep: True

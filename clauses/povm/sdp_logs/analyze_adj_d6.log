@@ -1,0 +1,39 @@
+d=6 h=(1, 3) loc=False adj=True: SOS bound S = 2.6994909462975  I* - I_ME = +1.51e-08  (rp 2.3e-09, gap 4.5e-09) [301s]
+   S(DKZ) = 2.6994909840524
+   block  0 ('M', 0, 0)      n= 11  rank DKZ=  6  rank Z=  6  rank X=  5  n-rDKZ=  5  minpos eig Z 2.9e+00 X 4.1e-03  max small eig X 3.4e-10  ok
+   block  1 ('M', 0, 1)      n= 10  rank DKZ=  0  rank Z=  0  rank X= 10  n-rDKZ= 10  minpos eig Z 0.0e+00 X 2.9e-04  max small eig X 0.0e+00  ok
+   block  2 ('M', 0, 2)      n= 10  rank DKZ=  0  rank Z=  0  rank X= 10  n-rDKZ= 10  minpos eig Z 0.0e+00 X 3.3e-04  max small eig X 0.0e+00  ok
+   block  3 ('M', 0, 3)      n= 10  rank DKZ=  0  rank Z=  0  rank X= 10  n-rDKZ= 10  minpos eig Z 0.0e+00 X 2.9e-04  max small eig X 0.0e+00  ok
+   block  4 ('M', 1, 0)      n=  9  rank DKZ=  5  rank Z=  5  rank X=  4  n-rDKZ=  4  minpos eig Z 2.9e+00 X 3.3e-03  max small eig X 2.6e-10  ok
+   block  5 ('M', 1, 1)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 2.2e-04  max small eig X 0.0e+00  ok
+   block  6 ('M', 1, 2)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 3.9e-04  max small eig X 0.0e+00  ok
+   block  7 ('M', 1, 3)      n=  9  rank DKZ=  1  rank Z=  1  rank X=  8  n-rDKZ=  8  minpos eig Z 2.4e+01 X 6.1e-04  max small eig X 4.0e-11  ok
+   block  8 ('M', 2, 0)      n=  9  rank DKZ=  4  rank Z=  4  rank X=  5  n-rDKZ=  5  minpos eig Z 3.1e+00 X 1.1e-03  max small eig X 2.5e-10  ok
+   block  9 ('M', 2, 1)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 2.8e-04  max small eig X 0.0e+00  ok
+   block 10 ('M', 2, 2)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 4.9e-04  max small eig X 0.0e+00  ok
+   block 11 ('M', 2, 3)      n=  9  rank DKZ=  2  rank Z=  2  rank X=  7  n-rDKZ=  7  minpos eig Z 5.3e+00 X 6.2e-04  max small eig X 1.3e-10  ok
+   block 12 ('M', 3, 0)      n=  9  rank DKZ=  3  rank Z=  3  rank X=  6  n-rDKZ=  6  minpos eig Z 3.4e+00 X 7.3e-04  max small eig X 2.2e-10  ok
+   block 13 ('M', 3, 1)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 4.1e-04  max small eig X 0.0e+00  ok
+   block 14 ('M', 3, 2)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 4.1e-04  max small eig X 0.0e+00  ok
+   block 15 ('M', 3, 3)      n=  9  rank DKZ=  3  rank Z=  3  rank X=  6  n-rDKZ=  6  minpos eig Z 3.4e+00 X 7.3e-04  max small eig X 2.2e-10  ok
+   block 16 ('M', 4, 0)      n=  9  rank DKZ=  2  rank Z=  2  rank X=  7  n-rDKZ=  7  minpos eig Z 5.3e+00 X 6.2e-04  max small eig X 1.3e-10  ok
+   block 17 ('M', 4, 1)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 4.9e-04  max small eig X 0.0e+00  ok
+   block 18 ('M', 4, 2)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 2.8e-04  max small eig X 0.0e+00  ok
+   block 19 ('M', 4, 3)      n=  9  rank DKZ=  4  rank Z=  4  rank X=  5  n-rDKZ=  5  minpos eig Z 3.1e+00 X 1.1e-03  max small eig X 2.5e-10  ok
+   block 20 ('M', 5, 0)      n=  9  rank DKZ=  1  rank Z=  1  rank X=  8  n-rDKZ=  8  minpos eig Z 2.4e+01 X 6.1e-04  max small eig X 4.0e-11  ok
+   block 21 ('M', 5, 1)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 3.9e-04  max small eig X 0.0e+00  ok
+   block 22 ('M', 5, 2)      n=  9  rank DKZ=  0  rank Z=  0  rank X=  9  n-rDKZ=  9  minpos eig Z 0.0e+00 X 2.2e-04  max small eig X 0.0e+00  ok
+   block 23 ('M', 5, 3)      n=  9  rank DKZ=  5  rank Z=  5  rank X=  4  n-rDKZ=  4  minpos eig Z 2.9e+00 X 3.3e-03  max small eig X 2.6e-10  ok
+   block 24 ('Dbl', 1, 0)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 2.0e+00 X 2.5e-02  max small eig X 1.4e-09  ok
+   block 25 ('Dbl', 1, 1)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 2.5e-01 X 2.1e-02  max small eig X 4.5e-09  ok
+   block 26 ('Dbl', 1, 2)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.2e-01 X 5.2e-02  max small eig X 8.0e-09  ok
+   block 27 ('Dbl', 1, 3)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.1e-01 X 4.4e-02  max small eig X 6.4e-09  ok
+   block 28 ('Dbl', 1, 4)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.8e-01 X 2.5e-02  max small eig X 2.1e-09  ok
+   block 29 ('Dbl', 1, 5)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 8.6e-01 X 7.0e-02  max small eig X 1.5e-09  ok
+   block 30 ('Dbl', 3, 0)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 8.6e-01 X 7.0e-02  max small eig X 1.5e-09  ok
+   block 31 ('Dbl', 3, 1)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.8e-01 X 2.5e-02  max small eig X 2.1e-09  ok
+   block 32 ('Dbl', 3, 2)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.1e-01 X 4.4e-02  max small eig X 6.4e-09  ok
+   block 33 ('Dbl', 3, 3)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 1.2e-01 X 5.2e-02  max small eig X 8.0e-09  ok
+   block 34 ('Dbl', 3, 4)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 2.5e-01 X 2.1e-02  max small eig X 4.5e-09  ok
+   block 35 ('Dbl', 3, 5)    n= 21  rank DKZ=  1  rank Z=  1  rank X= 20  n-rDKZ= 20  minpos eig Z 2.0e+00 X 2.5e-02  max small eig X 1.4e-09  ok
+   strict complementarity w.r.t. DKZ on all blocks: True

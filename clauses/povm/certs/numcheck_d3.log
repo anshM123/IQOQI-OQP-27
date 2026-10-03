@@ -1,0 +1,4 @@
+d=3 trial 0 D=2 rank cap None: LHS = S - lam = +2.852459847897   RHS = +2.852459847897   diff +4.9e-15   min block term +1.45e-02
+d=3 trial 1 D=3 rank cap 1: LHS = S - lam = +3.147019739373   RHS = +3.147019739373   diff +2.2e-14   min block term +5.88e-02
+d=3 trial 2 D=4 rank cap None: LHS = S - lam = +2.956445476640   RHS = +2.956445476640   diff -8.9e-16   min block term +1.27e-02
+d=3 trial 3 D=2 rank cap 1: LHS = S - lam = +3.294026347051   RHS = +3.294026347051   diff +2.7e-15   min block term +2.47e-02

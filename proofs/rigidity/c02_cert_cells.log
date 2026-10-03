@@ -1,0 +1,46 @@
+d=  2: K=   7, min n_r=1, certified lambda >= 1.286e-01, rel |sum lam u - v| = 0.0e+00
+d=  3: K=  14, min n_r=1, certified lambda >= 7.357e-02, rel |sum lam u - v| = 4.4e-16
+d=  4: K=  20, min n_r=1, certified lambda >= 4.644e-02, rel |sum lam u - v| = 1.7e-16
+d=  5: K=  27, min n_r=1, certified lambda >= 2.658e-02, rel |sum lam u - v| = 6.9e-16
+d=  6: K=  31, min n_r=1, certified lambda >= 2.569e-02, rel |sum lam u - v| = 6.9e-16
+d=  7: K=  40, min n_r=1, certified lambda >= 2.183e-02, rel |sum lam u - v| = 1.6e-15
+d=  8: K=  42, min n_r=1, certified lambda >= 1.830e-02, rel |sum lam u - v| = 6.9e-16
+d=  9: K=  51, min n_r=1, certified lambda >= 1.339e-02, rel |sum lam u - v| = 6.2e-16
+d= 10: K=  53, min n_r=1, certified lambda >= 1.581e-02, rel |sum lam u - v| = 8.3e-16
+d= 11: K=  63, min n_r=1, certified lambda >= 1.113e-02, rel |sum lam u - v| = 2.3e-15
+d= 12: K=  66, min n_r=1, certified lambda >= 1.102e-02, rel |sum lam u - v| = 7.0e-16
+d= 13: K=  74, min n_r=1, certified lambda >= 9.323e-03, rel |sum lam u - v| = 1.5e-15
+d= 14: K=  78, min n_r=1, certified lambda >= 8.345e-03, rel |sum lam u - v| = 2.4e-15
+d= 15: K=  91, min n_r=1, certified lambda >= 7.397e-03, rel |sum lam u - v| = 3.7e-15
+d= 16: K=  94, min n_r=1, certified lambda >= 7.513e-03, rel |sum lam u - v| = 9.1e-16
+d= 17: K=  95, min n_r=1, certified lambda >= 6.753e-03, rel |sum lam u - v| = 2.5e-15
+d= 18: K= 101, min n_r=1, certified lambda >= 7.071e-03, rel |sum lam u - v| = 1.4e-15
+d= 19: K= 109, min n_r=1, certified lambda >= 6.107e-03, rel |sum lam u - v| = 9.9e-16
+d= 20: K= 122, min n_r=1, certified lambda >= 5.531e-03, rel |sum lam u - v| = 2.3e-15
+d= 21: K= 117, min n_r=1, certified lambda >= 5.612e-03, rel |sum lam u - v| = 1.2e-15
+d= 22: K= 130, min n_r=1, certified lambda >= 4.898e-03, rel |sum lam u - v| = 5.3e-15
+d= 23: K= 143, min n_r=1, certified lambda >= 4.387e-03, rel |sum lam u - v| = 3.0e-15
+d= 24: K= 140, min n_r=1, certified lambda >= 4.533e-03, rel |sum lam u - v| = 1.7e-15
+d= 25: K= 152, min n_r=1, certified lambda >= 4.214e-03, rel |sum lam u - v| = 1.4e-15
+d= 26: K= 156, min n_r=1, certified lambda >= 4.211e-03, rel |sum lam u - v| = 3.6e-15
+d= 27: K= 153, min n_r=1, certified lambda >= 3.940e-03, rel |sum lam u - v| = 3.0e-15
+d= 28: K= 168, min n_r=1, certified lambda >= 4.040e-03, rel |sum lam u - v| = 2.7e-15
+d= 29: K= 179, min n_r=1, certified lambda >= 3.352e-03, rel |sum lam u - v| = 2.1e-15
+d= 30: K= 186, min n_r=1, certified lambda >= 3.383e-03, rel |sum lam u - v| = 7.8e-15
+d= 31: K= 191, min n_r=1, certified lambda >= 3.294e-03, rel |sum lam u - v| = 1.3e-15
+d= 32: K= 190, min n_r=1, certified lambda >= 3.213e-03, rel |sum lam u - v| = 2.3e-15
+d= 33: K= 198, min n_r=1, certified lambda >= 3.058e-03, rel |sum lam u - v| = 2.1e-15
+d= 34: K= 199, min n_r=1, certified lambda >= 3.152e-03, rel |sum lam u - v| = 4.6e-15
+d= 35: K= 212, min n_r=1, certified lambda >= 2.950e-03, rel |sum lam u - v| = 1.9e-15
+d= 36: K= 220, min n_r=1, certified lambda >= 2.955e-03, rel |sum lam u - v| = 1.9e-15
+d= 37: K= 222, min n_r=1, certified lambda >= 2.957e-03, rel |sum lam u - v| = 1.5e-15
+d= 38: K= 226, min n_r=1, certified lambda >= 2.708e-03, rel |sum lam u - v| = 7.9e-15
+d= 39: K= 238, min n_r=1, certified lambda >= 2.433e-03, rel |sum lam u - v| = 4.9e-15
+d= 40: K= 243, min n_r=1, certified lambda >= 2.297e-03, rel |sum lam u - v| = 2.4e-15
+d= 60: K= 362, min n_r=1, certified lambda >= 1.576e-03, rel |sum lam u - v| = 1.5e-14
+d=100: K= 616, min n_r=1, certified lambda >= 9.319e-04, rel |sum lam u - v| = 4.7e-15
+d=150: K= 907, min n_r=1, certified lambda >= 6.008e-04, rel |sum lam u - v| = 1.2e-14
+d=200: K=1164, min n_r=1, certified lambda >= 4.620e-04, rel |sum lam u - v| = 1.1e-14
+checked 199 certificates (d = 2..200); failures: none
+min over d of min n_r: 1 ; min over d of certified lambda bound: 0.00042544
+exit 0

@@ -1,0 +1,10 @@
+d=4 T0 untouched copy                              P1 verify_povm: ACCEPTED                                  referee: ACCEPTED
+d=4 T1 Y[0][1] += 2^-60 (Hermitian kept)           P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T2 D-block Y[2][2] += 2^-60                    P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T3 kernel[0][0] += 1                           P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T4 lam += 1e-12                                P1 verify_povm: rejected (assert)                         referee: rejected (lam False identity False)
+d=4 T5 letter changed in an M element              P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T6 D block outcome label shifted               P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T7 first block dropped                         P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T8 two letters swapped in an M element         P1 verify_povm: rejected (assert)                         referee: rejected (lam True identity False)
+d=4 T9 Y_b - 10 I (indefinite), positivity only: P1 exact-LDL: rejected (pivot not certified positive: block 2 col 0 [-9.98);  P1 iv-Cholesky: rejected (interval Cholesky failed: block 2 col 0 radicand [);  referee: rejected (block 2: pivot 0 not positive (-9.989914488367654))

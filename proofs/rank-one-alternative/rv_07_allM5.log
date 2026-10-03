@@ -1,0 +1,10 @@
+[allM5 M=5 gmax=3.0 seed=14] worst ratio objective 6.7669e-02: rank 3, D = 7.4412e-01, R2 = 1.129e+01, |g| = 8.69
+[allM5 M=5 gmax=3.0 seed=14] worst abs objective -1.1557e-14: rank 1, D = -9.5923e-14, R2 = 3.173e-14, |g| = 8.30
+   (362s)
+[allM5 M=5 gmax=30.0 seed=14] worst ratio objective 1.8545e-02: rank 2, D = 3.0529e+00, R2 = 1.853e+02, |g| = 130.85
+[allM5 M=5 gmax=30.0 seed=14] worst abs objective -1.9020e-13: rank 1, D = -2.6574e-11, R2 = 1.972e-12, |g| = 139.72
+   (430s)
+[allM5 M=5 gmax=300.0 seed=14] worst ratio objective 9.8486e-03: rank 1, D = 7.3052e+00, R2 = 8.329e+02, |g| = 1356.39
+[allM5 M=5 gmax=300.0 seed=14] worst abs objective -2.1301e-12: rank 1, D = -2.8231e-09, R2 = 8.864e-11, |g| = 1325.35
+   CANDIDATE VIOLATION; 50-digit defect = 4.1636487291051542829e-11
+   (365s)

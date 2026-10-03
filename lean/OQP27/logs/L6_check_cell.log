@@ -1,0 +1,4 @@
+d=3: window value 13.3641674176 vs -2G(d) 13.3641674176
+d=4: window value 23.7585198535 vs -2G(d) 23.7585198535
+d=5: window value 37.1226872711 vs -2G(d) 37.1226872711
+max cellFunctional - windowValue over random configurations: -2.80892208537014

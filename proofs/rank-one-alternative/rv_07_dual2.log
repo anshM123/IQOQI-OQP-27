@@ -1,0 +1,6 @@
+[dual M=5 seed=16] max |Tr(A iT(B))| / sum Phi = 0.727083 at ranks (2, 2, 1)
+   (123s)
+[dual M=6 seed=16] max |Tr(A iT(B))| / sum Phi = 0.748578 at ranks (3, 2, 1)
+   (245s)
+[dual M=7 seed=16] max |Tr(A iT(B))| / sum Phi = 0.771783 at ranks (1, 3, 3)
+   (476s)

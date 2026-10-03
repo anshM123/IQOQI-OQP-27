@@ -1,0 +1,6 @@
+Lemma 3: (i) 2995 configs with all gamma<=0, min T = 0.000e+00; (ii) 2997 configs all gamma>=0, min T = -1.137e-12;
+         identity T = sum h(conj nu) - alpha S_- err 7.04e-13;  min(sum h - alpha S_+) over all = 0.000e+00
+Lemma 4: multiset identity failures 0/165248 t-values (incl. t = atoms, coincident atoms); max |T(nu)-T(nu')| = 1.21e-11
+Lemma 4 (x_m = 1, s = 1): max |T| = 7.11e-15
+Lemma 5 random+structured (4000): max |T(nu)-T(nu^0)|/E(eta) = 2.691e-02 at (M,s,R,eta)=(2, 0.11150037791390387, 2.350197191569796, 0.02676065988658222); max part ratios (a,b,c) = [0.9909 0.4021 0.0304]
+Lemma 5 adversarial (60 Nelder-Mead runs): max ratio = 2.978e-02 at (M,s,R,eta) = (2, 0.664991974743183, 4.999585774475287, 0.3084636264069853)

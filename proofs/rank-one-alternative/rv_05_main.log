@@ -1,0 +1,2 @@
+(a) 5000 tests: monotonicity failures 0, 1-Lipschitz failures 0; max |dT|/(L e) = 0.464 (<= 1 required)
+(b) 120 minimisations of T_eps on K_R, 3 face points: max sin(pi x)/(L/(eps pi sinh(pi R))) = 0.011 (<= 1 required)

@@ -1,0 +1,21 @@
+T1: certified L >= 0.000000000000 bits; exact max test-factor value over strategies 1.000000000000; R^xy max = (0, 0):1.000000, (0, 1):1.000000, (1, 0):1.000000, (1, 1):1.000000
+C2: certified L >= 0.046273845411 bits; exact max test-factor value over strategies 0.999999999000; R^xy max = (0, 0):1.138071, (0, 1):1.138071, (1, 0):1.138071, (1, 1):1.138071
+K3: certified L >= 0.057783024051 bits; exact max test-factor value over strategies 0.999999999000; R^xy max = (0, 0):1.160689, (0, 1):1.160689, (1, 0):1.160689, (1, 1):1.160689
+CC4: certified L >= 0.087900462237 bits; exact max test-factor value over strategies 0.999999999000; R^xy max = (0, 0):1.248001, (0, 1):1.248001, (1, 0):1.248001, (1, 1):1.248001
+cross conditions R_j^00 + R_k^11 <= 4 and R_j^01 + R_k^10 <= 4 for all block pairs: True
+  d= 4 = 4*1+0: competitor >= 0.087900462237 bits  vs DKZ_d <= T = 0.068780260568: margin 0.019120
+  d= 5 = 4*1+1: competitor >= 0.070320369790 bits  vs DKZ_d <= T = 0.068780260568: margin 0.001540
+  d= 6 = 4*1+2: competitor >= 0.074024923295 bits  vs DKZ_d <= T = 0.068780260568: margin 0.005245
+  d= 7 = 4*1+3: competitor >= 0.074992988729 bits  vs DKZ_d <= T = 0.068780260568: margin 0.006213
+  d= 8 = 4*2+0: competitor >= 0.087900462237 bits  vs DKZ_d <= T = 0.068780260568: margin 0.019120
+  d= 9 = 4*2+1: competitor >= 0.078133744211 bits  vs DKZ_d <= T = 0.068780260568: margin 0.009353
+  d=10 = 4*2+2: competitor >= 0.079575138872 bits  vs DKZ_d <= T = 0.068780260568: margin 0.010795
+  d=11 = 4*2+3: competitor >= 0.079686615459 bits  vs DKZ_d <= T = 0.068780260568: margin 0.010906
+  d=12 = 4*3+0: competitor >= 0.087900462237 bits  vs DKZ_d <= T = 0.068780260568: margin 0.019120
+min over 4 <= d <= 2000: d=5, 0.070320369790 bits (> T: True)
+  residue 0: C(4+0) >= 0.087900462237 > T: True
+  residue 1: C(4+1) >= 0.070320369790 > T: True
+  residue 2: C(4+2) >= 0.074024923295 > T: True
+  residue 3: C(4+3) >= 0.074992988729 > T: True
+monotonicity premise L_rho < L4: True
+exact test factors written to blocks_testfactors.json

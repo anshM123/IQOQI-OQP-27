@@ -1,0 +1,11 @@
+<site-packages>\cupy\_environment.py:286: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+seesaw_check.py:31: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL, tol_gap_abs=1e-11, tol_gap_rel=1e-11, tol_feas=1e-11)
+seesaw d=3 D=3 start 0: I = 2.414213518598  I-I_ME = -4.587e-01  rounds 4  nonproj 2.3e-01
+seesaw d=3 D=3 start 1: I = 2.872934050819  I-I_ME = -3.531e-10  rounds 9  nonproj 1.3e-10
+seesaw d=3 D=3 start 2: I = 2.872934050819  I-I_ME = -3.530e-10  rounds 10  nonproj 1.4e-10
+seesaw d=3 D=3 start 3: I = 2.414213489057  I-I_ME = -4.587e-01  rounds 3  nonproj 1.6e-01
+seesaw d=3 D=3 start 4: I = 2.872934050819  I-I_ME = -3.531e-10  rounds 9  nonproj 1.3e-10
+seesaw d=3 D=3 start 5: I = 2.872934050819  I-I_ME = -3.530e-10  rounds 10  nonproj 1.3e-10
+# SEESAW BEST d=3 D=3: I = 2.872934050819  I_ME = 2.872934051172  I-I_ME = -3.530e-10

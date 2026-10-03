@@ -1,0 +1,23 @@
+<site-packages>\cupy\_environment.py:286: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+[a] d=2: |q(bases)-Lemma0| = 2.2e-16, |q_iv-Lemma0| = 2.2e-16; S^UNI(DKZ_d) in [0.0462738469, 0.0462738469] bits; <= T: True
+[a] d=3: |q(bases)-Lemma0| = 4.4e-16, |q_iv-Lemma0| = 5.6e-16; S^UNI(DKZ_d) in [0.0577830255, 0.0577830255] bits; <= T: True; S^COR (float minimax) = 0.0577830219
+[a] d=4: |q(bases)-Lemma0| = 7.2e-16, |q_iv-Lemma0| = 7.2e-16; S^UNI(DKZ_d) in [0.0623797596, 0.0623797596] bits; <= T: True; S^COR (float minimax) = 0.0623797451
+[a] d=5: |q(bases)-Lemma0| = 1.4e-16, |q_iv-Lemma0| = 2.5e-16; S^UNI(DKZ_d) in [0.0646421471, 0.0646421471] bits; <= T: True; S^COR (float minimax) = 0.0646421214
+ref_solver.py:60: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL, verbose=verbose, max_iter=500, tol_gap_abs=1e-12, tol_gap_rel=1e-12,
+[a] d=6: |q(bases)-Lemma0| = 8.6e-16, |q_iv-Lemma0| = 8.3e-16; S^UNI(DKZ_d) in [0.0658923236, 0.0658923236] bits; <= T: True
+[a] d=7: |q(bases)-Lemma0| = 3.2e-16, |q_iv-Lemma0| = 2.5e-16; S^UNI(DKZ_d) in [0.0666458185, 0.0666458185] bits; <= T: True
+[a] d=8: |q(bases)-Lemma0| = 9.0e-16, |q_iv-Lemma0| = 4.7e-16; S^UNI(DKZ_d) in [0.0671368389, 0.0671368389] bits; <= T: True
+[a] d=9: |q(bases)-Lemma0| = 4.3e-16, |q_iv-Lemma0| = 4.2e-17; S^UNI(DKZ_d) in [0.0674744465, 0.0674744465] bits; <= T: True
+[c] d=2: D(Q^d || wrap_d P^mu*) = 0.0466530928 bits (<= T = 0.068780260568: True)
+[c] d=3: D(Q^d || wrap_d P^mu*) = 0.0577941948 bits (<= T = 0.068780260568: True)
+[c] d=4: D(Q^d || wrap_d P^mu*) = 0.0624127636 bits (<= T = 0.068780260568: True)
+[c] d=5: D(Q^d || wrap_d P^mu*) = 0.0646569200 bits (<= T = 0.068780260568: True)
+[c] d=7: D(Q^d || wrap_d P^mu*) = 0.0666470316 bits (<= T = 0.068780260568: True)
+[c] d=8: D(Q^d || wrap_d P^mu*) = 0.0671375002 bits (<= T = 0.068780260568: True)
+[c] d=16: D(Q^d || wrap_d P^mu*) = 0.0683476496 bits (<= T = 0.068780260568: True)
+[c] d=33: D(Q^d || wrap_d P^mu*) = 0.0686614285 bits (<= T = 0.068780260568: True)
+[c] d=64: D(Q^d || wrap_d P^mu*) = 0.0687407602 bits (<= T = 0.068780260568: True)
+[c] d=128: D(Q^d || wrap_d P^mu*) = 0.0687634147 bits (<= T = 0.068780260568: True)
+[c] d=1000: D(Q^d || wrap_d P^mu*) = 0.0687709446 bits (<= T = 0.068780260568: True)

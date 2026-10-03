@@ -1,0 +1,10 @@
+pi in [3.141592653589793, 3.141592653589793], width 1.0e-45
+d=10: float LP v_c(DKZ_d) (cyclic) = 0.680318320061;  2/I_ME(d) = 0.680318320061;  competitor threshold = 0.464987979410
+   [main] v = 3401/5000 = 0.68020000: LP margin 8.696e-06; exact check: PASS (min slack 8.696e-06, t = 0.301218, 32 nonzero weights)
+   [tight] v = 680317/1000000 = 0.68031700: LP margin 9.702e-08; exact check: PASS (min slack 9.702e-08, t = 0.301270, 32 nonzero weights)
+d=11: float LP v_c(DKZ_d) (cyclic) = 0.679694195121;  2/I_ME(d) = 0.679694195121;  competitor threshold = 0.467489102303
+   [main] v = 1359/2000 = 0.67950000: LP margin 1.299e-05; exact check: PASS (min slack 1.299e-05, t = 0.306995, 38 nonzero weights)
+   [tight] v = 679693/1000000 = 0.67969300: LP margin 7.992e-08; exact check: PASS (min slack 7.992e-08, t = 0.307083, 38 nonzero weights)
+d=12: float LP v_c(DKZ_d) (cyclic) = 0.679173873866;  2/I_ME(d) = 0.679173873866;  competitor threshold = 0.424518846314
+   [main] v = 679/1000 = 0.67900000: LP margin 1.067e-05; exact check: PASS (min slack 1.067e-05, t = 0.309551, 43 nonzero weights)
+   [tight] v = 169793/250000 = 0.67917200: LP margin 1.150e-07; exact check: PASS (min slack 1.150e-07, t = 0.309629, 43 nonzero weights)

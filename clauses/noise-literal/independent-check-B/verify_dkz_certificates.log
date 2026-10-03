@@ -1,0 +1,21 @@
+d= 3 [main ] v =         87/125 = 0.69600000  t = 0.143562  min slack (iv) 3.649e-05  (frac) 3.649e-05  -> local: YES;  v > v_thr(d) exactly: False
+d= 3 [tight] v = 696151/1000000 = 0.69615100  t = 0.143593  min slack (iv) 3.406e-07  (frac) 3.406e-07  -> local: YES;  v > v_thr(d) exactly: False
+d= 4 [main ] v =       863/1250 = 0.69040000  t = 0.201588  min slack (iv) 2.711e-05  (frac) 2.711e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 4 [tight] v =  172637/250000 = 0.69054800  t = 0.201631  min slack (iv) 3.149e-07  (frac) 3.149e-07  -> local: YES;  v > v_thr(d) exactly: True
+d= 5 [main ] v =       687/1000 = 0.68700000  t = 0.233381  min slack (iv) 2.279e-05  (frac) 2.279e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 5 [tight] v =  137431/200000 = 0.68715500  t = 0.233434  min slack (iv) 2.291e-07  (frac) 2.291e-07  -> local: YES;  v > v_thr(d) exactly: True
+d= 6 [main ] v =     6847/10000 = 0.68470000  t = 0.268338  min slack (iv) 2.236e-05  (frac) 2.236e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 6 [tight] v =  342441/500000 = 0.68488200  t = 0.268409  min slack (iv) 2.131e-07  (frac) 2.131e-07  -> local: YES;  v > v_thr(d) exactly: True
+d= 7 [main ] v =     6831/10000 = 0.68310000  t = 0.282749  min slack (iv) 1.630e-05  (frac) 1.630e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 7 [tight] v =  341627/500000 = 0.68325400  t = 0.282813  min slack (iv) 1.992e-07  (frac) 1.992e-07  -> local: YES;  v > v_thr(d) exactly: True
+d= 8 [main ] v =     6819/10000 = 0.68190000  t = 0.291385  min slack (iv) 1.218e-05  (frac) 1.218e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 8 [tight] v = 682031/1000000 = 0.68203100  t = 0.291441  min slack (iv) 1.794e-07  (frac) 1.794e-07  -> local: YES;  v > v_thr(d) exactly: True
+d= 9 [main ] v =     6809/10000 = 0.68090000  t = 0.297102  min slack (iv) 1.474e-05  (frac) 1.474e-05  -> local: YES;  v > v_thr(d) exactly: True
+d= 9 [tight] v = 681079/1000000 = 0.68107900  t = 0.297180  min slack (iv) 1.396e-07  (frac) 1.396e-07  -> local: YES;  v > v_thr(d) exactly: True
+d=10 [main ] v =      3401/5000 = 0.68020000  t = 0.301218  min slack (iv) 8.696e-06  (frac) 8.696e-06  -> local: YES;  v > v_thr(d) exactly: True
+d=10 [tight] v = 680317/1000000 = 0.68031700  t = 0.301270  min slack (iv) 9.702e-08  (frac) 9.702e-08  -> local: YES;  v > v_thr(d) exactly: True
+d=11 [main ] v =      1359/2000 = 0.67950000  t = 0.306995  min slack (iv) 1.299e-05  (frac) 1.299e-05  -> local: YES;  v > v_thr(d) exactly: True
+d=11 [tight] v = 679693/1000000 = 0.67969300  t = 0.307083  min slack (iv) 7.992e-08  (frac) 7.992e-08  -> local: YES;  v > v_thr(d) exactly: True
+d=12 [main ] v =       679/1000 = 0.67900000  t = 0.309551  min slack (iv) 1.067e-05  (frac) 1.067e-05  -> local: YES;  v > v_thr(d) exactly: True
+d=12 [tight] v =  169793/250000 = 0.67917200  t = 0.309629  min slack (iv) 1.150e-07  (frac) 1.150e-07  -> local: YES;  v > v_thr(d) exactly: True
+ALL CERTIFICATES VALID

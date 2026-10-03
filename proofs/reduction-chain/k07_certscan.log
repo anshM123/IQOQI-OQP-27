@@ -1,0 +1,3 @@
+certificates with a defect: []
+smallest certified min lambda: [(0.00042544, 198), (0.00044184, 194), (0.00044411, 196)]
+float64 relative residual |U lam~ - v|/max v: [(2, '1.8e-14'), (3, '1.5e-14'), (10, '7.8e-15'), (50, '2.3e-14'), (100, '8.2e-14'), (150, '1.6e-13'), (200, '1.1e-13')]

@@ -1,0 +1,16 @@
+(a) certificates, original cell-pair kernel, 50 digits:
+  d=2: K=7, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 2.89e-16;  exact min lam = 1.285890e-01 (> 0: True);  |v - U lam| = 0.0e+00
+  d=3: K=14, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 3.26e-15;  exact min lam = 7.356695e-02 (> 0: True);  |v - U lam| = 0.0e+00
+  d=4: K=20, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 3.11e-15;  exact min lam = 4.644280e-02 (> 0: True);  |v - U lam| = 0.0e+00
+  d=5: K=27, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 1.00e-14;  exact min lam = 2.658334e-02 (> 0: True);  |v - U lam| = 0.0e+00
+  d=6: K=31, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 6.78e-15;  exact min lam = 2.569413e-02 (> 0: True);  |v - U lam| = 0.0e+00
+  d=7: K=40, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 1.14e-14;  exact min lam = 2.183085e-02 (> 0: True);  |v - U lam| = 0.0e+00
+  d=8: K=42, cells n_r >= 1 and sum n = 16 d: True;  |v - U lam~| = 9.78e-15;  exact min lam = 1.829972e-02 (> 0: True);  |v - U lam| = 0.0e+00
+(b,c) random strategies:
+  d=3: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(3.552713678800501e-15), 'F_err': np.float64(3.552713678800501e-15), 'I_gap': np.float64(-2.171197811452467), 'pair_err': np.float64(3.3306690738754696e-16), 'ts_max': np.float64(-2.2851051194979792)}
+  d=4: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(3.552713678800501e-15), 'F_err': np.float64(1.0658141036401503e-14), 'I_gap': np.float64(-2.1515596867715745), 'pair_err': np.float64(5.551115123125783e-16), 'ts_max': np.float64(-1.1715728752538097)}
+  d=5: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(7.105427357601002e-15), 'F_err': np.float64(1.7763568394002505e-14), 'I_gap': np.float64(-2.1515596867715745), 'pair_err': np.float64(1.1102230246251565e-15), 'ts_max': np.float64(-1.1715728752538097)}
+  d=6: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(7.105427357601002e-15), 'F_err': np.float64(4.263256414560601e-14), 'I_gap': np.float64(-2.1515596867715745), 'pair_err': np.float64(1.2212453270876722e-15), 'ts_max': np.float64(-1.1715728752538097)}
+  d=7: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(2.842170943040401e-14), 'F_err': np.float64(1.3500311979441904e-13), 'I_gap': np.float64(-1.458749265883767), 'pair_err': np.float64(1.4432899320127035e-15), 'ts_max': np.float64(-1.1715728752538097)}
+  d=8: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(2.842170943040401e-14), 'F_err': np.float64(1.7053025658242404e-13), 'I_gap': np.float64(-1.458749265883767), 'pair_err': np.float64(1.4432899320127035e-15), 'ts_max': np.float64(-1.1715728752538097)}
+FINAL: {'dir_max': np.float64(-3.526277471252098), 'sum_err': np.float64(2.842170943040401e-14), 'F_err': np.float64(1.7053025658242404e-13), 'I_gap': np.float64(-1.458749265883767), 'pair_err': np.float64(1.4432899320127035e-15), 'ts_max': np.float64(-1.1715728752538097)}

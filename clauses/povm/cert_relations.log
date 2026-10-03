@@ -1,0 +1,10 @@
+d=3: 4145 expanded Gram terms; 1024 contain adjacent equal generators (group law needed), 1024 shorten under R^n R^m = R^(n+m), 224 collapse to 1 (unitarity R^-n R^n = 1)
+   random PVM  D=3: LHS = S - lam = +2.518844875428   RHS (no reduction) = +2.518844875428 (imag -2.8e-15)   LHS-RHS = -5.329e-15
+   random PVM  D=4: LHS = S - lam = +2.077236888554   RHS (no reduction) = +2.077236888554 (imag -2.5e-15)   LHS-RHS = +1.021e-14
+   random POVM D=3: LHS = S - lam = +2.652731984155   RHS (no reduction) = +0.286935809945 (imag -2.2e-16)   LHS-RHS = +2.366e+00
+   random POVM D=4: LHS = S - lam = +3.093004961730   RHS (no reduction) = +0.604185054189 (imag -6.1e-16)   LHS-RHS = +2.489e+00
+d=4: 14089 expanded Gram terms; 3504 contain adjacent equal generators (group law needed), 3504 shorten under R^n R^m = R^(n+m), 480 collapse to 1 (unitarity R^-n R^n = 1)
+   random PVM  D=4: LHS = S - lam = +2.989172245615   RHS (no reduction) = +2.989172245615 (imag -1.8e-15)   LHS-RHS = +1.243e-14
+   random PVM  D=5: LHS = S - lam = +4.256190988835   RHS (no reduction) = +4.256190988835 (imag -2.7e-15)   LHS-RHS = -6.217e-15
+   random POVM D=4: LHS = S - lam = +4.325106604419   RHS (no reduction) = +0.359797572316 (imag -2.0e-16)   LHS-RHS = +3.965e+00
+   random POVM D=5: LHS = S - lam = +4.223880032414   RHS (no reduction) = +0.479952103886 (imag -2.6e-16)   LHS-RHS = +3.744e+00

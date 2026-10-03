@@ -1,0 +1,6 @@
+lam = +0.1103 h = 0.0833: int u*/M - h(1/4) = +1.640e-07  (min distance of eigenvalues to strip edge 1.3e-06)
+lam = +0.1103 h = 0.0417: int u*/M - h(1/4) = +1.912e-07  (min distance of eigenvalues to strip edge 1.3e-06)
+lam = +0.1103 h = 0.0208: int u*/M - h(1/4) = -1.210e-08  (min distance of eigenvalues to strip edge 1.3e-06)
+lam = -0.3000 h = 0.0833: int u*/M - h(1/4) = +1.357e-06  (min distance of eigenvalues to strip edge 1.3e-06)
+lam = -0.3000 h = 0.0417: int u*/M - h(1/4) = -2.260e-07  (min distance of eigenvalues to strip edge 1.3e-06)
+lam = -0.3000 h = 0.0208: int u*/M - h(1/4) = +1.261e-07  (min distance of eigenvalues to strip edge 1.3e-06)

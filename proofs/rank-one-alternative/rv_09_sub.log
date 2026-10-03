@@ -1,0 +1,55 @@
+[sub M=2 gmax=3.0 seed=21] worst abs: obj 1.7261e-12, T = 1.0356e-11, s = 0.0050, |g| = 6.00
+[sub M=2 gmax=3.0 seed=21] worst rel: obj 7.2179e-07, T = 1.2848e-07, s = 0.0050, |g| = 3.76
+   (18s)
+[sub M=2 gmax=30.0 seed=21] worst abs: obj -1.4559e-14, T = -5.0449e-13, s = 0.0102, |g| = 34.65
+[sub M=2 gmax=30.0 seed=21] worst rel: obj -7.8870e-13, T = -7.8870e-13, s = 0.9411, |g| = 48.32
+   (11s)
+[sub M=2 gmax=300.0 seed=21] worst abs: obj -1.3366e-13, T = -4.6327e-11, s = 0.0102, |g| = 346.62
+[sub M=2 gmax=300.0 seed=21] worst rel: obj -6.9008e-11, T = -6.9008e-11, s = 0.3872, |g| = 588.43
+   (16s)
+rv_09_sub.py:12: RuntimeWarning: overflow encountered in exp
+  s = 0.005 + 0.99/(1 + np.exp(-p[0]))
+[sub M=3 gmax=3.0 seed=21] worst abs: obj 3.1691e-12, T = 1.8766e-11, s = 0.0070, |g| = 5.92
+[sub M=3 gmax=3.0 seed=21] worst rel: obj 1.5939e-10, T = 9.5324e-11, s = 0.0050, |g| = 6.63
+   (43s)
+[sub M=3 gmax=30.0 seed=21] worst abs: obj -6.9795e-14, T = -5.9401e-12, s = 0.7438, |g| = 85.11
+[sub M=3 gmax=30.0 seed=21] worst rel: obj -6.1107e-12, T = -6.1107e-12, s = 0.7461, |g| = 83.93
+   (28s)
+[sub M=3 gmax=300.0 seed=21] worst abs: obj -5.5229e-13, T = -4.7010e-10, s = 0.7431, |g| = 851.17
+[sub M=3 gmax=300.0 seed=21] worst rel: obj -4.3406e-10, T = -4.3406e-10, s = 0.3315, |g| = 677.11
+   (37s)
+rv_09_sub.py:12: RuntimeWarning: overflow encountered in exp
+  s = 0.005 + 0.99/(1 + np.exp(-p[0]))
+[sub M=4 gmax=3.0 seed=21] worst abs: obj 9.5374e-12, T = 8.6285e-11, s = 0.9950, |g| = 9.05
+[sub M=4 gmax=3.0 seed=21] worst rel: obj 2.7912e-10, T = 2.7912e-10, s = 0.0053, |g| = 8.16
+   (72s)
+[sub M=4 gmax=30.0 seed=21] worst abs: obj -9.2193e-14, T = -9.2371e-12, s = 0.0142, |g| = 100.19
+[sub M=4 gmax=30.0 seed=21] worst rel: obj -1.0587e-11, T = -1.0587e-11, s = 0.0142, |g| = 99.12
+   (61s)
+[sub M=4 gmax=300.0 seed=21] worst abs: obj -5.7137e-13, T = -5.7253e-10, s = 0.0145, |g| = 1002.03
+[sub M=4 gmax=300.0 seed=21] worst rel: obj -7.9922e-10, T = -7.9922e-10, s = 0.0142, |g| = 991.22
+   (69s)
+[sub M=5 gmax=3.0 seed=21] worst abs: obj 9.8703e-14, T = 1.0054e-12, s = 0.6999, |g| = 10.19
+[sub M=5 gmax=3.0 seed=21] worst rel: obj 2.3235e-12, T = 2.3235e-12, s = 0.0103, |g| = 10.48
+   (101s)
+[sub M=5 gmax=30.0 seed=21] worst abs: obj -1.1688e-13, T = -1.3330e-11, s = 0.5515, |g| = 114.05
+[sub M=5 gmax=30.0 seed=21] worst rel: obj -1.3756e-11, T = -1.3756e-11, s = 0.0168, |g| = 123.57
+   (80s)
+[sub M=5 gmax=300.0 seed=21] worst abs: obj -1.8324e-12, T = -2.0891e-09, s = 0.7192, |g| = 1140.08
+   CANDIDATE; 50-digit T = 5.9667155376066439954e-11
+[sub M=5 gmax=300.0 seed=21] worst rel: obj -1.7881e-09, T = -1.7881e-09, s = 0.1822, |g| = 1300.61
+   CANDIDATE; 50-digit T = 2.4428960667145414349e-11
+   (85s)
+rv_09_sub.py:12: RuntimeWarning: overflow encountered in exp
+  s = 0.005 + 0.99/(1 + np.exp(-p[0]))
+[sub M=6 gmax=3.0 seed=21] worst abs: obj 1.0811e-10, T = 1.1571e-09, s = 0.9950, |g| = 10.70
+[sub M=6 gmax=3.0 seed=21] worst rel: obj 2.9487e-10, T = 2.9487e-10, s = 0.0050, |g| = 11.52
+   (111s)
+[sub M=6 gmax=30.0 seed=21] worst abs: obj -1.3851e-13, T = -1.7110e-11, s = 0.1712, |g| = 123.53
+[sub M=6 gmax=30.0 seed=21] worst rel: obj -1.9497e-11, T = -1.9497e-11, s = 0.1713, |g| = 122.66
+   (91s)
+[sub M=6 gmax=300.0 seed=21] worst abs: obj -1.9653e-12, T = -2.3851e-09, s = 0.3731, |g| = 1213.61
+   CANDIDATE; 50-digit T = 6.397482339263184498e-11
+[sub M=6 gmax=300.0 seed=21] worst rel: obj -2.2826e-09, T = -2.2826e-09, s = 0.9448, |g| = 1144.21
+   CANDIDATE; 50-digit T = 1.317563153673462655e-10
+   (90s)

@@ -1,0 +1,3 @@
+(1) 125 samples: max Im c/Im y (C_+) = 0.98662216 (<= 1) ; max |y|/(2K_1) = 0.49765872 (<= 1) ; spec T_0: max ratio = 0.98662216 (<= 1)
+(2) 120 samples, count failures 0 ; max [Im c/(b_n - tau)]/Im y over C_+ = 0.98862924 (<= 1) ; max [Im c/(tau - b_1)]/|Im y| over C_- = 0.98840007 (<= 1)
+(3) general-B trace identity: max relative defect 3.76e-51

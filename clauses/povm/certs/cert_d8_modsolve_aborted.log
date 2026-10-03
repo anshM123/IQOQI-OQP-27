@@ -1,0 +1,45 @@
+d=8: reduced sizes [7, 14, 14, 14, 6, 13, 13, 12, 7, 13, 13, 11, 8, 13, 13, 10, 9, 13, 13, 9, 10, 13, 13, 8, 11, 13, 13, 7, 12, 13, 13, 6, 28, 28, 28, 28, 28, 28, 28, 28] [17.8s]
+   reduced SDP: bound=3.73656637312887 moment=3.73656637009907 target=3.73656636953439 rp=1.8e-11 gap=1.4e-10
+      block 0 ('M', 0, 0) k=7 Y eig min 1.447e-03 max 5.945e-03
+      block 1 ('M', 0, 1) k=14 Y eig min 7.447e-05 max 1.095e-02
+      block 2 ('M', 0, 2) k=14 Y eig min 6.465e-05 max 9.922e-03
+      block 3 ('M', 0, 3) k=14 Y eig min 7.447e-05 max 1.095e-02
+      block 4 ('M', 1, 0) k=6 Y eig min 3.230e-04 max 2.663e-03
+      block 5 ('M', 1, 1) k=13 Y eig min 9.791e-06 max 1.073e-01
+      block 6 ('M', 1, 2) k=13 Y eig min 6.505e-05 max 2.443e-02
+      block 7 ('M', 1, 3) k=12 Y eig min 1.245e-04 max 3.951e-03
+      block 8 ('M', 2, 0) k=7 Y eig min 5.247e-04 max 2.803e-03
+      block 9 ('M', 2, 1) k=13 Y eig min 7.763e-05 max 1.611e-02
+      block 10 ('M', 2, 2) k=13 Y eig min 1.451e-04 max 1.328e-02
+      block 11 ('M', 2, 3) k=11 Y eig min 9.468e-05 max 4.119e-03
+      block 12 ('M', 3, 0) k=8 Y eig min 2.608e-04 max 2.739e-03
+      block 13 ('M', 3, 1) k=13 Y eig min 1.037e-04 max 1.579e-02
+      block 14 ('M', 3, 2) k=13 Y eig min 1.809e-04 max 1.186e-02
+      block 15 ('M', 3, 3) k=10 Y eig min 1.083e-04 max 3.214e-03
+      block 16 ('M', 4, 0) k=9 Y eig min 1.511e-04 max 2.928e-03
+      block 17 ('M', 4, 1) k=13 Y eig min 1.520e-04 max 1.372e-02
+      block 18 ('M', 4, 2) k=13 Y eig min 1.520e-04 max 1.372e-02
+      block 19 ('M', 4, 3) k=9 Y eig min 1.511e-04 max 2.928e-03
+      block 20 ('M', 5, 0) k=10 Y eig min 1.083e-04 max 3.214e-03
+      block 21 ('M', 5, 1) k=13 Y eig min 1.809e-04 max 1.186e-02
+      block 22 ('M', 5, 2) k=13 Y eig min 1.037e-04 max 1.579e-02
+      block 23 ('M', 5, 3) k=8 Y eig min 2.608e-04 max 2.739e-03
+      block 24 ('M', 6, 0) k=11 Y eig min 9.468e-05 max 4.119e-03
+      block 25 ('M', 6, 1) k=13 Y eig min 1.451e-04 max 1.328e-02
+      block 26 ('M', 6, 2) k=13 Y eig min 7.763e-05 max 1.611e-02
+      block 27 ('M', 6, 3) k=7 Y eig min 5.247e-04 max 2.803e-03
+      block 28 ('M', 7, 0) k=12 Y eig min 1.245e-04 max 3.951e-03
+      block 29 ('M', 7, 1) k=13 Y eig min 6.505e-05 max 2.443e-02
+      block 30 ('M', 7, 2) k=13 Y eig min 9.791e-06 max 1.073e-01
+      block 31 ('M', 7, 3) k=6 Y eig min 3.230e-04 max 2.663e-03
+      block 32 ('D', 1, 0) k=28 Y eig min 1.076e-02 max 1.262e+01
+      block 33 ('D', 1, 1) k=28 Y eig min 3.601e-03 max 1.191e+01
+      block 34 ('D', 1, 2) k=28 Y eig min 9.549e-03 max 1.200e+01
+      block 35 ('D', 1, 3) k=28 Y eig min 2.127e-02 max 1.214e+01
+      block 36 ('D', 1, 4) k=28 Y eig min 4.676e-02 max 1.239e+01
+      block 37 ('D', 1, 5) k=28 Y eig min 3.589e-02 max 1.171e+01
+      block 38 ('D', 1, 6) k=28 Y eig min 7.355e-03 max 1.331e+01
+      block 39 ('D', 1, 7) k=28 Y eig min 5.014e-02 max 1.434e+01
+   1312 equations, 10465 unknowns [1198.6s]
+   max residual after rounding: 3.60e-09
+   pivot subsystem 1311x1311 (of 1312 eqs, 10465 unknowns) [1212.2s]

@@ -1,0 +1,13 @@
+competitor d=4: LP v_c = 0.6442117016, closed form 0.6442117016, diff +1.1e-16  (0.0s)
+competitor d=5: LP v_c = 0.6588626785, closed form 0.6588626785, diff +2.2e-16  (0.0s)
+competitor d=6: LP v_c = 0.5728740432, closed form 0.5728740432, diff +1.1e-16  (0.0s)
+competitor d=7: LP v_c = 0.5797525814, closed form 0.5797525814, diff -1.1e-16  (0.0s)
+competitor d=8: LP v_c = 0.5136703457, closed form 0.5136703457, diff +1.1e-16  (0.1s)
+competitor d=9: LP v_c = 0.5176035638, closed form 0.5176035638, diff +2.2e-16  (0.2s)
+DKZ d=3: LP v_c = 0.6961524227, 2/I_ME = 0.6961524227, diff +3.3e-16  (0.0s)
+DKZ d=4: LP v_c = 0.6905497395, 2/I_ME = 0.6905497395, diff +3.3e-16  (0.0s)
+DKZ d=5: LP v_c = 0.6871565744, 2/I_ME = 0.6871565744, diff +2.2e-16  (0.0s)
+DKZ d=6: LP v_c = 0.6848837511, 2/I_ME = 0.6848837511, diff +4.4e-16  (0.0s)
+DKZ d=7: LP v_c = 0.6832559054, 2/I_ME = 0.6832559054, diff -2.2e-16  (0.0s)
+DKZ d=8: LP v_c = 0.6820329582, 2/I_ME = 0.6820329582, diff +2.2e-16  (0.0s)
+exit=0

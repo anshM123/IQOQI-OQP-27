@@ -1,0 +1,62 @@
+[PASS] C1 L(2,2,3) complete facet list (exact double description, two insertion orders)  -- 1116 facets = 36 positivity + 648 lifted CHSH + 432 CGLMP; matches facets223.txt: True; 6.8s
+[PASS] C2 competitor PVMs on Phi_d: projectors, ranks, exact behaviour (d = 4,5,6,7,8,9)  -- even: CHSH on {0,1}^2; odd: (d-1)/d CHSH + (1/d) delta_{a=b=0}
+[PASS] C3 coarse-grained CHSH: local bound 2; CHSH(comp) = 2sqrt2 (even), (d-1)/d 2sqrt2 + 2/d (odd); CHSH(u) = 2(d-2)^2/d^2; thresholds = v_even, v_odd (symbolic)
+[PASS] C4 reduction Lemma R: p_v(a,b|x,y) = kappa(a) kappa(b) q_v(pi a, pi b|x,y), q_v = v q + (1-v) n_{1/d} (exact, symbolic v, d = 4..9)
+      [even d on Phi_d (and any d on Phi_2k): q = CHSH] t in [0, 1/3]: all 1116 G_F >= 0 certified (1108 Bernstein boxes); G_F == 0 identically for 8 facets (classes ['CHSH'])
+      [odd d on Phi_d: q = (1-t) CHSH + t delta_0000] t in [0, 1/3]: all 1116 G_F >= 0 certified (1108 Bernstein boxes); G_F == 0 identically for 8 facets (classes ['CHSH'])
+      [odd d on Phi_d: q = (1-t) CHSH + t delta_1111] t in [0, 1/3]: all 1116 G_F >= 0 certified (1108 Bernstein boxes); G_F == 0 identically for 8 facets (classes ['CHSH'])
+[PASS] C5 competitor critical visibility = v_even(d) / v_odd(d) EXACTLY for all d >= 3 (all 1116 G_F >= 0 on t in [0,1/3], Bernstein in Q(sqrt2)); per-d exact re-check d = 3..12
+[PASS] C6 1/2-lemma: explicit local model of (p+u)/2 verified exactly on random rational behaviours with uniform marginals (d = 2..5)
+[PASS] C7 [sanity] DKZ closed form p = 1/(2d^3 sin^2(pi(b-a-delta_xy)/d)) and CGLMP value I_ME(d) (float)  -- d=4: |closed form - bases| 7.2e-16, I - I_ME 8.9e-16; d=5: |closed form - bases| 1.4e-16, I - I_ME 0.0e+00 ...
+  d=3: mu >= 0, sum mu = 1 (support 8); max |Q - T^v1| <= 1.556e-15 <= (v1 - v0)/(2 d v0) = 2.394e-13: OK  =>  v_c(DKZ_3) >= v0 = 0.696152321999
+  d=4: mu >= 0, sum mu = 1 (support 13); max |Q - T^v1| <= 7.035e-16 <= (v1 - v0)/(2 d v0) = 1.810e-13: OK  =>  v_c(DKZ_4) >= v0 = 0.690549638999
+  d=5: mu >= 0, sum mu = 1 (support 17); max |Q - T^v1| <= 1.449e-15 <= (v1 - v0)/(2 d v0) = 1.455e-13: OK  =>  v_c(DKZ_5) >= v0 = 0.687156473999
+  d=6: mu >= 0, sum mu = 1 (support 20); max |Q - T^v1| <= 1.212e-15 <= (v1 - v0)/(2 d v0) = 1.217e-13: OK  =>  v_c(DKZ_6) >= v0 = 0.684883650999
+  d=7: mu >= 0, sum mu = 1 (support 25); max |Q - T^v1| <= 1.613e-15 <= (v1 - v0)/(2 d v0) = 1.045e-13: OK  =>  v_c(DKZ_7) >= v0 = 0.683255804999
+  d=8: mu >= 0, sum mu = 1 (support 29); max |Q - T^v1| <= 3.024e-15 <= (v1 - v0)/(2 d v0) = 9.164e-14: OK  =>  v_c(DKZ_8) >= v0 = 0.682032857999
+  d=9: mu >= 0, sum mu = 1 (support 32); max |Q - T^v1| <= 5.772e-16 <= (v1 - v0)/(2 d v0) = 8.157e-14: OK  =>  v_c(DKZ_9) >= v0 = 0.681080610999
+  d=10: mu >= 0, sum mu = 1 (support 37); max |Q - T^v1| <= 8.503e-16 <= (v1 - v0)/(2 d v0) = 7.350e-14: OK  =>  v_c(DKZ_10) >= v0 = 0.680318219999
+  d=11: mu >= 0, sum mu = 1 (support 41); max |Q - T^v1| <= 1.266e-15 <= (v1 - v0)/(2 d v0) = 6.688e-14: OK  =>  v_c(DKZ_11) >= v0 = 0.679694094999
+  d=12: mu >= 0, sum mu = 1 (support 45); max |Q - T^v1| <= 1.287e-15 <= (v1 - v0)/(2 d v0) = 6.135e-14: OK  =>  v_c(DKZ_12) >= v0 = 0.679173772999
+  d=13: mu >= 0, sum mu = 1 (support 46); max |Q - T^v1| <= 5.710e-16 <= (v1 - v0)/(2 d v0) = 5.667e-14: OK  =>  v_c(DKZ_13) >= v0 = 0.678733361999
+  d=14: mu >= 0, sum mu = 1 (support 53); max |Q - T^v1| <= 3.018e-15 <= (v1 - v0)/(2 d v0) = 1.053e-13: OK  =>  v_c(DKZ_14) >= v0 = 0.678355771998
+  d=15: mu >= 0, sum mu = 1 (support 55); max |Q - T^v1| <= 7.928e-16 <= (v1 - v0)/(2 d v0) = 4.916e-14: OK  =>  v_c(DKZ_15) >= v0 = 0.678028463999
+  d=16: mu >= 0, sum mu = 1 (support 60); max |Q - T^v1| <= 1.157e-15 <= (v1 - v0)/(2 d v0) = 4.611e-14: OK  =>  v_c(DKZ_16) >= v0 = 0.677742024999
+  d=17: mu >= 0, sum mu = 1 (support 62); max |Q - T^v1| <= 1.053e-15 <= (v1 - v0)/(2 d v0) = 4.341e-14: OK  =>  v_c(DKZ_17) >= v0 = 0.677489251999
+  d=18: mu >= 0, sum mu = 1 (support 68); max |Q - T^v1| <= 1.351e-15 <= (v1 - v0)/(2 d v0) = 4.101e-14: OK  =>  v_c(DKZ_18) >= v0 = 0.677264540999
+  d=19: mu >= 0, sum mu = 1 (support 72); max |Q - T^v1| <= 4.142e-16 <= (v1 - v0)/(2 d v0) = 3.887e-14: OK  =>  v_c(DKZ_19) >= v0 = 0.677063466999
+  d=20: mu >= 0, sum mu = 1 (support 77); max |Q - T^v1| <= 1.758e-15 <= (v1 - v0)/(2 d v0) = 3.693e-14: OK  =>  v_c(DKZ_20) >= v0 = 0.676882485999
+[PASS] C8 DKZ local-model certificates d = 3..20 (exact rationals, rigorous sin enclosures, absorption lemma): v_c(DKZ_d) >= v0(d)  [Theorem 1 uses d = 4..9]
+[PASS] C8b tightness: v0(d) <= v_c(DKZ_d) <= 2/I_ME(d) with 2/I_ME(d) - v0(d) < 1.02e-7 for d = 3..20 (rigorous enclosure of I_ME)  -- max gap 1.0096e-07
+      d=4: v_comp = 0.644212 < r = 69/100 <= v0 = 0.690549639
+      d=5: v_comp = 0.658863 < r = 687/1000 <= v0 = 0.687156474
+      d=6: v_comp = 0.572874 < r = 171/250 <= v0 = 0.684883651
+      d=7: v_comp = 0.579753 < r = 683/1000 <= v0 = 0.683255805
+      d=8: v_comp = 0.513670 < r = 341/500 <= v0 = 0.682032858
+      d=9: v_comp = 0.517604 < r = 681/1000 <= v0 = 0.681080611
+[PASS] C9 comparison: competitor threshold < 1/2 <= v_c(DKZ) for even d >= 10 and odd d >= 11 (exact; fails at d = 8, 9 as stated); d = 4..9: v_comp(d) < r(d) <= v0(d) (exact)
+[PASS] C10 [sanity] full (2,2,d) LP critical visibilities (float, informational)  -- comp d=4: LP 0.644211702 vs 0.644211702; comp d=5: LP 0.658862679 vs 0.658862679; comp d=6: LP 0.572874043 vs 0.572874043; DKZ d=4: LP 0.690549739 vs 2/I_ME 0.690549739; DKZ d=5: LP 0.687156574 vs 2/I_ME 0.687156574
+      (1) facet list = positivity (36) + lifted CHSH (648) + CGLMP orbit (432): True
+      (2) CHSH_F(u) over all lifted CHSH representations: [Fraction(-2, 9), Fraction(2, 9)];  I_F(u) over the CGLMP orbit: [Fraction(0, 1)]
+      (3) I_ME(3) = 4/3 + 8*sqrt(3)/9 (exact), 2/I_ME(3) = 3 sqrt3 - 9/2 = 0.696152422707;  lifted-CHSH bound 4/(3 sqrt2+1) = 0.762974279322 > 2/I_ME(3): True;  Phi_2: 8/(9 sqrt2-1) = 0.682132773235 < 2/I_ME(3): True
+          interval re-check: 0.7629742793 > 0.6961524228 and 0.6821327733 < 0.6961524225: True
+          Phi_D (D odd) block construction beats 2/I_ME(3) first at D = 17 (and for all larger odd D, the bound being decreasing in D)
+      (4) I_3(DKZ_3) = 4/3 + 8*sqrt(3)/9  == I_ME(3): True
+[PASS] S1 Theorem 3 (d = 3 on Phi_3): facet classes, CHSH_F(u) = +-2/9, I_F(u) = 0, 2/I_ME(3) = 3sqrt3 - 9/2 < 4/(3sqrt2+1), I_3(DKZ_3) = (12+8sqrt3)/9 (radicals)
+[PASS] S2 Phi_2, d = 3: v_c = 8/(9 sqrt2 - 1) = 0.682133 (exact, = Prop. 5 at t = 1/3) < 2/I_ME(3); odd D >= 17 block bound (in S1 output)
+        d= 4 (even): w_0 = 0.644212, w_(1/100) = 0.660156 < v0(DKZ) = 0.690550; CHSH decreasing in eps: True  OK
+        d= 5 (odd): w_0 = 0.658863, w_(1/100) = 0.679019 < v0(DKZ) = 0.687156; CHSH decreasing in eps: True  OK
+        d= 6 (even): w_0 = 0.572874, w_(1/100) = 0.589968 < v0(DKZ) = 0.684884; CHSH decreasing in eps: True  OK
+        d= 7 (odd): w_0 = 0.579753, w_(1/100) = 0.600313 < v0(DKZ) = 0.683256; CHSH decreasing in eps: True  OK
+        d= 8 (even): w_0 = 0.513670, w_(1/100) = 0.531187 < v0(DKZ) = 0.682033; CHSH decreasing in eps: True  OK
+        d= 9 (odd): w_0 = 0.517604, w_(1/100) = 0.537957 < v0(DKZ) = 0.681081; CHSH decreasing in eps: True  OK
+        d=10 (even): w_0 = 0.464988, w_(1/100) = 0.482487 < v0(DKZ) = 0.680318; CHSH decreasing in eps: True  OK
+        d >= 11 (even formula): w_(1/100)(d) < 1/2 certified (shifted polynomial has positive coefficients): True
+        d >= 11 (odd formula): w_(1/100)(d) < 1/2 certified (shifted polynomial has positive coefficients): True
+      PVMs on Phi_D using all outcomes beat v0(DKZ_d) at (d, D) = (4, 12), (5, 11), (6, 12), (7, 13), (8, 12), (9, 13)
+[PASS] S3 POVMs M = (1-eps)P + (eps/d)1, 0 < eps <= 1/100 (all effects full rank): v_c < v_c(DKZ_d) for all d >= 4 (exact); Remark S3c (PVMs on Phi_D, all outcomes used) for d = 4..9
+[PASS] S4 [numerical] ledger B1: no rank pattern with F = v* I + (1-v*) I(n) > 2 in the search logs  -- 24 (d, D) cases, largest F = 1.985692
+----------------------------------------------------------------------------------------------------
+15 items, 0 failures, 133s
+OVERALL: PASS
+exit=0

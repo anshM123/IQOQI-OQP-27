@@ -1,0 +1,32 @@
+import FormalConjectures.OpenQuantumProblems.«27»
+
+/-! Axiom audit of the main results of `FormalConjectures/OpenQuantumProblems/27.lean`. -/
+
+#print axioms OpenQuantumProblem27.dkz_optimal_of_le_twenty
+#print axioms OpenQuantumProblem27.dkz_unique_of_le_twenty
+#print axioms OpenQuantumProblem27.dkz_noise_of_le_twenty
+#print axioms OpenQuantumProblem27.dkz_optimal
+#print axioms OpenQuantumProblem27.dkz_unique
+#print axioms OpenQuantumProblem27.dkz_noise
+#print axioms OpenQuantumProblem27.dkz_optimal_any_dim_of_le_twenty
+#print axioms OpenQuantumProblem27.dkz_unique_any_dim_of_le_twenty
+#print axioms OpenQuantumProblem27.strip_inequality
+#print axioms OpenQuantumProblem27.strip_equality
+#print axioms OpenQuantumProblem27.cglmpFunctional_dkz
+#print axioms OpenQuantumProblem27.cglmpFunctional_dkz_lt
+#print axioms OpenQuantumProblem27.dkz_tsirelson
+#print axioms OpenQuantumProblem27.cglmpMaxEntValue_two
+#print axioms OpenQuantumProblem27.cglmpExpr_eq_cglmpFunctional
+#print axioms OpenQuantumProblem27.le_cglmpFunctional_of_isLocalBehaviour
+#print axioms OpenQuantumProblem27.cglmpFunctional_deterministicBehaviour_zero
+#print axioms OpenQuantumProblem27.cglmpFunctional_computationalBasis
+#print axioms OpenQuantumProblem27.bornProb_maxEntangledState
+#print axioms OpenQuantumProblem27.isProjectiveMeasurement_vonNeumannMeasurement
+#print axioms OpenQuantumProblem27.trace_vonNeumannMeasurement
+#print axioms OpenQuantumProblem27.kronecker_mulVec_maxEntangledState_eq_iff
+#print axioms OpenQuantumProblem27.dkzUnitaryA_mem_unitaryGroup
+#print axioms OpenQuantumProblem27.dkzUnitaryB_mem_unitaryGroup
+#print axioms OpenQuantumProblem27.coneCertPos_le_twenty
+#print axioms OpenQuantumProblem27.cglmpFunctional_adglState
+#print axioms OpenQuantumProblem27.adglState_beats_maxEntangledState
+#print axioms OpenQuantumProblem27.cglmpMaxEntValue_three

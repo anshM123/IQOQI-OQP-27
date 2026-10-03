@@ -1,0 +1,19 @@
+d= 3: v0 = 0.696152321999, v1 = 0.696152322000, support   8, bound (v1-v0)/(2dv0) = 2.394e-13; two-sided margin iv 2.379e-13 frac 2.379e-13; one-sided margin 2.381e-13 -> VALID
+d= 4: v0 = 0.690549638999, v1 = 0.690549639000, support  13, bound (v1-v0)/(2dv0) = 1.810e-13; two-sided margin iv 1.803e-13 frac 1.803e-13; one-sided margin 1.803e-13 -> VALID
+d= 5: v0 = 0.687156473999, v1 = 0.687156474000, support  17, bound (v1-v0)/(2dv0) = 1.455e-13; two-sided margin iv 1.441e-13 frac 1.441e-13; one-sided margin 1.441e-13 -> VALID
+d= 6: v0 = 0.684883650999, v1 = 0.684883651000, support  20, bound (v1-v0)/(2dv0) = 1.217e-13; two-sided margin iv 1.205e-13 frac 1.205e-13; one-sided margin 1.205e-13 -> VALID
+d= 7: v0 = 0.683255804999, v1 = 0.683255805000, support  25, bound (v1-v0)/(2dv0) = 1.045e-13; two-sided margin iv 1.029e-13 frac 1.029e-13; one-sided margin 1.029e-13 -> VALID
+d= 8: v0 = 0.682032857999, v1 = 0.682032858000, support  29, bound (v1-v0)/(2dv0) = 9.164e-14; two-sided margin iv 8.861e-14 frac 8.861e-14; one-sided margin 8.861e-14 -> VALID
+d= 9: v0 = 0.681080610999, v1 = 0.681080611000, support  32, bound (v1-v0)/(2dv0) = 8.157e-14; two-sided margin iv 8.099e-14 frac 8.099e-14; one-sided margin 8.099e-14 -> VALID
+d=10: v0 = 0.680318219999, v1 = 0.680318220000, support  37, bound (v1-v0)/(2dv0) = 7.350e-14; two-sided margin iv 7.264e-14 frac 7.264e-14; one-sided margin 7.264e-14 -> VALID
+d=11: v0 = 0.679694094999, v1 = 0.679694095000, support  41, bound (v1-v0)/(2dv0) = 6.688e-14; two-sided margin iv 6.561e-14 frac 6.561e-14; one-sided margin 6.561e-14 -> VALID
+d=12: v0 = 0.679173772999, v1 = 0.679173773000, support  45, bound (v1-v0)/(2dv0) = 6.135e-14; two-sided margin iv 6.006e-14 frac 6.006e-14; one-sided margin 6.006e-14 -> VALID
+d=13: v0 = 0.678733361999, v1 = 0.678733362000, support  46, bound (v1-v0)/(2dv0) = 5.667e-14; two-sided margin iv 5.610e-14 frac 5.610e-14; one-sided margin 5.626e-14 -> VALID
+d=14: v0 = 0.678355771998, v1 = 0.678355772000, support  53, bound (v1-v0)/(2dv0) = 1.053e-13; two-sided margin iv 1.023e-13 frac 1.023e-13; one-sided margin 1.023e-13 -> VALID
+d=15: v0 = 0.678028463999, v1 = 0.678028464000, support  55, bound (v1-v0)/(2dv0) = 4.916e-14; two-sided margin iv 4.837e-14 frac 4.837e-14; one-sided margin 4.837e-14 -> VALID
+d=16: v0 = 0.677742024999, v1 = 0.677742025000, support  60, bound (v1-v0)/(2dv0) = 4.611e-14; two-sided margin iv 4.495e-14 frac 4.495e-14; one-sided margin 4.584e-14 -> VALID
+d=17: v0 = 0.677489251999, v1 = 0.677489252000, support  62, bound (v1-v0)/(2dv0) = 4.341e-14; two-sided margin iv 4.236e-14 frac 4.236e-14; one-sided margin 4.236e-14 -> VALID
+d=18: v0 = 0.677264540999, v1 = 0.677264541000, support  68, bound (v1-v0)/(2dv0) = 4.101e-14; two-sided margin iv 3.966e-14 frac 3.966e-14; one-sided margin 3.966e-14 -> VALID
+d=19: v0 = 0.677063466999, v1 = 0.677063467000, support  72, bound (v1-v0)/(2dv0) = 3.887e-14; two-sided margin iv 3.845e-14 frac 3.845e-14; one-sided margin 3.858e-14 -> VALID
+d=20: v0 = 0.676882485999, v1 = 0.676882486000, support  77, bound (v1-v0)/(2dv0) = 3.693e-14; two-sided margin iv 3.518e-14 frac 3.518e-14; one-sided margin 3.518e-14 -> VALID
+ALL P2 CERTIFICATES VALID (own check)

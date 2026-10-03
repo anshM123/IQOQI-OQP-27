@@ -1,0 +1,7 @@
+zsol2_A10.npz: A=10 B=14 t=0.122448208434 (t pi^2 = 1.208515)
+  link (0, 0): sum_|m|<=3000 Q log(Q/P) in [0.047661889910122, 0.047661889910122] nats
+  link (0, 1): sum_|m|<=3000 Q log(Q/P) in [0.047687881719259, 0.047687881719259] nats
+  link (1, 0): sum_|m|<=3000 Q log(Q/P) in [0.047661763634272, 0.047661763634272] nats
+  link (1, 1): sum_|m|<=3000 Q log(Q/P) in [0.047687839500767, 0.047687839500767] nats
+  tail |m| > 3000: P >= Q verified (needs |m| >= 18.37): True  => tail contribution <= 0
+  CERTIFIED: T_inf <= 0.068780260568 bits  (interval width 3.3e-39)

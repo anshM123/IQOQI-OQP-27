@@ -1,0 +1,34 @@
+'OpenQuantumProblem27.dkz_optimal_of_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_unique_of_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_noise_of_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_noise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_optimal_any_dim_of_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_unique_any_dim_of_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.strip_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.strip_equality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpFunctional_dkz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpFunctional_dkz_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkz_tsirelson' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpMaxEntValue_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpExpr_eq_cglmpFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.le_cglmpFunctional_of_isLocalBehaviour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpFunctional_deterministicBehaviour_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OpenQuantumProblem27.cglmpFunctional_computationalBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.bornProb_maxEntangledState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.isProjectiveMeasurement_vonNeumannMeasurement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OpenQuantumProblem27.trace_vonNeumannMeasurement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.kronecker_mulVec_maxEntangledState_eq_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OpenQuantumProblem27.dkzUnitaryA_mem_unitaryGroup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.dkzUnitaryB_mem_unitaryGroup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.coneCertPos_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpFunctional_adglState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.adglState_beats_maxEntangledState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenQuantumProblem27.cglmpMaxEntValue_three' depends on axioms: [propext, Classical.choice, Quot.sound]

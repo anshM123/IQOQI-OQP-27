@@ -1,0 +1,29 @@
+1. DKZ closed form = CGLMP-paper strategy with Bob's settings swapped; I = I_ME(d), d = 3..10: True
+     d=3: |CGLMP-paper basis - closed form| = 2.67e-51, I - I_ME = 5.35e-51
+     d=4: |CGLMP-paper basis - closed form| = 5.01e-51, I - I_ME = 4.28e-50
+     d=5: |CGLMP-paper basis - closed form| = 4.68e-51, I - I_ME = 5.35e-50
+   d= 3: support   8, max|Q - T^v1| <= 1.556e-15 vs tol 2.394e-13  -> v_c(DKZ_3) >= 0.696152321999: True
+   d= 4: support  13, max|Q - T^v1| <= 7.035e-16 vs tol 1.810e-13  -> v_c(DKZ_4) >= 0.690549638999: True
+   d= 5: support  17, max|Q - T^v1| <= 1.449e-15 vs tol 1.455e-13  -> v_c(DKZ_5) >= 0.687156473999: True
+   d= 6: support  20, max|Q - T^v1| <= 1.212e-15 vs tol 1.217e-13  -> v_c(DKZ_6) >= 0.684883650999: True
+   d= 7: support  25, max|Q - T^v1| <= 1.613e-15 vs tol 1.045e-13  -> v_c(DKZ_7) >= 0.683255804999: True
+   d= 8: support  29, max|Q - T^v1| <= 3.024e-15 vs tol 9.164e-14  -> v_c(DKZ_8) >= 0.682032857999: True
+   d= 9: support  32, max|Q - T^v1| <= 5.772e-16 vs tol 8.157e-14  -> v_c(DKZ_9) >= 0.681080610999: True
+   d=10: support  37, max|Q - T^v1| <= 8.503e-16 vs tol 7.350e-14  -> v_c(DKZ_10) >= 0.680318219999: True
+   d=11: support  41, max|Q - T^v1| <= 1.266e-15 vs tol 6.688e-14  -> v_c(DKZ_11) >= 0.679694094999: True
+   d=12: support  45, max|Q - T^v1| <= 1.287e-15 vs tol 6.135e-14  -> v_c(DKZ_12) >= 0.679173772999: True
+   d=13: support  46, max|Q - T^v1| <= 5.710e-16 vs tol 5.667e-14  -> v_c(DKZ_13) >= 0.678733361999: True
+   d=14: support  53, max|Q - T^v1| <= 3.018e-15 vs tol 1.053e-13  -> v_c(DKZ_14) >= 0.678355771998: True
+   d=15: support  55, max|Q - T^v1| <= 7.928e-16 vs tol 4.916e-14  -> v_c(DKZ_15) >= 0.678028463999: True
+   d=16: support  60, max|Q - T^v1| <= 1.157e-15 vs tol 4.611e-14  -> v_c(DKZ_16) >= 0.677742024999: True
+   d=17: support  62, max|Q - T^v1| <= 1.053e-15 vs tol 4.341e-14  -> v_c(DKZ_17) >= 0.677489251999: True
+   d=18: support  68, max|Q - T^v1| <= 1.351e-15 vs tol 4.101e-14  -> v_c(DKZ_18) >= 0.677264540999: True
+   d=19: support  72, max|Q - T^v1| <= 4.142e-16 vs tol 3.887e-14  -> v_c(DKZ_19) >= 0.677063466999: True
+   d=20: support  77, max|Q - T^v1| <= 1.758e-15 vs tol 3.693e-14  -> v_c(DKZ_20) >= 0.676882485999: True
+2. DKZ certificates re-verified with mpmath interval enclosures (200 bits): True
+3. Lemma 8: explicit joint law of (A0,A1,B0,B1) from mu reproduces Q_xy(b-a)/d on all four links (d = 3,4,5, exact): True
+4. Lemma 6: (P1 + P2)/2 reproduces (p + u)/2 exactly on random uniform-marginal behaviours (d = 2..6): True | construction fails without uniform marginals (as it should): True
+5. Lemma 9 identity T^{v0} = (v0/v1) Q + (1 - v0/v1)(u + S)/2 and S >= 0 at the stated bound (exact toy): True
+6. comparison: d = 4..9 v_comp < r(d) <= v0(d): True; v_comp < 1/2 for all d = 10..10000 (exact): True; fails at d = 8, 9 as stated: True; analytic tail argument: True; 2/I_ME - v0 in [1.0e-7, 1.01e-7] (d = 3..20)
+RESULT: PASS
+exit=0

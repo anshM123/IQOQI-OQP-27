@@ -1,0 +1,57 @@
+(1) Lemma C at random points: |d_tau Lam_+ - d_c S_+|
+  30 random (instance, tau, c): max relative defect 0.0
+
+(2) double root inside C_+ (collision of two C_+ roots), M = 4, r = 1 (three C_+ roots)
+  M4_r1_trial0: tau0 = 0.32, c* = (1.5398642891874333175 + 0.43106247479585858282j) ; closest C_+ pair distance 4.34e-30 (double root at (-0.485325337543 + 2.65582603986j))
+  C_+ roots at (tau0, c*): (-0.485325337543239 + 2.65582603986398j), (-0.485325337543239 + 2.65582603986398j), (4.01603991930898 + 0.930004796712872j)
+  d_tau Lam_+ = (3.5091283417584545645082726215 - 0.920104944116813626696828136922j)
+  d_c S_+     = (3.5091283417584545645082726215 - 0.920104944116813626696828136922j)
+  |defect| = 0.0
+  c = c* + 1.0e-8: closest C_+ pair distance 0.0006458 (~ sqrt(h): branch point of the individual roots)
+  c = c* + 1.0e-16: closest C_+ pair distance 6.458e-8 (~ sqrt(h): branch point of the individual roots)
+  (1.1) on the proof's disc (centre i*9617.02, radius 9616.91): #roots inside = (3.0 + 4.66607140725e-45j) ; |S_+ - contour| = 2.76e-37 ; |Lam_+ - contour| = 1.73e-40
+
+(3) Lemma D: limits of Lam_+ - Lam0_+ at tau -> 1 (-> 0) and tau -> 0 (-> Theta); Theta vs Theta_1
+  rand_M3_r1           c=(0.37 + 0.81j) min Im T_0 - Im c = 7.779e-62 ; |exp Theta - det ratio| = 8.8e-61 ; |Theta - Theta_1| = 6.96e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00082, 8.2e-8, 8.2e-16, 8.2e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00031, 3.1e-8, 3.1e-16, 3.1e-30
+  rand_M3_r1           c=(-1.3 + 0.05j) min Im T_0 - Im c = 4.862e-62 ; |exp Theta - det ratio| = 1.22e-59 ; |Theta - Theta_1| = 3.33e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00045, 4.5e-8, 4.5e-16, 4.5e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.0085, 8.4e-7, 8.4e-15, 8.4e-29
+  rand_M3_r1           c=(2.1 + 3.0j)   min Im T_0 - Im c = 0.0 ; |exp Theta - det ratio| = 3.89e-62 ; |Theta - Theta_1| = 6.41e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 5.1e-5, 5.1e-9, 5.1e-17, 5.1e-31 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 4.2e-5, 4.2e-9, 4.2e-17, 4.2e-31
+  rand_M4_r2           c=(0.37 + 0.81j) min Im T_0 - Im c = 0.1059 ; |exp Theta - det ratio| = 4.92e-61 ; |Theta - Theta_1| = 4.67e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00028, 2.8e-8, 2.8e-16, 2.8e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00019, 1.9e-8, 1.9e-16, 1.9e-30
+  rand_M4_r2           c=(-1.3 + 0.05j) min Im T_0 - Im c = 0.006562 ; |exp Theta - det ratio| = 5.46e-61 ; |Theta - Theta_1| = 1.24e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00066, 6.6e-8, 6.6e-16, 6.6e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00035, 3.5e-8, 3.5e-16, 3.5e-30
+  rand_M4_r2           c=(2.1 + 3.0j)   min Im T_0 - Im c = 0.1665 ; |exp Theta - det ratio| = 4.86e-61 ; |Theta - Theta_1| = 6.96e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00019, 1.9e-8, 1.9e-16, 1.9e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 9.5e-5, 9.5e-9, 9.5e-17, 9.5e-31
+  rank1B_M5            c=(0.37 + 0.81j) min Im T_0 - Im c = -2.334e-61 ; |exp Theta - det ratio| = 1.57e-59 ; |Theta - Theta_1| = 9.33e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00036, 3.6e-8, 3.6e-16, 3.6e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.0024, 2.4e-7, 2.4e-15, 2.4e-29
+  rank1B_M5            c=(-1.3 + 0.05j) min Im T_0 - Im c = -8.751e-62 ; |exp Theta - det ratio| = 1.14e-59 ; |Theta - Theta_1| = 2.57e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00041, 4.1e-8, 4.1e-16, 4.1e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.0005, 5.0e-8, 5.0e-16, 5.0e-30
+  rank1B_M5            c=(2.1 + 3.0j)   min Im T_0 - Im c = 0.0 ; |exp Theta - det ratio| = 1.99e-60 ; |Theta - Theta_1| = 0.0
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00013, 1.3e-8, 1.3e-16, 1.3e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00014, 1.4e-8, 1.4e-16, 1.4e-30
+  corank1_M5           c=(0.37 + 0.81j) min Im T_0 - Im c = 1.627 ; |exp Theta - det ratio| = 3.21e-61 ; |Theta - Theta_1| = 1.1e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00014, 1.4e-8, 1.4e-16, 1.4e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00012, 1.2e-8, 1.2e-16, 1.2e-30
+  corank1_M5           c=(-1.3 + 0.05j) min Im T_0 - Im c = 0.6474 ; |exp Theta - det ratio| = 1.39e-60 ; |Theta - Theta_1| = 1.39e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.0036, 3.6e-7, 3.6e-15, 3.6e-29 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.0013, 1.3e-7, 1.3e-15, 1.3e-29
+  corank1_M5           c=(2.1 + 3.0j)   min Im T_0 - Im c = 1.336 ; |exp Theta - det ratio| = 0.0 ; |Theta - Theta_1| = 4.92e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 3.1e-5, 3.1e-9, 3.1e-17, 3.1e-31 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 3.0e-5, 3.0e-9, 3.0e-17, 3.0e-31
+  degenH_M5            c=(0.37 + 0.81j) min Im T_0 - Im c = 7.779e-62 ; |exp Theta - det ratio| = 3.48e-61 ; |Theta - Theta_1| = 1.08e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 9.9e-5, 9.9e-9, 9.9e-17, 9.9e-31 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00014, 1.4e-8, 1.4e-16, 1.4e-30
+  degenH_M5            c=(-1.3 + 0.05j) min Im T_0 - Im c = 0.0 ; |exp Theta - det ratio| = 3.78e-60 ; |Theta - Theta_1| = 1.47e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00092, 9.2e-8, 9.2e-16, 9.2e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00018, 1.8e-8, 1.8e-16, 1.8e-30
+  degenH_M5            c=(2.1 + 3.0j)   min Im T_0 - Im c = 3.112e-61 ; |exp Theta - det ratio| = 1.94e-61 ; |Theta - Theta_1| = 0.0
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 8.5e-6, 8.5e-10, 8.5e-18, 8.5e-32 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 8.8e-6, 8.8e-10, 8.8e-18, 8.8e-32
+  zero_BHB_M4          c=(0.37 + 0.81j) min Im T_0 - Im c = 0.8247 ; |exp Theta - det ratio| = 2.2e-60 ; |Theta - Theta_1| = 1.71e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00017, 1.7e-8, 1.7e-16, 1.7e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00088, 8.8e-8, 8.8e-16, 8.8e-30
+  zero_BHB_M4          c=(-1.3 + 0.05j) min Im T_0 - Im c = 0.02385 ; |exp Theta - det ratio| = 8.2e-61 ; |Theta - Theta_1| = 1.12e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 0.00021, 2.1e-8, 2.1e-16, 2.1e-30 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 0.00041, 4.1e-8, 4.1e-16, 4.1e-30
+  zero_BHB_M4          c=(2.1 + 3.0j)   min Im T_0 - Im c = 0.1806 ; |exp Theta - det ratio| = 1.74e-61 ; |Theta - Theta_1| = 9.84e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 2.6e-5, 2.6e-9, 2.6e-17, 2.6e-31 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 5.2e-5, 5.2e-9, 5.2e-17, 5.2e-31
+  near_comm_1e-3_M6    c=(0.37 + 0.81j) min Im T_0 - Im c = 2.705e-7 ; |exp Theta - det ratio| = 7.32e-61 ; |Theta - Theta_1| = 1.22e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 1.0e-9, 1.0e-13, 1.0e-21, 1.0e-35 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 4.6e-10, 4.6e-14, 4.6e-22, 4.6e-36
+  near_comm_1e-3_M6    c=(-1.3 + 0.05j) min Im T_0 - Im c = 2.253e-8 ; |exp Theta - det ratio| = 4.85e-61 ; |Theta - Theta_1| = 3.81e-60
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 1.4e-8, 1.4e-12, 1.4e-20, 1.4e-34 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 4.3e-8, 4.3e-12, 4.3e-20, 4.3e-34
+  near_comm_1e-3_M6    c=(2.1 + 3.0j)   min Im T_0 - Im c = 1.797e-7 ; |exp Theta - det ratio| = 2.02e-61 ; |Theta - Theta_1| = 6.96e-61
+      |Lam_+ - Lam0_+| at 1 - 1e-4,-8,-16,-30: 1.5e-10, 1.5e-14, 1.5e-22, 1.5e-36 ;  |Lam_+ - Lam0_+ - Theta| at 1e-4,-8,-16,-30: 1.3e-10, 1.3e-14, 1.3e-22, 1.3e-36
+max |Theta - Theta_1| over all (instance, c): 3.81e-60   (k = 0 in Step 2)

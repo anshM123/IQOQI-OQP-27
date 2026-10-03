@@ -1,0 +1,1287 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+% allow line breaks after hyphens in long URLs
+\Urlmuskip=0mu plus 1mu
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\-}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Li}{\operatorname{Li}_2}
+\newcommand{\Cl}{\operatorname{Cl}_2}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\IME}{I_{\mathrm{ME}}}
+\newcommand{\FD}{F_{\mathrm{DKZ}}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\vc}{v_{\mathrm c}}
+\newcommand{\veven}{v_{\mathrm{even}}}
+\newcommand{\vodd}{v_{\mathrm{odd}}}
+\newcommand{\CH}{\mathrm{CH}}
+\newcommand{\DKZ}{\mathrm{DKZ}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+
+\begin{document}
+
+\title[Supplementary Information]{Supplementary Information for\\ ``Fourier measurements are optimal for CGLMP Bell
+tests on maximally entangled states in every dimension''}
+
+\author{Ansh Mishra}
+\address{Independent researcher, Cumming, GA, USA}
+\email{ansh.mishra2025@gmail.com}
+\author{Aryan Senthilkumar}
+\address{Independent researcher, Johns Creek, GA, USA}
+\email{aryan.senthilk@gmail.com}
+
+\subjclass[2020]{81P40; 15A42; 47A63; 42A50; 44A10; 65G30}
+\keywords{Bell inequalities, CGLMP inequality, maximally entangled states, rigidity, BMV conjecture, Stahl's
+theorem, conjugate function, Stein--Weiss theorem, interval arithmetic}
+
+\begin{abstract}
+This Supplementary Information contains the complete proofs of the two analytic theorems of the article
+(Theorem~3, the strip inequality for matrices of every size, and Theorem~4, the two-variable
+Bessis--Moussa--Villani formula with an explicit positive density), an outline of a second, distribution-free proof of
+both, precise statements and proofs of the continuum theorem and of the cell-embedding inequalities, a description of
+the computer-assisted certificate CONE$_d$ in its three regimes, the proof of the rigidity theorem, the theorems on the
+two other clauses of Part~B of Open Quantum Problem~27 (noise resistance and Kullback--Leibler discrimination) with
+their proofs, the main theorems of the Lean~4 formalisation, and the re-verifications and checks. Theorem
+numbers 1--4 refer to the article.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+%==================================================================================================
+\section{Logical structure}\label{sec:structure}
+%==================================================================================================
+
+Throughout, $d\ge2$ is the number of outcomes, $N=4d$, $\tau=\frac1M\Tr$ is the normalized trace on $M_M(\C)$, and
+$\IME(d)=\frac{4}{d(d-1)}\sum_{j=1}^{d-1}(d-j)\sec\frac{\pi j}{2d}$. The proof of Theorems~1 and~2 of the article
+has the following structure.
+\begin{enumerate}
+\item[(R)] \emph{Reduction} (Section~\ref{sec:reduction}; proved in earlier work\cite{classical}). Every projective
+strategy on $\Phi_D$ gives a family of $N$ projections on some $\C^M$ whose deficit $F-\FD$ is a linear form
+$\frac12\langle v,\delta\rangle$ in the ``pair counts'' $\delta$.
+\item[(T4)] \emph{Two-variable BMV formula} (Section~\ref{sec:bmv}): an explicit positive density. Analytic.
+\item[(T3)] \emph{Strip inequality} (Section~\ref{sec:strip}), deduced from (T4), with an exact defect formula and
+its equality case. Analytic.
+\item[(C)] \emph{Continuum theorem} for projection-valued step fields on a circle (Section~\ref{sec:cont}), from (T3).
+Analytic.
+\item[(E)] \emph{Cell inequalities} $\langle u^\ell,\delta\rangle\le0$ for every cell vector $\ell$
+(Section~\ref{sec:cells}), from (C). Analytic.
+\item[(K)] \emph{CONE$_d$}: $v$ is a non-negative combination of cell vectors $u^\ell$ and trivial directions
+(Section~\ref{sec:cone}). Computer-assisted (interval arithmetic) for every $d$.
+\item[(A)] (R)+(E)+(K) give Theorem~1 (Section~\ref{sec:cells}).
+\item[(B)] The equality case of the chain gives Theorem~2 (Section~\ref{sec:rigidity}).
+\end{enumerate}
+Nothing else is used. In particular the exact sum-of-squares certificates of earlier work for $3\le d\le20$
+\cite{repo} are not used; they give an independent proof of Theorems~1 and~2 for those $d$.
+
+Every item of this list, except (K) for $d\ge21$, has been formalised in Lean~4 (Section~\ref{sec:lean}). For
+$2\le d\le20$ the formal proof of Theorems~1 and~2 is complete, including (K), whose certificates are re-evaluated by
+the Lean kernel. For $d\ge21$ it is complete except for the single input (K), which is established by the
+interval-arithmetic certificates of
+Section~\ref{sec:cone}, outside Lean. Theorems~3 and~4 are formalised in full. Thus Theorems~1 and~2 are proved for
+every $d$, with a computer-assisted step (interval arithmetic) for $d\ge21$, and fully formalised for $d\le20$.
+
+Section~\ref{sec:clauses} treats the two remaining clauses of Part~B of Problem~27. It uses Theorems~1 and~2 only for
+the CGLMP reading of the noise clause and for $d=3$; the other results there are independent of the chain above.
+
+%==================================================================================================
+\section{The CGLMP expression, the clock model and the circle configuration}\label{sec:reduction}
+%==================================================================================================
+
+\subsection{CGLMP expression}
+With outcomes $A_1,A_2,B_1,B_2\in\Z_d$, the CGLMP expression\cite{CGLMP} is
+\begin{multline*}
+I_d=\sum_{k=0}^{\lfloor d/2\rfloor-1}\Bigl(1-\frac{2k}{d-1}\Bigr)\Bigl(\bigl[P(A_1=B_1+k)+P(B_1=A_2+k+1)\\
++P(A_2=B_2+k)+P(B_2=A_1+k)\bigr]-\bigl[P(A_1=B_1-k-1)+P(B_1=A_2-k)\\
++P(A_2=B_2-k-1)+P(B_2=A_1-k-1)\bigr]\Bigr),
+\end{multline*}
+where $P(A_x=B_y+k)$ is the probability that $A_x-B_y\equiv k\pmod d$. Let $m(t)\in\{0,\dots,d-1\}$ be the residue of
+$t$ modulo $d$, relabel $X_1=A_2$, $Y_1=B_2$, $X_2=A_1$, $Y_2=B_1$, and put
+$S=\mathbb{E}\,m(X_1-Y_1)+\mathbb{E}\,m(Y_1-X_2)+\mathbb{E}\,m(X_2-Y_2)+\mathbb{E}\,m(Y_2-X_1-1)$. Then
+$I_d=4-\frac{2}{d-1}S$ for every behaviour (ref.~\cite{classical}, Lemma~2.1), and the local bound $I_d\le2$ is
+$S\ge d-1$.
+
+\subsection{Maximally entangled strategies}
+For projective measurements $\{P^x_a\},\{Q^y_b\}$ on $\C^D\otimes\C^D$ and $\Phi_D=D^{-1/2}\sum_j|jj\rangle$, one has
+$P(a,b|x,y)=\tau(P^x_a(Q^y_b)^{\mathsf T})$ with $\tau=\frac1D\Tr$. With $w=e^{2\pi i/d}$, $U_x=\sum_aw^aP^x_a$,
+$U'_y=\sum_bw^bQ^y_b$ and $R_1=U_2$, $R_2=(U'_2)^{\mathsf T}$, $R_3=U_1$, $R_4=(U'_1)^{\mathsf T}$ (so $R_i^d=\one$),
+the expansion $m(t)=\frac{d-1}{2}+\sum_{n=1}^{d-1}c_nw^{nt}$, $c_n=-1/(1-w^{-n})$, gives
+\begin{equation}\label{eq:Strace}
+S=2(d-1)+\sum_{n=1}^{d-1}c_n\sum_{i=0}^3\tau(L^{(i)}_n)
+\end{equation}
+with the links $L^{(0)}_n=R_1^nR_2^{-n}$, $L^{(1)}_n=R_2^nR_3^{-n}$, $L^{(2)}_n=R_3^nR_4^{-n}$ and
+$L^{(3)}_n=w^{-n}R_4^nR_1^{-n}$.
+Conversely every quadruple of unitaries with $R_i^d=\one$ comes from a projective strategy on $\Phi_D$.
+
+\subsection{The clock model}
+Let $z=e^{2\pi i/N}$. For $V_0,\dots,V_{d-1}\in U(M)$ with $V_k^4=\one$ define the covariant strategy
+$W=\sum_k|k\rangle\langle k|\otimes z^kV_k$, $R^V_1=X\otimes\one_M$, $R^V_{i+1}=WR^V_iW^\dagger$, with $X$ the cyclic
+shift on $\C^d$.
+
+\begin{theorem}[reduction; ref.~\cite{classical}, Theorem~2.3]\label{thm:reduction}
+(1) $I_d(R^V)=4F(V)/(d(d-1))$ with $F(V)=\sum_{j<k}\Re[h_{k-j}\tr(V_jV_k^\dagger)]$, $h_m=\sec\psi_m-i\csc\psi_m$,
+$\psi_m=\pi m/(2d)$. (2) Every projective strategy $R$ on $\Phi_D$ is unitarily equivalent to a direct summand of some
+$R^V$ (one can take $M=4D$) with $I_d(R)=I_d(R^V)$. The family $V$ is unique up to simultaneous conjugation.
+(3) The DKZ strategy is, up to the local unitary $G\otimes\bar G$ with $G=W_0^{-2}$, $W_0=\mathrm{diag}(z^k)$, the
+covariant strategy with $M=1$, $V\equiv1$; hence $\IME(d)=4\FD/(d(d-1))$ with $\FD=\sum_{m=1}^{d-1}(d-m)\sec\psi_m$.
+\end{theorem}
+
+The family $V$ in (2) is obtained by direct-summing the images of $R$ under the cyclic group of order $4d$ generated by
+$\rho(R_1,R_2,R_3,R_4)=(R_2,R_3,R_4,wR_1)$ and applying the Stone--von Neumann theorem for $\Z_d$ to the shift of the
+summands; see ref.~\cite{classical}, Appendix~A.
+
+\subsection{The circle configuration}
+Let $E_k=V_k^\dagger$. Write $x\in\Z_N$ uniquely as $x=k-da$ ($0\le k\le d-1$, $a\in\Z_4$) and let $Q_x$ be the spectral
+projection of $E_k$ for the eigenvalue $i^a$. For each $k$, $\{Q_{k-da}\}_{a\in\Z_4}$ is a projective measurement and
+$E_k=\sum_ai^aQ_{k-da}$. We call such a family of $N$ projections a \emph{27B configuration}. Put $A_x=Q_x$,
+$B_x=Q_{x+d}$ (so $A_xB_x=0$ and $\sum_xA_x=\sum_xB_x=d\,\one$), $\kappa(u)=\cot(\pi u/N)$ for $u\ne0$, $\kappa(0)=0$, and
+\[
+\langle A,B\rangle_\tau=\sum_{x,y\in\Z_N}\kappa(x-y)\,\tau(A_xB_y),\qquad T(m)=\sum_y\tau(A_{y+m}B_y),\qquad N(m)=T(m)-T(-m).
+\]
+
+\begin{lemma}[linear form]\label{lem:linear}
+$F(V)=\frac12\langle A,B\rangle_\tau-\frac d2$, $N(d)=d$, $N(2d-m)=N(m)$, and
+\[
+F(V)-\FD=\tfrac12\langle v,\delta\rangle,\qquad v_m=2\csc\frac{\pi m}{2d},\qquad \delta_m=N(m)-m\qquad(1\le m\le d-1).
+\]
+Moreover, for $1\le s\le d-1$, $\delta_s+\delta_{d-s}\le0$.
+\end{lemma}
+
+\begin{proof}
+The first identity is the projection form of the cotangent representation of ref.~\cite{classical} (Lemma~3.1
+there, and its operator version in Section~6); its proof holds verbatim for non-commuting $V_k$. For the others, put
+$C(n)=\sum_u\tau(Q_uQ_{u+n})$. Then
+\[
+T(m)=C(m-d),\qquad N(m)=C(m-d)-C(m+d).
+\]
+Since
+$Q_uQ_{u+2d}=0$ (two outcomes of one measurement) and $\sum_u\tau(Q_u)=d$, $N(d)=C(0)-C(2d)=d$, and, by $C(-n)=C(n)$
+and $N$-periodicity, $N(2d-m)=C(d-m)-C(3d-m)=C(m-d)-C(m+d)=N(m)$. As $\kappa$ is odd and
+$\kappa(2d)=0$, $\langle A,B\rangle_\tau=\sum_{m=1}^{2d-1}\kappa(m)N(m)=d\kappa(d)+\sum_{m=1}^{d-1}(\kappa(m)+\kappa(2d-m))N(m)$,
+and $\kappa(m)+\kappa(2d-m)=\cot\frac{\pi m}{4d}+\tan\frac{\pi m}{4d}=2\csc\frac{\pi m}{2d}$. For $V\equiv1$ the
+configuration is $A=[0,d)$, $B=[-d,0)$, with $N(m)=m$. For the last claim, let $\pi_{jk}(t)=\sum_b\tau(Q_{j-db}Q_{k-d(b+t)})$
+for sites $j<k$, a probability vector on $\Z_4$. Splitting the sum defining $N(m)$ according to whether the site index
+wraps around gives $N(m)=\sum_{k-j=m}[\pi_{jk}(1)-\pi_{jk}(3)]+\sum_{k-j=d-m}[\pi_{jk}(0)-\pi_{jk}(2)]$, so
+$N(s)+N(d-s)-d$ is a sum over the $d$ pairs at distance $s$ or $d-s$ of $\pi(0)+\pi(1)-\pi(2)-\pi(3)-1\le0$.
+\end{proof}
+
+Hence Theorem~1 is equivalent to $\langle v,\delta\rangle\le0$ for every 27B configuration on every $\C^M$.
+
+%==================================================================================================
+\section{Theorem 4: the two-variable BMV formula with an explicit density}\label{sec:bmv}
+%==================================================================================================
+
+Throughout this section and the next, $B$ is an orthogonal projection of rank $r$ on $\C^M$, $P=\one-B$, $g$ is
+Hermitian, $g_{\rm d}=BgB+PgP$, and $\lambda_{\min}\le\lambda_{\max}$ are the extreme eigenvalues of $g$. $\Tr_P$ and
+$\Tr_B$ denote traces over the ranges of $P$ and $B$ of the compressions. For $(a,t)\in\C^2$,
+\[
+\cD(a,t)=\Tr e^{ag-tP}-e^{-t}\Tr_Pe^{aPgP}-\Tr_Be^{aBgB}.
+\]
+For $s\in\R$ and $0<\tau<1$ let $p_{s,\tau}(x)=\det(g-s-x(P-\tau))$ and $q_{s,\tau}(x)=\det(g_{\rm d}-s-x(P-\tau))$, let
+$x_1(s,\tau),\dots,x_M(s,\tau)$ be the roots of $p_{s,\tau}$ (the eigenvalues of $(P-\tau)^{-1}(g-s)$), and
+\[
+F(s,\tau)=\frac{1}{2\pi}\sum_{i=1}^M|\Im x_i(s,\tau)|\quad(0<\tau<1),\qquad F(s,\tau)=0\ \text{otherwise}.
+\]
+
+\begin{theorem}[Theorem~4 of the article, except the defect formula]\label{thm:bmv}
+$F$ is non-negative and continuous on $\R\times(0,1)$, vanishes unless $\lambda_{\min}<s<\lambda_{\max}$, satisfies
+$F(s,\tau)\le\frac{M}{2\pi}\|g-s\|/\sqrt{\tau(1-\tau)}$ (so $F\in L^1(\R^2)$ with compact support), and for all
+$(a,t)\in\C^2$
+\begin{equation}\label{eq:bmv}
+\cD(a,t)=a^2\int_0^1\!\!\int_\R e^{as-t\tau}F(s,\tau)\,ds\,d\tau .
+\end{equation}
+\end{theorem}
+
+\begin{lemma}[pencil facts]\label{lem:pencil}
+Let $0<\tau<1$ and $s\in\R$.
+(a) Every root of $p_{s,\tau}$ satisfies $|x|\le\|g-s\|/\min(\tau,1-\tau)$, and so does every root of $q_{s,\tau}$.
+(b) Every non-real root of $p_{s,\tau}$ satisfies $|x|\le\|g-s\|/\sqrt{\tau(1-\tau)}$.
+(c) If $s\le\lambda_{\min}$ or $s\ge\lambda_{\max}$, all roots of $p_{s,\tau}$ are real.
+(d) All roots of $q_{s,\tau}$ are real.
+(e) $p_{s,\tau}$ and $q_{s,\tau}$ have degree $M$, the same leading coefficient $\det(\tau-P)\ne0$ and the same sum of
+roots.
+(f) $F$ is continuous on $\R\times(0,1)$.
+\end{lemma}
+
+\begin{proof}
+A root $x$ comes with a unit vector $\psi$ such that $(g-s)\psi=x(P-\tau)\psi$. (a) $P-\tau$ has eigenvalues $1-\tau$
+and $-\tau$, so $|x|\min(\tau,1-\tau)\le|x|\,\|(P-\tau)\psi\|=\|(g-s)\psi\|\le\|g-s\|$; likewise for $q$ with
+$\|g_{\rm d}-s\|\le\|g-s\|$. (b) $\langle\psi,(g-s)\psi\rangle=x\langle\psi,(P-\tau)\psi\rangle$ with both inner products
+real; if $\Im x\ne0$ then $\langle\psi,(P-\tau)\psi\rangle=0$, i.e. $\|P\psi\|^2=\tau$, $\|B\psi\|^2=1-\tau$, hence
+$\|(P-\tau)\psi\|^2=(1-\tau)^2\tau+\tau^2(1-\tau)=\tau(1-\tau)$ and the argument of (a) applies. (c) If $g-s$ is
+semidefinite and $\Im x\ne0$, then by (b) $\langle\psi,(g-s)\psi\rangle=0$, so $(g-s)\psi=0$, so $x(P-\tau)\psi=0$ with
+$x\ne0$ and $P-\tau$ invertible, a contradiction. (d) $g_{\rm d}-s-x(P-\tau)$ is block diagonal; its determinant
+vanishes iff $x=(s-\mu)/\tau$ with $\mu\in\spec(BgB|_{\mathrm{ran}B})$ or $x=(\mu-s)/(1-\tau)$ with
+$\mu\in\spec(PgP|_{\mathrm{ran}P})$. (e) $p_{s,\tau}(x)=\det(\tau-P)\det(x-(P-\tau)^{-1}(g-s))$, so the roots sum to
+$\Tr[(P-\tau)^{-1}(g-s)]$, and likewise for $q$; since $(P-\tau)^{-1}=P/(1-\tau)-B/\tau$ commutes with $B$,
+$\Tr[(P-\tau)^{-1}(g-g_{\rm d})]=\Tr[(P-\tau)^{-1}(BgP+PgB)]=0$. (f) The coefficients of $p_{s,\tau}$ are polynomials in
+$(s,\tau)$ and the leading coefficient does not vanish on $(0,1)$, so the roots depend continuously on $(s,\tau)$ as an
+unordered $M$-tuple, and $\sum_i|\Im x_i|$ is a continuous symmetric function of it.
+\end{proof}
+
+\begin{lemma}[Jensen-type identity]\label{lem:jensen}
+Let $p(x)=c\prod_{i=1}^M(x-x_i)$ and $q(x)=c\prod_{i=1}^M(x-y_i)$ with $c\ne0$, all $y_i$ real, and
+$\sum_ix_i=\sum_iy_i$. Then $\log|p/q|\in L^1(\R)$ and $\int_\R\log|p(\xi)/q(\xi)|\,d\xi=\pi\sum_i|\Im x_i|$.
+\end{lemma}
+
+\begin{proof}
+Write $x_i=\alpha_i+i\beta_i$. Then $\log|p/q|=A+C$ with $A(\xi)=\sum_i\frac12\log(1+\beta_i^2/(\xi-\alpha_i)^2)\ge0$
+and $C(\xi)=\sum_i[\log|\xi-\alpha_i|-\log|\xi-y_i|]$. Each summand of $A$ is integrable with
+$\int_\R\frac12\log(1+b^2/u^2)\,du=\pi|b|$ (substitute $u=|b|v$ and use the antiderivative
+$v\log(1+v^{-2})+2\arctan v$). $C$ has only logarithmic singularities, and $C(\xi)=O(\xi^{-2})$ as $|\xi|\to\infty$
+because $\sum_i\alpha_i=\sum_iy_i$; so $C\in L^1$. For $L>\max_i(|\alpha_i|,|y_i|)$,
+$\int_{-L}^L\log|\xi-a|\,d\xi=m_L(a):=(L-a)\log(L-a)+(L+a)\log(L+a)-2L$, which is even and smooth in $a$ with
+$m_L''(a)=2L/(L^2-a^2)$, so $m_L(a)=m_L(0)+a^2/L+O(a^4/L^3)$. Hence
+$\int_{-L}^LC=\sum_i(\alpha_i^2-y_i^2)/L+O(L^{-3})\to0$, and $\int_\R C=0$.
+\end{proof}
+
+\begin{lemma}[real slices]\label{lem:slices}
+For $\xi\in\R$ let $\lambda_j(\xi)$ and $\lambda^0_j(\xi)$ ($j=1,\dots,M$) be the eigenvalues of $g-\xi P$ and of
+$g_{\rm d}-\xi P$, and put $U_\xi(w)=\sum_j[(w-\lambda_j(\xi))_+-(w-\lambda^0_j(\xi))_+]$ and
+$N_\xi(w)=\sum_j[\one_{w>\lambda_j(\xi)}-\one_{w>\lambda^0_j(\xi)}]$. Then (a) $U_\xi$ is continuous, piecewise linear and
+compactly supported, with $U_\xi'=N_\xi$ almost everywhere; (b) $\int_\R e^{aw}U_\xi(w)\,dw=\cD(a,a\xi)/a^2$ for every
+complex $a\ne0$; (c) the Hilbert transform $(Hf)(w)=\frac1\pi\,\mathrm{p.v.}\!\int f(u)/(w-u)\,du$ of $N_\xi$ is
+$(HN_\xi)(w)=\frac1\pi\log|\det(g-\xi P-w)/\det(g_{\rm d}-\xi P-w)|$ for $w$ outside both spectra.
+\end{lemma}
+
+\begin{proof}
+(a) Below all eigenvalues $U_\xi=0$; above all of them $U_\xi=\Tr(g_{\rm d}-\xi P)-\Tr(g-\xi P)=0$. (b) $U_\xi''=
+\sum_j(\delta_{\lambda_j}-\delta_{\lambda^0_j})$ as distributions and $U_\xi$ has compact support, so two integrations by
+parts give $a^{-2}\sum_j(e^{a\lambda_j}-e^{a\lambda^0_j})=a^{-2}[\Tr e^{a(g-\xi P)}-\Tr_Be^{aBgB}-e^{-a\xi}\Tr_Pe^{aPgP}]$.
+(c) Pair $\lambda_j$ with $\lambda^0_j$; each difference of indicators is $\pm$ the indicator of the interval between
+them, and $\frac1\pi\int_\alpha^\beta du/(w-u)=\frac1\pi\log|(w-\alpha)/(w-\beta)|$.
+\end{proof}
+
+\begin{lemma}[limits]\label{lem:limits}
+For Hermitian $A$,
+\[
+\lim_{t\to+\infty}\Tr e^{A-tP}=\Tr_Be^{BAB},\qquad\lim_{t\to-\infty}e^t\,\Tr e^{A-tP}=\Tr_Pe^{PAP}.
+\]
+\end{lemma}
+
+\begin{proof}
+Shifting $A$ by a constant multiplies both sides by the same factor, so let $A\ge\one$. Let $\mu_1\ge\dots\ge\mu_M$ be
+the eigenvalues of $H_t=A-tP$ and $\beta_1\ge\dots\ge\beta_r$ those of $BAB|_{\mathrm{ran}B}$. Min-max over subspaces
+of $\mathrm{ran}\,B$ gives $\mu_k\ge\beta_k$ ($k\le r$). For $\psi=b+p$ ($b\in\mathrm{ran}B$, $p\in\mathrm{ran}P$) and
+$t>\|A\|$, $\langle\psi,H_t\psi\rangle\le\langle b,Ab\rangle+2\|A\|\|b\|\|p\|-(t-\|A\|)\|p\|^2\le\langle b,(A+\epsilon_t)b\rangle$
+with $\epsilon_t=\|A\|^2/(t-\|A\|)$, so $\mu_k\le\beta_k+\epsilon_t$ for $k\le r$, and $\mu_{r+1}\le\|A\|-t$ (min-max with
+the codimension-$r$ subspace $\mathrm{ran}P$). Hence $\Tr e^{H_t}\to\sum_ke^{\beta_k}$. The second limit is the first
+with $B$ and $P$ exchanged, since $e^t\Tr e^{A-tP}=\Tr e^{A+tB}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:bmv}]
+The properties of $F$ are Lemma~\ref{lem:pencil}. \emph{Step 0.} $\cD$ is entire on $\C^2$. Since $e^{-tP}=B+e^{-t}P$,
+$\cD(0,t)=0$ and $\partial_a\cD(0,t)=\Tr(ge^{-tP})-e^{-t}\Tr(PgP)-\Tr(BgB)=0$. Hence
+$G(a,t):=\cD(a,t)/a^2=\int_0^1(1-u)\partial_a^2\cD(ua,t)\,du$ is entire.
+
+\emph{Step 1 (a distribution).} Put $\hat G(\zeta)=G(-i\zeta_1,i\zeta_2)$, so that $e^{-i(\zeta_1s+\zeta_2\tau)}=
+e^{as-t\tau}$ for $a=-i\zeta_1$, $t=i\zeta_2$. Let $K=[\lambda_{\min},\lambda_{\max}]\times[0,1]$ and
+$H_K(\eta)=\sup_{(s,\tau)\in K}(s\eta_1+\tau\eta_2)$. For complex $a,t$ the Hermitian part of $ag-tP$ is
+$\eta_1g+\eta_2P$ with $\eta=\Im\zeta$, so $\|e^{ag-tP}\|\le e^{\lambda_{\max}(\eta_1g+\eta_2P)}\le e^{H_K(\eta)}$
+(the pair $(\langle\psi,g\psi\rangle,\langle\psi,P\psi\rangle)$ lies in $K$ for unit $\psi$). The two subtracted terms
+are bounded in the same way, so $|\cD|\le2Me^{H_K(\eta)}$. For $|\zeta_1|\ge1$ this bounds $\hat G$; for $|\zeta_1|<1$
+the maximum principle on $|\zeta_1|\le2$ gives $|\hat G(\zeta)|\le\frac M2e^{H_K(\eta)+3c_K}$ with
+$c_K=\max(|\lambda_{\min}|,|\lambda_{\max}|)$. By the Paley--Wiener--Schwartz theorem (ref.~\cite{Hormander},
+Theorem~7.3.1) there is a distribution $T$ supported in $K$ with
+\begin{equation}\label{eq:T}
+T(e^{as-t\tau})=G(a,t)\qquad\text{for all }(a,t)\in\C^2,
+\end{equation}
+and $\hat G$ is bounded on $\R^2$.
+
+\emph{Step 2 ($T=F$ on the open strip).} Let $\varphi\in C_c^\infty(\R^2)$ with Fourier transform $\hat\varphi$. Since
+$T$ has compact support and bounded transform, $T(\varphi)=(2\pi)^{-2}\int_{\R^2}\hat G(k)\hat\varphi(-k)\,dk$. Change
+variables $k=(\sigma,-\sigma\xi)$ (Jacobian $|\sigma|$) and use Fubini:
+$T(\varphi)=(2\pi)^{-2}\int d\xi\int d\sigma\,|\sigma|\hat G(\sigma,-\sigma\xi)\hat\varphi(-\sigma,\sigma\xi)$.
+By Lemma~\ref{lem:slices}(b), $\hat G(\sigma,-\sigma\xi)=\hat U_\xi(\sigma)$, the Fourier transform of $U_\xi$; and
+$\hat\varphi(-\sigma,\sigma\xi)=\hat\psi_\xi(-\sigma)$ with $\psi_\xi(w)=\int\varphi(w+\xi\tau,\tau)\,d\tau$. By
+Lemma~\ref{lem:slices}(a), $|\sigma|\hat U_\xi=(-i\,\mathrm{sgn}\,\sigma)\hat N_\xi=\widehat{HN_\xi}$, so by Parseval
+the inner integral is $2\pi\int\!\!\int(HN_\xi)(s-\xi\tau)\varphi(s,\tau)\,ds\,d\tau$, and by Lemma~\ref{lem:slices}(c)
+with $g-\xi P-(s-\xi\tau)=g-s-\xi(P-\tau)$,
+\[
+T(\varphi)=\frac{1}{2\pi^2}\int_\R d\xi\int\!\!\int\varphi(s,\tau)\log\Bigl|\frac{p_{s,\tau}(\xi)}{q_{s,\tau}(\xi)}\Bigr|
+\,ds\,d\tau .
+\]
+If $\mathrm{supp}\,\varphi\subset[-S,S]\times[\delta,1-\delta]$, all roots of $p_{s,\tau},q_{s,\tau}$ lie in
+$|x|\le R=(\|g\|+S)/\delta$ there (Lemma~\ref{lem:pencil}(a)); the integrand is uniformly integrable for $|\xi|\le2R$
+(logarithmic singularities), and for $|\xi|>2R$ it is bounded by $2MR^2/\xi^2$, using $|\log|1-z|+\Re z|\le|z|^2$ for
+$|z|\le\frac12$ and the equal root sums. So Fubini applies, and Lemma~\ref{lem:jensen} (with
+Lemma~\ref{lem:pencil}(d),(e)) gives $T(\varphi)=\int\!\!\int\varphi F$.
+
+\emph{Step 3 (no mass on the edges).} $T-F$ has compact support contained in the two segments
+$[\lambda_{\min},\lambda_{\max}]\times\{0\}$ and $\times\{1\}$. By the structure theorem for distributions supported in
+a hyperplane (ref.~\cite{Hormander}, Theorem~2.3.5), $T-F=\sum_{k\le n}[\alpha_k\otimes\delta^{(k)}(\tau)+\beta_k\otimes
+\delta^{(k)}(\tau-1)]$ with compactly supported distributions $\alpha_k,\beta_k$, and therefore
+\[
+G(a,t)-\int\!\!\int e^{as-t\tau}F\,ds\,d\tau=\sum_kt^k[A_k(a)+e^{-t}B_k(a)],\qquad A_k(a)=\alpha_k(e^{as}),\ B_k(a)=\beta_k(e^{as}).
+\]
+Fix real $a\ne0$. As $t\to+\infty$, $G(a,t)\to0$ by Lemma~\ref{lem:limits} and the integral tends to $0$ by dominated
+convergence, so the polynomial $\sum_kA_k(a)t^k$ tends to $0$ and all $A_k(a)=0$. As $t\to-\infty$, multiplying by
+$e^t$ and using Lemma~\ref{lem:limits} again gives $B_k(a)=0$. The $A_k,B_k$ are entire and vanish on
+$\R\setminus\{0\}$, hence identically, so $\alpha_k=\beta_k=0$ and $T=F$. Equation~\eqref{eq:T} is
+equation~\eqref{eq:bmv}.
+\end{proof}
+
+\begin{remark}[sum rule]\label{rem:sumrule}
+The second-order Duhamel formula gives $G(0,t)=\|BgP\|_F^2(1-e^{-t})/t=\|BgP\|_F^2\int_0^1e^{-t\tau}d\tau$. By
+Theorem~\ref{thm:bmv}, $\int_\R F(s,\tau)\,ds=\|BgP\|_F^2$ for every $\tau\in(0,1)$. This is the horizontal Radon
+projection, which the proof does not use; it is an independent check (Fig.~4d of the article).
+\end{remark}
+
+\begin{remark}[$M=2$]\label{rem:m2}
+For $B=\mathrm{diag}(1,0)$ and $g=\bigl(\begin{smallmatrix}\alpha&c\\ \bar c&\beta\end{smallmatrix}\bigr)$ the
+discriminant of $p_{s,\tau}$ is $(m(\tau)-s)^2-4\tau(1-\tau)|c|^2$ with $m(\tau)=\tau\beta+(1-\tau)\alpha$, so
+$F(s,\tau)=\sqrt{4\tau(1-\tau)|c|^2-(s-m(\tau))^2}_+/(2\pi\tau(1-\tau))$: every slice is a semicircle law of mass
+$|c|^2$ centred on the segment from $\alpha$ ($\tau=0$) to $\beta$ ($\tau=1$).
+\end{remark}
+
+\begin{remark}[structure]
+$(P-\tau)^{-1}(g-s)$ is self-adjoint for the indefinite form $[u,u']=\langle u,(P-\tau)u'\rangle$, which has $M-r$
+positive and $r$ negative squares. Hence at most $\min(r,M-r)$ conjugate pairs of non-real roots occur, and for
+$\mathrm{rank}\,B=1$, $F=\frac1\pi\Im x_+$ for the single root in the upper half-plane (if any).
+\end{remark}
+
+\begin{corollary}[Stahl's theorem for projections with an explicit density]
+For Hermitian $A$ and an orthogonal projection $P$, $t\mapsto\Tr e^{A-tP}$ is the Laplace transform of the positive
+measure $\Tr_B(e^{BAB})\delta_0+\Tr_P(e^{PAP})\delta_1+\bigl(\int_\R e^sF_A(s,\tau)\,ds\bigr)d\tau$ on $[0,1]$, where
+$F_A$ is the density of Theorem~\ref{thm:bmv} for $g=A$.
+\end{corollary}
+
+\begin{proof}
+Take $a=1$, $g=A$ in equation~\eqref{eq:bmv}.
+\end{proof}
+
+\begin{remark}[prior work]
+Stahl proved that $t\mapsto\Tr e^{A-tB}$ is the Laplace transform of a positive measure for all Hermitian $A$ and
+$B$\cite{Stahl,Eremenko}, settling the conjecture of Bessis, Moussa and Villani\cite{BMV,LS}. Hein\"avaara\cite{Hein}
+constructed tracial joint spectral measures by a two-dimensional Fourier inversion whose density is given by the
+imaginary parts of eigenvalues of an auxiliary pencil, and derived Stahl's theorem from it. Theorem~\ref{thm:bmv} is a
+variant of this mechanism, adapted to a projection, to the pinched subtraction and to the division by $a^2$; the same
+proof gives the analogous formula for general Hermitian $B$, with atoms at all eigenvalues of $B$. We found the proof
+independently and learned of ref.~\cite{Hein} afterwards. What is specific to the present setting is the positivity of
+the pinched, $a^2$-divided object and its consequence, the strip inequality.
+\end{remark}
+
+\subsection*{An elementary route}
+Steps~1--3 of the proof of Theorem~\ref{thm:bmv} use the Paley--Wiener--Schwartz theorem, Fourier inversion and the
+structure of distributions supported on a line. They can be replaced by an argument without distributions, based on the
+following identity.
+
+\begin{proposition}[Radon identity]\label{prop:RI}
+Let $H$ be Hermitian on $\C^M$ and, for $0<\tau<1$, let $y_1(\tau),\dots,y_M(\tau)$ be the eigenvalues of
+$(P-\tau)^{-1}H$. Then $\tau\mapsto\sum_i|\Im y_i(\tau)|$ is continuous on $(0,1)$, bounded by
+$M\|H\|/\sqrt{\tau(1-\tau)}$, and
+\[
+\frac1{2\pi}\int_0^1\sum_{i=1}^M\bigl|\Im y_i(\tau)\bigr|\,d\tau=\Tr H_+-\Tr\bigl(BHB+PHP\bigr)_+ .
+\]
+\end{proposition}
+
+\emph{Outline of the proof.} Replace $H$ by $H+c$ with $\Im c>0$. An eigenvector $\psi$ of a root $y$ gives
+$\Im c=\langle\psi,(P-\tau)\psi\rangle\Im y$, so no root is real, and a homotopy $H\to sH$ shows that exactly
+$\mathrm{rank}\,P$ roots lie in the upper half-plane. Since $\det(H+c-y(P-\tau))$ depends on $(\tau,c)$ only through
+$(y,c+y\tau)$, a simple root satisfies the complex inviscid Burgers equation $\partial_\tau y=y\,\partial_cy$; summed
+over the roots in the upper half-plane with a Cauchy integral, which is valid also at repeated roots, this gives the
+conservation law $\partial_\tau\sum\mathrm{Log}\,y=\partial_c\sum y$. Integrating over $\tau\in(0,1)$, the end
+$\tau\to1$ contributes nothing after the pinched terms are subtracted, and the end $\tau\to0$ gives, through a Schur
+complement, $\log\det(H+c)-\log\det(H_{\rm d}+c)$ with $H_{\rm d}=BHB+PHP$. Hence the $\tau$-integral $\Psi(c)$ of the
+sum of the roots in the upper half-plane, minus its pinched counterpart, equals
+$\mathcal E(c)=\Tr[(H_{\rm d}+c)\mathrm{Log}(H_{\rm d}+c)]-\Tr[(H+c)\mathrm{Log}(H+c)]$ up to a term $-2\pi ikc+\kappa_0$
+with $k\in\Z$ and $\kappa_0\in\C$. As $c$ tends to a real $c_0$, dominated convergence (the integrand is bounded by
+$M(\|H\|+|c|)(2+(\tau(1-\tau))^{-1/2})$: the argument of Lemma~\ref{lem:pencil}(b) gives
+$|y|\le(\|H\|+|c|)/\sqrt{\tau(1-\tau)}$ for the roots in the upper half-plane when $\tau\le\frac12$ and for those in
+the lower half-plane when $\tau\ge\frac12$, and the sum of all roots equals that of the pinched pencil)
+turns the imaginary parts into $\pi$ times the two sides of the identity for $H+c_0$, up to $-2\pi kc_0+\Im\kappa_0$.
+For $c_0>\|H\|$ both sides vanish, because all roots are then real; hence $k=0$, $\Im\kappa_0=0$, and the identity
+holds. The complete proof is in the repository\cite{repoOQP}.
+
+\emph{Consequences.} On the line $s=w+\xi\tau$ the roots of $p_{s,\tau}$ are $\xi+y_i$, where the $y_i$ are those of
+Proposition~\ref{prop:RI} for $H=g-\xi P-w$, and $BHB+PHP=g_{\rm d}-\xi P-w$. So the identity says that the integral of
+$F$ along this line equals $U_\xi(w)$ (Lemma~\ref{lem:slices}): the Radon projections of $F$ are the real slices. By
+Lemma~\ref{lem:slices}(b) and Tonelli's theorem, equation~\eqref{eq:bmv} holds for all real $a\ne0$ and real $t$; both
+sides are entire on $\C^2$, so it holds everywhere by the identity theorem, applied in $a$ and then in $t$. In the proof
+of Theorem~\ref{thm:strip}, step~(b) then needs only a one-variable uniqueness lemma: a continuous $Z$ with
+$|Z(w)|\le Ce^{-c|w|}$ whose two-sided Laplace transform vanishes on an interval is zero (analytic continuation to the
+imaginary axis and a Gaussian approximate identity). This route, which has been re-checked in a separate verification
+pass (Section~\ref{sec:checks}), is the one followed by the Lean formalisation (Section~\ref{sec:lean}); there the
+one-variable uniqueness step uses the Fourier inversion theorem of Mathlib. The same argument for an arbitrary Hermitian
+matrix in place of the projection $P$ gives a proof of Stahl's theorem\cite{Stahl} without distribution theory or
+Fourier analysis; we make no priority claim about this by-product.
+
+%==================================================================================================
+\section{Theorem 3: the strip inequality}\label{sec:strip}
+%==================================================================================================
+
+Let $S=\{0\le\Re\nu\le1\}$. For $\lambda\in\R$ and $x+iy$ with $0<x<1$ let
+$h_\lambda(x+iy)=-\frac1{\pi^2}\Im\Li(e^{\pi(y-\lambda)}e^{-i\pi x})$; the argument $-\pi x\in(-\pi,0)$ never meets the
+cut $[1,\infty)$ of $\Li$, so $h_\lambda$ is harmonic. For $0<X<1$ let $K_X(u)=\sin(\pi X)/(2(\cosh\pi u-\cos\pi X))$.
+
+\begin{lemma}[strip Poisson kernel]\label{lem:kernel}
+$K_X>0$, $K_X(u)\le C_Xe^{-\pi|u|}$, $K_X(u)=\sum_{n\ge1}\sin(n\pi X)e^{-n\pi|u|}$ for $u\ne0$, and for $|\Re a|<\pi$,
+$\int_\R e^{-au}K_X(u)\,du=\sin(a(1-X))/\sin a$.
+\end{lemma}
+
+\begin{proof}
+The series follows from $\sum_nq^n\sin n\theta=q\sin\theta/(1-2q\cos\theta+q^2)$ with $q=e^{-\pi|u|}$,
+$\theta=\pi X$. For the transform take $a=i\kappa$, $\kappa\ne0$ real, and integrate
+$f(u)=e^{-i\kappa u}/(\cosh\pi u-\cos\pi X)$ over the boundary of $[-L,L]\times[0,2]$. Since $f(u+2i)=e^{2\kappa}f(u)$,
+the contour integral is $(1-e^{2\kappa})\int_\R f$; the poles inside are $u=iX$ and $u=i(2-X)$ with residues
+$e^{\kappa X}/(i\pi\sin\pi X)$ and $-e^{\kappa(2-X)}/(i\pi\sin\pi X)$. Hence
+$\int e^{-i\kappa u}K_X(u)\,du=\sinh(\kappa(1-X))/\sinh\kappa$. Both sides are analytic on $|\Re a|<\pi$.
+\end{proof}
+
+\begin{lemma}\label{lem:poisson}
+For $0<X<1$, $h_\lambda(X+iY)=\int_\R(w-\lambda)_+K_X(Y-w)\,dw$; $h_\lambda$ extends continuously to $S$ with
+$h_\lambda(iY)=(Y-\lambda)_+$ and $h_\lambda(1+iY)=0$.
+\end{lemma}
+
+\begin{proof}
+The right side $\Psi$ is harmonic ($K_X(Y-w)=\frac12\Re\cot(\pi(z-iw)/2)$ with $z=X+iY$). For $Y<\lambda$ expand the
+kernel by Lemma~\ref{lem:kernel} and integrate termwise:
+\[
+\Psi=\sum_n\frac{\sin(n\pi X)e^{n\pi(Y-\lambda)}}{(n\pi)^2}=-\frac1{\pi^2}\Im\sum_n\frac{(e^{\pi(Y-\lambda)}e^{-i\pi X})^n}{n^2}=h_\lambda .
+\]
+Two harmonic functions on the connected strip that agree on an open set agree everywhere. As $X\to0$, $K_X(Y-\cdot)$
+is an approximate identity at $Y$; as $X\to1$, $K_X\to0$ with exponential tails.
+\end{proof}
+
+For $\nu=x+iy\in S$ let $\omega_\nu$ be the measure $K_x(y-w)\,dw$ ($0<x<1$), $\delta_y$ ($x=0$) or $0$ ($x=1$). Then
+$h_\lambda(\nu)=\int(w-\lambda)_+\omega_\nu(dw)$ and $\int e^{aw}\omega_\nu(dw)=e^{ay}\sin(a(1-x))/\sin a$
+($|\Re a|<\pi$).
+
+\begin{theorem}[Theorem~3 of the article, with the defect formula of Theorem~4]\label{thm:strip}
+For every $\lambda\in\R$,
+\[
+\sum_{\nu\in\spec(B+ig)}h_\lambda(\nu)-\Tr[(P(g-\lambda)P)_+]=V(\lambda):=\int_0^1\!\!\int_\R K_{1-\tau}(s-\lambda)F(s,\tau)\,ds\,d\tau\ \ge0,
+\]
+with eigenvalues counted with algebraic multiplicity. Equality holds for one (equivalently, every) $\lambda$ if and only
+if $[B,g]=0$.
+\end{theorem}
+
+\begin{proof}
+The eigenvalues $\nu_k=x_k+iy_k$ of $X=B+ig$ satisfy $x_k\in[0,1]$, since $\Re\langle\psi,X\psi\rangle=\langle\psi,B\psi\rangle$.
+Let $\rho=\sum_k\omega_{\nu_k}$ and $\sigma=\sum_{\mu\in\spec(PgP|_{\mathrm{ran}P})}\delta_\mu$; the left side is
+$\int(w-\lambda)_+d(\rho-\sigma)(w)$.
+(a) For real $0<|a|<\pi$, $\hat\rho(a):=\int e^{aw}\rho(dw)=\sum_ke^{ay_k}\sin(a(1-x_k))/\sin a=
+[\Tr e^{ag+iaP}-\Tr e^{ag-iaP}]/(2i\sin a)$, because $e^{ag+iaP}=e^{-ia(X-1)}$ and $e^{ag-iaP}=e^{ia(X^\dagger-1)}$. Also
+$\hat\sigma(a)=\Tr_Pe^{aPgP}$. The $B$-terms cancel in $\cD(a,-ia)-\cD(a,ia)=2i\sin a\,[\hat\rho(a)-\hat\sigma(a)]$, and
+by Theorem~\ref{thm:bmv} at $t=\mp ia$ this equals $2ia^2\int\!\!\int e^{as}\sin(a\tau)F\,ds\,d\tau$. With
+Lemma~\ref{lem:kernel} ($X=1-\tau$) and Tonelli,
+\[
+\hat\rho(a)-\hat\sigma(a)=a^2\int\!\!\int e^{as}\frac{\sin a\tau}{\sin a}F\,ds\,d\tau=a^2\int_\R e^{aw}V(w)\,dw .
+\]
+$V$ is finite, continuous and $O(e^{-\pi|w|})$ ($\int K_{1-\tau}=\tau$ and $F\le C/\sqrt{\tau(1-\tau)}$).
+(b) Hence $\rho$ and $\sigma$ have equal mass and equal first moment. Put $W(w)=\int(w-u)_+d(\rho-\sigma)(u)$; $W$ is
+continuous, $O(e^{-\pi|w|})$ at both ends (by the moment identities), and $W''=\rho-\sigma$. Two integrations by parts
+give $\int e^{aw}W=a^{-2}(\hat\rho-\hat\sigma)=\int e^{aw}V$ for real $0<|a|<\pi$; both sides are analytic on
+$|\Re a|<\pi$, so $W$ and $V$ have the same Fourier transform and $W=V$.
+(c) Since $(u-\lambda)_+=(\lambda-u)_++(u-\lambda)$ and $\rho-\sigma$ has zero mass and first moment, the left side
+equals $W(\lambda)=V(\lambda)\ge0$.
+(d) $K_{1-\tau}>0$ for $0<\tau<1$ and $F\ge0$ is continuous, so $V(\lambda)=0$ forces $F\equiv0$ on
+$\R\times(0,1)$, then $\cD\equiv0$ by Theorem~\ref{thm:bmv}, then $\|BgP\|_F^2=0$ by Remark~\ref{rem:sumrule}, i.e.
+$[B,g]=0$. Conversely, if $[B,g]=0$ then $p=q$, $F=0$ and $V=0$.
+\end{proof}
+
+\begin{remark}[convex order]
+By (b)--(c), Theorem~\ref{thm:strip} for all $\lambda$ says that $\sigma$ (the spectrum of the compression $PgP$) is
+dominated by $\rho$ (the eigenvalues of $B+ig$ swept to the left edge by harmonic measure) in convex order:
+$\sum_{\mu}f(\mu)\le\int f\,d\rho$ for every convex $f$. Applied to $(P,g)$ it gives the mirror statement for $BgB$ and
+the right edge.
+\end{remark}
+
+\begin{remark}[a second proof in special cases]
+For $\mathrm{rank}\,B\le1$, for $\mathrm{corank}\,B\le3$ and for all $M\le5$, Theorem~\ref{thm:strip} also follows
+from a one-dimensional reduction (the compression eigenvalues of a rank-one perturbation are quantiles of a Cauchy-type
+distribution) combined with an argument-principle rigidity of the critical points of the defect. Earlier, the cases
+$M\le4$ and $\mathrm{corank}\,B\le2$ had been proved by a geometric argument based on Pedoe's inequality for polygons and,
+independently for $M\le4$, by a Bellman-function argument. These proofs are documented in the repository\cite{repoOQP}.
+\end{remark}
+
+%==================================================================================================
+\section{The continuum theorem for step fields}\label{sec:cont}
+%==================================================================================================
+
+Let $\T=\R/2\pi\Z$, $dm=d\theta/2\pi$, and let $\Phi_c(\alpha,\beta)=\frac1{2\pi^2}[\Cl(2\pi\alpha)+\Cl(2\pi\beta)+\Cl(2\pi(1-\alpha-\beta))]$,
+where $\Cl(\theta)=\sum_{n\ge1}\sin(n\theta)/n^2$ is the Clausen function. For $\alpha=\beta=\frac14$,
+$\Phi_c=G/\pi^2$ with $G$ Catalan's constant. We need the theorem only for step fields, for which every step can be
+made explicit.
+
+\begin{theorem}[continuum theorem for step fields]\label{thm:cont}
+Let $t_0,\dots,t_{n-1}$ be distinct points of $\T$ in cyclic order, $J_j=(t_j,t_{j+1})$, and let $B_j$ be orthogonal
+projections and $0\le A_j\le\one-B_j$ on $\C^M$. Let $B(\theta)=B_j$, $A(\theta)=A_j$ on $J_j$, and assume
+$\int B\,dm=\beta\one$. Let $g$ be the conjugate function of $B$,
+\[
+g(\theta)=\frac1\pi\sum_j(B_j-B_{j-1})\log\Bigl|\sin\frac{\theta-t_j}{2}\Bigr|\qquad(\theta\notin\{t_j\}).
+\]
+Then, with $\alpha=\int\tau(A)\,dm$, $\int\tau(Ag)\,dm\le\Phi_c(\alpha,\beta)$. More precisely, for every $\lambda$,
+\begin{equation}\label{eq:chain}
+\int\tau(Ag)\,dm\le\lambda\alpha+\int\tau\bigl((P(g-\lambda)P)_+\bigr)dm\le\lambda\alpha+h_\lambda(\beta),\qquad P=\one-B,
+\end{equation}
+and if $\alpha=\beta=\frac14$ and equality holds throughout at $\lambda^*=\log2/(2\pi)$, then $[B(\theta),g(\theta)]=0$ for
+almost every $\theta$.
+\end{theorem}
+
+\begin{proof}
+\emph{Herglotz function.} $H(z)=\int\frac{e^{i\phi}+z}{e^{i\phi}-z}B(\phi)\,dm(\phi)=\beta\one+\frac i\pi\sum_j(B_j-B_{j-1})
+\mathrm{Log}(1-ze^{-it_j})$ is analytic on the disc, $H(0)=\beta\one$, and extends continuously to the closed disc minus
+$\{e^{it_j}\}$ with boundary values $B(\theta)+ig(\theta)$. For $r\ge\frac12$,
+$\|H(re^{i\theta})\|\le C_0+\frac2\pi\sum_j|\log|\sin\frac{\theta-t_j}2||$, a function in every $L^p$.
+\emph{Spectrum in the strip.} $\langle\psi,\Re H(z)\psi\rangle=\int P_z\langle\psi,B\psi\rangle\,dm\in(0,1)$ for unit $\psi$
+unless $B(\phi)\psi=0$ a.e. or $B(\phi)\psi=\psi$ a.e.; after removing the common kernel and range of the $B_j$ (on which
+the statement is trivial) the numerical range of $H(z)$, hence its spectrum, lies in the open strip.
+\emph{Harmonicity.} $\phi_\lambda(w)=\frac{i}{\pi^2}\Li(e^{-i\pi w-\pi\lambda})$ is analytic on the open strip with
+$\Re\phi_\lambda=h_\lambda$, so $u_\lambda(z)=\Re\Tr\phi_\lambda(H(z))=\sum_{\nu\in\spec H(z)}h_\lambda(\nu)$ is harmonic,
+with $u_\lambda(0)=Mh_\lambda(\beta)$.
+\emph{Boundary passage.} $0\le h_\lambda(x+iy)\le|y|+|\lambda|+C_1$, so $u_\lambda(re^{i\theta})$ is dominated by an
+integrable function; for $\theta\notin\{t_j\}$ it converges to $u^*_\lambda(\theta)=\sum_{\nu\in\spec(B+ig)(\theta)}h_\lambda(\nu)$.
+By the mean value property and dominated convergence, $\int u^*_\lambda\,dm=Mh_\lambda(\beta)$.
+\emph{Chain.} For $\theta\notin\{t_j\}$, with $X=P(g-\lambda)P$: $\tau(A(g-\lambda))=\tau(AX)\le\tau(AX_+)\le\tau(X_+)$, and
+by Theorem~\ref{thm:strip}, $\tau(X_+)\le\frac1Mu^*_\lambda(\theta)$. Integrating gives~\eqref{eq:chain}.
+\emph{Legendre identity.} $\min_\lambda[\lambda\alpha+h_\lambda(\beta)]=\Phi_c(\alpha,\beta)$, attained at
+$\lambda=\frac1\pi\log\frac{\sin\pi(\alpha+\beta)}{\sin\pi\alpha}$; for $\alpha=\beta=\frac14$ this is $\lambda^*$.
+\emph{Equality.} If both inequalities in~\eqref{eq:chain} are equalities at $\lambda^*$, then the non-negative integrand
+$\frac1Mu^*_{\lambda^*}-\tau((P(g-\lambda^*)P)_+)$ vanishes a.e., i.e. Theorem~\ref{thm:strip} holds with equality at
+$\lambda^*$ for a.e. $\theta$, and its equality clause gives $[B(\theta),g(\theta)]=0$ a.e.
+\end{proof}
+
+\begin{remark}
+With only the trace constraint $\int\tau(B)=\beta$, the centre value is $\sum_ih_\lambda(\beta_i)\le Mh_\lambda(\beta)$
+by concavity of $x\mapsto h_\lambda(x)$ on $[0,1]$ (the $y$-convexity of $h_\lambda$ and harmonicity), and the same
+bound follows. The operator constraint holds in all applications below.
+\end{remark}
+
+%==================================================================================================
+\section{Cell embeddings and the reduction of Theorem 1 to \texorpdfstring{CONE$_d$}{CONE(d)}}\label{sec:cells}
+%==================================================================================================
+
+Let $\Delta_d=\{\ell\in\R^d:\ell_r\ge0,\ \sum_r\ell_r=d\}$; extend $\ell_x=\ell_{x\bmod d}$ to $x\in\Z_N$, put $L_0=0$,
+$L_{x+1}=L_x+\ell_x$ (so $L_N=N$) and $I_x=[L_x,L_{x+1})\subset\R/N\Z$. For a 27B configuration let $\tilde A,\tilde B$ be
+the step fields equal to $A_x,B_x$ on $I_x$, and
+\[
+Q^\ell=\int\!\!\int\tau(\tilde A(\xi)\tilde B(\eta))\cot\frac{\pi(\xi-\eta)}{N}\,d\xi\,d\eta=\sum_{x,y}K^\ell(x,y)\tau(A_xB_y),
+\]
+with $K^\ell(x,y)=\int_{I_x}\int_{I_y}\cot\frac{\pi(\xi-\eta)}N\,d\xi\,d\eta$.
+With $G(u)=-\frac{N^2}{2\pi^2}\Cl(2\pi u/N)$ (so $G''(u)=\cot(\pi u/N)$), $K^\ell(x,y)$ is the mixed second difference
+of $G$ over the cell endpoints.
+
+\begin{proposition}[cell inequalities]\label{prop:cells}
+For every $\ell\in\Delta_d$ and every 27B configuration, $Q^\ell\le N^2\Phi_c(\frac14,\frac14)$, with equality for the
+DKZ configuration. Averaging over the $d$ rotations $Q_x\mapsto Q_{x-c}$,
+\begin{equation}\label{eq:cellineq}
+\frac1d\sum_{c=0}^{d-1}\bigl[Q^\ell(\mathrm{rot}_cQ)-N^2\Phi_c(\tfrac14,\tfrac14)\bigr]=\langle u^\ell,\delta\rangle\le0,\qquad
+u^\ell_m=\Delta^2_m\Bigl[\frac1d\sum_{r=0}^{d-1}\hat G\bigl(S_r(m)\bigr)\Bigr],
+\end{equation}
+where $S_r(m)=\ell_r+\dots+\ell_{r+m-1}$, $\hat G(u)=G(u)+G(2d-u)$, $\Delta^2_m$ is the second difference in $m$ and
+$1\le m\le d-1$. Moreover $v_m=\hat G''(m)$.
+\end{proposition}
+
+\begin{proof}
+Rescale $\R/N\Z$ to $\T$. Since $\ell$ depends only on the residue modulo $d$ and $\{Q_{r+jd}\}_j$ is a projective
+measurement for each $r$, $\int\tilde B\,dm=\frac1N\sum_r\ell_r\sum_jQ_{r+d+jd}=\frac dN\one=\frac14\one$, and likewise
+$\int\tilde A\,dm=\frac14\one$; also $\tilde A\tilde B=0$. Zero-length cells carry no field. Theorem~\ref{thm:cont}
+(with $\alpha=\beta=\frac14$; $g$ is the conjugate function of the step field) gives $Q^\ell/N^2=\int\tau(\tilde Ag)\,dm\le
+\Phi_c(\frac14,\frac14)$. For DKZ, the windows $[c,c+d)$ and $[c-d,c)$ occupy adjacent arcs of length $d$, whose
+continuum value is $N^2\Phi_c$ (Stein--Weiss extremal). Rotations preserve the class of 27B configurations. The kernel
+$K^\ell$ is invariant under $(x,y)\mapsto(x+d,y+d)$, so the rotation average is
+$\sum_m\tilde K(m)T(m)$ with $\tilde K(m)=\frac1d\sum_{r<d}K^\ell(r+m,r)$, odd in $m$; folding with
+$N(2d-m)=N(m)$, $N(d)=d$ as in Lemma~\ref{lem:linear} gives~\eqref{eq:cellineq} with
+$u^\ell_m=\tilde K(m)+\tilde K(2d-m)$. Writing $K^\ell(r+m,r)$ through window sums,
+$\tilde K(m)=\Delta^2P(m)$ with $P(k)=\frac1d\sum_rG(S_r(k))$, and $S_r(2d-j)=2d-S_{r+d-j}(j)$ gives the window-sum
+form. Finally $\hat G''(u)=\cot\frac{\pi u}{4d}+\tan\frac{\pi u}{4d}=2\csc\frac{\pi u}{2d}$.
+\end{proof}
+
+\begin{definition}[CONE$_d$]
+CONE$_d$ holds if there are a finite positive Borel measure $\mu$ on $\Delta_d$ and $w_s\ge0$ with
+$v=\int_{\Delta_d}u^\ell\,\mu(d\ell)+\sum_{s=1}^{\lfloor d/2\rfloor}w_s(e_s+e_{d-s})$.
+\end{definition}
+
+\begin{proof}[Proof of Theorem~1, given CONE$_d$]
+By Lemma~\ref{lem:linear} and Proposition~\ref{prop:cells},
+$2(F-\FD)=\langle v,\delta\rangle=\int\langle u^\ell,\delta\rangle\mu(d\ell)+\sum_sw_s(\delta_s+\delta_{d-s})\le0$.
+By Theorem~\ref{thm:reduction}, $I_d\le\IME(d)$ for every projective strategy on every $\Phi_D$.
+\end{proof}
+
+\begin{lemma}[Dirichlet cells reproduce the singular part]\label{lem:dirichlet}
+If $\ell=d\cdot\mathrm{Dir}(1,\dots,1)$ (the gaps between $d$ uniform random points on a circle of length $d$), then for
+every $\phi\in C^2(0,d]$ with $\phi''(s)s^m$ integrable and $1\le m\le d-1$,
+$\Delta^2_m\mathbb{E}\,\phi(S(m))=\int_0^d\phi''(s)b_{m,d}(s/d)\,ds=\frac{d}{d+1}\mathbb{E}\,\phi''(dX)$ with
+$X\sim\mathrm{Beta}(m+1,d-m+1)$, $b_{m,d}(x)=\binom dmx^m(1-x)^{d-m}$. In particular for $\phi''(s)=1/s$ the result is
+exactly $1/m$.
+\end{lemma}
+
+\begin{proof}
+$S(m)/d\sim\mathrm{Beta}(m,d-m)$ has density $\frac{d-1}{d}b_{m-1,d-2}(s/d)$, and
+$b''_{m,d}=d(d-1)(b_{m-2,d-2}-2b_{m-1,d-2}+b_{m,d-2})$; two integrations by parts, in which the point masses of $S(0)=0$
+and $S(d)=d$ cancel the boundary terms, give the formula.
+\end{proof}
+
+Lemma~\ref{lem:dirichlet} explains the construction of the certificates: the expectation of $u^\ell$ under uniform
+Dirichlet cells is a Bernstein--Durrmeyer smoothing of $\hat G''$ which reproduces the pole $2\csc(\pi u/2d)\sim4d/(\pi u)$
+exactly, and the residual comes only from the image poles at distance $\ge d$. It is smooth and of relative order $1/d$,
+and it must be corrected by non-exchangeable cell distributions.
+
+%==================================================================================================
+\section{\texorpdfstring{CONE$_d$ for every $d$}{CONE(d) for every d} (computer-assisted)}\label{sec:cone}
+%==================================================================================================
+
+\begin{theorem}[computer-assisted]\label{thm:cone}
+CONE$_d$ holds for every $d\ge2$. For $d\le200$, $\mu$ is a finite positive combination of point masses at rational
+cell vectors with all cells $\ge\frac1{16}$, and $w=0$. For $d\ge201$, $\mu$ is the law of a Gaussian-modulated
+Dirichlet process, which charges only the open simplex.
+\end{theorem}
+
+\subsection{\texorpdfstring{$2\le d\le200$}{2 <= d <= 200}: exact rational cells}
+For each $d$, $K$ cell vectors $\ell^{(k)}=n^{(k)}/16$ with integers $n^{(k)}_r\ge1$, $\sum_rn^{(k)}_r=16d$
+($3.5d\le K\le6.3d$) are given. All window sums are multiples of $\frac1{16}$, so $\hat G$ is needed only at
+$j/16$: $\hat G(j/16)=-\frac{N^2}{2\pi^2}[\Cl(\pi j/K_g)+\Cl(\pi(K_g-j)/K_g)]$, $K_g=32d$. Each value is enclosed in
+160-bit interval arithmetic by $\Cl(t)=t-t\log t+\sum_{n\le70}\frac{|B_{2n}|t^{2n+1}}{2n(2n+1)!}+[0,\epsilon_{70}(t)]$
+($0<t\le\pi$) with exact Bernoulli numbers and an explicit tail bound. A floating-point linear program gives weights
+$\tilde\lambda>0$; the exact solution $\lambda=\tilde\lambda+U^{\mathsf T}y$ of $U\lambda=v$ is enclosed through
+$|y|\le|R\,\mathrm{res}|/(1-\|I-RUU^{\mathsf T}\|)$ with an approximate inverse $R$. Every weight is certified positive
+($d\cdot\min_k\lambda_k\in[0.0816,0.2572]$; smallest $4.25\times10^{-4}$, at $d=198$), and a complete re-verification of
+all 199 certificates in interval arithmetic passed. The enclosures of the Clausen function were compared with an
+independent 63-point high-precision evaluation. An independent scan of all 199 certificates confirmed the cell
+structure and the positivity of the weights, and independent floating-point re-evaluations of the identity at selected
+$d$ (with 50-digit Clausen values and, for $d\le10$, the original cell-pair kernel instead of the window-sum form) agree
+to the precision of the stored weights. For $2\le d\le20$ the same certificates are also re-evaluated by the Lean
+kernel in exact rational interval arithmetic (Section~\ref{sec:lean}).
+
+\subsection{\texorpdfstring{$201\le d\le2000$}{201 <= d <= 2000}: Gaussian-modulated Dirichlet cells}
+\emph{Potentials.} For a cell process put $P(m)=\mathbb{E}\frac1d\sum_r\hat G(S_r(m))$, so that $u=\Delta^2P$, and let
+$P_v$ solve $\Delta^2P_v=v$ on $1,\dots,d-1$ with the same boundary values. Write $X_A(m)=\frac12(X(m)-X(d-m))$ and
+$X_S(m)=\frac12(X(m)+X(d-m))$.
+
+\emph{Lemma R1 (reduction).} If (i) $P_A=(P_v)_A$ and (ii) $W=(P_v-P)_S$ has $\Delta^2W\ge0$ on $1,\dots,d-1$, then
+CONE$_d$ holds (with $w=\Delta^2W$, a non-negative combination of the $e_s+e_{d-s}$).
+
+\emph{Lemma R2 (exact singular part).} $\hat G=\hat G_s+\hat G_r$ with $\hat G_s(u)=\frac{4d}\pi u\log\frac ud$ and
+$\hat G_r(u)=d^2g_r(u/d)$, $g_r$ analytic on $|x|<2$. For Dirichlet cells the singular part of $P$ equals that of $P_v$
+exactly, $\frac{4d}{\pi}[m\psi(m)+1-\frac md-m\psi(d)]$ ($\psi$ the digamma function), so only the analytic $g_r$
+enters condition (i).
+
+\emph{Process.} Let $\Phi:\{0,\dots,d\}\to[0,\infty)$ be symmetric with $\Phi(0)=\Phi(d)=0$ and Fourier coefficients
+$a_k(\Phi)=-\frac{2w_k}d\sum_m\Phi(m)\cos\frac{2\pi km}d>0$ ($1\le k\le d/2$), where $w_k=1$ for $k<d/2$ and
+$w_{d/2}=\frac12$. Then $c(j)=\frac12\Delta^2\Phi(j)$ is a positive-definite
+function on $\Z_d$ with zero sum, and the centred stationary Gaussian vector $\eta$ with covariance $c$ satisfies
+$\sum_r\eta_r=0$ and $\mathrm{Var}(\eta_0+\dots+\eta_{m-1})=\Phi(m)$. On $E=\{\max_r|\eta_r|<\frac34\}$ take
+$\ell=d\cdot\mathrm{Dir}(1+\eta)$, on $E^c$ the uniform Dirichlet law.
+
+\emph{Lemmas R3, R4 (decoupling).} By the aggregation property of the Dirichlet law,
+$P(m)=\mathbb{E}[\mathcal F(m+Z(m));E]+\mathbb{P}(E^c)\mathcal F(m)$ with $Z(m)\sim N(0,\Phi(m))$ and
+$\mathcal F(b)=\mathbb{E}\hat G(dX_b)$, $X_b\sim\mathrm{Beta}(b,d-b)$. Up to an error bounded by
+$2d\exp(-9/(32\Phi(1)))$ times explicit derivative bounds, condition (i) decouples into one scalar equation
+$\mathcal H_m(\Phi(m))=\tau_m$ per $1\le m<d/2$.
+
+\emph{Lemma B (fixed point).} If on a box $Q=\prod_m[\mathrm{lo}_m,\mathrm{hi}_m]$ all $a_k>0$, the coupling errors are
+at most $2\epsilon_t$, and $\mathcal H_m(\mathrm{lo}_m)<\tau_m-2\epsilon_t$, $\mathcal H_m(\mathrm{hi}_m)>\tau_m+2\epsilon_t$,
+then the Poincar\'e--Miranda theorem\cite{Kulpa} gives $\Phi^\#\in Q$ for which (i) holds exactly. The two sign
+conditions follow from a certified root enclosure $[a_m,b_m]$ and a certified lower bound $c$ on $\mathcal H_m'$ on
+$[a_m-\rho,b_m+\rho]$ with $c\rho\ge2\epsilon_t$.
+
+\emph{Certificates.} For each $201\le d\le2000$ one run of a single checker certifies all hypotheses of Lemma~B and
+condition (ii) of Lemma~R1. The run uses one precision (160-bit interval arithmetic throughout) and one code version,
+whose SHA-256 hash is stored in every certificate. It encloses $\mathcal F^{(2j)}$ ($j\le7$) at the integers (polygamma
+values through zeta values and harmonic sums, and the regular part through exact truncated Pochhammer products with a
+rigorous tail), the targets $\tau_m$, and the decoupled solution $\Phi_*$ (exact order-14 Gaussian expansion and
+order-16 Lagrange remainder); it finds root boxes $[a_m,b_m]$ with a certified sign change and fixes one
+Poincar\'e--Miranda box $Q\supseteq\prod_m[a_m-r,b_m+r]$, with a radius $r=2^{e}$ chosen from the tail bound. All
+remaining conditions are certified on this widened box: all $a_k>0$; a lower bound $c$ for $\mathcal H_m'$ with
+$c\,r>2\epsilon_t$; the two sign conditions, also directly at the faces of $Q$; a lower bound larger than $4\epsilon_t$ for
+the second differences of the symmetric part of $P_v$ minus the Gaussian average, which gives (ii) for the exact
+process; and the tail bound, in logarithms. Factorials, binomial coefficients and Bernoulli numbers enter as
+exact integers and rationals, the zeta values are enclosed by the Euler--Maclaurin formula with a rigorous remainder,
+and no decision is taken on floating-point numbers. An audit script re-checks every condition from the exact decimal
+values stored in the certificates: 1800 of 1800 pass. The smallest certified values over all $d$ are
+$d^2\min_ka_k\ge0.06319$ (even $d$; at $d=2000$) and $\ge0.12638$ (odd $d$), $d\min_m\Delta^2W\ge0.660$, a ratio of the
+certified derivative bound to the required one of $4.0009$ (at least $1$ is needed), face margins at least
+$10^{16.7}\cdot2\epsilon_t$, $\epsilon_t\le10^{-31.16}$ and $\mathbb{P}(E^c)\le4.2\times10^{-37}$. (Earlier runs at
+100 bits for $d\le600$ gave lower apparent margins, $0.0285$ and $0.0798$; they are superseded.)
+
+\subsection{\texorpdfstring{$d\ge2001$}{d >= 2001}: analytic proof with interval Taylor models}
+Let $\epsilon=1/d$. A smooth model $\Phi_e(b)=\epsilon b^2u_e(b)$ is defined, $u_e$ being the unique root in $(0,1)$ of
+a quartic $\sum_{j=1}^4\mathrm{Ch}_j(b)u^j=\hat\tau_e(b)$ with explicit coefficients (Binet-type functions of the digamma
+derivatives and the Taylor coefficients of $g_r$, and an Euler--Maclaurin interpolant of $P_v$). Positivity of the
+$a_k$ reduces, by a Fej\'er--P\'olya argument for the convex sequence $a(m)=\frac16-f(m)$, to the pointwise bounds
+$\Delta^4(\Phi_e-F_A)(1)\ge-\gamma\epsilon^2$ and $\Delta^4(\Phi_e-F_A)(m)\ge\beta\epsilon^3$ ($2\le m\le d/2$), where
+$F_A$ is an explicit boundary layer, together with $|\Phi_*-\Phi_e|\le\delta_{\max}$. For instance, $\gamma=3$,
+$\beta=\frac14$ and $\delta_{\max}=\epsilon^2/20$ would already give $a_k\ge0.011\,w_k\epsilon^2>0$ for every $d\ge2001$;
+this is the sense of the sufficient level $\frac14$ in Fig.~5d of the article. The bounds actually certified, by interval
+Taylor models in $(x,\epsilon)$, $x=b/d$, on boxes covering every $d\ge2001$ simultaneously, are much better:
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.9cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{4.3cm}}
+\toprule
+quantity & region & certified bound\\
+\midrule
+normalized fourth difference, outer zone & $0.011\le x\le0.501$, $0\le\epsilon\le1/2001$ & $\ge7.419$\\
+normalized fourth difference, inner zone & $x\le0.013$, all positions $b\ge1$ & $\ge6.022$\\
+first two stencil positions & $m=1$; $m=2$ & $\ge-2.765192\,\epsilon^2$; $\ge206.884\,\epsilon^3$\\
+model error & all $m$ & $|\Phi_*-\Phi_e|\le6.6468\times10^{-4}\epsilon^2$\\
+Fourier coefficients & all $k$ & $a_k\ge0.1186944\,w_k\epsilon^2$\\
+symmetric slack & all $m$ & $\Delta^2W\ge0.620154\,\epsilon$\\
+higher Gaussian orders & all $m$ & $|\mathsf G-\mathsf G_4|\le138.103\,\epsilon^3$, $|\partial_t\mathsf G_4|\le11.5703\,d$\\
+Fej\'er--P\'olya constant & & $\min\mathcal A\ge0.1054878997577$\\
+tail and fixed-point conditions & all $d\ge2001$ & logarithmic margins $>800$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here $\mathsf G(b,t)$ is the truncated Gaussian average of $\mathcal F(b+\cdot)-\mathcal F(b)$ with variance $t$, $\mathsf G_4$ its
+expansion to order $t^4$, and $\mathcal A(\theta)=a(0)+2\sum_{m\ge1}a(m)\cos m\theta$. All constants, including these, are
+computed in interval arithmetic. A rigour pass completed the written proofs of the model identities (one of them, the
+first-order identity of the inner zone, is now proved in full and was checked symbolically and numerically to
+$6\times10^{-25}$) and corrected several code-level enclosure defects, one of which had left a sliver of size about
+$10^{-20}$ of the parameter range uncovered at $d=2001$; no conclusion changed. An audit script checks the coverage of
+all boxes and recomputes every margin from the logs. Non-rigorous cross-checks (for example $d^2\Delta^4(1)=-2.7514$ and
+$d^3\Delta^4(m)\approx10$ at $d=4000$) agree with the certified bounds.
+
+\begin{remark}[coverage]
+All 1800 single-run certificates for $201\le d\le2000$, one per $d$ and all from the same code version, pass the audit,
+the smallest derivative ratio being $4.0009$; the audit for $d\ge2001$ reports every box and every margin as certified.
+A single command re-checks all three regimes (the 199 certificates for $d\le200$ against their verification records,
+the 1800 certificates for $201\le d\le2000$, and every box and margin for $d\ge2001$) and reports CONE$_d$ certified for
+every $d\ge2$. Fig.~5 of the article is generated directly from these certificate files.
+\end{remark}
+
+\begin{remark}[finite form]\label{rem:finite}
+For $d\ge201$ the certificates give CONE$_d$ in integral form, with a measure $\mu$ carried by the open simplex. A
+finite form, $v=\sum_j\alpha_ju^{\ell_j}$ with $\alpha_j\ge0$ and at least one $\ell_j$ with all cells positive and
+$\alpha_j>0$, follows from it: the barycentre of $\mu$ lies in the convex hull of $\{u^\ell:\ell\text{ in the open
+simplex}\}$, Carath\'eodory's theorem reduces it to at most $d$ points, and each trivial direction $e_s+e_{d-s}$ is a
+positive multiple of the cell vector of a cell sequence supported on two residues. This finite form is the input of the
+Lean formalisation (Section~\ref{sec:lean}).
+\end{remark}
+
+%==================================================================================================
+\section{Proof of Theorem 2 (rigidity)}\label{sec:rigidity}
+%==================================================================================================
+
+Let a projective strategy $R$ on $\Phi_D$ attain $\IME(d)$; let $V$ be its reduced family and $Q$ its 27B
+configuration on $\C^M$. Then $\langle v,\delta\rangle=0$ (Theorem~\ref{thm:reduction}, Lemma~\ref{lem:linear}).
+
+\emph{Step 1.} In the representation of Theorem~\ref{thm:cone} every term is $\le0$
+(Proposition~\ref{prop:cells}, Lemma~\ref{lem:linear}), so $\langle u^\ell,\delta\rangle=0$ for $\mu$-almost every
+$\ell$. Since $\mu$ charges $\Delta^+_d=\{\ell:\ell_r>0\ \forall r\}$ (all cells $\ge\frac1{16}$ for $d\le200$; Dirichlet
+laws with parameters $\ge\frac14$ for $d>200$), there is $\ell^*\in\Delta_d^+$ with $\langle u^{\ell^*},\delta\rangle=0$.
+All terms of the rotation average~\eqref{eq:cellineq} are $\le0$ with mean $0$, so
+$Q^{\ell^*}(Q)=N^2\Phi_c(\frac14,\frac14)$. (The uniform cell vector would not suffice: $u^{(1,\dots,1)}$ is not
+proportional to $v$.)
+
+\emph{Step 2.} By the equality clause of Theorem~\ref{thm:cont}, $[B(\theta),g(\theta)]=0$ for almost every $\theta$,
+where $B$ is the step field of $Q$ for the cells of $\ell^*$.
+
+\begin{lemma}[residue lemma]\label{lem:residue}
+Let $t_0,\dots,t_{n-1}\in\R$ be distinct modulo $2\pi$ and $J_j\in M_M(\C)$. If
+$\sum_jJ_j\cot\frac{\theta-t_j}2=0$ on a non-empty open interval avoiding $\bigcup_j(t_j+2\pi\Z)$, then all $J_j=0$.
+\end{lemma}
+
+\begin{proof}
+The function $\sum_jJ_j\cot\frac{z-t_j}2$ is holomorphic on the connected set $\C\setminus\bigcup_j(t_j+2\pi\Z)$ and
+vanishes on an interval, hence everywhere; its residue at $t_j$ is $2J_j$.
+\end{proof}
+
+\emph{Step 3.} On each open arc $J_x$ the field $g$ is real-analytic and $[B_x,g(\theta)]=0$ a.e., hence identically.
+Differentiating, $\sum_j[B_x,B_j-B_{j-1}]\cot\frac{\theta-t_j}2=0$ on $J_x$. All cells of $\ell^*$ have positive length,
+so the $t_j$ are distinct, and Lemma~\ref{lem:residue} gives $[B_x,B_j]=[B_x,B_{j-1}]$ for all $j$; so
+$[B_x,B_j]=[B_x,B_x]=0$. Hence all $Q_x$ commute. (Cells of zero length would hide the corresponding measurement; this
+is why Step 1 needs $\ell^*\in\Delta^+_d$.)
+
+\emph{Step 4.} Since $E_k=\sum_ai^aQ_{k-da}$, the $V_k$ commute. By Theorem~B of ref.~\cite{classical} every joint
+eigenvector of the $V_k$ carries a one-step configuration, and by Corollary~C of ref.~\cite{classical} the strategy
+$R$, a direct summand of $R^V$, is unitarily equivalent to $R^{(0)}\otimes\one_K$ with $d\cdot\dim K=D$. Translating back
+to measurements, a unitary $u:\C^D\to\C^d\otimes\C^K$ with $uR_iu^\dagger=R^{\rm DKZ}_i\otimes\one_K$ gives
+$uP^x_au^\dagger=P^{x,\rm DKZ}_a\otimes\one$ and $\bar uQ^y_b\bar u^\dagger=Q^{y,\rm DKZ}_b\otimes\one$, i.e. the local
+unitary $u\otimes\bar u$ maps the strategy to $\mathrm{DKZ}\otimes\one_K$ and $\Phi_D$ to $\Phi_d\otimes\Phi_K$. The
+$R^{\rm DKZ}_i$ generate $M_d(\C)$, so $u$ is unique up to $\one_d\otimes U(K)$. If $d\nmid D$, compactness of the set
+of strategies on $\Phi_D$ shows that the maximum is attained and hence is strictly below $\IME(d)$.
+\hfill$\square$
+
+%==================================================================================================
+\section{The noise and Kullback--Leibler clauses}\label{sec:clauses}
+%==================================================================================================
+
+Part~B of Problem~27 also asks to show that the DKZ measurements realise the highest resistance of the violation to
+noise, and the best discrimination against local realism in the sense of the Kullback--Leibler divergence\cite{vDGG}.
+This section gives the statements and proofs (sketches for the Kullback--Leibler clause). The settings are
+$x,y\in\{1,2\}$ and the outcomes $a,b\in\Z_d$, as in the CGLMP expression of Section~\ref{sec:reduction}, and $\DKZ_d$
+denotes the DKZ strategy on $\Phi_d$, with the bases $|k\rangle_{A,x}=d^{-1/2}\sum_je^{-2\pi ij(k+\alpha_x)/d}|j\rangle$
+and $|l\rangle_{B,y}=d^{-1/2}\sum_je^{2\pi ij(l-\beta_y)/d}|j\rangle$, $\alpha=(0,\frac12)$, $\beta=(\frac14,-\frac14)$.
+Our answers to these two clauses are partial (see the status table of the article). Certificates, verification programs
+and the re-verification reports are in the directory \texttt{clauses/} of the repository\cite{repoOQP}; its file
+\texttt{LEDGER.md} records the wording of the problem\cite{OQP} and the status of every clause.
+
+\subsection{Critical visibilities}
+A behaviour is a family $p=(p(\cdot,\cdot|x,y))_{x,y}$ of probability distributions on $\Z_d\times\Z_d$. The local
+polytope $\cL_d$ is the convex hull of the deterministic behaviours $\delta_\lambda(a,b|x,y)=[a=a_x][b=b_y]$,
+$\lambda=(a_1,a_2,b_1,b_2)\in\Z_d^4$. Let $p_0(a,b|x,y)=d^{-2}$ (uniformly random outcomes), $p_v=vp+(1-v)p_0$ and
+$\vc(p)=\max\{v\in[0,1]:p_v\in\cL_d\}$; $p_v$ is local exactly for $v\le\vc(p)$, and a smaller $\vc$ means a higher
+resistance to noise. Relabellings of outcomes, settings and parties do not change $\vc$. Gill measures noise resistance
+by mixing with ``completely random, uniform outcomes''\cite{Gill} as long as local realism is violated, that is, by
+$\vc$. The noise clause has three readings: (a) noise $p_0$, nonlocality detected by the CGLMP inequality; (b) Gill's
+literal reading, noise $p_0$ and nonlocality against all Bell inequalities, that is, $\vc$; (c) white noise on the
+state, $v|\Phi_D\rangle\langle\Phi_D|+(1-v)\one/D^2$, against all Bell inequalities. In~(c) the noise contributes
+$\Tr P^x_a\Tr Q^y_b/D^2$, which equals $p_0$ when all outcomes have trace $D/d$, for example for complete von Neumann
+(rank-one) measurements on $\Phi_d$; for these, readings (b) and (c) coincide, and this is the formulation of Formal
+Conjectures issue \#3444. Reading (a) holds for every $d$; reading (b) fails for every $d\ge4$ once measurements may have
+outcomes that never occur; for complete von Neumann measurements, (b) and (c) are open for $d\ge4$.
+
+\begin{proposition}[CGLMP reading]\label{prop:cglmpnoise}
+Let $p$ be the behaviour of a projective strategy on $\Phi_D$. Then $I_d(p_v)=vI_d(p)$, so $p_v$ violates the CGLMP
+inequality if and only if $v>2/I_d(p)$, and $2/I_d(p)\ge2/\IME(d)$, with equality if and only if the strategy is
+$\DKZ_d\otimes\one$ up to a local unitary $u\otimes\bar u$.
+\end{proposition}
+
+\begin{proof}
+$I_d$ is linear, and $I_d(p_0)=0$ because every probability in the CGLMP expression equals $1/d$ under $p_0$. Apply
+Theorems~1 and~2.
+\end{proof}
+
+This is formalised in the file \texttt{lean/OQP27/CglmpNoise.lean} (Section~\ref{sec:lean}), with the assumptions of
+Theorems~1 and~2: none for $2\le d\le20$, and CONE$_d$ for $d\ge21$.
+
+\subsection{Gill's literal reading}\label{subsec:literal}
+Let $\mathsf A_1=\sigma_z$, $\mathsf A_2=\sigma_x$, $\mathsf B_1=(\sigma_z+\sigma_x)/\sqrt2$,
+$\mathsf B_2=(\sigma_z-\sigma_x)/\sqrt2$ be the optimal CHSH observables, $\Pi^x_\pm=\frac12(\one\pm\mathsf A_x)$ and
+$\Pi'^y_\pm=\frac12(\one\pm\mathsf B_y)$. For $d\ge3$ the strategy $C_d$ on $\Phi_d$ is defined as follows. For even $d$,
+write $\Phi_d=\Phi_2\otimes\Phi_{d/2}$ (by $|i\rangle|j\rangle\mapsto|i\frac d2+j\rangle$) and let
+$P^x_0=\Pi^x_+\otimes\one$, $P^x_1=\Pi^x_-\otimes\one$, $Q^y_0=\Pi'^y_+\otimes\one$, $Q^y_1=\Pi'^y_-\otimes\one$. For odd
+$d$, write $\C^d=\bigoplus_{k=1}^{(d-1)/2}\operatorname{span}\{|2k-2\rangle,|2k-1\rangle\}\oplus\C|d-1\rangle$ and let
+$P^x_0=(\bigoplus_k\Pi^x_+)\oplus1$, $P^x_1=(\bigoplus_k\Pi^x_-)\oplus0$, and $Q^y_0,Q^y_1$ likewise. In both cases the
+outcomes $2,\dots,d-1$ have zero projections. Let
+\[
+\veven(d)=\frac{4(d-1)}{(\sqrt2-1)d^2+4(d-1)},\qquad\vodd(d)=\frac4{(\sqrt2-1)d+4}.
+\]
+
+\begin{theorem}[computer-assisted for $4\le d\le9$]\label{thm:literal}
+(1) For every $d\ge3$, $\vc(C_d)=\veven(d)$ for even $d$ and $\vc(C_d)=\vodd(d)$ for odd $d$. (2) For every $d\ge2$,
+$\frac12\le\vc(\DKZ_d)\le2/\IME(d)$, and $\vc(\DKZ_d)\ge0.69,\,0.687,\,0.684,\,0.683,\,0.682,\,0.681$ for $d=4,\dots,9$.
+(3) For every $d\ge4$, $\vc(C_d)<\vc(\DKZ_d)$: on $\Phi_d$, and on every $\Phi_{kd}$, among projective measurements
+with possibly unused outcomes, the DKZ measurements do not realise the highest resistance of the violation of local
+realism to uniform outcome noise.
+\end{theorem}
+
+\begin{lemma}\label{lem:Cbeh}
+Let $s_{xy}=-1$ for $x=y=2$ and $s_{xy}=1$ otherwise, $\CH(a,b|x,y)=\frac14(1+(-1)^{a+b}s_{xy}/\sqrt2)$ for
+$a,b\in\{0,1\}$ and $0$ otherwise, and $\delta_{00}(a,b|x,y)=[a=b=0]$. The behaviour of $C_d$ is $\CH$ for even $d$ and
+$\frac{d-1}d\CH+\frac1d\delta_{00}$ for odd $d$.
+\end{lemma}
+
+\begin{proof}
+The projections are real symmetric, so the behaviour is $\Tr(P^x_aQ^y_b)/d$. For $e,f\in\{\pm1\}$,
+\[
+\tfrac12\Tr\Bigl(\frac{\one+e\mathsf A_x}2\cdot\frac{\one+f\mathsf B_y}2\Bigr)=\tfrac14\bigl(1+\tfrac{ef}2\Tr(\mathsf A_x\mathsf B_y)\bigr),
+\qquad\tfrac12\Tr(\mathsf A_x\mathsf B_y)=s_{xy}/\sqrt2 .
+\]
+For odd $d$ each of the $(d-1)/2$ blocks contributes $\Tr(\Pi\Pi')/d$, and the last dimension contributes $[a=b=0]/d$.
+\end{proof}
+
+Let $\varsigma(0)=1$, $\varsigma(a)=-1$ for $a\ne0$, $E_{xy}(p)=\sum_{a,b}\varsigma(a)\varsigma(b)p(a,b|x,y)$ and
+$\mathcal E=E_{11}+E_{12}+E_{21}-E_{22}$ (CHSH after coarse-graining every measurement into $\{0\}$ and the rest).
+
+\begin{lemma}\label{lem:witness}
+$\mathcal E\le2$ on $\cL_d$, $\mathcal E(p_0)=2(d-2)^2/d^2$, $\mathcal E(\CH)=2\sqrt2$, $\mathcal E(\delta_{00})=2$.
+Hence the behaviour $p_v$ of $C_d$ violates $\mathcal E\le2$ if and only if $v>\veven(d)$ (even $d$), respectively
+$v>\vodd(d)$ (odd $d$).
+\end{lemma}
+
+\begin{proof}
+On $\delta_\lambda$, $\mathcal E=\varsigma(a_1)(\varsigma(b_1)+\varsigma(b_2))+\varsigma(a_2)(\varsigma(b_1)-\varsigma(b_2))=\pm2$.
+Under $p_0$ the coarse-grained outcomes are independent with mean $(2-d)/d$. The threshold is
+$(2-\mathcal E(p_0))/(\mathcal E(p)-\mathcal E(p_0))$, with $2-\mathcal E(p_0)=8(d-1)/d^2$ and
+$\mathcal E(p)-\mathcal E(p_0)=(2\sqrt2d^2-2(d-2)^2)/d^2$, respectively $2(d-1)((\sqrt2-1)d+4)/d^2$.
+\end{proof}
+
+\begin{proposition}[a local model at the threshold]\label{prop:flagmodel}
+Let $d\ge3$, $s=1/d$ and $T=4s(1-s)/(\sqrt2-(1-2s)^2)=\veven(d)$. Then $T\CH+(1-T)p_0$ is local.
+\end{proposition}
+
+\begin{proof}
+Let $c_1=(1-T)(1-2s)$, $c_2=(1-T)(1-2s)^2$ and $c_0=1-4c_1+3c_2=4s[(1-s)-(\sqrt2-1)(1-3s)]/(\sqrt2-(1-2s)^2)>0$; also
+$c_1-c_2=2s(1-T)(1-2s)\ge0$. Let $\Lambda\in\{0,1,\ast\}^4$ (entries for $A_1,A_2,B_1,B_2$) be $(\ast,\ast,\ast,\ast)$ with
+probability $c_2$; each of $(\ast,r,r,1-r)$, $(r,\ast,r,r)$, $(r,1-r,\ast,r)$, $(r,r,r,\ast)$, $r\in\{0,1\}$, with
+probability $\frac12(c_1-c_2)$; and each of the eight $\lambda\in\{0,1\}^4$ with
+$\sum_{x,y}s_{xy}(-1)^{\lambda_{A_x}+\lambda_{B_y}}=2$ with probability $\frac18c_0$. Each party outputs its entry if it is
+$0$ or $1$, and an independent uniformly random element of $\{2,\dots,d-1\}$ if it is $\ast$. Entries with $a$ or
+$b\ge2$ come only from the first two families and equal $(1-T)/d^2$. For $a,b\in\{0,1\}$ the patterns of the second
+family with $\ast$ elsewhere are aligned with $s_{xy}$, and six of the eight strategies of the third family are aligned
+on each pair of settings, so $q(a,b|x,y)=\frac14(1-2c_1+c_2)+\frac18(-1)^{a+b}s_{xy}(1-c_2)$. This equals
+$T\CH(a,b|x,y)+(1-T)d^{-2}$, because $1-2c_1+c_2=T+4(1-T)s^2$ and $1-c_2=\sqrt2T$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:literal}(1)]
+The upper bounds are Lemmas~\ref{lem:Cbeh} and~\ref{lem:witness}. Equality for even $d$ is
+Proposition~\ref{prop:flagmodel}. For odd $d$,
+$vp_{C_d}+(1-v)p_0=vs\,\delta_{00}+(1-vs)(v'\CH+(1-v')p_0)$ with $v'=v(1-s)/(1-vs)$, and $v'=T$ at $v=\vodd(d)$.
+\end{proof}
+
+\begin{lemma}[the $\frac12$-lemma]\label{lem:half}
+If all marginals of $p$ are uniform, then $p_v$ is local for $v\le\frac12$. The constant is optimal: the behaviour
+$\mathrm{PR}_d(a,b|x,y)=\frac1d[\,b-a\equiv[x=2][y=1]\,]$, a $d$-outcome version of the box of Popescu and
+Rohrlich\cite{PR}, has $I_d(\mathrm{PR}_d)=4$ and $\vc(\mathrm{PR}_d)=\frac12$.
+\end{lemma}
+
+\begin{proof}
+The distributions
+\[
+P_1(a_1,a_2,b_1,b_2)=p(a_1,b_1|1,1)\,p(a_2,b_2|2,2),\qquad P_2(a_1,a_2,b_1,b_2)=p(a_1,b_2|1,2)\,p(a_2,b_1|2,1)
+\]
+are local models; on the other two pairs of settings they give independent uniform outcomes. So $\frac12(P_1+P_2)$
+models $\frac12(p+p_0)$, and $p_v=2v\cdot\frac12(p+p_0)+(1-2v)p_0$.
+\end{proof}
+
+The DKZ behaviour is $p_{\DKZ}(a,b|x,y)=\frac1dh_{xy}(b-a)$ with
+$h_{xy}(m)=1/(2d^2\sin^2(\pi(m-\delta_{xy})/d))$, $\delta_{xy}=\alpha_x+\beta_y$ (so $\delta_{11}=\delta_{22}=\frac14$,
+$\delta_{12}=-\frac14$, $\delta_{21}=\frac34$); its marginals are uniform, so $\vc(\DKZ_d)\ge\frac12$.
+
+\begin{lemma}[covariant local models and absorption]\label{lem:absorb}
+(i) If $\mu$ is a probability distribution on $M_d=\{m\in\Z_d^{\{1,2\}^2}:m_{11}-m_{12}-m_{21}+m_{22}\equiv0\}$ with
+marginals $\mu_{xy}$, then $\frac1d\mu_{xy}(b-a)$ is local. (ii) Let $p$ and a local $Q$ have uniform marginals and
+$0<v_0<v_1\le1$. If $|Q-p_{v_1}|\le(v_1-v_0)/(2d^2v_0)$ entrywise, then $p_{v_0}$ is local.
+\end{lemma}
+
+\begin{proof}
+(i) With $m\sim\mu$ and an independent uniform $c$, output $A_1=c$, $A_2=c+m_{11}-m_{21}$, $B_1=c+m_{11}$,
+$B_2=c+m_{12}$; then $B_y-A_x=m_{xy}$. (ii) With $E=p_{v_1}-Q$ and $\gamma=v_0/(v_1-v_0)$,
+$p_{v_0}=\frac{v_0}{v_1}Q+(1-\frac{v_0}{v_1})\cdot\frac12(p_0+S)$, where $S=p_0+2\gamma E\ge0$ has uniform marginals, so
+Lemma~\ref{lem:half} applies.
+\end{proof}
+
+\begin{proposition}[computer-assisted]\label{prop:dkzcert}
+For $3\le d\le20$ there are rationals $v_0<v_1$ and a distribution $\mu$ on $M_d$ with rational weights (denominator
+$10^{16}$) such that $|\mu_{xy}(m)-v_1h_{xy}(m)-(1-v_1)/d|\le(v_1-v_0)/(2dv_0)$. Hence $\vc(\DKZ_d)\ge v_0(d)$, with
+$2/\IME(d)-1.02\cdot10^{-7}<v_0(d)$; in particular the bounds of Theorem~\ref{thm:literal}(2) hold.
+\end{proposition}
+
+\begin{proof}
+The weights are checked in integer arithmetic. The values $h_{xy}(m)$ are enclosed in rational intervals: $\pi$ by
+partial sums of Machin's formula (width below $10^{-50}$), and $\sin$ by consecutive partial sums of its Taylor series
+on $[0,2]$, after reduction to $\sin(\pi r)$ with $r\in[0,\frac12]$; the condition is then decided exactly, with margins
+about $10^{-13}$ against enclosure widths about $10^{-15}$. The distributions were found by a floating-point linear
+program\cite{HiGHS} and rounded; this plays no role in the check. Program \texttt{dkz\_cert.py} and the certificates are
+in \texttt{clauses/noise-literal/}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:literal}(2) and (3)]
+The upper bound follows from $I_d(p_{\DKZ})=\IME(d)$ and $I_d(p_0)=0$. For $d\ge10$, $\vc(C_d)<\frac12$: for even $d$
+this is $(\sqrt2-1)d^2-4d+4>0$, true for all $d\ge9$; for odd $d$ it is $d>4(\sqrt2+1)=9.657\ldots$. For $4\le d\le9$,
+exact comparison in $\Q(\sqrt2)$ gives $\vc(C_d)=0.6442,\ 0.6589,\ 0.5729,\ 0.5798,\ 0.5137,\ 0.5176<r(d)$. On
+$\Phi_{kd}$ use $C_d\otimes\one_k$ and $\DKZ_d\otimes\one_k$.
+\end{proof}
+
+\begin{proposition}[$d=2,3$]\label{prop:small}
+(1) For $d=2$ every quantum behaviour has $\vc\ge1/\sqrt2=\vc(\DKZ_2)$ (positivity and the CHSH inequalities describe
+$\cL_2$\cite{Fine}, CHSH vanishes on $p_0$, and Tsirelson's bound\cite{Tsirelson} holds). (2) (Computer-assisted.) Every
+projective strategy on $\Phi_3$ has $\vc\ge2/\IME(3)=3\sqrt3-\frac92=0.696152\ldots$, with equality only for $\DKZ_3$ up
+to relabellings and $u\otimes\bar u$. (3) On $\Phi_2$, the measurements $\{\Pi^x_+,\Pi^x_-,0\}$, $\{\Pi'^y_+,\Pi'^y_-,0\}$
+give $\vc=8/(9\sqrt2-1)=0.682132\ldots<\vc(\DKZ_3)$; the same holds on every $\Phi_D$ with $D$ even, in particular on
+$\Phi_6$, which also carries $\DKZ_3\otimes\one_2$.
+\end{proposition}
+
+\begin{proof}[Sketch of proof of (2) and (3)]
+$\cL_3$ has exactly $1116$ facets: $36$ positivity facets, $648$ lifted CHSH facets and $432$ relabelled CGLMP
+facets\cite{CollinsGisin} (recomputed by an exact double description). The CGLMP facets are handled by Theorems~1
+and~2 (relabellings map projective strategies on $\Phi_3$ to such strategies and fix $p_0$). For a lifted CHSH facet,
+H\"older's inequality and Jordan's lemma bound the quantum value by $(4\sqrt2+2)/3$, while the noise contributes
+$\pm\frac29$, so these facets hold for $v\le4/(3\sqrt2+1)=0.762974\ldots$. Part~(3) is Lemma~\ref{lem:witness} and
+Proposition~\ref{prop:flagmodel} with $d=3$.
+\end{proof}
+
+\begin{remark}[unused outcomes; scope]\label{rem:scope}
+$C_d$ leaves $d-2$ outcomes unused, while $p_0$ gives each of them probability $1/d$. On $\Phi_d$ a PVM whose $d$
+outcomes all occur is rank-one, and then $p_0$ is the white noise of reading~(c); so a projective counterexample on
+$\Phi_d$ using every outcome would settle reading~(c), which is open for $d\ge4$ (numerically, DKZ is optimal for
+$d\le8$: see ref.~\cite{GLZ} for $d\le5$ and the searches summarised in the repository; already for $d=4$ the polytope of
+link laws of covariant local behaviours, Masanes' polytope of correlation functions\cite{Masanes}, has facets that are
+not CGLMP inequalities). With POVMs every outcome can be used:
+the effects $(1-\varepsilon)P^x_a+\frac\varepsilon d\one$, $(1-\varepsilon)Q^y_b+\frac\varepsilon d\one$ with $(P,Q)=C_d$
+and $0<\varepsilon\le\frac1{100}$ are invertible and still beat DKZ for every $d\ge4$; and projective measurements on
+$\Phi_D$ with $D>d$ that use every outcome beat DKZ for $(d,D)=(4,12),(5,11),(6,12),(7,13),(8,12),(9,13)$.
+\end{remark}
+
+\emph{Prior work.} Ac\'{\i}n, Durt, Gisin and Latorre\cite{ADGL} found the value $\veven(d)$ (their eq.~(14)) for the
+CHSH strategy on a Schmidt-rank-two maximally entangled state in $\C^d\otimes\C^d$ with two-outcome measurements, and
+concluded that resistance to noise is not a good measure of nonlocality; Gruca, Laskowski and \.Zukowski\cite{GLZ} found
+numerically that Schmidt-rank-two states are the most noise-robust ($d\le5$); Baek, Ryu and Lee\cite{BRL} observed by
+linear programming that merged-outcome strategies beat DKZ on $\Phi_4$ and $\Phi_{16}$ under uniform noise (robustness
+$0.448$ versus $0.552$ for $d=4$), without relating this to Problem~27. The DKZ thresholds $2/\IME(d)$ were computed
+numerically in refs.~\cite{KGZMZ,DKZ,CGLMP,GLZ}, and analytically for $d=3$ in ref.~\cite{Chen01}. As far as we found,
+the exact theorem for every $d\ge4$ on $\Phi_d$, the exact threshold of $C_d$ in the $d$-outcome scenario, the rigorous
+lower bounds for $\DKZ_d$ and the consequence for Problem~27 are new.
+
+\subsection{The Kullback--Leibler clause}
+For a distribution $\sigma$ on the setting pairs let
+$U_q(\sigma)=\inf_{p\in\cL_d}\sum_{x,y}\sigma_{xy}D(q(\cdot,\cdot|x,y)\|p(\cdot,\cdot|x,y))$ (in bits); the statistical
+strengths of van Dam, Gill and Gr\"unwald\cite{vDGG} are $S^{\mathrm{UNI}}(q)=U_q(\frac14)$, $S^{\mathrm{UC}}(q)$ (supremum over
+product $\sigma$) and $S^{\mathrm{COR}}(q)$ (supremum over all $\sigma$). For $d=4k+\rho$ ($k\ge1$, $\rho\in\{0,1,2,3\}$)
+let $B_d$ be the strategy on $\Phi_d$ that uses, on consecutive coordinate blocks with disjoint outcome groups, $k$
+copies of two CHSH strategies with shared settings (product bases of the eigenvectors of $\mathsf A_x$, resp.
+$\mathsf B_y$, outcome $2a_1+a_2$) and one block of size $\rho$ (a single basis vector, the CHSH bases, or the DKZ bases
+for $d=3$). Its four measurements are orthonormal bases of $\C^d$.
+
+\begin{theorem}[computer-assisted]\label{thm:kl}
+For every $d\ge4$ and $X\in\{\mathrm{UNI},\mathrm{UC},\mathrm{COR}\}$,
+\[
+S^X(\DKZ_d)\le0.0687802606<0.0703203697\le S^{\mathrm{UNI}}(B_d)\le S^X(B_d),
+\]
+and $S^{\mathrm{UNI}}(B_d)\ge0.0879004622$ if $4\mid d$. The same holds on $\Phi_{kd}$ for $\DKZ_d\otimes\one_k$ and
+$B_d\otimes\one_k$.
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+\emph{Test factors.} If $r\ge0$ is positive on the support of $q$ and $\sum_{x,y}\sigma_{xy}r(a_x,b_y|x,y)\le1$ for every
+$\lambda$, Jensen's inequality gives $U_q(\sigma)\ge\sum_{x,y}\sigma_{xy}\sum_{a,b}q\log r$. \emph{Competitor.} The
+behaviour of $B_d$ is the mixture $\sum_j\frac{m_j}dq_j$ of its block behaviours, supported on disjoint outcome sets.
+For uniform $\sigma$, block test factors with entries at most $2$ add: a deterministic $\lambda$ either has all its
+contributing pairs of settings in one block, or exactly two diagonal pairs in two blocks, contributing at most
+$\frac14(2+2)=1$. Exact rational test factors (entries at most $1.24801$, feasibility checked by exhaustive enumeration)
+certify the block values $0$, $0.046273845411$, $0.057783024051$ and $L_4=0.087900462237$ bits; the resulting bound
+$(4kL_4+\rho L_\rho)/d$ is nondecreasing in $k$ and at least $\frac45L_4\ge0.0703203697$. \emph{DKZ.} By the partial
+fraction expansion of $\pi^2/\sin^2(\pi z)$, $h_{xy}$ is the reduction modulo $d$ of the distribution
+$h^\infty_{xy}(m)=1/(2\pi^2(m-\delta_{xy})^2)$ on $\Z$. A distribution $\mu$ of $(t,n_1,n_2)\in\Z^3$ defines, with a
+uniform shift $c$, the local model $A_1=c$, $A_2=c+t$, $B_1=c+n_1$, $B_2=c+n_2$ modulo $d$, and data processing gives
+$S^{\mathrm{UNI}}(\DKZ_d)\le T(\mu)=\frac14\sum_{x,y}D(h^\infty_{xy}\|\mu_{xy})$ for every $d$, where $\mu_{xy}$ are the
+laws of $n_1,n_2,n_1-t,n_2-t$. An explicit rational $\mu^*$ with tail $\propto1/(t^2-\frac14)$ gives
+$T(\mu^*)\le0.068780260568$ (interval arithmetic for $|m|\le3000$; nonpositive terms beyond). Two relabellings fix
+$p_{\DKZ}$ and generate a group that acts transitively on the setting pairs, so by concavity of $\sigma\mapsto U_q(\sigma)$,
+$S^{\mathrm{UNI}}=S^{\mathrm{UC}}=S^{\mathrm{COR}}$ for $\DKZ_d$.
+\end{proof}
+
+Moreover $S(\DKZ_d)\le S(\DKZ_{kd})$, and $0.0687464\le\sup_dS(\DKZ_d)\le0.0687711$. For $d=3$, $\DKZ_3$ is a strict
+local maximiser of all three strengths among projective strategies on $\Phi_3$, modulo phases and local unitaries
+$u\otimes\bar u$ (computer-assisted: exact Karush--Kuhn--Tucker data in $\Q(\sqrt3)$, with an optimal test factor that is
+affine in the CGLMP level, and an interval Cholesky certificate for the averaged Hessian), with
+$S(\DKZ_3)=0.05778302549332865$ bits; global optimality at $d=3$ is supported numerically but open. The clause was
+first shown to fail for $d=4$ by Zhang\cite{Zhang}, with an exact certificate, and for $4\le d\le9$ in our earlier
+work\cite{repo}. Programs and certificates (\texttt{verify\_main.py}, \texttt{zcert.py}, \texttt{blocks\_cert.py},
+\texttt{d3\_cert.py}) are in \texttt{clauses/kl-divergence/}.
+
+%==================================================================================================
+\section{Formal verification in Lean 4}\label{sec:lean}
+%==================================================================================================
+
+The argument of this Supplementary Information has been formalised in the Lean~4 theorem prover\cite{Lean} with the
+mathematical library Mathlib\cite{Mathlib}, in the versions
+\begin{center}
+Lean 4.33.1,\qquad Mathlib revision \texttt{0df444a360eaa60ab8c11dca51a86af692955474}.
+\end{center}
+The formalisation has 98 files and about 33,400 lines; it is in the directory \texttt{lean/} of the
+repository\cite{repoOQP}. No file uses \texttt{sorry}, \texttt{admit}, an \texttt{axiom} declaration or
+\texttt{native\_decide}, and \texttt{\#print axioms} reports, for every main theorem, only the three standard axioms
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The main theorems (file \texttt{Main.lean} and the
+files it imports, and the file \texttt{CglmpNoise.lean}, which imports \texttt{Main.lean}) are the following.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{6.9cm}>{\raggedright\arraybackslash}p{2.6cm}}
+\toprule
+Lean theorem & statement & assumptions\\
+\midrule
+\nolinkurl{OQP27.maxEntClause_le_twenty} & for every $2\le d\le20$: Theorems~1 and~2, and the DKZ strategy attains
+$\IME(d)$ & none\\
+\nolinkurl{OQP27.maxEntClause_all} & Theorems~1 and~2 for every $d\ge2$ & CONE$_d$ for $d\ge21$ only
+(\nolinkurl{Hyp_ConeCertPos_large})\\
+\nolinkurl{OQP27.stripInequality}, \nolinkurl{OQP27.stripEquality} & Theorem~3 for every matrix size $M$, and its
+equality case & none\\
+\nolinkurl{OQP27.StripL3b.theorem1_bmv2} & Theorem~4 (two-variable BMV formula with explicit density), for all
+$(a,t)\in\C^2$ & none\\
+\nolinkurl{OQP27.StripL3b.hyp_RI} & the Radon identity (Proposition~\ref{prop:RI}) & none\\
+\nolinkurl{OQP27.Red.hyp_reduction} & the exact reduction: strategy $\to$ clock model $\to$ 27B configuration $\to$
+linear form (Section~\ref{sec:reduction}) & none\\
+\nolinkurl{OQP27.Cell.continuumCell} & the continuum theorem for step fields: Theorem~3 implies every cell inequality
+(Sections~\ref{sec:cont}, \ref{sec:cells}) & none\\
+\nolinkurl{OQP27.ClassB.classicalTheoremB_all} & the classical (commuting) theorem for every $d$, including the discrete
+Hilbert-transform rearrangement ($N=4d$, $|A|=|B|=d$) & none\\
+\nolinkurl{OQP27.coneCertPos_le_twenty} & CONE$_d$ for $2\le d\le20$: the explicit certificates of
+Section~\ref{sec:cone} re-evaluated by the Lean kernel in exact rational interval arithmetic & none\\
+\nolinkurl{OQP27.ConeCertificate.fullCheck_sound} & soundness of the certificate checker & none\\
+\nolinkurl{OQP27.dkz_cglmp} & the DKZ strategy attains $\IME(d)$, for every $d$ & none\\
+\nolinkurl{OQP27.cglmpOf_noisy}, \nolinkurl{OQP27.noisy_violation_iff} (\texttt{CglmpNoise.lean}) & uniform noise of
+weight $1-v$ multiplies $I_d$ by $v$; the CGLMP noise threshold of a strategy is $2/I_d$ & none\\
+\nolinkurl{OQP27.noisy_violation_imp_le_twenty}, \nolinkurl{OQP27.noisy_threshold_rigid_le_twenty} &
+Proposition~\ref{prop:cglmpnoise} for $2\le d\le20$ & none\\
+\nolinkurl{OQP27.noisy_violation_imp}, \nolinkurl{OQP27.noisy_threshold_rigid} & Proposition~\ref{prop:cglmpnoise} for
+every $d\ge2$ & CONE$_d$ for $d\ge21$ only\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Hence Theorems~1 and~2, in the form stated in Lean (the internal model: projective measurements on $\Phi_D$ of any
+local dimension, probabilities $\Tr(A^{\mathsf T}B)/D$, the expression $I_d$), are machine-checked with no hypotheses
+for $2\le d\le20$. A second, single-file formalisation (directory \texttt{formal-conjectures-27/} of the
+repository\cite{repoOQP}) states Part~B in the formulation of Formal Conjectures issue \#3444 (the state $\Phi_d$,
+complete von Neumann measurements, the Born rule and the CGLMP functional of the problem page) and proves that it
+reduces to this model. For $d\ge21$ the formal proof is complete except for the single input CONE$_d$, stated in the finite form of
+Remark~\ref{rem:finite}, which is established by the interval-arithmetic certificates of Section~\ref{sec:cone},
+outside Lean. The formal proof of Theorems~3 and~4 follows the elementary route of Section~\ref{sec:bmv}: the Radon
+identity, then Theorem~4 by Tonelli's theorem and the identity theorem; its one-variable uniqueness step uses the
+Fourier inversion theorem of Mathlib. The continuum theorem is formalised for step fields, with explicit Herglotz
+functions, as in Section~\ref{sec:cont}.
+
+Theorems~3 and~4 are formalised in full in the following sense: the identity~\eqref{eq:bmv} on $\C^2$, with $F\ge0$
+measurable, compactly supported and bounded by $C(\tau(1-\tau))^{-1/2}$, and the strip inequality with its exact defect
+formula and its equality case, for every matrix size. A few auxiliary statements are proved on paper only, because the
+formal proof does not need them: the continuity of $F$ (Lean uses measurability, and a bound in Frobenius norm), the sum
+rule of Remark~\ref{rem:sumrule}, and the dilogarithm formula for $h_\lambda$ (Lean defines $h_\lambda$ as the Poisson integral
+of Lemma~\ref{lem:poisson}). Likewise, the formal rigidity statement is the main assertion of Theorem~2 ($d$ divides $D$,
+and a unitary $u$ maps the measurements to DKZ$\,\otimes\one$); the uniqueness of $u$ and the corollary for $d\nmid D$
+(Step~4 of Section~\ref{sec:rigidity}) are proved on paper.
+
+%==================================================================================================
+\section{Re-verification and checks}\label{sec:checks}
+%==================================================================================================
+
+\emph{Re-verification.} Each proof was re-derived step by step in a separate verification pass, and the numerical checks
+were rewritten from scratch; the reports are in the repository\cite{repoOQP}. These are internal checks, not peer
+review.
+\begin{enumerate}
+\item Theorems~3 and~4, by the route of Sections~\ref{sec:bmv} and~\ref{sec:strip} (Paley--Wiener--Schwartz and
+Fourier slices): verdict correct. Equation~\eqref{eq:bmv} was confirmed at 82 complex points $(a,t)$ to
+$6.8\times10^{-13}$, and the defect formula of Theorem~\ref{thm:strip} at 51 pairs (instance, $\lambda$) to
+$1.3\times10^{-12}$.
+\item The Radon identity and the elementary route (Proposition~\ref{prop:RI} and its consequences): verdict correct;
+the identities were confirmed to 34--46 digits.
+\item The reduction chain, the continuum theorem, the cell inequalities, the logic of CONE$_d$ and the rigidity
+argument (Sections~\ref{sec:reduction}, \ref{sec:cont}--\ref{sec:rigidity}): verdict correct.
+\item The alternative proof of Theorem~3 for $\mathrm{rank}\,B\le1$ (and hence for $\mathrm{corank}\,B\le3$ and all
+$M\le5$): verdict correct (no mathematical error; some expository gaps, none of which changes a
+statement).
+\item Theorem~\ref{thm:literal}, two re-verifications: verdict correct, no error and no gap. The first
+re-derived every step, recomputed the facets of $\cL_3$ separately, re-verified all eighteen certificates of
+Proposition~\ref{prop:dkzcert} in 200-bit interval arithmetic and ran eleven tamper tests on the verification program,
+all of which were detected; the second rebuilt the result from scratch, with its own certificates, and found the local
+model of Proposition~\ref{prop:flagmodel}.
+\item Theorem~\ref{thm:kl} and the statements on $d=3$ and on $\sup_dS(\DKZ_d)$: verdict correct, no error; the bound
+$T(\mu^*)\le0.068780260568$ was reproduced digit for digit and the local optimality at $d=3$ re-proved with a different
+chart and slice. The sharper bounds on $\sup_dS(\DKZ_d)$ come from this verification.
+\end{enumerate}
+
+\emph{Checks.} The following checks are not part of the proofs; they guard against errors in them. All scripts and
+logs are in the repository\cite{repoOQP}.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{9.8cm}}
+\toprule
+item & check\\
+\midrule
+Theorem~\ref{thm:bmv} & independent re-implementation: equation~\eqref{eq:bmv} to $6.8\times10^{-13}$ (relative) at 82
+complex $(a,t)$ on 13 instances ($M\le6$); back-projection identity (step 2) to $10^{-20}$ at 15 random $(s,\tau)$ with
+0, 2 and 4 non-real roots; sum rule (Remark~\ref{rem:sumrule}) to $10^{-13}$; Radon identity, which gives the Radon
+slices, to 34--46 digits on 22 instances with $M\le8$\\
+Theorem~\ref{thm:strip} & defect formula to $1.3\times10^{-12}$ at 51 (instance, $\lambda$) pairs on 9 instances,
+including spectra up to $\pm150$, clustered spectra and $M=6$ (independent code); adversarial searches for violations
+of the strip inequality for $M\le8$ (none); second proof for rank $\le1$, corank $\le3$, $M\le5$\\
+Lemma~\ref{lem:linear}, Prop.~\ref{prop:cells} & identities checked on random non-commuting configurations for
+$3\le d\le12$, $M\le4$, to $10^{-13}$; every rotated cell inequality negative on random configurations\\
+Theorem~\ref{thm:cont} & chain~\eqref{eq:chain} term by term on step fields ($d=4$, $M=2,3$); mean-value identity;
+$\lambda^*$ and $\Phi_c(\frac14,\frac14)=G/\pi^2$ to 40 digits\\
+Theorem~\ref{thm:cone} & separate checker and complete re-verification for $d\le200$, and re-evaluation by the Lean
+kernel for $d\le20$; floating-point re-evaluation; audit of all 1800 single-run certificates for $201\le d\le2000$;
+non-rigorous prototypes for large $d$; audit of box coverage and margins for $d\ge2001$\\
+Rigidity & residue formula and Herglotz boundary values against quadrature; gradient ascent: all runs that reach the
+maximum end at commuting families\\
+Theorems~1 and~2, $3\le d\le20$ & independent exact sum-of-squares certificates\cite{repo}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%==================================================================================================
+\section{Details of the numerical illustrations}\label{sec:figs}
+%==================================================================================================
+
+All figures are produced by \texttt{make\_figures.py}. Fig.~1b: Riemannian gradient ascent with backtracking on
+$U(D)^4$ (the four measurement bases, rank-one projectors for $D=5$ and rank-two projectors for $D=10$), 20 runs each
+from Haar-random starting points; the ascent direction for a basis $U$ with blocks $\Pi_a$ and gradient operators
+$G_a$ is $\sum_a[X_a,\Pi_a]$, $X_a=U^\dagger G_aU$. Figs.~3 and~4: a random instance ($M=5$, $\mathrm{rank}\,B=2$, fixed
+seed); $h_\lambda$ is evaluated by the dilogarithm with principal branch; the breakpoints of $F(\cdot,\tau)$ are the
+critical values of the eigenvalue curves $x\mapsto\lambda_j(g-x(P-\tau))$, located by bisection; the integrals are
+computed by adaptive Gauss--Kronrod quadrature after the substitutions $s=s_a+(s_b-s_a)\sin^2(\theta/2)$ on each
+interval between breakpoints and $\tau=\sin^2(\vartheta/2)$. The defect of the strip inequality and the balayage of
+$F$ agree to $1.4\times10^{-14}$, and the $\tau$-marginals equal $\|BgP\|_F^2$ to $6\times10^{-14}$. Fig.~5 reads the
+certificate files directly: the LP certificates for $d\le200$, the single-run certificates for $201\le d\le2000$ (the
+plotted values are the lower endpoints of the certified enclosures), and the box logs of the final run for $d\ge2001$.
+
+\begin{thebibliography}{99}
+\bibitem{ADGL} A. Ac\'{\i}n, T. Durt, N. Gisin and J. I. Latorre, Quantum nonlocality in two three-level systems, Phys.
+Rev. A \textbf{65} (2002), 052325.
+\bibitem{BRL} K. Baek, J. Ryu and J. Lee, Robustness measures for quantifying nonlocality, New J. Phys. \textbf{27}
+(2025), 053001.
+\bibitem{BMV} D. Bessis, P. Moussa and M. Villani, Monotonic converging variational approximations to the functional
+integrals in quantum statistical mechanics, J. Math. Phys. \textbf{16} (1975), 2318--2325.
+\bibitem{Chen01} J.-L. Chen, D. Kaszlikowski, L. C. Kwek, C. H. Oh and M. \.Zukowski, Entangled three-state systems
+violate local realism more strongly than qubits: an analytical proof, Phys. Rev. A \textbf{64} (2001), 052109.
+\bibitem{Tsirelson} B. S. Cirel'son, Quantum generalizations of Bell's inequality, Lett. Math. Phys. \textbf{4} (1980),
+93--100.
+\bibitem{CollinsGisin} D. Collins and N. Gisin, A relevant two qubit Bell inequality inequivalent to the CHSH
+inequality, J. Phys. A \textbf{37} (2004), 1775.
+\bibitem{CGLMP} D. Collins, N. Gisin, N. Linden, S. Massar and S. Popescu, Bell inequalities for arbitrarily
+high-dimensional systems, Phys. Rev. Lett. \textbf{88} (2002), 040404.
+\bibitem{DKZ} T. Durt, D. Kaszlikowski and M. \.Zukowski, Violations of local realism with quantum systems described
+by $N$-dimensional Hilbert spaces up to $N=16$, Phys. Rev. A \textbf{64} (2001), 024101.
+\bibitem{Eremenko} A. E. Eremenko, Herbert Stahl's proof of the BMV conjecture, Sb. Math. \textbf{206} (2015), 87--92.
+\bibitem{Fine} A. Fine, Hidden variables, joint probability, and the Bell inequalities, Phys. Rev. Lett. \textbf{48}
+(1982), 291--295.
+\bibitem{Gill} R. D. Gill, Better Bell inequalities (passion at a distance), IMS Lecture Notes--Monograph Series
+\textbf{55} (2007), 135--148; arXiv:math/0610115.
+\bibitem{GLZ} J. Gruca, W. Laskowski and M. \.Zukowski, Nonclassicality of pure two-qutrit entangled states, Phys. Rev.
+A \textbf{85} (2012), 022118.
+\bibitem{Hein} O. Hein\"avaara, Tracial joint spectral measures, preprint, arXiv:2310.03227 (2023).
+\bibitem{Hormander} L. H\"ormander, \emph{The Analysis of Linear Partial Differential Operators I}, 2nd edn,
+Springer, 1990.
+\bibitem{HiGHS} Q. Huangfu and J. A. J. Hall, Parallelizing the dual revised simplex method, Math. Program. Comput.
+\textbf{10} (2018), 119--142.
+\bibitem{OQP} IQOQI Vienna, Open Quantum Problems, Problem 27: The power of CGLMP inequalities; archived copy of 29
+October 2023:
+\url{https://web.archive.org/web/20231029013544/https://oqp.iqoqi.oeaw.ac.at/the-power-of-cglmp-inequalities}.
+\bibitem{KGZMZ} D. Kaszlikowski, P. Gnaci\'nski, M. \.Zukowski, W. Miklaszewski and A. Zeilinger, Violations of local
+realism by two entangled $N$-dimensional systems are stronger than for two qubits, Phys. Rev. Lett. \textbf{85} (2000),
+4418--4421.
+\bibitem{Kulpa} W. Kulpa, The Poincar\'e--Miranda theorem, Amer. Math. Monthly \textbf{104} (1997), 545--550.
+\bibitem{Lean} L. de Moura and S. Ullrich, The Lean 4 theorem prover and programming language, in: CADE 28, Lecture
+Notes in Comput. Sci. \textbf{12699}, Springer, 2021, 625--635.
+\bibitem{LS} E. H. Lieb and R. Seiringer, Equivalent forms of the Bessis--Moussa--Villani conjecture, J. Stat. Phys.
+\textbf{115} (2004), 185--190.
+\bibitem{Masanes} Ll. Masanes, Tight Bell inequality for $d$-outcome measurements correlations, Quantum Inf. Comput.
+\textbf{3} (2003), 345--358.
+\bibitem{Mathlib} The mathlib Community, The Lean mathematical library, in: Proc. 9th ACM SIGPLAN International
+Conference on Certified Programs and Proofs (CPP 2020), ACM, 2020, 367--381.
+\bibitem{classical} A. Mishra and A. Senthilkumar, A rearrangement inequality for the discrete Hilbert transform, with
+an application to optimal CGLMP measurements, preprint (2026), \url{https://github.com/anshM123/CGLMP}.
+\bibitem{repo} A. Mishra and A. Senthilkumar, CGLMP on maximally entangled states: exact optimality, rigidity and
+Tsirelson bounds, \url{https://github.com/anshM123/CGLMP} (2026).
+\bibitem{repoOQP} A. Mishra and A. Senthilkumar, IQOQI Vienna Open Problem 27B: proofs, CONE$_d$ certificates, Lean~4
+formalisations and re-verification reports, \url{https://github.com/anshM123/IQOQI-OQP-27}
+(2026).
+\bibitem{PR} S. Popescu and D. Rohrlich, Quantum nonlocality as an axiom, Found. Phys. \textbf{24} (1994), 379--385.
+\bibitem{Stahl} H. R. Stahl, Proof of the BMV conjecture, Acta Math. \textbf{211} (2013), 255--290.
+\bibitem{vDGG} W. van Dam, R. D. Gill and P. D. Gr\"unwald, The statistical strength of nonlocality proofs, IEEE Trans.
+Inform. Theory \textbf{51} (2005), 2812--2835.
+\bibitem{Zhang} Y. Zhang, CGLMP measurements need not maximize statistical strength, Zenodo (2026),
+\url{https://doi.org/10.5281/zenodo.23022433}.
+\end{thebibliography}
+
+\end{document}

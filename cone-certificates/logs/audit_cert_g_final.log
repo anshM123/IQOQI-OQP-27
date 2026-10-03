@@ -1,0 +1,13 @@
+verify_cert.py sha256 = ff56740d15d40a07c99deb6433fb1b0f40b5a2d5b356b3ec9da0270ff1fab6a7
+certificates 201..2000: 1800/1800 OK; missing 0 []; failed 0 []
+margins (lower endpoints; argmin d):  d^2 min at_k = 0.0631932 (even d, d = 2000), 0.126387 (odd d, d = 1999);  d min Delta^2 W = 0.660025 (d = 201)
+  (D): min inf Hc'/(c1min/4) = 4.00099 (d = 2000);  min log10[c_D r/(2 eps_t)] = 0.616942 (d = 201);  min log10[|face value|/(2 eps_t)] = 16.7768 (d = 201)
+  tails: max log10 eps_t = -31.1695 (d = 201);  min log10[min Delta^2 W/(4 eps_t)] = 28.0838 (d = 201);  truncation-moment fallbacks used: 0
+  constants: S_1 <= 1.8883784297, S_16 <= 0.0053051640, g_r(1) tail <= 4.933e-47
+  total certifier time 11.86 h
+previous logs [vg/fp]: min d^2 at_k = 0.0632 (even) / 0.1264 (odd), min d w = 0.6600, min (D) ratio = 4.0010
+previous logs [100-bit backup]: min d^2 at_k = 0.0285 (even) / 0.0798 (odd), min d w = 0.6336, min (D) ratio = 4.0033
+  new/old - 1 vs 100-bit backup 201-600 (400 d): min at_k [-1.11e-04, +1.22e+00], min Delta^2 W [+3.10e-06, +4.87e-02], (D) ratio [+1.31e-10, +5.90e-09]
+  new/old - 1 vs vg/fp 201-600 (400 d): min at_k [-1.11e-04, +1.21e-04], min Delta^2 W [+1.49e-06, +2.13e-05], (D) ratio [+1.31e-10, +5.90e-09]
+  new/old - 1 vs vg/fp 601-2000 (1400 d): min at_k [+2.59e-06, +7.23e-05], min Delta^2 W [+4.93e-07, +7.76e-06], (D) ratio [+3.78e-12, +2.65e-10]
+ALL CERTIFIED

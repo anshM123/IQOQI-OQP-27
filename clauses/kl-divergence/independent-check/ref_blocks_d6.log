@@ -1,0 +1,22 @@
+  warnings.warn(
+  prob.solve(solver=cp.CLARABEL, verbose=verbose, max_iter=500, tol_gap_abs=1e-12, tol_gap_rel=1e-12,
+[0] block T1: |q(bases) - exact formula| = 0.0e+00
+[0] block C2: |q(bases) - exact formula| = 1.1e-16
+[0] block K3: |q(bases) - exact formula| = 3.3e-16
+[0] block CC4: |q(bases) - exact formula| = 1.4e-16
+[1] their r_T1: (F1) exact max over 1 strategies = 1.000000000000; L in [0.000000000000, 0.000000000000] bits; max entry 1.000000
+[1] their r_C2: (F1) exact max over 16 strategies = 0.999999999000; L in [0.046273845411, 0.046273845411] bits; max entry 1.138071
+[1] their r_K3: (F1) exact max over 81 strategies = 0.999999999000; L in [0.057783024051, 0.057783024051] bits; max entry 1.160689
+[1] their r_CC4: (F1) exact max over 256 strategies = 0.999999999000; L in [0.087900462237, 0.087900462237] bits; max entry 1.248001
+[1] (F2) cross conditions for all ordered type pairs (exact): True
+[1] C(4+0) >= 0.087900462237 bits
+[1] C(4+1) >= 0.070320369790 bits
+[1] C(4+2) >= 0.074024923295 bits
+[1] C(4+3) >= 0.074992988729 bits
+[1] => S^UNI(B_d) >= 0.070320369790 bits for all d >= 4 (given Lemma F)
+[2] own solver, block C2: S^UNI in [0.046273846853, 0.046273846854] bits (float dual value 0.046273846853; exact M = 1.000000000000)
+[2] own solver, block K3: S^UNI in [0.057783025493, 0.057783025494] bits (float dual value 0.057783025493; exact M = 1.000000000000)
+[2] own solver, block CC4: S^UNI in [0.087900463663, 0.087900463912] bits (float dual value 0.087900463608; exact M = 0.999999999962)
+[3] d=4 (['CC4']): |q(bases) - direct sum| = 1.4e-16; S^UNI(B_d) in [0.0879004637, 0.0879004637] bits; C(d) = 0.0879004622
+[3] d=5 (['CC4', 'T1']): |q(bases) - direct sum| = 8.3e-17; S^UNI(B_d) in [0.0703203709, 0.0703203709] bits; C(d) = 0.0703203698
+[3] d=6 (['CC4', 'C2']): |q(bases) - direct sum| = 1.1e-16; S^UNI(B_d) in [0.0740249247, 0.0740249247] bits; C(d) = 0.0740249233

@@ -1,0 +1,10 @@
+F-checks: |h(numpy)-h(mp def)| <= 1.7763568394002505e-15  F2 err 1.0829477987666376e-15  F4 (h_x - i h_y = phi') err 1.7763568394002505e-15
+  F3 boundary y=-2.0: phi'(0+iy)=0.000594981203-0.000000000000j formula 0.000594981203 | phi'(1+iy)=-0.000593871146-0.000000000000j formula -0.000593871146
+  F3 boundary y=-0.3: phi'(0+iy)=0.157162629914-0.000000000000j formula 0.157162629914 | phi'(1+iy)=-0.104743029299-0.000000000000j formula -0.104743029299
+  F3 boundary y=0.4: phi'(0+iy)=-0.293389490925-1.000000000000j formula -0.293389490925-1.000000000000j | phi'(1+iy)=-0.479722243608-0.000000000000j formula -0.479722243608
+  F3 boundary y=2.5: phi'(0+iy)=-2.499876407091-1.000000000000j formula -2.499876407091-1.000000000000j | phi'(1+iy)=-2.500123544939-0.000000000000j formula -2.500123544939
+F5: |min_y (h - p y) - Phi_c| <= 8.9683e-42 ; min over grid of h - p y - Phi_c = 2.0368e-8 (>= 0 required)
+Lemma 1(a): max violation of 0<=x<=s, sum x = s: 1.69e-11
+Lemma 1(b): 400 cases, max |gamma - spec(PgP)|/scale = 4.02e-11;  |R(t) - exp(-2pi i F(t))| <= 1.31e-12;  |R - (1-isG)/(1+isG)| <= 1.23e-13
+Lemma 1(c): residues p_i min 9.56e-09 (>0), |sum p_i - 1| <= 1.01e-13, |spec(s vv*+ig) - nu|/scale <= 1.17e-12
+Lemma 2: max |sum(1-x)y - sum gamma - alpha S|/scale = 2.76e-12  (400 configs, 30% atoms, coincident y)

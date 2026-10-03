@@ -1,0 +1,10 @@
+waited 4s; free MB at start: 8073; slot 1
+'OQP27.cglmpOf_unif' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.cglmpOf_noisy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.noisy_violation_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.noisy_violation_imp_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.noisy_violation_imp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.dkz_noisy_violation_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.noisy_threshold_rigid_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.noisy_threshold_rigid' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit code: 0; elapsed s: 116

@@ -1,0 +1,1 @@
+run stopped by the referee (not needed: the Gaussian construction is not used for d <= 200; the programme's own verifier also fails at d = 31, spot/vg_31.log)

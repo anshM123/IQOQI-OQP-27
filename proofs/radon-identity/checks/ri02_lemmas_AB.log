@@ -1,0 +1,9 @@
+instances: 18, tau values: 9, 4 complex c per (instance, tau)
+Lemma A: number of (instance,tau,c) with wrong C_+/C_- count: 0   (expect 0)
+Lemma B(i):   max |y| min(tau,1-tau)/K            = 0.99999981   (expect <= 1)
+Lemma B(ii):  max |y| sqrt(tau(1-tau))/K, right side = 0.99305657   (expect <= 1)
+   same ratio for the WRONG half plane (no bound)    = 9999.9966   (unbounded as tau -> 0,1)
+trace identity: max rel. defect                    = 5.69e-29
+domination: max |S_+ - S0_+| / (M K (2 + (tau(1-tau))^-1/2)) = 0.19187461   (expect <= 1)
+real c, Lemma 1(b): max |y| sqrt(tau(1-tau))/||H+c|| over non-real roots = 0.81272317   (expect <= 1)
+ALL OK

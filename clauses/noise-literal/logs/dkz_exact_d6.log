@@ -1,0 +1,3 @@
+d=6: K_d has 2462 facets (exact DD, two orders, all re-verified) [499.2s]
+   field Q(cos(pi/24)) of degree 8; v* = 2/I_ME(6) in [0.684883751129915, 0.684883751129915]; all 2462 facets >= 0 at T^v* (1 exactly tight, smallest positive value >= 3.143e-02)  =>  v_c(DKZ_6) = 2/I_ME(6) EXACTLY [500.2s]
+RESULT: PASS

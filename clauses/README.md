@@ -1,0 +1,21 @@
+# The noise and Kullback–Leibler clauses of OQP 27B, and POVMs
+
+This folder contains our results on the clauses of Problem 27B that go beyond the optimality and uniqueness theorem of the
+papers, and one strengthening of that theorem (POVMs, d = 3..8). [`LEDGER.md`](LEDGER.md) has the exact wording of the
+problem and the status of every clause; several of these clauses are only partly settled.
+
+| Folder | Clause | Result | Checks |
+|---|---|---|---|
+| [`noise-cglmp/`](noise-cglmp/) | 27B(ii), noise resistance of the CGLMP violation (white noise on Phi_d) | proved for every d (computer-assisted for d >= 21); DKZ is the unique optimum | Lean: `../lean/OQP27/CglmpNoise.lean`, `../formal-conjectures-27/27.lean` |
+| [`noise-literal/`](noise-literal/) | 27B(ii), violation of local realism (all Bell inequalities) under Gill's uniform outcome noise | false for every d >= 4 when measurements may have unused outcomes (zero projectors) or be POVMs; for complete von Neumann measurements on Phi_d proved for d = 3 and open for d >= 4 | `python verify_theorem.py` (17 checks, about 3 min); two re-verifications |
+| [`kl-divergence/`](kl-divergence/) | 27B(iii), Kullback-Leibler discrimination | false for every d >= 4 (complete von Neumann competitors on Phi_d); d = 3 open, DKZ_3 a strict local maximum | `python verify_main.py` and the scripts listed in THEOREM.md; one re-verification |
+| [`povm/`](povm/) | strengthening of 27B(i): arbitrary POVMs instead of projective measurements | DKZ optimal and unique among all POVMs for d = 3..8 (every local dimension) | `cd certs && python ../verify_povm.py 3 4 5 6 7 8` (exact; add `iv` first for the interval check); one re-verification |
+
+Each theorem is stated and proved in the folder's `THEOREM.md`. Every computational input is checked in exact
+rational/algebraic arithmetic or with rigorous interval enclosures; no decision rests on a floating-point comparison.
+The re-verifications re-derived the proofs and re-checked the computations with separately written code; their reports
+are `INDEPENDENT_VERIFICATION*.md`, and their scripts and logs are in the `independent-check*` subfolders. They are
+internal checks, not peer review.
+
+Requirements: Python 3 with numpy, scipy, sympy and mpmath. Run each script from its own folder with
+`OMP_NUM_THREADS=1`.

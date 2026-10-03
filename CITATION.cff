@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the preprint below."
+title: "IQOQI Vienna Open Problem 27B: optimal CGLMP measurements on maximally entangled states"
+type: software
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+version: "1.0"
+date-released: "2026-10-02"
+license: MIT
+repository-code: "https://github.com/anshM123/IQOQI-OQP-27"
+keywords:
+  - "Bell inequalities"
+  - "CGLMP inequality"
+  - "maximally entangled states"
+  - "self-testing"
+  - "Bessis-Moussa-Villani"
+  - "matrix inequalities"
+  - "computer-assisted proof"
+  - "Lean 4"
+preferred-citation:
+  type: article
+  status: preprint
+  title: "Optimal CGLMP measurements in every dimension and the clauses of IQOQI Vienna Open Quantum Problem 27B"
+  authors:
+    - family-names: Mishra
+      given-names: Ansh
+    - family-names: Senthilkumar
+      given-names: Aryan
+  year: 2026
+  month: 10
+  url: "https://github.com/anshM123/IQOQI-OQP-27"

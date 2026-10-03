@@ -1,0 +1,12 @@
+<site-packages>\cupy\_environment.py:286: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+ref_d3_direct.py:39: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  cp.Problem(cp.Minimize(tt), cons).solve(solver=cp.CLARABEL, tol_gap_abs=1e-12, tol_gap_rel=1e-12,
+eps= 0.20: max (S^UNI - S0)/eps^2 = -0.03178, max (S^COR - S0)/eps^2 = -0.03151 bits; all below S0: UNI True, COR True; COR >= UNI: True
+eps= 0.10: max (S^UNI - S0)/eps^2 = -0.02987, max (S^COR - S0)/eps^2 = -0.02959 bits; all below S0: UNI True, COR True; COR >= UNI: True
+eps= 0.05: max (S^UNI - S0)/eps^2 = -0.03873, max (S^COR - S0)/eps^2 = -0.03804 bits; all below S0: UNI True, COR True; COR >= UNI: True
+eps= 0.02: max (S^UNI - S0)/eps^2 = -0.02750, max (S^COR - S0)/eps^2 = -0.02730 bits; all below S0: UNI True, COR True; COR >= UNI: True
+ref_solver.py:60: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL, verbose=verbose, max_iter=500, tol_gap_abs=1e-12, tol_gap_rel=1e-12,
+spot eps=0.1: S^UNI 0.0573396828 <= S^UC(grid) 0.0573396828 <= S^COR 0.0573451736 < S0 0.0577830255
+spot eps=0.1: S^UNI 0.0570186254 <= S^UC(grid) 0.0570186254 <= S^COR 0.0570451406 < S0 0.0577830255

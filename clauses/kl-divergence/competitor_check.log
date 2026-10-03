@@ -1,0 +1,4 @@
+d=4 (4*1+0): |q - direct-sum formula| = 0.0e+00;  KL(competitor) in [0.0879004637, 0.0879004637] bits;  KL(DKZ_d) in [0.0623797596, 0.0623797596] bits
+d=5 (4*1+1): |q - direct-sum formula| = 2.8e-17;  KL(competitor) in [0.0703203709, 0.0703203709] bits;  KL(DKZ_d) in [0.0646421471, 0.0646421471] bits
+d=6 (4*1+2): |q - direct-sum formula| = 8.3e-17;  KL(competitor) in [0.0740249247, 0.0740249247] bits;  KL(DKZ_d) in [0.0658923236, 0.0658923236] bits
+d=7 (4*1+3): |q - direct-sum formula| = 1.4e-16;  KL(competitor) in [0.0749929902, 0.0749929902] bits;  KL(DKZ_d) in [0.0666458185, 0.0666458185] bits

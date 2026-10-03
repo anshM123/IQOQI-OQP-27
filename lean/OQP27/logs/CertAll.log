@@ -1,0 +1,6 @@
+waited 2s; free MB at start: 10072; slot 4
+'OQP27.ConeCertificate.sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.ConeCertificate.fullCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.coneCert_le_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.coneCert_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit code: 0; elapsed s: 18

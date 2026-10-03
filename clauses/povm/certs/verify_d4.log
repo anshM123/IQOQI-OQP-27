@@ -1,0 +1,7 @@
+d=4: S_op invariant under rho, sigma, reversal (mod cyclic rotation)
+d=4: identity check over 124 symmetry classes (17969 expanded terms; 16 moment blocks, 4 doubly-localizing blocks): OK
+d=4: all 20 Gram blocks positive definite (exact LDL, min certified pivot > [0.0008792268863354207722342677233579051874555141062842731056275431709, 0.0008792268863354207722342677233579051874555141062842731056275431709])
+d=4: exact identity in Q(zeta_16):  4 - 2 lam/(d-1) = 4/(d(d-1)) sum_j (d-j) sec(pi j/(2d))
+d=4: lam = S_DKZ exactly;  I_ME = 2.89624321845870835323833434249  (= 4/(d(d-1)) sum (d-j) sec(pi j/2d))
+d=4: VERIFIED: every POVM strategy on every maximally entangled state has I_d <= I_ME(d)
+d=4: equality case: 24 vectors Z^0_n - w^(nc), Z^1_n - 1 lie in range(X^c) of the doubly-localizing blocks -> every POVM strategy attaining I_ME(d) is projective

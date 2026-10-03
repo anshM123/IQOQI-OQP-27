@@ -1,0 +1,13 @@
+d= 3: done (cert K=14, min cell n_r = 1)
+d= 4: done (cert K=20, min cell n_r = 1)
+d= 5: done (cert K=27, min cell n_r = 1)
+d= 6: done (cert K=31, min cell n_r = 1)
+d= 7: done (cert K=40, min cell n_r = 1)
+d= 8: done (cert K=42, min cell n_r = 1)
+d= 9: done (cert K=51, min cell n_r = 1)
+d=10: done (cert K=53, min cell n_r = 1)
+d=11: done (cert K=63, min cell n_r = 1)
+d=12: done (cert K=66, min cell n_r = 1)
+max abs errors: {'a': '9.95e-14', 'b': '8.88e-15', 'c': '1.14e-13', 'd': '1.68e-12', 'e': '1.14e-13'}
+max over samples of single rotated cell inequality Q^ell - N^2 Phi_c = -1.332e+00  (must be <= 0)
+max over samples of N(s) + N(d-s) - d = -1.687e+00  (must be <= 0)

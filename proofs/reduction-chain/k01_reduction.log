@@ -1,0 +1,30 @@
+d=3: done (I_ME = 2.8729340512, F_DKZ = 4.3094010768)
+d=4: done (I_ME = 2.8962432185, F_DKZ = 8.6887296554)
+d=5: done (I_ME = 2.9105448081, F_DKZ = 14.5527240404)
+d=6: done (I_ME = 2.9202036064, F_DKZ = 21.9015270478)
+d=7: done (I_ME = 2.9271609424, F_DKZ = 30.7351898955)
+d=8: done (I_ME = 2.9324096087, F_DKZ = 41.0537345219)
+80 random strategies (d = 3..8, D = 2..6)
+  max I_chain    = 5.551e-15
+  max I_Q        = 9.992e-15
+  max lemma21    = 2.776e-15
+  max F_AB       = 7.372e-14
+  max Nd         = 1.545e-13
+  max Nsym       = 8.882e-16
+  max red        = 4.796e-14
+  max Nsum_viol  = -2.625e+00
+  max (I_direct - I_ME) over random strategies = -1.5945  (must be < 0)
+DKZ checks:
+  d=2: I(DKZ) - I_ME = -4.44e-16; I(DKZ(x)1_2) - I_ME = -4.44e-16; eq.(15) dev 1.7e-16; N(m) - m (m<d) = 1.6e-15
+  d=3: I(DKZ) - I_ME = 1.78e-15; I(DKZ(x)1_2) - I_ME = 2.22e-15; eq.(15) dev 5.6e-16; N(m) - m (m<d) = 4.4e-15
+  d=4: I(DKZ) - I_ME = 0.00e+00; I(DKZ(x)1_2) - I_ME = 0.00e+00; eq.(15) dev 7.2e-16; N(m) - m (m<d) = 2.2e-16
+  d=5: I(DKZ) - I_ME = 4.44e-16; I(DKZ(x)1_2) - I_ME = -1.33e-15; eq.(15) dev 1.7e-16; N(m) - m (m<d) = 1.0e-14
+  d=6: I(DKZ) - I_ME = 1.78e-15; I(DKZ(x)1_2) - I_ME = 1.78e-15; eq.(15) dev 7.8e-16; N(m) - m (m<d) = 4.2e-14
+  d=7: I(DKZ) - I_ME = -8.88e-16; I(DKZ(x)1_2) - I_ME = -8.88e-16; eq.(15) dev 1.4e-16; N(m) - m (m<d) = 1.2e-14
+  d=8: I(DKZ) - I_ME = -8.88e-16; I(DKZ(x)1_2) - I_ME = -8.88e-16; eq.(15) dev 4.4e-16; N(m) - m (m<d) = 5.6e-14
+ascent (BFGS over unitaries, eigen-labels fixed):
+  d=3 D=3: best I found = 2.8729340511, I_ME = 2.8729340512, diff = -2.48e-11
+  d=3 D=4: best I found = 2.6547005383, I_ME = 2.8729340512, diff = -2.18e-01
+  d=4 D=4: best I found = 2.8962432184, I_ME = 2.8962432185, diff = -6.89e-11
+  d=3 D=6: best I found = 2.8729340501, I_ME = 2.8729340512, diff = -1.11e-09
+  d=5 D=5: best I found = 2.9105448053, I_ME = 2.9105448081, diff = -2.73e-09

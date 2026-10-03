@@ -1,0 +1,35 @@
+S1  Qt_n = x^(n-2)[1 - prod_{k<n}(1+kw)/(1+kwx)]/w exactly (n <= 6); Qt_0 = Qt_1 = 0, Qt_2 = -1 + (1+w)x + O(x^2), Qt_3 = -(3+2w)x + O(x^2), Qt_n = O(x^2) for n >= 4: True
+S2  recursion Qt_{n+1} = Qt_n r_n - x^(n-1) n (1-x)/(1+n eps) exact (n <= 6): True
+S3  tauh_e(0,w) = pi*a2/2 ;  d_x tauh_e(0,w) = pi*(-4*a2*w - 6*a2 + 15*a3*w + 18*a3 - 15*g3*w - 18*g3)/12
+S4  g_r''(0) = 0, g_3 = pi/36, g_5 = 7*pi**3/28800, g_r''(1) = 2 - 4/pi, g_r'''(1) = 4/pi, a_2 = (-2 + pi)/pi, a_3 = -2/(3*pi): True
+S5  Taylor coefficients of g_r'' at 0 agree with the Bernoulli formula of a03 (i = 3, 5): True
+S6  tauh_e = A0 + (pi/2)[-(1 + pi/12) + t1c w] x + O(x^2) with t1c = -(2/3 + 5pi/72 + 1/(3pi)): True
+S6b P_n(x, 0) = x^n (n <= 8), hence d_x^2j S(0, 0) = -(2j)! a_2j: True
+S7  Ch_1 = B - (pi/2) x + O(x^2), Ch_2 = (w B_4/2) x + O(x^2), Ch_3, Ch_4 = O(x^2): True   [Ch_1: B2 + (-pi/2) x;  Ch_2: (B4*w/2) x]
+S8  (I1) U0 = A0/B: True ;  (I2) b^3 U1 = phi_2 (exact symbolic identity): True
+S9  (W0) omega(0, w) = -(1 - 2/pi): True   [Tg(0,0) = 0]
+PART S (symbolic): ALL IDENTITIES VERIFIED
+N0  a_n via taylor(closed form) vs binomial sums: max diff 3.13e-36 (n < 12)
+N1  b =     1.0: U0 = 0.644418332660068 (A0/B rel.err 1.1e-29),  b^3 U1 = -2.97988761437283,  phi_2 = -2.97988761437283  rel.err 6.2e-25
+N1  b =    1.25: U0 = 0.621288956260576 (A0/B rel.err 2.4e-30),  b^3 U1 = -4.99750798691957,  phi_2 = -4.99750798691957  rel.err 1.6e-25
+N1  b =     1.5: U0 = 0.607479490932579 (A0/B rel.err 7.6e-31),  b^3 U1 = -7.73597729982361,  phi_2 = -7.73597729982361  rel.err 5.5e-26
+N1  b =     2.0: U0 = 0.592554303301726 (A0/B rel.err 1.3e-31),  b^3 U1 = -15.7867426555022,  phi_2 = -15.7867426555022  rel.err 1.0e-26
+N1  b =     2.5: U0 = 0.585123990105739 (A0/B rel.err 3.4e-32),  b^3 U1 = -27.950784035826,  phi_2 = -27.950784035826  rel.err 3.0e-27
+N1  b =     3.0: U0 = 0.580915796186733 (A0/B rel.err 1.2e-32),  b^3 U1 = -45.0437029460211,  phi_2 = -45.0437029460211  rel.err 1.1e-27
+N1  b =     4.0: U0 = 0.576592272695857 (A0/B rel.err 2.4e-33),  b^3 U1 = -97.2744831162222,  phi_2 = -97.2744831162222  rel.err 2.4e-28
+N1  b =     5.0: U0 = 0.574538727718253 (A0/B rel.err 7.2e-34),  b^3 U1 = -178.993458695112,  phi_2 = -178.993458695112  rel.err 7.8e-29
+N1  b =     7.0: U0 = 0.572721061805577 (A0/B rel.err 1.3e-34),  b^3 U1 = -456.947856237743,  phi_2 = -456.947856237743  rel.err 1.5e-29
+N1  b =    10.0: U0 = 0.571743582097353 (A0/B rel.err 2.1e-35),  b^3 U1 = -1257.86049851091,  phi_2 = -1257.86049851091  rel.err 2.6e-30
+N1  b =    15.0: U0 = 0.571218329069265 (A0/B rel.err 2.5e-36),  b^3 U1 = -4050.83638543198,  phi_2 = -4050.83638543198  rel.err 3.2e-31
+N1  b =    20.0: U0 = 0.571033901748127 (A0/B rel.err 2.5e-37),  b^3 U1 = -9371.99129916267,  phi_2 = -9371.99129916267  rel.err 3.3e-32
+N1  b =    30.0: U0 = 0.570901978994901 (A0/B rel.err 2.6e-37),  b^3 U1 = -30855.1144496115,  phi_2 = -30855.1144496115  rel.err 3.6e-32
+N1  b =    50.0: U0 = 0.570834373290779 (A0/B rel.err 1.9e-37),  b^3 U1 = -139978.542067604,  phi_2 = -139978.542067604  rel.err 2.7e-32
+N1  b =   100.0: U0 = 0.57080583965482 (A0/B rel.err 6.7e-38),  b^3 U1 = -1102623.02501094,  phi_2 = -1102623.02501094  rel.err 9.4e-33
+N1  b =   300.0: U0 = 0.570797383820042 (A0/B rel.err 1.2e-38),  b^3 U1 = -29461238.1831196,  phi_2 = -29461238.1831196  rel.err 1.7e-33
+N1  b =  1000.0: U0 = 0.570796421927577 (A0/B rel.err 3.7e-38),  b^3 U1 = -1087144564.71596,  phi_2 = -1087144564.71596  rel.err 5.2e-33
+N2  max rel. errors: (I1) 1.06e-29, (I2) 6.23e-25 (extrapolation from x = 1e-5..8e-5, degree 7); (T/x) definition vs Tt + EMx: 3.98e-42
+PART N (numerical, independent implementation): CONSISTENT
+J1  interval jets at x = 0, 161 values of b in [1, 1000] and w = 0: enclosures of U0 and U1 intersect A0/B and phi_2/b^3 at every point: True (bad: []);  max relative widths 6.3e-22, 1.7e-21
+J2  omega(0, w) enclosures contain -(1 - 2/pi) at 41 points: True
+PART J (interval jets): CONSISTENT
+IDENTITIES: ALL CONSISTENT  [575s]

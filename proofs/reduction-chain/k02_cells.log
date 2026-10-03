@@ -1,0 +1,12 @@
+d=3: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(1.16488068494202e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+d=4: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(1.5745142912354606e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+d=5: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(1.5745142912354606e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+d=6: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(1.5745142912354606e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+d=7: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(3.2623732065507097e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+d=8: running {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(3.2623732065507097e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+FINAL: {'a_max': -3.552713678800501e-15, 'b_err': np.float64(5.9738470293984766e-15), 'c_err': np.float64(3.2623732065507097e-16), 'd_err': 1.8077035598977817e-14, 'e_ok': True}
+adversarial ascent of <u^ell, delta> (BFGS over unitaries, eigen-labels fixed):
+  d=4 M=2: max <u,delta> found = -7.349e+00
+  d=5 M=3: max <u,delta> found = -8.096e+00
+  d=6 M=2: max <u,delta> found = -2.102e+01
+  d=6 M=3: max <u,delta> found = -9.644e+00

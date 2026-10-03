@@ -1,0 +1,3 @@
+rc07b: 2 shifted-form points of rc01 with |GL - TS| > 1e-30, recomputed adaptively (dps 44)
+  rand_M4_r2                   c0=-161/54  (rc01 quad-err 9.9e-22)  L=1.433447039759656571854841312 R=1.433447039759656571854841312 |L-R|=2.52e-44 panels=19 max panel err=5.6e-37 (15s)
+  rand_M4_r2                   c0=7/57     (rc01 quad-err 7.6e-18)  L=1.828455255964650705267060406 R=1.828455255964650705267060406 |L-R|=5.61e-45 panels=16 max panel err=2.9e-38 (13s)

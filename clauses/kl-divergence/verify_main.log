@@ -1,0 +1,11 @@
+[Z] exact model: nonnegative, kernels normalised, total mass = 1 exactly
+[Z] link laws: exact, each sums to 1 over Z (window part + telescoped far tail)
+[Z] T_inf <= 0.068780260568 bits (sum over |m| <= 3000; tail |m| > 3000 has P >= Q, contributes <= 0)
+[F] T1: test factor feasible (exact max over 1 strategies = 1.000000000000); L >= 0.000000000000 bits
+[F] C2: test factor feasible (exact max over 16 strategies = 0.999999999000); L >= 0.046273845411 bits
+[F] K3: test factor feasible (exact max over 81 strategies = 0.999999999000); L >= 0.057783024051 bits
+[F] CC4: test factor feasible (exact max over 256 strategies = 0.999999999000); L >= 0.087900462237 bits
+[F] cross conditions hold for all ordered pairs of block types (exact)
+[F] competitor lower bound for every d >= 4: C(d) >= 0.070320369790 bits (min at d = 5)
+THEOREM 1 margin: C_min - T_inf >= 0.001540109 bits > 0: True
+[sanity] DKZ closed form and wrap identity confirmed in floats for d = 3, 4, 7, 10

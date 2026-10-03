@@ -1,0 +1,10 @@
+(1) d_tau Lam_+ = d_c S_+ : max rel. defect over 36 random points = 2.83e-49
+(2) d_tau (Lam_+ - Lam0_+) = d_c (S_+ - S0_+) : max rel. defect = 1.09e-47
+    pinched pencil alone: d_tau Lam0_+ = (2.8571428571428571429 + 0.0j),  d_c S0_+ = (2.8571428571428571429 + 0.0j)  ((M-r)/(1-tau) = 2.8571428571428571429)
+(3) H = H_d (double C_+ root (1 + c)/(1 - tau)): |y1 - y2| (C_+ roots) = 0.0;  d_tau Lam_+ - d_c S_+ = 0.0
+(3) perturbed off-diagonal 1e-6: |y1 - y2| (C_+ roots) = 3.42e-12;  d_tau Lam_+ - d_c S_+ = 6.41e-50
+(3) perturbed off-diagonal 0.3: |y1 - y2| (C_+ roots) = 0.301;  d_tau Lam_+ - d_c S_+ = 0.0
+(4) circle centre i*6.8144, radius 6.4045: (1/2pi i) oint p'/p = (3.0 + 3.07758597762e-43j) (M - r = 3)
+    |contour S_+ - S_+| = 5.68e-40,  |contour Lam_+ - Lam_+| = 2.3e-40
+(5) Hopf equation x_tau + x x_s = 0 at 30 non-real roots: max rel. defect = 1.07e-40
+ALL OK

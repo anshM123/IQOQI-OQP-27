@@ -1,0 +1,5 @@
+d=3 M=2: runs=12, reached F_DKZ (gap<1e-6): 6;  max comm at top = 1.22e-07, max comm^2/gap = 41.02;  other gaps: [np.float64(1.8094), np.float64(2.3094), np.float64(3.0), np.float64(3.1547), np.float64(3.4641), np.float64(5.4641)]
+d=4 M=2: runs=12, reached F_DKZ (gap<1e-6): 7;  max comm at top = 1.74e-07, max comm^2/gap = 4.27;  other gaps: [np.float64(3.0674), np.float64(4.7602), np.float64(5.9816), np.float64(7.0674), np.float64(7.0756)]
+d=5 M=2: runs=10, reached F_DKZ (gap<1e-6): 5;  max comm at top = 2.13e-07, max comm^2/gap = 13.72;  other gaps: [np.float64(3.9888), np.float64(4.8557), np.float64(10.3793), np.float64(13.615), np.float64(14.0875)]
+d=4 M=3: runs=8, reached F_DKZ (gap<1e-6): 0;  ;  other gaps: [np.float64(0.7216), np.float64(2.386), np.float64(3.4065), np.float64(3.7688), np.float64(4.0504), np.float64(4.1151), np.float64(6.3705), np.float64(7.6781)]
+d=6 M=2: runs=8, reached F_DKZ (gap<1e-6): 4;  max comm at top = 2.24e-07, max comm^2/gap = 2.62;  other gaps: [np.float64(10.2437), np.float64(11.6224), np.float64(17.2621), np.float64(21.1245)]

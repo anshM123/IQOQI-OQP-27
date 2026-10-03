@@ -1,0 +1,53 @@
+cell vectors: [2.375 0.125 0.25  1.25 ] [0.8854 1.283  0.7115 1.1202]
+[random M=2, cert cell] d=4 M=2  ||[Q,Q]||max=6.980e-01
+   (1) Q^ell/N^2 = 0.0423769147   quadrature int tau(Ag) = 0.0423769147   diff 8.61e-13
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272504  vs h_lam(1/4) = 0.0652272682  diff -1.77e-08
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571970087  vs h_lam(1/4) = 0.2571969490  diff 5.96e-08
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844197  vs h_lam(1/4) = 0.0994844485  diff -2.88e-08
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082678830  vs h_lam(1/4) = 0.0082678547  diff 2.83e-08
+   (3) Phi_c - Q^ell/N^2 = 0.0504298035;  S_star = 0.0072557887, S_bath = 0.0431739971, sum = 0.0504297858  diff 1.77e-08
+   (4) min pointwise (*)-defect density = -1.776e-15;  max_theta ||[B(theta), g(theta)]|| = 4.487e+00
+[random M=3, random cell] d=4 M=3  ||[Q,Q]||max=7.071e-01
+   (1) Q^ell/N^2 = 0.0036592025   quadrature int tau(Ag) = 0.0036592025   diff -2.41e-12
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272028  vs h_lam(1/4) = 0.0652272682  diff -6.54e-08
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571969417  vs h_lam(1/4) = 0.2571969490  diff -7.30e-09
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844178  vs h_lam(1/4) = 0.0994844485  diff -3.08e-08
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082679190  vs h_lam(1/4) = 0.0082678547  diff 6.43e-08
+   (3) Phi_c - Q^ell/N^2 = 0.0891475156;  S_star = 0.0035950572, S_bath = 0.0855523931, sum = 0.0891474503  diff 6.54e-08
+   (4) min pointwise (*)-defect density = -1.776e-15;  max_theta ||[B(theta), g(theta)]|| = 5.009e+00
+F(V0) - F_DKZ = 0.0
+[commuting one-step mixture] d=4 M=2  ||[Q,Q]||max=0.000e+00
+   (1) Q^ell/N^2 = 0.0928067182   quadrature int tau(Ag) = 0.0928067182   diff 9.36e-12
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272681  vs h_lam(1/4) = 0.0652272682  diff -9.36e-12
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571969578  vs h_lam(1/4) = 0.2571969490  diff 8.76e-09
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844507  vs h_lam(1/4) = 0.0994844485  diff 2.19e-09
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082677549  vs h_lam(1/4) = 0.0082678547  diff -9.98e-08
+   (3) Phi_c - Q^ell/N^2 = 0.0000000000;  S_star = 0.0000000000, S_bath = 0.0000000000, sum = 0.0000000000  diff 2.50e-16
+   (4) min pointwise (*)-defect density = 0.000e+00;  max_theta ||[B(theta), g(theta)]|| = 0.000e+00
+[rotated mixture t=0.2] d=4 M=2  ||[Q,Q]||max=3.928e-01
+   (1) Q^ell/N^2 = 0.0925890846   quadrature int tau(Ag) = 0.0925890846   diff 9.66e-12
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272682  vs h_lam(1/4) = 0.0652272682  diff 8.35e-11
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571969669  vs h_lam(1/4) = 0.2571969490  diff 1.79e-08
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844442  vs h_lam(1/4) = 0.0994844485  diff -4.34e-09
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082679836  vs h_lam(1/4) = 0.0082678547  diff 1.29e-07
+   (3) Phi_c - Q^ell/N^2 = 0.0002176335;  S_star = 0.0001568272, S_bath = 0.0000608064, sum = 0.0002176336  diff -9.32e-11
+   (4) min pointwise (*)-defect density = -8.882e-16;  max_theta ||[B(theta), g(theta)]|| = 2.963e+00
+   F_DKZ - F = 9.1180e-02;  (Phi_c - Q^ell/N^2)/t^2 = 0.0054, S_star/t^2 = 0.0039
+[rotated mixture t=0.1] d=4 M=2  ||[Q,Q]||max=2.064e-01
+   (1) Q^ell/N^2 = 0.0927504512   quadrature int tau(Ag) = 0.0927504511   diff 9.44e-12
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272682  vs h_lam(1/4) = 0.0652272682  diff 7.71e-12
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571969450  vs h_lam(1/4) = 0.2571969490  diff -4.08e-09
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844458  vs h_lam(1/4) = 0.0994844485  diff -2.74e-09
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082678369  vs h_lam(1/4) = 0.0082678547  diff -1.78e-08
+   (3) Phi_c - Q^ell/N^2 = 0.0000562670;  S_star = 0.0000405551, S_bath = 0.0000157119, sum = 0.0000562670  diff -1.72e-11
+   (4) min pointwise (*)-defect density = -8.882e-16;  max_theta ||[B(theta), g(theta)]|| = 1.557e+00
+   F_DKZ - F = 2.3574e-02;  (Phi_c - Q^ell/N^2)/t^2 = 0.0056, S_star/t^2 = 0.0041
+[rotated mixture t=0.05] d=4 M=2  ||[Q,Q]||max=1.043e-01
+   (1) Q^ell/N^2 = 0.0927925842   quadrature int tau(Ag) = 0.0927925842   diff 9.38e-12
+   (2) lam=+0.1103: int (1/M) sum h = 0.0652272681  vs h_lam(1/4) = 0.0652272682  diff -1.13e-11
+   (2) lam=-0.3000: int (1/M) sum h = 0.2571969522  vs h_lam(1/4) = 0.2571969490  diff 3.16e-09
+   (2) lam=+0.0000: int (1/M) sum h = 0.0994844563  vs h_lam(1/4) = 0.0994844485  diff 7.82e-09
+   (2) lam=+0.7000: int (1/M) sum h = 0.0082677826  vs h_lam(1/4) = 0.0082678547  diff -7.21e-08
+   (3) Phi_c - Q^ell/N^2 = 0.0000141340;  S_star = 0.0000101878, S_bath = 0.0000039462, sum = 0.0000141340  diff 1.94e-12
+   (4) min pointwise (*)-defect density = -5.551e-16;  max_theta ||[B(theta), g(theta)]|| = 7.870e-01
+   F_DKZ - F = 5.9216e-03;  (Phi_c - Q^ell/N^2)/t^2 = 0.0057, S_star/t^2 = 0.0041

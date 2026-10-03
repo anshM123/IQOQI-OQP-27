@@ -1,0 +1,13 @@
+Lemma 4:
+   M=3 r=1: (t, Tr e^(A-tP) - Tr_B e^(BAB), e^(-t)Tr e^(A+tP) - Tr_P e^(PAP)) = [(20, '3.1e-01', '1.0e+00'), (80, '7.4e-02', '2.7e-01'), (320, '1.8e-02', '6.8e-02')]
+   M=5 r=2: (t, Tr e^(A-tP) - Tr_B e^(BAB), e^(-t)Tr e^(A+tP) - Tr_P e^(PAP)) = [(20, '2.7e+01', '2.7e+00'), (80, '7.0e+00', '5.9e-01'), (320, '1.8e+00', '1.4e-01')]
+   M=6 r=4: (t, Tr e^(A-tP) - Tr_B e^(BAB), e^(-t)Tr e^(A+tP) - Tr_P e^(PAP)) = [(20, '1.6e+01', '1.2e-01'), (80, '4.4e+00', '2.3e-02'), (320, '1.1e+00', '5.5e-03')]
+Lemma 1 bound / support / Remark 4.2 count:
+   max F/bound = 0.605 (must be <= 1);  # grid points with F > 0 outside (lmin,lmax): 0;  #non-real roots <= 2 min(r,M-r) everywhere: True
+Theorem 2 equality case:
+   M=3 r=1 eps=0.0: defect(lam = -1, 0, .5, 2) = ['-7.199e-16', '-6.612e-16', '-6.470e-16', '-5.747e-16']
+   M=3 r=1 eps=0.001: defect(lam = -1, 0, .5, 2) = ['6.698e-08', '4.855e-08', '1.949e-08', '2.578e-08']
+   M=3 r=1 eps=0.1: defect(lam = -1, 0, .5, 2) = ['6.700e-04', '4.878e-04', '1.950e-04', '2.578e-04']
+   M=5 r=2 eps=0.0: defect(lam = -1, 0, .5, 2) = ['-4.595e-17', '-1.299e-16', '-7.466e-17', '-1.287e-16']
+   M=5 r=2 eps=0.001: defect(lam = -1, 0, .5, 2) = ['6.256e-07', '6.479e-07', '5.132e-07', '5.734e-07']
+   M=5 r=2 eps=0.1: defect(lam = -1, 0, .5, 2) = ['6.318e-03', '6.484e-03', '5.213e-03', '5.718e-03']

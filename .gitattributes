@@ -1,0 +1,4 @@
+# Check out text files with LF line endings on every platform. The certificate audit
+# (cone-certificates/audit_cert_g.py) compares the SHA-256 hash of cone-certificates/verify_cert.py
+# with the hash stored in each certificate.
+* text=auto eol=lf

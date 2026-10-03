@@ -1,0 +1,80 @@
+== axiom check for module L1 (2026-10-02 03:46); checked file (verbatim):
+import OQP27.Skeleton
+
+/-! Axiom check for module L1 (`OQP27/Statement.lean`, `OQP27/Skeleton.lean`). -/
+
+-- Statement.lean
+#print axioms OQP27.PVM.mul_eq_zero
+#print axioms OQP27.Strategy.trace_nonneg
+#print axioms OQP27.Strategy.im_trace_eq_zero
+#print axioms OQP27.Strategy.prob_nonneg
+#print axioms OQP27.Strategy.prob_eq
+#print axioms OQP27.Strategy.sum_prob
+#print axioms OQP27.IME_gt_two
+#print axioms OQP27.phaseProj_isProj
+#print axioms OQP27.sum_phaseProj
+#print axioms OQP27.dkzA_eq_vecMulVec
+#print axioms OQP27.dkzB_eq_vecMulVec
+#print axioms OQP27.Strategy.cglmp_eq_sum_range
+#print axioms OQP27.dkz_cglmp
+#print axioms OQP27.dkz_isDKZTensorId
+#print axioms OQP27.Strategy.IsDKZTensorId.dvd
+#print axioms OQP27.Strategy.cglmp_congr
+#print axioms OQP27.Strategy.prob_eq_dkz_of_isDKZTensorId
+#print axioms OQP27.Strategy.cglmp_of_isDKZTensorId
+#print axioms OQP27.rigidity_iff
+-- Skeleton.lean
+#print axioms OQP27.cellDirection_eq_coneU
+#print axioms OQP27.QConfig.pairCount_eq_corr
+#print axioms OQP27.QConfig.corr_neg
+#print axioms OQP27.QConfig.netCount_eq_corr
+#print axioms OQP27.IME_eq_sum_csc
+#print axioms OQP27.clock_value_eq_linear
+#print axioms OQP27.ConeCertPos.coneCert
+#print axioms OQP27.Hyp_ReductionRig.reduction
+#print axioms OQP27.pairing_coneV_nonpos
+#print axioms OQP27.exists_pos_cell_tight
+#print axioms OQP27.optimality_of_cells
+#print axioms OQP27.optimality_of_strip
+#print axioms OQP27.rigidity_of_cells
+#print axioms OQP27.rigidity_of_strip
+#print axioms OQP27.maxEntClause_of_strip
+#print axioms OQP27.maxEntClause_all_d
+== output:
+waited 2s; free MB at start: 6537; slot 3
+'OQP27.PVM.mul_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.trace_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.im_trace_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.prob_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.prob_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.sum_prob' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.IME_gt_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.phaseProj_isProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.sum_phaseProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.dkzA_eq_vecMulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.dkzB_eq_vecMulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.cglmp_eq_sum_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.dkz_cglmp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.dkz_isDKZTensorId' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.IsDKZTensorId.dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.cglmp_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.prob_eq_dkz_of_isDKZTensorId' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Strategy.cglmp_of_isDKZTensorId' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.rigidity_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.cellDirection_eq_coneU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.QConfig.pairCount_eq_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.QConfig.corr_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.QConfig.netCount_eq_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.IME_eq_sum_csc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.clock_value_eq_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.ConeCertPos.coneCert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.Hyp_ReductionRig.reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.pairing_coneV_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.exists_pos_cell_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.optimality_of_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.optimality_of_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.rigidity_of_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.rigidity_of_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.maxEntClause_of_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OQP27.maxEntClause_all_d' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit code: 0; elapsed s: 14

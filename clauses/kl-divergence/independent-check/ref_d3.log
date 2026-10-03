@@ -1,0 +1,13 @@
+[X1] exact: q0 = Q_{g'}/3 with Q = (2(2+sqrt3)/9, 2(2-sqrt3)/9, 1/9) on every link
+[X2] exact criticality in the right-multiplication Gell-Mann chart: d Pi_k = 0, k = 0,1,2, all 36 directions
+     (non-trivial: 288 nonzero first derivatives dq_i(c))
+[X3] exact: CGLMP Pi-form min 2, facet = 30 strategies, aff dim 23 = dim V (V = NS + level-sum zero)
+[X4] beta = 0.3213778867216628 (independent root find agrees); p* = q0/r* = positive mixture of ALL 30 facet strategies (w(single level-2) = P*_2/3, w(two level-1) = P*_1/9), max dev 9.4e-51 => p* in relint F
+     S(DKZ_3) = sum Q_k log r_k = 0.05778302549332865 bits
+[X5] exact: gauge tangent space rank 20 (21 generators), dq vanishes on it; slice = its orthogonal complement (dim 16), transversal by construction
+[X6] exact second derivatives of q on the slice computed
+[X7] exact: dim V0 = 20; least-norm Psi maps sum-zero z to u in V with per-link level sums z
+[X8] first-order terms of all four link functions vanish on the slice (interval check, < 1e-35)
+[X9] Hbar on slice (basis P): eigenvalues in [-9.917252, -0.076755]; metric-normalised (generalized w.r.t. Gram): [-0.617056, -0.056253]
+[X10] interval LDL^T of -Hbar - (1/1000) Gram succeeds: True  => Hbar <= -(1/1000)|z|^2 on the slice
+REFEREE d = 3 CERTIFICATE: PASSED

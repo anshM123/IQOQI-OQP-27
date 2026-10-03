@@ -1,0 +1,3 @@
+[random M=3] points with ||[B,g]|| > 1e-3: 540;  min defect/||[B,g]||^2 = 1.491e-02;  max |defect| where ||[B,g]|| <= 1e-3: 2.7e-15
+[rotated mixture t=0.1] points with ||[B,g]|| > 1e-3: 240;  min defect/||[B,g]||^2 = 8.644e-03;  max |defect| where ||[B,g]|| <= 1e-3: 4.4e-16
+[commuting mixture] points with ||[B,g]|| > 1e-3: 0;  min defect/||[B,g]||^2 = nan;  max |defect| where ||[B,g]|| <= 1e-3: 0.0e+00

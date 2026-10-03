@@ -1,0 +1,8 @@
+[Z1] exact: mu >= 0, kernels >= 0 and normalised, total mass = 1 (exact)
+[Z2] exact: each link law sums to 1 over Z
+[Z3] min_window P = 8.401e-05 > 0; per-link finite sums (nats): 00: 0.047661889910122, 01: 0.047687881719259, 10: 0.047661763634272, 11: 0.047687839500767
+[Z4] P >= Q for all |m| > 3000 (exact rational, pi > 3.14159265; holds from |m| >= 19): tail <= 0
+[Z5] per-link tail sum in [-6.437e-06, -6.353e-06] nats
+[Z6] CERTIFIED T(mu*) <= 0.068780260568 bits (tail dropped, as in the theorem)
+[Z6] two-sided enclosure: T(mu*) in [0.068770973223, 0.068771094547] bits
+[Z7] competitor bound 0.0703203697 - T_up = 0.001540109 bits

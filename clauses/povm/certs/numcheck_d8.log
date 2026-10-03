@@ -1,0 +1,2 @@
+d=8 trial 0 D=7 rank cap None: LHS = S - lam = +10.226627815552   RHS = +10.226627815552   diff -1.6e-13   min block term +1.86e-03
+d=8 trial 1 D=8 rank cap 4: LHS = S - lam = +10.316471814759   RHS = +10.316471814759   diff -1.4e-13   min block term +5.94e-03

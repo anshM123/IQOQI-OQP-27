@@ -1,0 +1,8 @@
+d=3: sawtooth identity exact for k = 0..2;  I_d(p') = 4 - 2 S(p)/(d-1) on all 81 deterministic strategies (exact)
+d=4: sawtooth identity exact for k = 0..3;  I_d(p') = 4 - 2 S(p)/(d-1) on all 256 deterministic strategies (exact)
+d=5: sawtooth identity exact for k = 0..4;  I_d(p') = 4 - 2 S(p)/(d-1) on all 625 deterministic strategies (exact)
+d=6: sawtooth identity exact for k = 0..5;  I_d(p') = 4 - 2 S(p)/(d-1) on all 1296 deterministic strategies (exact)
+d=7: sawtooth identity exact for k = 0..6;  I_d(p') = 4 - 2 S(p)/(d-1) on all 2401 deterministic strategies (exact)
+d=8: sawtooth identity exact for k = 0..7;  I_d(p') = 4 - 2 S(p)/(d-1) on all 4096 deterministic strategies (exact)
+d=9: sawtooth identity exact for k = 0..8;  I_d(p') = 4 - 2 S(p)/(d-1) on all 6561 deterministic strategies (exact)
+d=10: sawtooth identity exact for k = 0..9;  I_d(p') = 4 - 2 S(p)/(d-1) on all 10000 deterministic strategies (exact)

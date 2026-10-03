@@ -1,0 +1,22 @@
+pi in [3.141592653589793, 3.141592653589793], width 1.0e-45
+d=3: float LP v_c(DKZ_d) (cyclic) = 0.696152422707;  2/I_ME(d) = 0.696152422707;  competitor threshold = 0.762974279322
+   [main] v = 87/125 = 0.69600000: LP margin 3.649e-05; exact check: PASS (min slack 3.649e-05, t = 0.143562, 4 nonzero weights)
+   [tight] v = 696151/1000000 = 0.69615100: LP margin 3.406e-07; exact check: PASS (min slack 3.406e-07, t = 0.143593, 4 nonzero weights)
+d=4: float LP v_c(DKZ_d) (cyclic) = 0.690549739488;  2/I_ME(d) = 0.690549739488;  competitor threshold = 0.644211701564
+   [main] v = 863/1250 = 0.69040000: LP margin 2.711e-05; exact check: PASS (min slack 2.711e-05, t = 0.201588, 8 nonzero weights)
+   [tight] v = 172637/250000 = 0.69054800: LP margin 3.149e-07; exact check: PASS (min slack 3.149e-07, t = 0.201631, 8 nonzero weights)
+d=5: float LP v_c(DKZ_d) (cyclic) = 0.687156574416;  2/I_ME(d) = 0.687156574416;  competitor threshold = 0.658862678520
+   [main] v = 687/1000 = 0.68700000: LP margin 2.279e-05; exact check: PASS (min slack 2.279e-05, t = 0.233381, 9 nonzero weights)
+   [tight] v = 137431/200000 = 0.68715500: LP margin 2.291e-07; exact check: PASS (min slack 2.291e-07, t = 0.233434, 9 nonzero weights)
+d=6: float LP v_c(DKZ_d) (cyclic) = 0.684883751130;  2/I_ME(d) = 0.684883751130;  competitor threshold = 0.572874043197
+   [main] v = 6847/10000 = 0.68470000: LP margin 2.236e-05; exact check: PASS (min slack 2.236e-05, t = 0.268338, 16 nonzero weights)
+   [tight] v = 342441/500000 = 0.68488200: LP margin 2.131e-07; exact check: PASS (min slack 2.131e-07, t = 0.268409, 16 nonzero weights)
+d=7: float LP v_c(DKZ_d) (cyclic) = 0.683255905411;  2/I_ME(d) = 0.683255905411;  competitor threshold = 0.579752581421
+   [main] v = 6831/10000 = 0.68310000: LP margin 1.630e-05; exact check: PASS (min slack 1.630e-05, t = 0.282749, 19 nonzero weights)
+   [tight] v = 341627/500000 = 0.68325400: LP margin 1.992e-07; exact check: PASS (min slack 1.992e-07, t = 0.282813, 19 nonzero weights)
+d=8: float LP v_c(DKZ_d) (cyclic) = 0.682032958173;  2/I_ME(d) = 0.682032958173;  competitor threshold = 0.513670345675
+   [main] v = 6819/10000 = 0.68190000: LP margin 1.218e-05; exact check: PASS (min slack 1.218e-05, t = 0.291385, 26 nonzero weights)
+   [tight] v = 682031/1000000 = 0.68203100: LP margin 1.794e-07; exact check: PASS (min slack 1.794e-07, t = 0.291441, 26 nonzero weights)
+d=9: float LP v_c(DKZ_d) (cyclic) = 0.681080711104;  2/I_ME(d) = 0.681080711104;  competitor threshold = 0.517603563835
+   [main] v = 6809/10000 = 0.68090000: LP margin 1.474e-05; exact check: PASS (min slack 1.474e-05, t = 0.297102, 27 nonzero weights)
+   [tight] v = 681079/1000000 = 0.68107900: LP margin 1.396e-07; exact check: PASS (min slack 1.396e-07, t = 0.297180, 27 nonzero weights)

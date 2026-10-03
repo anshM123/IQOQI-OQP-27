@@ -1,0 +1,11 @@
+total mass: 1.0000000000000002
+captured mass per link: [np.float64(0.999999878), np.float64(0.999999878), np.float64(0.999999878), np.float64(0.999999878)]
+float Z-sum up to |m| <= 2000000: 0.068771151562 bits (certified bound uses |m|<=2000 and drops a negative tail)
+d=  2: S(DKZ_d) = 0.0462738459 <= wrapped model KL = 0.0466532314 <= T = 0.0687711516: True
+d=  3: S(DKZ_d) = 0.0577830241 <= wrapped model KL = 0.0577943343 <= T = 0.0687711516: True
+d=  4: S(DKZ_d) = 0.0623797564 <= wrapped model KL = 0.0624129034 <= T = 0.0687711516: True
+d=  5: S(DKZ_d) = 0.0646421402 <= wrapped model KL = 0.0646570599 <= T = 0.0687711516: True
+d=  7: S(DKZ_d) = 0.0666458160 <= wrapped model KL = 0.0666471717 <= T = 0.0687711516: True
+d=  9: S(DKZ_d) = 0.0674744429 <= wrapped model KL = 0.0674750617 <= T = 0.0687711516: True
+d= 16: S(DKZ_d) = 0.0683470225 <= wrapped model KL = 0.0683477898 <= T = 0.0687711516: True
+d= 33: S(DKZ_d) = 0.0686572691 <= wrapped model KL = 0.0686615687 <= T = 0.0687711516: True

@@ -1,0 +1,9 @@
+phi_xy(0) (nats): [0.04005214 0.04005214 0.04005214 0.04005214]  all equal S0 = 0.04005214120492423
+max |grad phi_xy| over links and slice directions: 6.237371730222208e-10
+max |Havg (finite differences) - Hbar (exact)|: 2.774450891779301e-06
+  link (0, 0): eigenvalues of its own Hessian: max +0.12774
+  link (0, 1): eigenvalues of its own Hessian: max +0.00883
+  link (1, 0): eigenvalues of its own Hessian: max +0.12775
+  link (1, 1): eigenvalues of its own Hessian: max +0.00883
+Hbar eigenvalues: max -0.009732127969930445 min -0.39013916841781277
+max over 60 samples of (S^UNI(z) - S0)/|z|^2 = -0.02704  (negative => decrease, as certified)

@@ -1,0 +1,5 @@
+DD identity: 1116 facets, exact facet-check failures 0, identical to P2 list (tight sets): True  (169s)
+DD reversed: 1116 facets, exact facet-check failures 0, identical to P2 list (tight sets): True  (231s)
+P2 classes: {'positivity': 36, 'CHSH': 648, 'CGLMP': 432}
+RESULT: PASS
+exit=0

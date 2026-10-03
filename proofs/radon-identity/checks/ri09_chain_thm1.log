@@ -1,0 +1,14 @@
+(a) roots on the line s = w + xi tau equal xi + (roots for H = g - xi P - w): max diff 1.02e-19
+    slice xi=0.3, w=-0.2: pencil quadrature 0.9382096504999918,  U_xi(w) = 0.9382096504999918
+    slice xi=-1.1, w=0.5: pencil quadrature 0.5526763184133829,  U_xi(w) = 0.5526763184133829
+    slice xi=2.0, w=-1.0: pencil quadrature 0.6242701623995986,  U_xi(w) = 0.6242701623995986
+(b) the two forms of U_xi agree to 9.32e-21;  Radon slice = U_xi to 9.32e-21
+    a=0.7, xi=0.4: int e^(aw) U = 3.486630055414029, closed = 3.486630055414029, D(a,a xi)/a^2 = 3.486630055414029
+    a=-1.3, xi=1.5: int e^(aw) U = 4.256309706050783, closed = 4.256309706050783, D(a,a xi)/a^2 = 4.256309706050783
+    a=2.1, xi=-0.8: int e^(aw) U = 75.46630525254493, closed = 75.46630525254493, D(a,a xi)/a^2 = 75.46630525254493
+(c) Lemma 3(b): max diff 3.25e-19
+    a=0.9, t=0.5: chain (slices by quadrature, 56 w-nodes) = 3.9245164160629,  D(a,t)/a^2 = 3.9245164160629
+    a=-0.6, t=1.4: chain (slices by quadrature, 56 w-nodes) = 0.86870314987978,  D(a,t)/a^2 = 0.86870314987978
+(d) chain RI -> Laplace identity on real (a,t): max diff 1.79e-16
+(e) complex (a,t) = ((0.8+0.6j), (0.3-1.1j)): 2D integral = 1.1625246010+3.0850261003j,  D(a,t)/a^2 = 1.1625246013+3.0850261002j,  |diff| = 3.08e-10
+ALL OK

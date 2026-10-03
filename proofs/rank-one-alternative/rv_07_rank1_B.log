@@ -1,0 +1,20 @@
+[rank1 M=5 gmax=3.0 seed=12] worst ratio objective 5.9438e-02: rank 1, D = 5.0859e-01, R2 = 9.106e+00, |g| = 9.17
+[rank1 M=5 gmax=3.0 seed=12] worst abs objective -5.0551e-15: rank 1, D = -2.3093e-14, R2 = 3.984e-15, |g| = 4.57
+   (213s)
+[rank1 M=5 gmax=30.0 seed=12] worst ratio objective 2.7023e-02: rank 1, D = 2.0896e+00, R2 = 7.913e+01, |g| = 113.13
+[rank1 M=5 gmax=30.0 seed=12] worst abs objective -1.3150e-13: rank 1, D = -1.5632e-11, R2 = 5.771e-13, |g| = 118.87
+   (228s)
+[rank1 M=5 gmax=300.0 seed=12] worst ratio objective 1.4673e-02: rank 1, D = 2.2625e+00, R2 = 1.567e+02, |g| = 300.66
+[rank1 M=5 gmax=300.0 seed=12] worst abs objective -1.6435e-12: rank 1, D = -1.9536e-09, R2 = 3.307e-11, |g| = 1188.65
+   CANDIDATE VIOLATION; 50-digit defect = 1.6172194889556394978e-11
+   (244s)
+[rank1 M=6 gmax=3.0 seed=12] worst ratio objective 6.4733e-02: rank 1, D = 7.0250e-01, R2 = 1.091e+01, |g| = 10.70
+[rank1 M=6 gmax=3.0 seed=12] worst abs objective -5.3152e-15: rank 1, D = -1.6431e-14, R2 = 1.130e-15, |g| = 3.09
+   (294s)
+[rank1 M=6 gmax=30.0 seed=12] worst ratio objective 3.1883e-02: rank 1, D = 4.0151e+00, R2 = 1.321e+02, |g| = 134.54
+[rank1 M=6 gmax=30.0 seed=12] worst abs objective -1.3854e-13: rank 1, D = -1.2818e-11, R2 = 4.092e-13, |g| = 92.52
+   (277s)
+[rank1 M=6 gmax=300.0 seed=12] worst ratio objective 1.9282e-02: rank 1, D = 2.2987e+00, R2 = 1.208e+02, |g| = 300.78
+[rank1 M=6 gmax=300.0 seed=12] worst abs objective -2.1361e-12: rank 1, D = -2.4324e-09, R2 = 3.732e-10, |g| = 1138.72
+   CANDIDATE VIOLATION; 50-digit defect = 1.4039038898450230042e-10
+   (256s)

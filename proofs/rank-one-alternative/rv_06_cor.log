@@ -1,0 +1,4 @@
+(i) cyclic symmetry Tr(A iT(B)) = Tr(B iT(C)) = Tr(C iT(A)) = -Tr(B iT(A)), real: max err 1.68e-16
+(ii) g = diag(y) + iT(B): B + ig upper triangular & spec = B_kk + i y_k, err 2.78e-17; min [sum(h - A_kk y_k) - Tr(A iT(B))] = 1.766e-44 (>= 0)
+(iii) 400 cases, corank 0..3, scales 0.1-300: Schur identity G = diag(y)+iT(B) err 4.00e-14; Tr(PGP)_+ = sum Q_kk y_k + Tr(Q iT(B)) err 3.70e-13
+      min slack: dual step -3.911e-15, (F5) step -7.522e-15, (*) -4.115e-11  (all >= 0 required)

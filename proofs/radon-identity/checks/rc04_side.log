@@ -1,0 +1,67 @@
+(1) Proposition 2.1: c0 > ||H||, A = H + c0 > 0
+  rand_M3_r1     c0=6.30314    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.09589 (<=1)  |int(S_pos - S0_+) - E(c0)|=5.05e-40  E(c0)=-2.643367894  -||BHP||^2/c0=-1.298955479
+  rand_M3_r1     c0=18.4094    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.405 (<=1)  |int(S_pos - S0_+) - E(c0)|=1.41e-39  E(c0)=-0.513389364  -||BHP||^2/c0=-0.4447450376
+  rand_M3_r1     c0=184.094    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.4909 (<=1)  |int(S_pos - S0_+) - E(c0)|=4.1e-38  E(c0)=-0.04502772472  -||BHP||^2/c0=-0.04447450376
+  rand_M4_r2     c0=5.27121    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.07179 (<=1)  |int(S_pos - S0_+) - E(c0)|=9.18e-40  E(c0)=-3.97694985  -||BHP||^2/c0=-2.86935867
+  rand_M4_r2     c0=15.3136    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.3772 (<=1)  |int(S_pos - S0_+) - E(c0)|=6.2e-40  E(c0)=-1.03755971  -||BHP||^2/c0=-0.9876816835
+  rand_M4_r2     c0=153.136    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.4882 (<=1)  |int(S_pos - S0_+) - E(c0)|=3.36e-38  E(c0)=-0.09909888135  -||BHP||^2/c0=-0.09876816835
+  rand_M5_r2     c0=6.43033    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.05331 (<=1)  |int(S_pos - S0_+) - E(c0)|=6.43e-40  E(c0)=-4.214249037  -||BHP||^2/c0=-3.431004133
+  rand_M5_r2     c0=18.791     violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.3524 (<=1)  |int(S_pos - S0_+) - E(c0)|=1.03e-39  E(c0)=-1.195869574  -||BHP||^2/c0=-1.174099316
+  rand_M5_r2     c0=187.91     violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.4855 (<=1)  |int(S_pos - S0_+) - E(c0)|=1.59e-38  E(c0)=-0.117482709  -||BHP||^2/c0=-0.1174099316
+  corank1_M5     c0=6.49452    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.05833 (<=1)  |int(S_pos - S0_+) - E(c0)|=5.51e-40  E(c0)=-5.297048987  -||BHP||^2/c0=-4.109230484
+  corank1_M5     c0=18.9836    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.3561 (<=1)  |int(S_pos - S0_+) - E(c0)|=2.76e-40  E(c0)=-1.428268271  -||BHP||^2/c0=-1.405820564
+  corank1_M5     c0=189.836    violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.4851 (<=1)  |int(S_pos - S0_+) - E(c0)|=1.75e-38  E(c0)=-0.140544656  -||BHP||^2/c0=-0.1405820564
+  degenH_M4      c0=2.5        violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.09573 (<=1)  |int(S_pos - S0_+) - E(c0)|=4.82e-40  E(c0)=-0.8353802281  -||BHP||^2/c0=-0.9381611143
+  degenH_M4      c0=7.0        violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.3435 (<=1)  |int(S_pos - S0_+) - E(c0)|=1.72e-40  E(c0)=-0.3157996393  -||BHP||^2/c0=-0.3350575408
+  degenH_M4      c0=70.0       violations=0  max |S_pos - S0_+|(c0-||H||)/(2||BHP||_F^2)=0.4831 (<=1)  |int(S_pos - S0_+) - E(c0)|=9.5e-39  E(c0)=-0.03327176424  -||BHP||^2/c0=-0.03350575408
+
+(2) Corollary 2.2: E(c) = int_R R(H + t) dt/(t - c), int_R R(H + t) dt = ||BHP||_F^2 (exact piecewise-linear integration)
+  rand_M3_r1     c=(0.4 + 1.3j) |E - Stieltjes| = 2.05e-40
+  rand_M3_r1     c=(-2.0 + 0.01j) |E - Stieltjes| = 6.69e-40
+  rand_M3_r1     c=(5.0 + 7.0j) |E - Stieltjes| = 5.85e-40
+  rand_M3_r1     int R = 8.1875  ||BHP||_F^2 = 8.1875  diff 1.1e-39 ; min_t R(H+t) = 0.0 (>= 0: pinching inequality)
+  rand_M4_r2     c=(0.4 + 1.3j) |E - Stieltjes| = 1.3e-40
+  rand_M4_r2     c=(-2.0 + 0.01j) |E - Stieltjes| = 2.05e-40
+  rand_M4_r2     c=(5.0 + 7.0j) |E - Stieltjes| = 2.19e-40
+  rand_M4_r2     int R = 15.125  ||BHP||_F^2 = 15.125  diff 1.65e-39 ; min_t R(H+t) = 0.0 (>= 0: pinching inequality)
+  rand_M5_r2     c=(0.4 + 1.3j) |E - Stieltjes| = 7.47e-40
+  rand_M5_r2     c=(-2.0 + 0.01j) |E - Stieltjes| = 9.59e-40
+  rand_M5_r2     c=(5.0 + 7.0j) |E - Stieltjes| = 1.34e-39
+  rand_M5_r2     int R = 22.0625  ||BHP||_F^2 = 22.0625  diff 1.84e-39 ; min_t R(H+t) = 0.0 (>= 0: pinching inequality)
+  corank1_M5     c=(0.4 + 1.3j) |E - Stieltjes| = 7.01e-40
+  corank1_M5     c=(-2.0 + 0.01j) |E - Stieltjes| = 5.81e-40
+  corank1_M5     c=(5.0 + 7.0j) |E - Stieltjes| = 8.54e-40
+  corank1_M5     int R = 26.6875  ||BHP||_F^2 = 26.6875  diff 2.57e-39 ; min_t R(H+t) = 0.0 (>= 0: pinching inequality)
+  degenH_M4      c=(0.4 + 1.3j) |E - Stieltjes| = 4.27e-40
+  degenH_M4      c=(-2.0 + 0.01j) |E - Stieltjes| = 3.13e-40
+  degenH_M4      c=(5.0 + 7.0j) |E - Stieltjes| = 1.09e-39
+  degenH_M4      int R = 2.3454027858486080343  ||BHP||_F^2 = 2.3454027858486080343  diff 1.84e-40 ; min_t R(H+t) = 0.0 (>= 0: pinching inequality)
+
+(3) Remark 3.2, M = 2: H = [[alpha, gamma],[conj gamma, beta]], P = diag(1, 0)
+  alpha=-0.75  beta=-1.0   |gamma|^2=3.25   L=0.93210403685012003794 closed=0.93210403685012003794 R=0.93210403685012003794 |L-closed|=1.15e-41 |f-roots|=9.18e-41
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 4.0 ; rho = (1-tau)/tau: max |f dtau - h drho| = 2.76e-40
+  alpha=-0.5   beta=-1.25  |gamma|^2=1.563  L=0.43003831361381877247 closed=0.43003831361381877247 R=0.43003831361381877247 |L-closed|=5.74e-42 |f-roots|=1.38e-40
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 5.35 ; rho = (1-tau)/tau: max |f dtau - h drho| = 2.76e-40
+  alpha=-0.75  beta=-2.25  |gamma|^2=2.313  L=0.19558249578131703477 closed=0.19558249578131703477 R=0.19558249578131703477 |L-closed|=5.74e-42 |f-roots|=6.72e-52
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 3.84 ; rho = (1-tau)/tau: max |f dtau - h drho| = 6.43e-40
+  alpha=-2.0   beta=0.5    |gamma|^2=1.813  L=0.58711730708738357365 closed=0.58711730708738357365 R=0.58711730708738357365 |L-closed|=0.0 |f-roots|=0.0
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 9.5 ; rho = (1-tau)/tau: max |f dtau - h drho| = 1.84e-40
+  alpha=1.75   beta=-1.25  |gamma|^2=4.5    L=1.0980762113533159403 closed=1.0980762113533159403 R=1.0980762113533159403 |L-closed|=0.0 |f-roots|=0.0
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 9.41 ; rho = (1-tau)/tau: max |f dtau - h drho| = 3.67e-40
+  alpha=0.25   beta=-1.0   |gamma|^2=7.313  L=2.1504504138968146948 closed=2.1504504138968146948 R=2.1504504138968146948 |L-closed|=0.0 |f-roots|=0.0
+      rho = tau/(1-tau) [as written]: max |f dtau - h drho| = 9.46 ; rho = (1-tau)/tau: max |f dtau - h drho| = 7.35e-40
+
+(4) Remark 3.3 (dps 30): (a) S_+ - S0_+ = (i/2pi) int_R ell dx; (c) (i/2pi) int (Phi_B - Phi_P) dx/x = E(c); (d) 2 pi^2 R(H + c0) = int_R dx/x [...]
+  rand_M3_r1     (a) |S_+ - S0_+ - (i/2pi) int ell| = 6.35e-18   (value (1.72187819291 + 2.80075207757j))
+  rand_M3_r1     (c) |(i/2pi) int (Phi_B - Phi_P)/x - E(c)| = 0.302
+  rand_M3_r1     (d) c0=0.0  int = 14.1485901574842104  2 pi^2 R = 12.3077375101433288  diff 1.84  (#kinks 6)
+  rand_M3_r1     (d) c0=0.7  int = 13.9544289291040878  2 pi^2 R = 12.3077375101433288  diff 1.65  (#kinks 6)
+  rand_M4_r2     (a) |S_+ - S0_+ - (i/2pi) int ell| = 0.0371   (value (-0.819003003214 + 6.54434565693j))
+  rand_M4_r2     (c) |(i/2pi) int (Phi_B - Phi_P)/x - E(c)| = 0.304
+  rand_M4_r2     (d) c0=0.0  int = 55.2734529316128988  2 pi^2 R = 52.7184609672179547  diff 2.55  (#kinks 8)
+  rand_M4_r2     (d) c0=0.7  int = 54.7900040156297812  2 pi^2 R = 52.7184609672179547  diff 2.07  (#kinks 8)
+  rand_M5_r2     (a) |S_+ - S0_+ - (i/2pi) int ell| = 1.68e-9   (value (-0.587586923922 + 8.29842647218j))
+
+NOTE (referee): the section-(4) lines above (Remark 3.3) came from a naive infinite-interval quadrature that is
+inaccurate for integrands decaying like log|x|/x^2; they are SUPERSEDED by rc04b_remark33.log, where (a), (c), (d) agree to
+1e-23..1e-26.  rc04 was stopped during section (4).

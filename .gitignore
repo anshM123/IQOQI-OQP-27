@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+lean/.lake/
+lean/logs_check/
+*.aux
+*.synctex.gz

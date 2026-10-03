@@ -1,0 +1,5 @@
+d=3: field Q(zeta_24) of degree 8; v* = 0.696152422706632; support 6 covariant strategies; all 12 marginal equations exact; min weight 1.427e-01; => T^(2/I_ME) local: True  (0s)
+d=4: field Q(zeta_32) of degree 16; v* = 0.690549739487811; support 12 covariant strategies; all 16 marginal equations exact; min weight 2.927e-03; => T^(2/I_ME) local: True  (0s)
+d=5: field Q(zeta_40) of degree 16; v* = 0.687156574416315; support 14 covariant strategies; all 20 marginal equations exact; min weight 5.088e-03; => T^(2/I_ME) local: True  (0s)
+RESULT: PASS
+exit=0

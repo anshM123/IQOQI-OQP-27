@@ -1,0 +1,46 @@
+[mixed M=3 gmax=3.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 9.6860e-03: T = 9.6860e-03, s = 1.0000, c2 = 1.309e+00, gamma range [-7.18, 3.12], |g| = 7.3
+[mixed M=3 gmax=3.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 7.4235e-03: T = 7.4235e-03, s = 0.0050, c2 = 1.035e+00, gamma range [-0.15, 2.70], |g| = 3.1
+   (52s)
+[mixed M=3 gmax=3.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 5.0260e-02: T = 5.0260e-02, s = 1.0000, c2 = 1.096e+00, gamma range [-2.70, 0.73], |g| = 3.0
+[mixed M=3 gmax=3.0 xmin=0.1 seed=31 s<1] min x/s 0.100 min obj 2.5709e-02: T = 2.5709e-02, s = 0.0050, c2 = 4.209e+00, gamma range [-0.15, 4.61], |g| = 5.5
+   (55s)
+[mixed M=3 gmax=30.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 9.4590e-03: T = 9.4590e-03, s = 1.0000, c2 = 2.602e+01, gamma range [-35.61, 1.50], |g| = 36.3
+[mixed M=3 gmax=30.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 1.2035e-02: T = 1.2035e-02, s = 0.9999, c2 = 9.861e+00, gamma range [-14.46, 16.21], |g| = 16.5
+   (52s)
+[mixed M=3 gmax=30.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 6.3330e-02: T = 6.3330e-02, s = 1.0000, c2 = 8.772e+00, gamma range [-8.09, 1.87], |g| = 9.1
+[mixed M=3 gmax=30.0 xmin=0.1 seed=31 s<1] min x/s 0.100 min obj 1.4607e-01: T = 1.4607e-01, s = 0.9984, c2 = 1.205e+02, gamma range [-29.60, 11.09], |g| = 33.0
+   (48s)
+[mixed M=3 gmax=300.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 3.2027e-02: T = 3.2027e-02, s = 1.0000, c2 = 2.457e+03, gamma range [-338.98, 66.60], |g| = 345.9
+[mixed M=3 gmax=300.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 4.5916e-02: T = 4.5916e-02, s = 0.9999, c2 = 1.356e+03, gamma range [-206.53, 148.61], |g| = 210.8
+   (43s)
+[mixed M=3 gmax=300.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 4.6755e-01: T = 4.6755e-01, s = 1.0000, c2 = 5.322e+03, gamma range [-210.02, 40.61], |g| = 233.8
+[mixed M=3 gmax=300.0 xmin=0.1 seed=31 s<1] min x/s 0.000 min obj 5.0000e-01: T = 2.8177e-10, s = 0.0050, c2 = 4.734e+02, gamma range [-209.83, 489.11], |g| = 489.1
+   (50s)
+[mixed M=4 gmax=3.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 1.3355e-02: T = 1.3355e-02, s = 1.0000, c2 = 1.057e+00, gamma range [-6.04, 3.07], |g| = 6.2
+[mixed M=4 gmax=3.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 1.5858e-02: T = 1.5858e-02, s = 0.9960, c2 = 3.585e+00, gamma range [-8.79, 9.41], |g| = 9.6
+   (66s)
+[mixed M=4 gmax=3.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 7.1101e-02: T = 7.1101e-02, s = 1.0000, c2 = 1.000e+00, gamma range [-1.21, 2.28], |g| = 2.5
+[mixed M=4 gmax=3.0 xmin=0.1 seed=31 s<1] min x/s 0.100 min obj 6.8898e-02: T = 6.8898e-02, s = 0.0050, c2 = 2.006e+01, gamma range [-5.54, 0.24], |g| = 9.3
+   (62s)
+[mixed M=4 gmax=30.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 2.2012e-02: T = 2.2012e-02, s = 1.0000, c2 = 4.373e+01, gamma range [-27.98, 34.57], |g| = 35.3
+[mixed M=4 gmax=30.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 2.3474e-02: T = 2.3474e-02, s = 0.9995, c2 = 5.901e+01, gamma range [-41.05, 32.37], |g| = 41.9
+   (62s)
+[mixed M=4 gmax=30.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 2.0454e-01: T = 2.0454e-01, s = 1.0000, c2 = 1.275e+02, gamma range [-29.87, 11.26], |g| = 33.4
+[mixed M=4 gmax=30.0 xmin=0.1 seed=31 s<1] min x/s 0.100 min obj 1.8463e-01: T = 1.8463e-01, s = 0.9994, c2 = 1.193e+02, gamma range [-27.48, 14.45], |g| = 30.7
+   (55s)
+[mixed M=4 gmax=300.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 1.3221e-01: T = 1.3221e-01, s = 1.0000, c2 = 6.023e+03, gamma range [-395.77, 335.00], |g| = 404.0
+[mixed M=4 gmax=300.0 xmin=0.02 seed=31 s<1] min x/s 0.000 min obj 1.0000e-01: T = -1.8076e-11, s = 0.0050, c2 = 5.124e+03, gamma range [-482.19, 645.22], |g| = 645.2
+   (59s)
+[mixed M=4 gmax=300.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 1.4933e+00: T = 1.4933e+00, s = 1.0000, c2 = 1.294e+04, gamma range [-236.56, 217.46], |g| = 264.6
+[mixed M=4 gmax=300.0 xmin=0.1 seed=31 s<1] min x/s 0.000 min obj 5.0000e-01: T = -1.5359e-10, s = 0.0050, c2 = 6.931e+04, gamma range [-664.12, 581.77], |g| = 872.7
+   (62s)
+[mixed M=5 gmax=3.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 1.6641e-02: T = 1.6641e-02, s = 1.0000, c2 = 1.196e+00, gamma range [-5.81, 4.03], |g| = 5.9
+[mixed M=5 gmax=3.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 2.2805e-02: T = 2.2805e-02, s = 1.0000, c2 = 1.196e+00, gamma range [-5.59, 2.28], |g| = 5.7
+   (73s)
+[mixed M=5 gmax=3.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 1.1132e-01: T = 1.1132e-01, s = 1.0000, c2 = 6.135e+00, gamma range [-5.41, 3.86], |g| = 6.1
+[mixed M=5 gmax=3.0 xmin=0.1 seed=31 s<1] min x/s 0.100 min obj 1.7256e-01: T = 1.7256e-01, s = 0.0050, c2 = 2.426e+00, gamma range [-3.81, 0.86], |g| = 4.1
+   (75s)
+[mixed M=5 gmax=30.0 xmin=0.02 seed=31 s=1] min x/s 0.020 min obj 3.7121e-02: T = 3.7121e-02, s = 1.0000, c2 = 1.466e+02, gamma range [-67.47, 41.65], |g| = 68.9
+[mixed M=5 gmax=30.0 xmin=0.02 seed=31 s<1] min x/s 0.020 min obj 8.1641e-02: T = 8.1641e-02, s = 1.0000, c2 = 4.062e+02, gamma range [-79.83, 81.67], |g| = 83.3
+   (81s)
+[mixed M=5 gmax=30.0 xmin=0.1 seed=31 s=1] min x/s 0.100 min obj 6.4398e-01: T = 6.4398e-01, s = 1.0000, c2 = 6.380e+02, gamma range [-59.85, 31.14], |g| = 67.2

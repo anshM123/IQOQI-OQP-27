@@ -1,0 +1,4 @@
+(a) q0 = Q_{g'}/3 exactly (sympy)
+(b) d Pi_k = 0 exactly for all 36 directions and k = 0, 1, 2 (sympy)
+(c) residuals (should be 0): 0 0 ; numerically: 0 0
+    beta = 0.321377886721662766374231825968  S(DKZ_3) = 0.05778302549332865021937140 bits

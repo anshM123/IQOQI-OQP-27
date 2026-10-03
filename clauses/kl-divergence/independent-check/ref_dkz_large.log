@@ -1,0 +1,9 @@
+<site-packages>\cupy\_environment.py:286: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+d=   8: float dual 0.067136838872 bits; CERTIFIED S^UNI(DKZ_d) >= 0.067136838874 bits (exact constraint max before scaling 3.999999999996/4); below T(mu*) = 0.068780260568: True
+d=  16: float dual 0.068347028597 bits; CERTIFIED S^UNI(DKZ_d) >= 0.068347028597 bits (exact constraint max before scaling 3.999999999999/4); below T(mu*) = 0.068780260568: True
+ref_dkz_large.py:51: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  pr.solve(solver=cp.CLARABEL, tol_gap_abs=1e-11, tol_gap_rel=1e-11, tol_feas=1e-11, max_iter=300)
+d=  32: float dual 0.068651213960 bits; CERTIFIED S^UNI(DKZ_d) >= 0.068651213978 bits (exact constraint max before scaling 3.999999999948/4); below T(mu*) = 0.068780260568: True
+d=  64: float dual 0.068727363696 bits; CERTIFIED S^UNI(DKZ_d) >= 0.068727363696 bits (exact constraint max before scaling 4.000000000000/4); below T(mu*) = 0.068780260568: True
+d= 128: float dual 0.068746407468 bits; CERTIFIED S^UNI(DKZ_d) >= 0.068746407468 bits (exact constraint max before scaling 4.000000000000/4); below T(mu*) = 0.068780260568: True

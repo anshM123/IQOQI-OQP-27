@@ -1,0 +1,69 @@
+d=6: reduced sizes [5, 10, 10, 10, 4, 9, 9, 8, 5, 9, 9, 7, 6, 9, 9, 6, 7, 9, 9, 5, 8, 9, 9, 4, 20, 20, 20, 20, 20, 20] [2.7s]
+   reduced SDP: bound=2.69949098469243 moment=2.69949098416926 target=2.69949098405234 rp=6.8e-12 gap=3.4e-11
+      block 0 ('M', 0, 0) k=5 Y eig min 3.095e-03 max 9.750e-03
+      block 1 ('M', 0, 1) k=10 Y eig min 1.800e-04 max 1.233e-02
+      block 2 ('M', 0, 2) k=10 Y eig min 1.781e-04 max 1.802e-02
+      block 3 ('M', 0, 3) k=10 Y eig min 1.800e-04 max 1.233e-02
+      block 4 ('M', 1, 0) k=4 Y eig min 1.044e-03 max 2.983e-03
+      block 5 ('M', 1, 1) k=9 Y eig min 9.296e-05 max 7.326e-02
+      block 6 ('M', 1, 2) k=9 Y eig min 2.214e-04 max 2.467e-02
+      block 7 ('M', 1, 3) k=8 Y eig min 2.774e-04 max 3.588e-03
+      block 8 ('M', 2, 0) k=5 Y eig min 6.977e-04 max 3.342e-03
+      block 9 ('M', 2, 1) k=9 Y eig min 2.103e-04 max 1.783e-02
+      block 10 ('M', 2, 2) k=9 Y eig min 3.909e-04 max 1.766e-02
+      block 11 ('M', 2, 3) k=7 Y eig min 2.260e-04 max 4.727e-03
+      block 12 ('M', 3, 0) k=6 Y eig min 3.586e-04 max 3.519e-03
+      block 13 ('M', 3, 1) k=9 Y eig min 3.599e-04 max 1.604e-02
+      block 14 ('M', 3, 2) k=9 Y eig min 3.599e-04 max 1.604e-02
+      block 15 ('M', 3, 3) k=6 Y eig min 3.586e-04 max 3.519e-03
+      block 16 ('M', 4, 0) k=7 Y eig min 2.260e-04 max 4.727e-03
+      block 17 ('M', 4, 1) k=9 Y eig min 3.909e-04 max 1.766e-02
+      block 18 ('M', 4, 2) k=9 Y eig min 2.103e-04 max 1.783e-02
+      block 19 ('M', 4, 3) k=5 Y eig min 6.977e-04 max 3.342e-03
+      block 20 ('M', 5, 0) k=8 Y eig min 2.774e-04 max 3.588e-03
+      block 21 ('M', 5, 1) k=9 Y eig min 2.214e-04 max 2.467e-02
+      block 22 ('M', 5, 2) k=9 Y eig min 9.296e-05 max 7.326e-02
+      block 23 ('M', 5, 3) k=4 Y eig min 1.044e-03 max 2.983e-03
+      block 24 ('D', 1, 0) k=20 Y eig min 6.740e-03 max 9.160e+00
+      block 25 ('D', 1, 1) k=20 Y eig min 1.686e-03 max 7.769e+00
+      block 26 ('D', 1, 2) k=20 Y eig min 1.188e-02 max 7.162e+00
+      block 27 ('D', 1, 3) k=20 Y eig min 2.743e-02 max 7.877e+00
+      block 28 ('D', 1, 4) k=20 Y eig min 2.602e-03 max 8.068e+00
+      block 29 ('D', 1, 5) k=20 Y eig min 4.252e-02 max 9.307e+00
+   502 equations, 3915 unknowns [113.0s]
+   max residual after rounding: 6.45e-10
+   pivot subsystem 501x501 (of 502 eqs, 3915 unknowns) [114.6s]
+   modsolve2: rank 501 of 501
+   modsolve2: success with 10 primes (310 bits)
+   exact equations satisfied [285.0s]
+      block 0: exact LDL pivots min 0.0050717501
+      block 1: exact LDL pivots min 0.0015390423
+      block 2: exact LDL pivots min 0.0016293572
+      block 3: exact LDL pivots min 0.0015390423
+      block 4: exact LDL pivots min 0.0012559511
+      block 5: exact LDL pivots min 0.0007044825
+      block 6: exact LDL pivots min 0.0011608498
+      block 7: exact LDL pivots min 0.00098221562
+      block 8: exact LDL pivots min 0.00096807147
+      block 9: exact LDL pivots min 0.00087401623
+      block 10: exact LDL pivots min 0.0012682451
+      block 11: exact LDL pivots min 0.00077554595
+      block 12: exact LDL pivots min 0.00080304188
+      block 13: exact LDL pivots min 0.0010596002
+      block 14: exact LDL pivots min 0.0011834391
+      block 15: exact LDL pivots min 0.00078916375
+      block 16: exact LDL pivots min 0.00085572913
+      block 17: exact LDL pivots min 0.0014272278
+      block 18: exact LDL pivots min 0.0008816067
+      block 19: exact LDL pivots min 0.00090493688
+      block 20: exact LDL pivots min 0.0009822156
+      block 21: exact LDL pivots min 0.0011608497
+      block 22: exact LDL pivots min 0.00070448245
+      block 23: exact LDL pivots min 0.0012559511
+      block 24: exact LDL pivots min 0.04179179
+      block 25: exact LDL pivots min 0.028912447
+      block 26: exact LDL pivots min 0.076066819
+      block 27: exact LDL pivots min 0.094188624
+      block 28: exact LDL pivots min 0.032272587
+      block 29: exact LDL pivots min 0.19649632
+d=6: CERTIFICATE OK (min LDL pivot 0.000704482), total 296.3s

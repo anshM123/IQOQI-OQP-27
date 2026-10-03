@@ -1,0 +1,3 @@
+rc07e: adaptive re-run of the RI-B points of rc05 with |GL - TS| > 1e-30 not covered by rc07 (dps 44)
+  b=(-1,1/5,1/2,2)                     c0=1/3  L_B=4.655954287545525831583491067 R=4.655954287545525831583491067 |L_B-R|=0.0 panels=32 max panel err=1.9e-37 (21s)
+  b=(0,1/2^3,1) Pi2HPi2 spec(1,1,-1)   c0=1/3  L_B=3.548728800793133349165925219 R=3.548728800793133349165925219 |L_B-R|=3.36e-44 panels=27 max panel err=9.1e-37 (30s)
