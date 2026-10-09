@@ -46,8 +46,8 @@ python3 scan_forbidden.py OQP27 CGLMPRigidity 2>/dev/null || python scan_forbidd
 echo "== axioms used by the main theorems (logs_check/OQP27_MainAxioms.log):"
 [ -s logs_check/OQP27_MainAxioms.log ] || { echo "MISSING: logs_check/OQP27_MainAxioms.log"; exit 1; }
 grep "depends on axioms" logs_check/OQP27_MainAxioms.log
-n=$(cat logs_check/OQP27_*Axioms.log | grep -c "depends on axioms")
-bad=$(cat logs_check/OQP27_*Axioms.log | grep "depends on axioms" | sed -e 's/^.*depends on axioms: \[//' -e 's/\].*$//' \
+n=$(cat logs_check/OQP27_*Axioms*.log | grep -c "depends on axioms")
+bad=$(cat logs_check/OQP27_*Axioms*.log | grep "depends on axioms" | sed -e 's/^.*depends on axioms: \[//' -e 's/\].*$//' \
       | tr ',' '\n' | tr -d ' \r' | grep -v -x -E 'propext|Classical[.]choice|Quot[.]sound' | sort -u)
 if [ -n "$bad" ]; then echo "UNEXPECTED AXIOMS: $bad"; exit 1; fi
 if [ "$n" -lt 250 ]; then echo "TOO FEW AUDITED THEOREMS: $n (expected 265)"; exit 1; fi
