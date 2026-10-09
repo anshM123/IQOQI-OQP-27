@@ -173,12 +173,13 @@ What is proved on paper but not in Lean:
 - **d ≤ 200:** exact finite cone representations (rational cells, certified positive weights), verified by `verify_cone.py` in
   `mpmath` interval arithmetic.
 - **201 ≤ d ≤ 2000:** one certificate per d from the single-run checker `verify_cert.py`. Each run uses one precision (160 bits),
-  one code version (SHA-256 stored in every certificate) and one Poincaré–Miranda box. `audit_cert_g.py` checks all 1800 and
-  reports 1800/1800 OK.
+  one code version (SHA-256 stored in every certificate) and one Poincaré–Miranda box. The consistency audit `audit_cert_g.py`
+  checks the stored bounds of all 1800 against the conditions of the proof and reports 1800/1800 OK.
 - **d ≥ 2001:** a uniform analytic argument with interval Taylor models and certified error terms (`CONE_ALLD_PROOF.md`,
   scripts `a01`–`a14`).
 
-`python audit_alld.py` re-checks all three regimes and prints `ALL-D CERTIFIED`.
+`python audit_alld.py` is a consistency audit of all three regimes: it re-checks the stored certified bounds and the coverage
+of all d (it does not recompute the bounds) and prints `ALL-D CERTIFIED`.
 
 ### Internal re-verification
 

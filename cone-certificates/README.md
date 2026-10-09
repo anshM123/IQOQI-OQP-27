@@ -13,6 +13,13 @@ Requirements: Python 3 with `mpmath` and `numpy` (`scipy` only for re-generating
 It prints the margins of every regime and ends with `ALL-D CERTIFIED (every d >= 2)`. The expected output is in
 `logs/audit_alld_final.log`.
 
+`audit_alld.py` and `audit_cert_g.py` are **consistency audits**.
+- They check the stored certified bounds, read exactly from the certificate files, against every condition of the
+  proof, and they check the coverage of all d.
+- They do not recompute the bounds. To recompute them, re-run the certifiers below.
+- The audit output printed at the end of `logs/alld/run_alld.log` comes from an earlier version of `audit_alld.py`. The
+  output of the current version on the published certificates is `logs/alld/audit_alld.log`.
+
 To re-run the certifiers themselves:
 - **LP certificates, d ≤ 200:** `python lp_reverify.py $(seq 2 200)` re-verifies the stored certificates in `certs/` with
   `verify_cone.py`. `python run_verify.py d0 d1` regenerates certificates: an untrusted LP search proposes columns, then a
@@ -47,3 +54,10 @@ finite nonnegative combination of cell vectors, so it is CONE_d in the finite fo
 | `certs/cert_d{d}.json` | LP certificates, 2 ≤ d ≤ 200 |
 | `logs/cert_g_d{d}.json` | Gaussian certificates, 201 ≤ d ≤ 2000 (bounds stored as exact decimal strings, with the checker's SHA-256) |
 | `logs/alld/` | outputs of the d ≥ 2001 scripts |
+
+**Files mentioned in the write-ups but not included here.** None of them is needed for the claim:
+- the superseded logs `logs/vg_d*.json`, `logs/fp_d*.json`, `logs/backup_prec100/` and `logs/alld/archive_pre_rigor/`;
+- the worker logs `logs/run_cert_w*.log` and `logs/run_cert_pids.txt`;
+- the box dumps `logs/boxes/`, written by `verify_cert.py d --dump-boxes`;
+- `logs/phi_d1000.json` and `logs/phi_d2000.json`. These are the inputs of the optional numerical cross-check `a01_model.py`,
+  which `run_alld.py` now skips when they are absent.

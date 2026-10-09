@@ -1433,7 +1433,7 @@ $\Upsilon(m)\in[\mathrm{lo}_m,\mathrm{hi}_m]$ for $1\le m<d/2$ (and a fixed valu
 \begin{enumerate}
 \item[(B1)] $\hat a_k(\Upsilon)>0$ for all $k$ and all $\Upsilon\in\mathcal Q$;
 \item[(B2)] $\varepsilon_{\rm t}\le\bar\varepsilon$ for all $\Upsilon\in\mathcal Q$;
-\item[(B3)] $\mathrm{Hc}_m(\mathrm{lo}_m)<\tau_m-2\bar\varepsilon$ and $\mathrm{Hc}_m(\mathrm{hi}_m)>\tau_m+2\bar\varepsilon$ for all $m$.
+\item[(B3)] $\mathrm{Hc}_m(\mathrm{lo}_m)\le\tau_m-2\bar\varepsilon$ and $\mathrm{Hc}_m(\mathrm{hi}_m)\ge\tau_m+2\bar\varepsilon$ for all $m$.
 \end{enumerate}
 Then some $\Upsilon^\#\in\mathcal Q$ satisfies $(P_{\mu_{\Upsilon^\#}})_A=(P_v)_A$, that is, condition (i) of Lemma~\ref{lem:R1}.
 \end{lemma}
@@ -1442,13 +1442,14 @@ Then some $\Upsilon^\#\in\mathcal Q$ satisfies $(P_{\mu_{\Upsilon^\#}})_A=(P_v)_
 Condition (i) for $\mu_\Upsilon$ is the system $F_m(\Upsilon):=\mathrm{Hc}_m(\Upsilon(m))+e_m(\Upsilon)-\tau_m=0$, $1\le m<d/2$. By (B1)
 the Gaussian law depends continuously on $\Upsilon\in\mathcal Q$ and has a positive density on the hyperplane
 $\{\sum\eta_r=0\}$, so the boundary of $E$ is a null set and $\Upsilon\mapsto P_{\mu_\Upsilon}$ is continuous; hence $F$ is continuous on
-the box $\mathcal Q$. By Lemma~\ref{lem:decoupling}, (B2) and (B3), $F_m<0$ on the face $\Upsilon(m)=\mathrm{lo}_m$ and $F_m>0$ on the
-face $\Upsilon(m)=\mathrm{hi}_m$. The Poincar\'e--Miranda theorem~\cite{Kulpa} gives a zero of $F$ in $\mathcal Q$.
+the box $\mathcal Q$. By Lemma~\ref{lem:decoupling}, (B2) and (B3), $F_m\le0$ on the face $\Upsilon(m)=\mathrm{lo}_m$ and $F_m\ge0$ on the
+face $\Upsilon(m)=\mathrm{hi}_m$. The Poincar\'e--Miranda theorem~\cite{Kulpa}, which needs only these weak inequalities on the
+faces, gives a zero of $F$ in $\mathcal Q$.
 \end{proof}
 
-Condition (B3) is obtained from a sign change and a derivative bound: if $\mathrm{Hc}_m(a_m)<\tau_m<\mathrm{Hc}_m(b_m)$,
+Condition (B3) is obtained from a sign change and a derivative bound: if $\mathrm{Hc}_m(a_m)\le\tau_m\le\mathrm{Hc}_m(b_m)$,
 $\mathrm{lo}_m\le a_m-\varrho$, $\mathrm{hi}_m\ge b_m+\varrho$, and $\mathrm{Hc}_m'\ge c_*>0$ on $[\mathrm{lo}_m,\mathrm{hi}_m]$ with
-$c_*\varrho\ge2\bar\varepsilon$, then $\mathrm{Hc}_m(\mathrm{lo}_m)\le\mathrm{Hc}_m(a_m)-c_*\varrho<\tau_m-2\bar\varepsilon$, and
+$c_*\varrho\ge2\bar\varepsilon$, then $\mathrm{Hc}_m(\mathrm{lo}_m)\le\mathrm{Hc}_m(a_m)-c_*\varrho\le\tau_m-2\bar\varepsilon$, and
 similarly at $\mathrm{hi}_m$, so (B3) holds. For condition (ii) of Lemma~\ref{lem:R1} at $\Upsilon^\#$, note that
 $W=(P_v-P_{\mu_{\Upsilon^\#}})_S$ and that $|P_{\mu_\Upsilon}(m)-H(m,\Upsilon(m))|\le\bar\varepsilon$ by
 Lemma~\ref{lem:decoupling}, while both functions take the same values at $m=0$ and $m=d$. So it suffices that
@@ -1522,7 +1523,7 @@ centred periodic fourth difference.
 
 \begin{lemma}[positivity criterion]\label{lem:P}
 \begin{enumerate}
-\item \emph{(computer-assisted)} The sequence $(a(m))_{m\ge0}$ is positive and convex, and $m^2a(m)\le\frac{13}{180}$ for $m\ge1$.
+\item \emph{(computer-assisted)} The sequence $(a(m))_{m\ge0}$ is positive and convex, and $m^2a(m)\le0.0723$ for $m\ge1$.
 Consequently, for all $\theta$,
 \[
 \mathcal A(\theta):=a(0)+2\sum_{m\ge1}a(m)\cos m\theta\ \ge\ \Delta^2a(1)=2f(1)-f(2)\ \ge\ 0.105487,
@@ -1539,10 +1540,10 @@ where $w_k=1$ for $k<d/2$ and $w_{d/2}=\frac12$.
 \end{lemma}
 
 \begin{proof}
-(1) The positivity, convexity and the bound $m^2a(m)\le\frac{13}{180}$ are verified in interval arithmetic for $m\le3000$,
-and for $m>3000$ from the asymptotic expansion $f(b)=\frac16-\frac{13}{180}b^{-2}+\frac{683}{7560}b^{-4}+E(b)$,
+(1) The positivity, convexity and the bound $m^2a(m)\le0.0723$ are verified in interval arithmetic for $m\le3000$ (the
+maximum is $0.07222\ldots$), and for $m>3000$ from the asymptotic expansion $f(b)=\frac16-\frac{13}{180}b^{-2}+\frac{683}{7560}b^{-4}+E(b)$,
 $|E(b)|\le0.409\,b^{-6}$, obtained from the Binet expansion of the polygamma functions with its explicit remainder
-(program \texttt{t35\_polya.py}). Since $a$ is convex with $a(m)\to0$, P\'olya's argument writes
+(program \texttt{t35\_polya.py}); for $m>3000$ it gives $m^2a(m)\le\frac{13}{180}-\frac{683}{7560}m^{-2}+0.409\,m^{-4}<\frac{13}{180}<0.0723$. Since $a$ is convex with $a(m)\to0$, P\'olya's argument writes
 $\mathcal A=\sum_{L\ge1}\Delta^2a(L)\,L\,\mathcal K_L$ with the nonnegative Fej\'er kernels
 $\mathcal K_L(\theta)=L^{-2}\bigl(\sin\frac{L\theta}2/\sin\frac\theta2\bigr)^2$, and $L\mathcal K_L\equiv1$ for $L=1$. The values of
 $f(1),f(2)$ follow from $\psi'(2)=\frac{\pi^2}6-1$, $\psi''(2)=2-2\zeta(3)$, $\psi'(3)=\frac{\pi^2}6-\frac54$, $\psi''(3)=\frac94-2\zeta(3)$.
@@ -1571,7 +1572,7 @@ $\Upsilon(1)\le0.6451\,\varepsilon$ and $\sup|\Xb'|\le\frac{4d}\pi(H_d+1)+1.8884
 $\varrho_d=2\bar\varepsilon_d/c_d$. Then:
 \begin{enumerate}
 \item for each $1\le m<d/2$ there are $a_m<b_m$ within $6.6468\cdot10^{-4}\varepsilon^2$ of $\Upsilon_e(m)$ with
-$\mathrm{Hc}_m(a_m)<\tau_m<\mathrm{Hc}_m(b_m)$, and $\mathrm{Hc}_m'\ge c_d$ on $[a_m-\varrho_d,b_m+\varrho_d]$;
+$\mathrm{Hc}_m(a_m)\le\tau_m\le\mathrm{Hc}_m(b_m)$, and $\mathrm{Hc}_m'\ge c_d$ on $[a_m-\varrho_d,b_m+\varrho_d]$;
 \item $D_B[\Upsilon_e](1)\ge-2.765192\,\varepsilon^2$ and $D_B[\Upsilon_e](m)\ge6.022431\,\varepsilon^3$ for $2\le m\le d/2$;
 \item for every symmetric $\Upsilon$ with $|\Upsilon(m)-\Upsilon_e(m)|\le6.6468\cdot10^{-4}\varepsilon^2+\varrho_d$ for
 $1\le m\le d/2$, the one-sided slack $X_\Upsilon$ of the remark after Lemma~\ref{lem:B} satisfies
@@ -1584,10 +1585,14 @@ by factors larger than $e^{800}$.
 \end{enumerate}
 \end{proposition}
 
-\emph{What is verified.} The model $\Upsilon_e$ is real-analytic in $(x,\varepsilon)=(m/d,1/d)$, and every statement is
+\emph{What is verified.} The model $\Upsilon_e$ is smooth in $(x,\varepsilon)=(m/d,1/d)$ on every box used. At
+$\varepsilon=0$ the functions $\mathrm B_{2j}(1/w)$ have only an asymptotic expansion, so we use $C^K$ regularity with explicit
+Taylor remainders, not analyticity (\texttt{cone-certificates/RIGOR\_ALLD.md}, Lemmas M1 and M3). Every statement is
 proved by interval Taylor models over boxes in $(x,\varepsilon)$ or $(w,\varepsilon)$, $w=1/m$, with
 $\varepsilon\in[0,1/2001]$, so that each box covers all $d\ge2001$ at once (Appendix~\ref{app:model}); the box endpoints lie
-on exact decimal grids and the $\varepsilon$-ranges are stored exactly. Item (1) is the \emph{pointwise lemma} (program
+on exact decimal grids and the $\varepsilon$-ranges are stored exactly. The enclosures use mpmath interval arithmetic at
+$120$--$240$ bits, which together with Python is the trusted base here. The regime-II verifier \texttt{verify\_cert.py}
+also widens the interval elementary functions by $16$ units in the last place; the regime-III programs do not. Item (1) is the \emph{pointwise lemma} (program
 \texttt{a10\_pointwise.py}, $159$ boxes; it also certifies that the model root is unique) together with the derivative
 bound of \texttt{a12\_fp\_alld.py}: a certified lower bound $0.15204$ for the derivative of the scaled decoupled equation
 on all boxes, which gives $\mathrm{Hc}_m'\ge\frac4\pi\,0.15204\,\varepsilon\ge c_d$. Item (2) is assembled from
@@ -2529,7 +2534,9 @@ exact certificates for $d\le20$ of~\cite{repo-cglmp} are available at \url{https
 %======================================================================
 
 This appendix defines the model $\Upsilon_e$ of Proposition~\ref{prop:regimeIII} and records the decomposition used in its
-verification. Throughout $d\ge2001$, $\varepsilon=1/d$, and for real $b\in(0,d)$ we write $x=b/d$ and $w=1/b$.
+verification. Throughout $d\ge2001$, $\varepsilon=1/d$, and for real $b\in(0,d)$ we write $x=b/d$ and $w=1/b$. The proofs
+of the statements below are written out in full in \texttt{cone-certificates/RIGOR\_ALLD.md}, together with the programs
+and their logs.
 
 \emph{Ingredients.} Let $\kappa_n(b)=\frac{\dd^n}{\dd b^n}[b\psi(b+1)]$ and $\mathrm B_{2j}(b)=b^{2j-1}\kappa_{2j}(b)/(2j-2)!$ (so that
 $\mathrm B_{2j}(b)\to1$ as $b\to\infty$), $k_j=2(2j-2)!/(2^jj!)$. Let $g_r(x)=\sum_{i\text{ odd}}g_ix^i$ (Lemma~\ref{lem:singular}),
@@ -2547,12 +2554,23 @@ Let $\mathrm p=g_r-\frac{\varepsilon^2}{12}g_r''+\frac{\varepsilon^4}{240}g_r'''
 $\tau_e(b)=[\tilde P-\Xb_r](b)-[\tilde P-\Xb_r](d-b)$ and $\hat\tau_e=\frac\pi2\tau_e/b$.
 
 \emph{The model.} $u_e(b)$ is the root in $(0,1)$ of $\sum_{j=1}^4\mathrm{Ch}_j(b)u^j=\hat\tau_e(b)$, and $\Upsilon_e(b)=\varepsilon b^2u_e(b)$;
-$\Upsilon_e(0)=0$ and $\Upsilon_e(d-b)=\Upsilon_e(b)$. The scan of \texttt{a10\_pointwise.py} certifies that this root exists and is unique,
-so $u_e$ is real-analytic; with the exact discrete targets and Gaussian order $7$ the model reproduces the certified
-solutions at $d=1000$ to relative accuracy $10^{-18}$ (numerical check).
+$\Upsilon_e(0)=0$ and $\Upsilon_e(d-b)=\Upsilon_e(b)$. For even $d$ both sides of the equation vanish identically at
+$b=d/2$, because the coefficients are antisymmetric about $x=\frac12$. There $u_e(d/2)$ is defined by continuity, as the
+root of the equation divided by $1-2x$; this is what the programs compute. The scan of \texttt{a10\_pointwise.py} certifies
+that this root exists and is unique, so $u_e$ is smooth, with the explicit Taylor remainders used below. (Numerical
+checks, not used in the proof: a prototype with the exact discrete targets and Gaussian order $7$ reproduces the
+certified solutions at $d=1000$ to relative accuracy $10^{-18}$. The model $\Upsilon_e$ itself agrees with them to relative
+accuracy $2\cdot10^{-12}$ at $d=1000$ and $1.3\cdot10^{-13}$ at $d=2000$. The proof uses only the certified bound
+$6.6468\cdot10^{-4}\varepsilon^2$ of the pointwise lemma.)
 
 \emph{Decomposition.} Expanding $u_e=U_0(w)+xU_1(w)+x^2R_2(x,w)$ in $x$ at fixed $w$, one has $b^2U_0=A_0b^2/\mathrm B(b)$ and
-$b^3U_1=\varphi_2(b)$ for an explicit function $\varphi_2$, so that
+$b^3U_1=\varphi_2(b)$, where $\mathrm B=\mathrm B_2$ and
+\[
+\varphi_2(b)=-\frac\pi2\Bigl(1+\frac\pi{12}\Bigr)\frac{b^3}{\mathrm B(b)}+\frac\pi2\,t_{1c}\,\frac{b^2}{\mathrm B(b)}
++\frac\pi2\,A_0\,\frac{b^3}{\mathrm B(b)^2}-\frac{A_0^2}2\,\frac{b^2\,\mathrm B_4(b)}{\mathrm B(b)^3},\qquad
+t_{1c}=-\Bigl(\frac23+\frac{5\pi}{72}+\frac1{3\pi}\Bigr)
+\]
+(identities I1 and I2, \texttt{RIGOR\_ALLD.md}, Theorem I; program \texttt{a08\_A2.py}), so that
 \[
 \Upsilon_e(b)=\varepsilon A_0b^2+A_0\varepsilon f(b)+\varepsilon^2\varphi_2(b)+\varepsilon^3b^4R_2(x,w),
 \]

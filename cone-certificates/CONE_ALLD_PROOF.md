@@ -144,6 +144,10 @@ K eps^5 m^2 from section 8; CERTIFIED (a13_constants.py, logs/alld/constants.jso
 so Delta^2 W(m) >= eps (min density) - 4 max |W - W_e| > 0 with a margin of order eps.
 
 ## 10. Tail / fixed-point (Lemma B) margins for all d >= 2001  [PROVED, elementary + a12_fp_alld.py]
+[Note: the constants in the next four lines (0.66 eps, 0.426 d, at_k >= 0.09 eps^2) are from an earlier stage. They remain
+valid but are weaker than the certified values used now, which are in the paper (Proposition prop:regimeIII) and in
+logs/alld/audit_alld.log: Phi(1) <= 0.6451 eps, log P(E^c) <= -864 at d = 2001 (decreasing in d), and
+at_k >= 0.1186944 w_k eps^2.]
 Phi\_\*(1) <= Phi_e(1) + eps^2/20 <= 0.66 eps (u_e <= 0.65 on b in [1, 1.05], section 8 scan), hence
 P(E^c) <= 2d exp(-9/(32 Phi(1))) <= 2d exp(-0.426 d),  eps_tail <= (3d/8) sup|F'| P(E^c),  sup|F'| <= (4d/pi)(H_d + 1) + 8d,
 r = 8 eps_tail/min c_1 with min\_{m<d/2} c_1(m) >= (4/pi) Ch\*\_min/d (Ch_1 = (1-2x) Ch\*\_1, d - 2m >= 1).  For d >= 2001 these are

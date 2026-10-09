@@ -77,6 +77,8 @@ APPLICATIONS (certified).
     so Hc_m' >= (2/(pi eps m)) 0.152/d >= 0.19/d.  Take the IVT interval of section 8 widened by rho = 10.5 d eps_t <= 10^(-363).
     The at_k margin (0.1187 eps^2) and the slack margin (0.6168 eps) absorb 2 rho and 4(eps_t + rho d^2).
 
+[SUPERSEDED, kept for the record: the certificates for 201 <= d <= 2000 are now produced by the single-run checker
+verify_cert.py (logs/cert_g_d{d}.json, RIGOR_GAUSS.md); the verify_gauss.py run described in this paragraph is no longer used.]
 CERTIFICATES (2026-10-01).  verify_gauss.py turns the above into a rigorous certificate for one d at cost O(d^2): interval enclosure of
 Phi_* (decoupled equations with an exact order-14 Gaussian expansion and an order-16 Lagrange remainder), interval DFT, slack, and the
 tail/Brouwer lemma (box radius r = 8 eps_tail / min c_1; margins min at_k > 2r, w > 4(r sup|F''| + eps_tail)).  All 201 <= d <= 1000 are
@@ -90,6 +92,9 @@ a(m) = 1/6 - f(m) is convex (QD2-L12, rigorous).  Positive definiteness for larg
 (D_B(1) >= -3 eps^2, D_B(m) >= eps^3, slack >= 0), which holds numerically with true constants gamma = 2.756, beta ~ 9.8 and has explicit
 leading terms D_B(m) = eps^2 A_2(m) + eps^3 A_3(m) + ..., A_2 = Delta^4 phi_2 (QD2-L10/N17).
 
+[SUPERSEDED, kept for the record: the analytic core described in the next paragraph is no longer open. It is proved for every
+d >= 2001 in CONE_ALLD_PROOF.md and RIGOR_ALLD.md (paper: Proposition prop:regimeIII), and certified for 201 <= d <= 2000 by
+verify_cert.py.]
 REMAINING (the analytic core): for the solution Phi_* of (D_m), prove (PD) at_k(Phi_*) > 0 for all k with a margin, and (SL) Delta^2 W >= 0
 with a margin, for all d >= d0.  Numerics (t27/t28): d = 41, 60, ... : all at_k > 0 with high-frequency floor d^2 at_k ~ 0.13 and low-k
 at_k k^4/d ~ 0.0168; slack d Delta^2 W in [0.63, 0.87].

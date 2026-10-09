@@ -11,7 +11,7 @@ version, one box, every quantity literally enclosed, every decision an interval 
 |---|---|
 | `verify_cert.py` | the unified certifier (one run per d), writes `logs/cert_g_d{d}.json` |
 | `test_verify_cert.py` | 22 tests of the constants and enclosures; output `logs/test_verify_cert.log` |
-| `audit_cert_g.py` | re-checks every condition of Lemma B / Lemma R1 (ii) from the JSON strings; output `logs/audit_cert_g_final.log` |
+| `audit_cert_g.py` | consistency audit: re-checks every condition of Lemma B / Lemma R1 (ii) against the stored exact strings (it does not recompute the bounds); output `logs/audit_cert_g_final.log` |
 | `run_cert.sh`, `start_cert.sh` | driver (one worker per residue class of d) and launcher (nohup, PIDs in `logs/run_cert_pids.txt`) |
 | `logs/cert_g_d{d}.json` | 1800 certificates, d = 201..2000 |
 
@@ -25,8 +25,8 @@ certificate and checked by the audit).
 
 For every d with 201 <= d <= 2000, one run of `verify_cert.py` certifies all hypotheses of Lemma B and of Lemma R1 (ii) of
 `CONE_PROOF.md` on one explicit Poincare-Miranda box (section 2).  Hence **CONE_d holds for every 201 <= d <= 2000**
-(computer-assisted: 160-bit interval arithmetic; the lemmas themselves are on paper).  The audit `audit_cert_g.py` re-checks every
-condition from the stored exact strings: **1800/1800 OK, ALL CERTIFIED** (section 7).  Minimum margins over all 1800 values
+(computer-assisted: 160-bit interval arithmetic; the lemmas themselves are on paper).  The consistency audit `audit_cert_g.py`
+re-checks every condition against the stored exact strings (it does not recompute the bounds): **1800/1800 OK, ALL CERTIFIED** (section 7).  Minimum margins over all 1800 values
 (lower endpoints of certified enclosures):
 
 | quantity | certified minimum | where |

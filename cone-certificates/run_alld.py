@@ -45,6 +45,12 @@ STAGE1 = [
     ('a01_model_d1000', ['a01_model.py', '1000']),      # non-rigorous prototype cross-check (reads logs/phi_d1000.json)
     ('a01_model_d2000', ['a01_model.py', '2000']),
 ]
+# The a01 jobs are an optional numerical cross-check, not part of the proof. Their input files logs/phi_d1000.json and
+# logs/phi_d2000.json (certified solutions at d = 1000, 2000) are not shipped with this repository, so skip them if absent.
+for _d in ('1000', '2000'):
+    if not os.path.exists(f'logs/phi_d{_d}.json'):
+        print(f'note: logs/phi_d{_d}.json not present; skipping the optional cross-check a01_model_d{_d}', flush=True)
+        STAGE1 = [j for j in STAGE1 if j[0] != f'a01_model_d{_d}']
 STAGE2 = [('a09_smallm', ['a09_smallm.py'])]          # needs logs/alld/polya.json (t35)
 
 

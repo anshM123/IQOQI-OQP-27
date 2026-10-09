@@ -45,7 +45,7 @@ Part A of the problem was answered negatively by Bancal, Gisin and Pironio (2010
 |---|---|---|
 | Lean, single file in the issue-#3444 formulation | see [`formal-conjectures-27/README.md`](formal-conjectures-27/README.md) | about 50 min, up to about 12 GB |
 | Lean, full development | `cd lean && lake exe cache get && bash check.sh` | about 2 h, up to about 8 GB per file |
-| CONE_d audit, every d | `cd cone-certificates && python audit_alld.py` | re-checks stored certificates; re-running the 201 ≤ d ≤ 2000 certifier takes about 12 CPU-hours |
+| CONE_d audit, every d | `cd cone-certificates && python audit_alld.py` | a consistency audit: it re-checks the stored certified bounds against every condition of the proof, and the coverage of all d, but does not recompute the bounds; re-running the 201 ≤ d ≤ 2000 certifier takes about 12 CPU-hours |
 | Noise clause, local realism | `cd clauses/noise-literal && python verify_theorem.py` | about 3 min |
 | Kullback–Leibler clause | `cd clauses/kl-divergence && python verify_main.py` | see `THEOREM.md` |
 | POVMs, 3 ≤ d ≤ 8 | `cd clauses/povm/certs && python ../verify_povm.py 3 4 5 6 7 8` | exact arithmetic |
