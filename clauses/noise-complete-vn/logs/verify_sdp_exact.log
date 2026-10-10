@@ -1,0 +1,4 @@
+class 9: SDP value 0.2071068292 (solved); exact PD check of Z'+sI: True (shift s = 2.408e-08, Bareiss 8s); residual sum 2.143e-06; exact UB = 0.2071146059; ratio UB = 1.4142292119 vs kappa_4 = 1.4481216092 -> BELOW kappa_4
+class 20: SDP value 0.4315535600 (solved); exact PD check of Z'+sI: True (shift s = 2.408e-08, Bareiss 60s); residual sum 7.698e-05; exact UB = 0.4316363282; ratio UB = 1.3836767361 vs kappa_4 = 1.4481216092 -> BELOW kappa_4
+class 29: SDP value 0.4275471459 (solved); exact PD check of Z'+sI: True (shift s = 2.408e-08, Bareiss 60s); residual sum 1.421e-05; exact UB = 0.4275671561; ratio UB = 1.3800596943 vs kappa_4 = 1.4481216092 -> BELOW kappa_4
+class 18: SDP value 0.3220632771 (solved); exact PD check of Z'+sI: True (shift s = 2.408e-08, Bareiss 47s); residual sum 3.488e-06; exact UB = 0.3220724984; ratio UB = 1.3680828553 vs kappa_4 = 1.4481216092 -> BELOW kappa_4

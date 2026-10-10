@@ -1,0 +1,95 @@
+d=4: 34 classes, 26 expanded; to expand now: [9, 2, 3, 7, 6, 1, 0, 25]
+    dd step 1/80: 49 rays
+    dd step 11/80: 52 rays
+    dd step 21/80: 55 rays
+    dd step 31/80: 78 rays
+    dd step 41/80: 194 rays
+    dd step 51/80: 3487 rays
+    dd step 61/80: 47636 rays
+    dd step 71/80: 32847 rays
+    dd step 80/80: 16560 rays
+class 9: 128 vertices, 16560 ridges, neighbours {0: 128, 1: 320, 6: 32, 7: 16, 9: 128, 10: 2176, 13: 1280, 15: 512, 17: 128, 18: 2048, 20: 2048, 25: 64, 27: 3072, 28: 2560, 29: 2048}  [263s]
+    dd step 1/80: 49 rays
+    dd step 11/80: 52 rays
+    dd step 21/80: 54 rays
+    dd step 31/80: 87 rays
+    dd step 41/80: 181 rays
+    dd step 51/80: 325 rays
+    dd step 61/80: 3580 rays
+    dd step 71/80: 4667 rays
+    dd step 80/80: 2646 rays
+class 2: 128 vertices, 2646 ridges, neighbours {0: 98, 1: 135, 2: 114, 3: 84, 4: 8, 5: 6, 6: 120, 7: 63, 8: 21, 10: 216, 11: 378, 12: 162, 13: 270, 14: 108, 15: 108, 16: 54, 25: 53, 26: 216, 31: 216, 33: 216}  [301s]
+    dd step 1/80: 49 rays
+    dd step 11/80: 52 rays
+    dd step 21/80: 55 rays
+    dd step 31/80: 96 rays
+    dd step 41/80: 183 rays
+    dd step 51/80: 1390 rays
+    dd step 61/80: 5076 rays
+    dd step 71/80: 6247 rays
+    dd step 80/80: 3406 rays
+class 3: 128 vertices, 3406 ridges, neighbours {0: 96, 1: 176, 2: 112, 3: 72, 5: 2, 6: 192, 7: 96, 8: 12, 10: 144, 11: 504, 12: 72, 13: 504, 14: 144, 15: 288, 16: 72, 25: 56, 27: 288, 31: 288, 33: 288}  [339s]
+    dd step 1/80: 49 rays
+    dd step 11/80: 52 rays
+    dd step 21/80: 55 rays
+    dd step 31/80: 88 rays
+    dd step 41/80: 168 rays
+    dd step 51/80: 601 rays
+    dd step 61/80: 8040 rays
+    dd step 71/80: 10115 rays
+    dd step 80/80: 5579 rays
+class 7: 128 vertices, 5579 ridges, neighbours {0: 112, 1: 236, 2: 56, 3: 64, 6: 136, 7: 12, 8: 4, 9: 3, 10: 528, 11: 336, 12: 48, 13: 912, 14: 96, 15: 480, 18: 768, 25: 60, 27: 576, 28: 192, 29: 384, 30: 192, 31: 192, 33: 192}  [395s]
+    dd step 1/96: 49 rays
+    dd step 11/96: 51 rays
+    dd step 21/96: 53 rays
+    dd step 31/96: 55 rays
+    dd step 41/96: 84 rays
+    dd step 51/96: 202 rays
+    dd step 61/96: 2593 rays
+    dd step 71/96: 18312 rays
+    dd step 81/96: 42510 rays
+    dd step 91/96: 76683 rays
+    dd step 96/96: 27981 rays
+class 6: 144 vertices, 27981 ridges, neighbours {0: 140, 1: 280, 2: 160, 3: 192, 6: 261, 7: 204, 8: 36, 9: 9, 10: 1656, 11: 1296, 12: 432, 13: 1512, 14: 756, 15: 936, 16: 36, 17: 576, 18: 2304, 19: 576, 20: 1728, 21: 576, 22: 576, 23: 3456, 24: 1152, 25: 59, 26: 1296, 27: 2304, 28: 1008, 29: 1152, 30: 576, 31: 1152, 32: 1152, 33: 432}  [888s]
+    dd step 1/112: 49 rays
+    dd step 11/112: 51 rays
+    dd step 21/112: 52 rays
+    dd step 31/112: 55 rays
+    dd step 41/112: 81 rays
+    dd step 51/112: 169 rays
+    dd step 61/112: 360 rays
+    dd step 71/112: 8581 rays
+    dd step 81/112: 93281 rays
+    dd step 91/112: 123996 rays
+    dd step 101/112: 207755 rays
+    dd step 111/112: 99780 rays
+    dd step 112/112: 87359 rays
+class 1: 160 vertices, 87359 ridges, neighbours {0: 160, 1: 291, 2: 270, 3: 264, 6: 420, 7: 531, 8: 126, 9: 135, 10: 4644, 11: 3024, 12: 1404, 13: 3240, 14: 1836, 15: 1188, 16: 216, 17: 1728, 18: 4320, 19: 3456, 20: 5184, 21: 864, 22: 1728, 23: 12096, 24: 5184, 25: 58, 26: 3456, 27: 5616, 28: 5184, 29: 4320, 30: 3024, 31: 8640, 32: 3456, 33: 1296}  [3259s]
+    dd step 1/112: 49 rays
+    dd step 11/112: 51 rays
+    dd step 21/112: 53 rays
+    dd step 31/112: 54 rays
+    dd step 41/112: 80 rays
+    dd step 51/112: 136 rays
+    dd step 61/112: 320 rays
+    dd step 71/112: 7022 rays
+    dd step 81/112: 66064 rays
+    dd step 91/112: 196465 rays
+    dd step 101/112: 165946 rays
+    dd step 111/112: 73510 rays
+    dd step 112/112: 64111 rays
+class 0: 160 vertices, 64111 ridges, neighbours {0: 153, 1: 240, 2: 294, 3: 216, 4: 9, 5: 18, 6: 315, 7: 378, 8: 144, 9: 81, 10: 3645, 11: 2592, 12: 891, 13: 2430, 14: 729, 15: 1053, 16: 324, 17: 1296, 18: 2592, 19: 2592, 20: 2592, 21: 648, 22: 1296, 23: 9072, 24: 3888, 25: 55, 26: 2916, 27: 3888, 28: 4536, 29: 2592, 30: 2592, 31: 5832, 32: 2592, 33: 1620}  [5387s]
+    dd step 1/192: 49 rays
+    dd step 11/192: 50 rays
+    dd step 21/192: 51 rays
+    dd step 31/192: 53 rays
+    dd step 41/192: 54 rays
+    dd step 51/192: 54 rays
+    dd step 61/192: 61 rays
+    dd step 71/192: 131 rays
+    dd step 81/192: 231 rays
+    dd step 91/192: 231 rays
+    dd step 101/192: 1147 rays
+    dd step 111/192: 5218 rays
+    dd step 121/192: 7150 rays
+    dd step 131/192: 1625350 rays

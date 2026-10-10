@@ -1,0 +1,2 @@
+﻿N = 121, real variables 1269; kappa_4 = [1.44812160922935 +/- 6.18e-15]; rigorous lower bound used 1448121609/1000000000
+class 9: SDP 0.2071067812 (optimal); exact PSD certificate True (shift 1.00e-07, lambda_min -3.33e-14); residual sum 6.51e-08; exact UB 0.2071310465; slack(u) 1/2; ratio UB 1.4142620931 -> BELOW kappa_4  [5s + 0s]

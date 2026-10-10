@@ -21,7 +21,8 @@ discrimination. This repository contains:
   complete von Neumann measurements, the CGLMP functional of the problem page), proved from the same development
   ([`formal-conjectures-27/`](formal-conjectures-27/));
 - results on the other two statements of Part B, which are only partly settled: the noise statement is proved for the
-  CGLMP violation and open for the violation of local realism with complete von Neumann measurements, and the
+  CGLMP violation; for the violation of local realism with complete von Neumann measurements it holds for d ≤ 4 and is
+  open for d ≥ 5; and the
   Kullback–Leibler statement is false for d ≥ 4 and open for d = 3 (see [the status table](#status-of-the-clauses-of-oqp-27)).
 
 The clause-by-clause status, with the exact wording of the problem, is in [`clauses/LEDGER.md`](clauses/LEDGER.md).
@@ -73,7 +74,7 @@ Theorems 3 and 4 are proved analytically; Theorems 1 and 2 use them together wit
 |---|---|---|
 | 27A: every face of the (2,2,d) local polytope that is not contained in a face of the no-signalling polytope is of CGLMP type | **false** (prior work) | Bancal, Gisin, Pironio, J. Phys. A 43, 385303 (2010) |
 | 27B: the measurements that maximally violate CGLMP on a maximally entangled state are necessarily the DKZ measurements | **proved for every d**: optimal, and unique up to local unitaries u ⊗ ū (projective measurements, every local dimension; computer-assisted for d ≥ 21) | Theorems 1 and 2; `papers/`, `lean/`, `formal-conjectures-27/` |
-| 27B: they give the highest resistance of the violation to noise | **Violation of the CGLMP inequality, white noise on Φ_d** (the formulation of issue #3444): **proved for every d**, with DKZ the unique optimum. This follows from Theorems 1 and 2, because white noise scales the CGLMP value. **Violation of local realism (all Bell inequalities), complete von Neumann measurements on Φ_d: open for d ≥ 4** (proved for d = 2, 3; DKZ optimal in all our numerical searches up to d = 8). | `clauses/noise-cglmp/` (Lean-checked), `clauses/noise-literal/` |
+| 27B: they give the highest resistance of the violation to noise | **Violation of the CGLMP inequality, white noise on Φ_d** (the formulation of issue #3444): **proved for every d**, with DKZ the unique optimum. This follows from Theorems 1 and 2, because white noise scales the CGLMP value. **Violation of local realism (all Bell inequalities), complete von Neumann measurements on Φ_d: proved for d = 2, 3, 4, open for d ≥ 5** (d = 4: complete facet list of the (2,2,4) local polytope, computer-assisted and independently re-implemented; DKZ optimal in all our numerical searches up to d = 8). | `clauses/noise-cglmp/` (Lean-checked), `clauses/noise-literal/`, `clauses/noise-complete-vn/` |
 | 27B: they give the best Kullback–Leibler discrimination | **false for every d ≥ 4**: explicit complete von Neumann measurements on Φ_d have a larger statistical strength than DKZ, for all three strengths of van Dam, Grünwald and Gill. **Open for d = 3** (DKZ is a strict local maximum). | `clauses/kl-divergence/` (d = 4 first by Y. Zhang, Zenodo 2026, doi:10.5281/zenodo.23022433) |
 
 "Proved" means proved by us, with the checks described under [Verification](#verification). None of these results has yet
@@ -82,11 +83,13 @@ been reviewed by outside experts.
 On the noise statement: with Gill's noise (uniformly random outcomes) and the violation of local realism, DKZ is beaten for
 every d ≥ 4 by measurements outside the class of complete von Neumann measurements, namely projective measurements with
 outcomes that never occur (zero projectors), or POVMs (`clauses/noise-literal/`, exact theorem). For complete von Neumann
-measurements on Φ_d, Gill's noise coincides with white noise on the state, and the question is open. The effect behind
+measurements on Φ_d, Gill's noise coincides with white noise on the state; there DKZ is optimal for d ≤ 4 (for d = 4
+through a complete list of the facets of the (2,2,4) local polytope, `clauses/noise-complete-vn/`), and the question
+is open for d ≥ 5. The effect behind
 these examples was observed before: Acín, Durt, Gisin and Latorre, PRA 65, 052325 (2002), eq. (14), and numerically Baek,
 Ryu and Lee, New J. Phys. 27, 053001 (2025). As far as we found, the exact theorems for every d ≥ 4 are new.
 
-Open questions: the noise statement for the violation of local realism with complete von Neumann measurements (d ≥ 4); the
+Open questions: the noise statement for the violation of local realism with complete von Neumann measurements (d ≥ 5); the
 Kullback–Leibler statement at d = 3; optimality for general POVMs when d ≥ 9 (for d = 3, ..., 8 it is proved, with
 uniqueness, by exact certificates in `clauses/povm/`); and the CGLMP maximum over all states for d ≥ 9 (exact for d ≤ 8).
 

@@ -1,0 +1,38 @@
+class  0: facet True, tight 160, orbit     1024, beta_L 0, beta(u)    -3/8, ratio UB 1.2761458 < kappa_4 (certified), expanded False
+class  1: facet True, tight 160, orbit     1536, beta_L 0, beta(u)    -3/8, ratio UB 1.2761476 < kappa_4 (certified), expanded False
+class  2: facet True, tight 128, orbit     3072, beta_L 0, beta(u)    -1/2, ratio UB 1.0000028 < kappa_4 (certified), expanded True
+class  3: facet True, tight 128, orbit     2304, beta_L 0, beta(u)    -1/2, ratio UB 1.0000043 < kappa_4 (certified), expanded True
+class  4: facet True, tight  96, orbit     1024, beta_L 0, beta(u)    -5/8, ratio UB 0.6000079 < kappa_4 (certified), expanded True
+class  5: facet True, tight  96, orbit     1536, beta_L 0, beta(u)    -5/8, ratio UB 0.6000016 < kappa_4 (certified), expanded True
+class  6: facet True, tight 144, orbit     2304, beta_L 0, beta(u)   -7/16, ratio UB 1.2366947 < kappa_4 (certified), expanded True
+class  7: facet True, tight 128, orbit     3456, beta_L 0, beta(u)    -1/2, ratio UB 1.2074837 < kappa_4 (certified), expanded True
+class  8: facet True, tight 112, orbit     2304, beta_L 0, beta(u)   -9/16, ratio UB 1.0000043 < kappa_4 (certified), expanded True
+class  9: facet True, tight 128, orbit      648, beta_L 0, beta(u)    -1/2, ratio UB 1.4142143 < kappa_4 (certified), expanded True
+class 10: facet True, tight 104, orbit    82944, beta_L 0, beta(u)    -5/8, ratio UB 1.3491910 < kappa_4 (certified), expanded True
+class 11: facet True, tight  91, orbit   165888, beta_L 0, beta(u)  -11/16, ratio UB 1.1612646 < kappa_4 (certified), expanded True
+class 12: facet True, tight  89, orbit    82944, beta_L 0, beta(u)  -11/16, ratio UB 1.1608443 < kappa_4 (certified), expanded True
+class 13: facet True, tight 104, orbit    82944, beta_L 0, beta(u)    -5/8, ratio UB 1.3491764 < kappa_4 (certified), expanded True
+class 14: facet True, tight  88, orbit    82944, beta_L 0, beta(u)  -11/16, ratio UB 1.1601880 < kappa_4 (certified), expanded True
+class 15: facet True, tight 105, orbit    41472, beta_L 0, beta(u)    -5/8, ratio UB 1.3491888 < kappa_4 (certified), expanded True
+class 16: facet True, tight  82, orbit    20736, beta_L 0, beta(u)    -3/4, ratio UB 1.0000286 < kappa_4 (certified), expanded True
+class 17: facet True, tight  80, orbit    82944, beta_L 0, beta(u)    -3/4, ratio UB 1.4481243 = kappa_4 (CGLMP theorem), expanded True
+class 18: facet True, tight  72, orbit   663552, beta_L 0, beta(u)    -7/8, ratio UB 1.3680765 < kappa_4 (certified), expanded True
+class 19: facet True, tight  60, orbit   663552, beta_L 0, beta(u)  -19/16, ratio UB 1.2634005 < kappa_4 (certified), expanded True
+class 20: facet True, tight  64, orbit  1327104, beta_L 0, beta(u)    -9/8, ratio UB 1.3836718 < kappa_4 (certified), expanded True
+class 21: facet True, tight  55, orbit   221184, beta_L 0, beta(u)    -9/8, ratio UB 1.2761487 < kappa_4 (certified), expanded True
+class 22: facet True, tight  56, orbit   331776, beta_L 0, beta(u)    -5/4, ratio UB 1.3314014 < kappa_4 (certified), expanded True
+class 23: facet True, tight  68, orbit  1327104, beta_L 0, beta(u)      -1, ratio UB 1.3194294 < kappa_4 (certified), expanded True
+class 24: facet True, tight  56, orbit  1327104, beta_L 0, beta(u)   -11/8, ratio UB 1.3028917 < kappa_4 (certified), expanded True
+class 25: facet True, tight 240, orbit       64, beta_L 1, beta(u)   15/16, ratio UB 1.0000066 < kappa_4 (certified), expanded False
+class 26: facet True, tight  82, orbit   165888, beta_L 0, beta(u)  -13/16, ratio UB 1.2603348 < kappa_4 (certified), expanded True
+class 27: facet True, tight  76, orbit   663552, beta_L 0, beta(u)    -7/8, ratio UB 1.3627765 < kappa_4 (certified), expanded True
+class 28: facet True, tight  81, orbit   331776, beta_L 0, beta(u)    -7/8, ratio UB 1.3565633 < kappa_4 (certified), expanded True
+class 29: facet True, tight  64, orbit  1327104, beta_L 0, beta(u)    -9/8, ratio UB 1.3800547 < kappa_4 (certified), expanded True
+class 30: facet True, tight  72, orbit   331776, beta_L 0, beta(u)    -7/8, ratio UB 1.2494713 < kappa_4 (certified), expanded True
+class 31: facet True, tight  75, orbit   663552, beta_L 0, beta(u)    -7/8, ratio UB 1.2417416 < kappa_4 (certified), expanded True
+class 32: facet True, tight  58, orbit  1327104, beta_L 0, beta(u)    -5/4, ratio UB 1.2479495 < kappa_4 (certified), expanded True
+class 33: facet True, tight  72, orbit   331776, beta_L 0, beta(u)  -15/16, ratio UB 1.2256070 < kappa_4 (certified), expanded True
+total facets 11665992 (JZC: 11665992); classes 34
+double counting violations among expanded classes: 0
+unexpanded classes: [0, 1, 25]
+ALL PER-CLASS CERTIFICATES OK

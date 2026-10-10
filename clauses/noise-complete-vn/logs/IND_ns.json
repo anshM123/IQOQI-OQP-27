@@ -1,0 +1,78 @@
+{
+ "orbit_sizes": {
+  "deterministic": 256,
+  "PR_2": 10368,
+  "PR_3": 110592,
+  "PR_4": 82944
+ },
+ "B": {
+  "vertices": 204160,
+  "by_orbit": {
+   "PR_2": 10368,
+   "PR_3": 110592,
+   "deterministic": 256,
+   "PR_4": 82944
+  },
+  "unrecognised": 0,
+  "ok": true,
+  "dd": {
+   "peak": 204160,
+   "steps": 15,
+   "time": 66.24763894081116,
+   "exact_rank_fallbacks": 0,
+   "maxentry": 4
+  }
+ },
+ "Bp": {
+  "deterministic": {
+   "edges": 32097,
+   "types": {
+    "PR_2": 5508,
+    "deterministic": 237,
+    "PR_3": 21168,
+    "PR_4": 5184
+   }
+  },
+  "PR_2": {
+   "edges": 1536,
+   "types": {
+    "PR_3": 640,
+    "PR_2": 632,
+    "deterministic": 136,
+    "PR_4": 128
+   }
+  },
+  "PR_3": {
+   "edges": 169,
+   "types": {
+    "PR_2": 60,
+    "PR_3": 48,
+    "deterministic": 49,
+    "PR_4": 12
+   }
+  },
+  "PR_4": {
+   "edges": 48,
+   "types": {
+    "PR_2": 16,
+    "deterministic": 16,
+    "PR_3": 16
+   }
+  }
+ },
+ "Bp_ok": true,
+ "C": {
+  "PR_2": {
+   "min_slack": "-3/2",
+   "cls": 22
+  },
+  "PR_3": {
+   "min_slack": "-4/3",
+   "cls": 24
+  },
+  "PR_4": {
+   "min_slack": "-1",
+   "cls": 20
+  }
+ }
+}

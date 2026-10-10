@@ -1,0 +1,42 @@
+(1) liftings of the 34 classes of L(2,2,4) to d = 5: tight counts (min / max over the copied outcomes)
+  class  0 (tight 160/256): lifted tight 300 .. 425 / 625
+  class  1 (tight 160/256): lifted tight 325 .. 425 / 625
+  class  2 (tight 128/256): lifted tight 250 .. 375 / 625
+  class  3 (tight 128/256): lifted tight 275 .. 350 / 625
+  class  4 (tight  96/256): lifted tight 200 .. 325 / 625
+  class  5 (tight  96/256): lifted tight 200 .. 300 / 625
+  class  6 (tight 144/256): lifted tight 300 .. 400 / 625
+  class  7 (tight 128/256): lifted tight 275 .. 350 / 625
+  class  8 (tight 112/256): lifted tight 225 .. 325 / 625
+  class  9 (tight 128/256): lifted tight 300 .. 325 / 625
+  class 10 (tight 104/256): lifted tight 215 .. 291 / 625
+  class 11 (tight  91/256): lifted tight 182 .. 270 / 625
+  class 12 (tight  89/256): lifted tight 191 .. 266 / 625
+  class 13 (tight 104/256): lifted tight 205 .. 292 / 625
+  class 14 (tight  88/256): lifted tight 190 .. 268 / 625
+  class 15 (tight 105/256): lifted tight 208 .. 294 / 625
+  class 16 (tight  82/256): lifted tight 158 .. 249 / 625
+  class 17 (tight  80/256): lifted tight 178 .. 212 / 625
+  class 18 (tight  72/256): lifted tight 146 .. 208 / 625
+  class 19 (tight  60/256): lifted tight 129 .. 178 / 625
+  class 20 (tight  64/256): lifted tight 137 .. 192 / 625
+  class 21 (tight  55/256): lifted tight 119 .. 157 / 625
+  class 22 (tight  56/256): lifted tight 123 .. 164 / 625
+  class 23 (tight  68/256): lifted tight 139 .. 200 / 625
+  class 24 (tight  56/256): lifted tight 114 .. 164 / 625
+  class 25 (tight 240/256): lifted tight 525 .. 600 / 625
+  class 26 (tight  82/256): lifted tight 165 .. 252 / 625
+  class 27 (tight  76/256): lifted tight 156 .. 223 / 625
+  class 28 (tight  81/256): lifted tight 171 .. 246 / 625
+  class 29 (tight  64/256): lifted tight 133 .. 180 / 625
+  class 30 (tight  72/256): lifted tight 144 .. 212 / 625
+  class 31 (tight  75/256): lifted tight 151 .. 225 / 625
+  class 32 (tight  58/256): lifted tight 113 .. 172 / 625
+  class 33 (tight  72/256): lifted tight 150 .. 212 / 625
+  largest lifted facet: 600 tight vertices (dimension of a facet of L(2,2,5): 79)
+(2) facets of L(2,2,5) maximally violated by PR_k, and random facets
+  PR_2: facet with 425 tight vertices, exact facet True, f0 = 0
+  PR_3: facet with 292 tight vertices, exact facet True, f0 = 0
+  PR_4: facet with 210 tight vertices, exact facet True, f0 = 0
+  PR_5: facet with 175 tight vertices, exact facet True, f0 = 0
+  40 random ray-shooting facets: tight counts [600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600]

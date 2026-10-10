@@ -1,0 +1,8 @@
+CGLMP_5: min slack 0, tight 175, exact facet True
+    [index] step 10: |R+| 2 |R-| 1 |R0| 80 -> 83 rays (max entry 1)  [0s]
+    [index] step 20: |R+| 2 |R-| 1 |R0| 83 -> 86 rays (max entry 1)  [0s]
+    [index] step 30: |R+| 4 |R-| 1 |R0| 98 -> 106 rays (max entry 1)  [0s]
+    [index] step 40: |R+| 6 |R-| 4 |R0| 135 -> 149 rays (max entry 1)  [0s]
+    [index] step 50: |R+| 21 |R-| 10 |R0| 272 -> 341 rays (max entry 2)  [0s]
+    [index] step 60: |R+| 461 |R-| 111 |R0| 2807 -> 4588 rays (max entry 3)  [0s]
+    [index] step 70: |R+| 33529 |R-| 9449 |R0| 38199 -> 81170 rays (max entry 8)  [1487s]

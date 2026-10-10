@@ -1,0 +1,6 @@
+d=3: 4 classes; checking adjacency closure
+class 0: 45 vertices, 97 ridges; neighbour classes {0: 44, 1: 8, 2: 16, 3: 29}  [0s]
+class 1: 36 vertices, 35 ridges; neighbour classes {0: 8, 1: 4, 3: 23}  [0s]
+class 2: 30 vertices, 36 ridges; neighbour classes {0: 12, 3: 24}  [0s]
+class 3: 72 vertices, 791 ridges; neighbour classes {0: 261, 1: 207, 2: 288, 3: 35}  [3s]
+COMPLETE (adjacency-closed)

@@ -1,0 +1,6 @@
+﻿(1) CGLMP_4: local bound 2, 80 tight deterministic points, exact affine rank 47 (facet: True); I_4(u) = 0; explicit relabelling onto class 17: True (axis map (0, 1, 2, 3), outcome permutations [0, 1, 2, 3], [1, 2, 3, 0], [2, 1, 0, 3], [2, 1, 0, 3])
+(2) 34 representatives: 34 distinct G-invariant signatures; groups with equal signature []; pairwise inequivalent: True
+(3) positivity facets meeting P = {p(00|00) = 0} in a ridge (exact affine rank 46): 63 of 63
+(4) orbit sizes (saved, exhaustive stabilisers of the 2026-10-02 run): total 11665992
+    Corollary P4: facets of a positivity facet = sum_j orbit_j a_(j,25)/64 + 63 = 7539508 + 63 = 7539571 (all terms integral: True)
+[1s]

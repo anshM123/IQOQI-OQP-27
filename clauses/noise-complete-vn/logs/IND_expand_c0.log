@@ -1,0 +1,7 @@
+    [class 0] step 10: |R+| 2 |R-| 1 |R0| 50 -> 54 rays (max entry 3)  [0s]
+    [class 0] step 20: |R+| 2 |R-| 2 |R0| 60 -> 66 rays (max entry 3)  [0s]
+    [class 0] step 30: |R+| 17 |R-| 1 |R0| 79 -> 113 rays (max entry 3)  [0s]
+    [class 0] step 40: |R+| 17 |R-| 11 |R0| 135 -> 174 rays (max entry 3)  [0s]
+    [class 0] step 50: |R+| 2174 |R-| 187 |R0| 1021 -> 4823 rays (max entry 6)  [0s]
+    [class 0] step 60: |R+| 28929 |R-| 12185 |R0| 32252 -> 108940 rays (max entry 9)  [285s]
+STOPPED by hand at 23:17 (own PID 49424): insertion order exploded early (108940 rays at step 60); to be re-run with another ordering

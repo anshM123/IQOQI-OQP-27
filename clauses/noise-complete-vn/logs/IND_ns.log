@@ -1,0 +1,17 @@
+﻿=== IND_ns d = 4: 64 positivity forms in my coordinates (verified on all 256 deterministic points)
+(O) orbit sizes under G (BFS over generators): {'deterministic': 256, 'PR_2': 10368, 'PR_3': 110592, 'PR_4': 82944}; total 204160  [5s]
+    canonical points: behaviours reproduced by the positivity forms, all are vertices (tight rank 48)
+    [NS] step 10: |R+| 94 |R-| 93 |R0| 348 -> 3568 rays (max entry 3)  [0s]
+    [NS] step 15: |R+| 42784 |R-| 26064 |R0| 56400 -> 204160 rays (max entry 4)  [60s]
+(B) DD of NS: 204160 vertices (each checked: t > 0, feasible, tight rank 48), DD peak 204160, max entry 4; by orbit {'PR_2': 10368, 'PR_3': 110592, 'deterministic': 256, 'PR_4': 82944}; not in the 4 orbits: 0  [70s]
+    vert(NS) = deterministic u PR_2 u PR_3 u PR_4 orbits: True
+(B') deterministic: 60 tight forms, 32097 NS-edges, neighbour types {'PR_2': 5508, 'deterministic': 237, 'PR_3': 21168, 'PR_4': 5184}
+(B') PR_2: 56 tight forms, 1536 NS-edges, neighbour types {'PR_3': 640, 'PR_2': 632, 'deterministic': 136, 'PR_4': 128}
+(B') PR_3: 52 tight forms, 169 NS-edges, neighbour types {'PR_2': 60, 'PR_3': 48, 'deterministic': 49, 'PR_4': 12}
+(B') PR_4: 48 tight forms, 48 NS-edges, neighbour types {'PR_2': 16, 'deterministic': 16, 'PR_3': 16}
+    vertex orbits closed under NS-adjacency: True  [9s]
+(C) PR_2: most negative listed slack over the PR_2 orbit = -3/2 (class 22, orbit element 175): violated: True
+(C) PR_3: most negative listed slack over the PR_3 orbit = -4/3 (class 24, orbit element 2622): violated: True
+(C) PR_4: most negative listed slack over the PR_4 orbit = -1 (class 20, orbit element 52562): violated: True
+HYPOTHESIS (ii) VERIFIED INDEPENDENTLY
+[total 88s]

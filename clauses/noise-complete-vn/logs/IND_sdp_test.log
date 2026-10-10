@@ -1,0 +1,7 @@
+﻿(1) random balanced PVMs on Phi_4: class consistency 3.6e-15, lambda_min(M) -4.3e-15, identity/marginal rules 6.7e-16, max |relaxation objective - direct Bell value| over 34 classes 6.7e-16
+(1) random balanced PVMs on Phi_4: class consistency 1.3e-15, lambda_min(M) -4.0e-15, identity/marginal rules 6.6e-16, max |relaxation objective - direct Bell value| over 34 classes 2.2e-16
+(1) random balanced PVMs on Phi_8: class consistency 2.0e-15, lambda_min(M) -3.0e-16, identity/marginal rules 4.3e-16, max |relaxation objective - direct Bell value| over 34 classes 6.7e-16
+(2) CGLMP_4: min of 3(2 - I_4) over deterministic points = 0 (local bound 2 attained), I_4(u) = 0 (sum over lam of I_4/256)
+    primitive slack (gcd 8) is G-equivalent to class 17: True (explicit g = (0, 0, 18, 14, 14))
+    kappa_4 = [1.44812160922935 +/- 6.18e-15]
+    DKZ value of I_4 = 2.896243218459; I_4/2 = 1.448121609229 (= kappa_4 numerically)

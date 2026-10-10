@@ -1,0 +1,22 @@
+=== CLOSE_verify d = 2: L(2,2,2) dim 8, 16 deterministic points, 16 positivity forms (verified exactly on all deterministic points)
+(A) facet classes
+  seed: facet maximally violated by PR_2 (tight 8); expanding non-positivity classes only
+    new class 1: tight 12
+  class 0: tight 8, 8 ridges, neighbours {1: 8}  [0.0s]
+  class  0: exact facet True, tight   8, non-positivity, expanded True
+  class  1: exact facet True, tight  12, POSITIVITY (1, 1, 0, 0), expanded False
+  all 16 positivity inequalities are facets of L (exact affine rank 7): True
+  every non-positivity class expanded: True; every neighbour in the list: True
+  orbits [8, 16]; total facets 24; positivity orbit 16 (= 4d^2: True); double-counting violations 0
+(B) vertices of NS(2,2,d): exact DD of the polar conv{q_i}, q_i = -d^2 A_i
+  DD done: 24 vertices, all verified exactly; max |ray entry| 4 (no-overflow bound certified)  [1s]
+  24 vertices (each verified exactly): {'deterministic': 16, 'PR_2': 8}; unrecognised: 0  [1s]
+  predicted (d^4 and C(d,k)^4 (k!)^3 (k-1)!): {'deterministic': 16, 'PR_2': 8}; match: True
+(B') closure of the vertex types under NS-adjacency (tangent-cone DD at one representative per type)
+  deterministic: 17 NS-edges, neighbour types {'deterministic': 13, 'PR_2': 4}; max |ray entry| 2  [0s]
+  PR_2: 8 NS-edges, neighbour types {'deterministic': 8}; max |ray entry| 2  [0s]
+  vertex types closed under NS-adjacency: True
+(C) every non-local vertex type violates a listed facet
+  PR_2: violates a facet of class 0 (tight 8) by h.x - h0 = 1/2 (exact; explicit relabelling onto the representative found)
+THEOREM V HYPOTHESES VERIFIED: the list of 2 classes (24 facets) is COMPLETE
+[total 1s]

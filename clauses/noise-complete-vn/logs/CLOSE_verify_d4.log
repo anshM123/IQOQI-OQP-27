@@ -1,0 +1,52 @@
+=== CLOSE_verify d = 4: L(2,2,4) dim 48, 256 deterministic points, 64 positivity forms (verified exactly on all deterministic points)
+(A) facet classes
+  loaded 34 classes; expansions saved for 33 classes
+  class  0: exact facet True, tight 160, non-positivity, expanded True
+  class  1: exact facet True, tight 160, non-positivity, expanded True
+  class  2: exact facet True, tight 128, non-positivity, expanded True
+  class  3: exact facet True, tight 128, non-positivity, expanded True
+  class  4: exact facet True, tight  96, non-positivity, expanded True
+  class  5: exact facet True, tight  96, non-positivity, expanded True
+  class  6: exact facet True, tight 144, non-positivity, expanded True
+  class  7: exact facet True, tight 128, non-positivity, expanded True
+  class  8: exact facet True, tight 112, non-positivity, expanded True
+  class  9: exact facet True, tight 128, non-positivity, expanded True
+  class 10: exact facet True, tight 104, non-positivity, expanded True
+  class 11: exact facet True, tight  91, non-positivity, expanded True
+  class 12: exact facet True, tight  89, non-positivity, expanded True
+  class 13: exact facet True, tight 104, non-positivity, expanded True
+  class 14: exact facet True, tight  88, non-positivity, expanded True
+  class 15: exact facet True, tight 105, non-positivity, expanded True
+  class 16: exact facet True, tight  82, non-positivity, expanded True
+  class 17: exact facet True, tight  80, non-positivity, expanded True
+  class 18: exact facet True, tight  72, non-positivity, expanded True
+  class 19: exact facet True, tight  60, non-positivity, expanded True
+  class 20: exact facet True, tight  64, non-positivity, expanded True
+  class 21: exact facet True, tight  55, non-positivity, expanded True
+  class 22: exact facet True, tight  56, non-positivity, expanded True
+  class 23: exact facet True, tight  68, non-positivity, expanded True
+  class 24: exact facet True, tight  56, non-positivity, expanded True
+  class 25: exact facet True, tight 240, POSITIVITY (0, 1, 3, 3), expanded False
+  class 26: exact facet True, tight  82, non-positivity, expanded True
+  class 27: exact facet True, tight  76, non-positivity, expanded True
+  class 28: exact facet True, tight  81, non-positivity, expanded True
+  class 29: exact facet True, tight  64, non-positivity, expanded True
+  class 30: exact facet True, tight  72, non-positivity, expanded True
+  class 31: exact facet True, tight  75, non-positivity, expanded True
+  class 32: exact facet True, tight  58, non-positivity, expanded True
+  class 33: exact facet True, tight  72, non-positivity, expanded True
+  all 64 positivity inequalities are facets of L (exact affine rank 47): True
+  every non-positivity class expanded: True; every neighbour in the list: True
+  orbits [1024, 1536, 3072, 2304, 1024, 1536, 2304, 3456, 2304, 648, 82944, 165888, 82944, 82944, 82944, 41472, 20736, 82944, 663552, 663552, 1327104, 221184, 331776, 1327104, 1327104, 64, 165888, 663552, 331776, 1327104, 331776, 663552, 1327104, 331776]; total facets 11665992; positivity orbit 64 (= 4d^2: True); double-counting violations 0
+(B') closure of the vertex types under NS-adjacency (tangent-cone DD at one representative per type)
+  deterministic: 32097 NS-edges, neighbour types {'deterministic': 237, 'PR_2': 5508, 'PR_3': 21168, 'PR_4': 5184}; max |ray entry| 4  [24s]
+  PR_2: 1536 NS-edges, neighbour types {'deterministic': 136, 'PR_2': 632, 'PR_3': 640, 'PR_4': 128}; max |ray entry| 3  [1s]
+  PR_3: 169 NS-edges, neighbour types {'PR_2': 60, 'deterministic': 49, 'PR_3': 48, 'PR_4': 12}; max |ray entry| 4  [0s]
+  PR_4: 48 NS-edges, neighbour types {'PR_3': 16, 'PR_2': 16, 'deterministic': 16}; max |ray entry| 4  [0s]
+  vertex types closed under NS-adjacency: True
+(C) every non-local vertex type violates a listed facet
+  PR_2: violates a facet of class 0 (tight 160) by h.x - h0 = 1/2 (exact; explicit relabelling onto the representative found)
+  PR_3: violates a facet of class 13 (tight 104) by h.x - h0 = 2/3 (exact; explicit relabelling onto the representative found)
+  PR_4: violates a facet of class 17 (tight 80) by h.x - h0 = 3/4 (exact; explicit relabelling onto the representative found)
+THEOREM V HYPOTHESES VERIFIED: the list of 34 classes (11665992 facets) is COMPLETE
+[total 27s]

@@ -1,0 +1,39 @@
+﻿class  0: {'facet': True, 'primitive': True, 'tight': 160, 'positivity': False}, stabiliser 2592, orbit 1024
+class  1: {'facet': True, 'primitive': True, 'tight': 160, 'positivity': False}, stabiliser 1728, orbit 1536
+class  2: {'facet': True, 'primitive': True, 'tight': 128, 'positivity': False}, stabiliser 864, orbit 3072
+class  3: {'facet': True, 'primitive': True, 'tight': 128, 'positivity': False}, stabiliser 1152, orbit 2304
+class  4: {'facet': True, 'primitive': True, 'tight': 96, 'positivity': False}, stabiliser 2592, orbit 1024
+class  5: {'facet': True, 'primitive': True, 'tight': 96, 'positivity': False}, stabiliser 1728, orbit 1536
+class  6: {'facet': True, 'primitive': True, 'tight': 144, 'positivity': False}, stabiliser 1152, orbit 2304
+class  7: {'facet': True, 'primitive': True, 'tight': 128, 'positivity': False}, stabiliser 768, orbit 3456
+class  8: {'facet': True, 'primitive': True, 'tight': 112, 'positivity': False}, stabiliser 1152, orbit 2304
+class  9: {'facet': True, 'primitive': True, 'tight': 128, 'positivity': False}, stabiliser 4096, orbit 648
+class 10: {'facet': True, 'primitive': True, 'tight': 104, 'positivity': False}, stabiliser 32, orbit 82944
+class 11: {'facet': True, 'primitive': True, 'tight': 91, 'positivity': False}, stabiliser 16, orbit 165888
+class 12: {'facet': True, 'primitive': True, 'tight': 89, 'positivity': False}, stabiliser 32, orbit 82944
+class 13: {'facet': True, 'primitive': True, 'tight': 104, 'positivity': False}, stabiliser 32, orbit 82944
+class 14: {'facet': True, 'primitive': True, 'tight': 88, 'positivity': False}, stabiliser 32, orbit 82944
+class 15: {'facet': True, 'primitive': True, 'tight': 105, 'positivity': False}, stabiliser 64, orbit 41472
+class 16: {'facet': True, 'primitive': True, 'tight': 82, 'positivity': False}, stabiliser 128, orbit 20736
+class 17: {'facet': True, 'primitive': True, 'tight': 80, 'positivity': False}, stabiliser 32, orbit 82944
+class 18: {'facet': True, 'primitive': True, 'tight': 72, 'positivity': False}, stabiliser 4, orbit 663552
+class 19: {'facet': True, 'primitive': True, 'tight': 60, 'positivity': False}, stabiliser 4, orbit 663552
+class 20: {'facet': True, 'primitive': True, 'tight': 64, 'positivity': False}, stabiliser 2, orbit 1327104
+class 21: {'facet': True, 'primitive': True, 'tight': 55, 'positivity': False}, stabiliser 12, orbit 221184
+class 22: {'facet': True, 'primitive': True, 'tight': 56, 'positivity': False}, stabiliser 8, orbit 331776
+class 23: {'facet': True, 'primitive': True, 'tight': 68, 'positivity': False}, stabiliser 2, orbit 1327104
+class 24: {'facet': True, 'primitive': True, 'tight': 56, 'positivity': False}, stabiliser 2, orbit 1327104
+class 25: {'facet': True, 'primitive': True, 'tight': 240, 'positivity': True}, stabiliser 41472, orbit 64
+class 26: {'facet': True, 'primitive': True, 'tight': 82, 'positivity': False}, stabiliser 16, orbit 165888
+class 27: {'facet': True, 'primitive': True, 'tight': 76, 'positivity': False}, stabiliser 4, orbit 663552
+class 28: {'facet': True, 'primitive': True, 'tight': 81, 'positivity': False}, stabiliser 8, orbit 331776
+class 29: {'facet': True, 'primitive': True, 'tight': 64, 'positivity': False}, stabiliser 2, orbit 1327104
+class 30: {'facet': True, 'primitive': True, 'tight': 72, 'positivity': False}, stabiliser 8, orbit 331776
+class 31: {'facet': True, 'primitive': True, 'tight': 75, 'positivity': False}, stabiliser 4, orbit 663552
+class 32: {'facet': True, 'primitive': True, 'tight': 58, 'positivity': False}, stabiliser 2, orbit 1327104
+class 33: {'facet': True, 'primitive': True, 'tight': 72, 'positivity': False}, stabiliser 8, orbit 331776
+positivity classes: [25]; all 64 positivity inequalities are facets: True
+equivalent pairs among the 34 representatives (should be none): []
+invariants pairwise distinct: True
+orbits [1024, 1536, 3072, 2304, 1024, 1536, 2304, 3456, 2304, 648, 82944, 165888, 82944, 82944, 82944, 41472, 20736, 82944, 663552, 663552, 1327104, 221184, 331776, 1327104, 1327104, 64, 165888, 663552, 331776, 1327104, 331776, 663552, 1327104, 331776]; total 11665992; equal to saved orbits: True
+ALL REPRESENTATIVES ARE FACETS: True   [2s]

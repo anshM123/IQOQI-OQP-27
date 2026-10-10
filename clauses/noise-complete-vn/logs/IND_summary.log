@@ -1,0 +1,40 @@
+﻿class | tight | ridges | NEW | equal to saved | runs agree | DD peak | DD s | order/mode
+    0 |   160 |  64111 |   0 | True | True (1) |  270929 |  7344.4 | index/nbhd
+    1 |   160 |  87359 |   0 | True | True (1) |  249817 |  9594.8 | index/nbhd
+    2 |   128 |   2646 |   0 | True | True (1) |    6911 |     4.5 | zeros/lists
+    3 |   128 |   3406 |   0 | True | True (1) |    9721 |    16.2 | zeros/lists
+    4 |    96 |     93 |   0 | True | True (1) |     101 |     4.1 | zeros/lists
+    5 |    96 |     85 |   0 | True | True (1) |      85 |     0.0 | zeros/lists
+    6 |   144 |  27981 |   0 | True | True (1) |  111222 |  2913.5 | zeros/lists
+    7 |   128 |   5579 |   0 | True | True (1) |   13791 |    37.0 | zeros/lists
+    8 |   112 |    436 |   0 | True | True (1) |     604 |     0.1 | zeros/lists
+    9 |   128 |  16560 |   0 | True | True (2) |   33130 |   178.3 | zeros/nbhd
+   10 |   104 |   1649 |   0 | True | True (1) |    2819 |     0.6 | zeros/lists
+   11 |    91 |    227 |   0 | True | True (1) |     278 |     0.1 | zeros/lists
+   12 |    89 |    155 |   0 | True | True (1) |     173 |     0.0 | zeros/lists
+   13 |   104 |   1494 |   0 | True | True (1) |    3211 |     0.7 | zeros/lists
+   14 |    88 |    272 |   0 | True | True (1) |     291 |     0.1 | zeros/lists
+   15 |   105 |   1382 |   0 | True | True (1) |    2967 |     0.8 | zeros/lists
+   16 |    82 |    112 |   0 | True | True (1) |     112 |     0.0 | zeros/lists
+   17 |    80 |    355 |   0 | True | True (1) |     355 |     0.1 | zeros/lists
+   18 |    72 |    135 |   0 | True | True (1) |     138 |     0.0 | zeros/lists
+   19 |    60 |     70 |   0 | True | True (1) |      70 |     0.0 | zeros/lists
+   20 |    64 |     81 |   0 | True | True (1) |      81 |     0.0 | zeros/lists
+   21 |    55 |     82 |   0 | True | True (1) |      82 |     0.0 | zeros/lists
+   22 |    56 |     60 |   0 | True | True (1) |      60 |     0.0 | zeros/lists
+   23 |    68 |    114 |   0 | True | True (1) |     114 |     0.0 | zeros/lists
+   24 |    56 |     60 |   0 | True | True (1) |      60 |     0.0 | zeros/lists
+   26 |    82 |    407 |   0 | True | True (1) |     555 |     0.1 | zeros/lists
+   27 |    76 |    144 |   0 | True | True (1) |     144 |     0.0 | zeros/lists
+   28 |    81 |    201 |   0 | True | True (1) |     211 |     0.0 | zeros/lists
+   29 |    64 |     74 |   0 | True | True (1) |      74 |     0.0 | zeros/lists
+   30 |    72 |    110 |   0 | True | True (1) |     110 |     0.0 | zeros/lists
+   31 |    75 |    147 |   0 | True | True (1) |     148 |     0.0 | zeros/lists
+   32 |    58 |     56 |   0 | True | True (1) |      56 |     0.0 | zeros/lists
+   33 |    72 |     82 |   0 | True | True (1) |      82 |     0.0 | zeros/lists
+expanded non-positivity classes: 33 of 33; double-counting violations (own orbits): 0
+Corollary P4 recount: sum_j orbit_j a_(j,25) / 64 = 482528512 / 64 = 7539508 (integral: True); with the 63 positivity neighbours: 7539571
+hypothesis (ii): vertices 204160 {'PR_2': 10368, 'PR_3': 110592, 'deterministic': 256, 'PR_4': 82944}; edge closure True; PR_k violations {'PR_2': {'min_slack': '-3/2', 'cls': 22}, 'PR_3': {'min_slack': '-4/3', 'cls': 24}, 'PR_4': {'min_slack': '-1', 'cls': 20}}: True
+ratio certificates: 34 classes, all PSD-certified and below kappa_4 except class 17: True; largest non-CGLMP bound 1.4142621 (class 9)
+ALL INDEPENDENT CHECKS PASSED
+markdown tables written to logs/IND_summary.md

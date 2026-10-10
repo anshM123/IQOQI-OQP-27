@@ -1,0 +1,30 @@
+=== CLOSE_verify d = 3: L(2,2,3) dim 24, 81 deterministic points, 36 positivity forms (verified exactly on all deterministic points)
+(A) facet classes
+  seed: facet maximally violated by PR_3 (tight 30); expanding non-positivity classes only
+    new class 1: tight 72
+    new class 2: tight 45
+  class 0: tight 30, 36 ridges, neighbours {1: 24, 2: 12}  [0.1s]
+    new class 3: tight 36
+  class 2: tight 45, 97 ridges, neighbours {0: 16, 1: 29, 2: 44, 3: 8}  [0.2s]
+  class 3: tight 36, 35 ridges, neighbours {1: 23, 2: 8, 3: 4}  [0.1s]
+  class  0: exact facet True, tight  30, non-positivity, expanded True
+  class  1: exact facet True, tight  72, POSITIVITY (1, 1, 2, 1), expanded False
+  class  2: exact facet True, tight  45, non-positivity, expanded True
+  class  3: exact facet True, tight  36, non-positivity, expanded True
+  all 36 positivity inequalities are facets of L (exact affine rank 23): True
+  every non-positivity class expanded: True; every neighbour in the list: True
+  orbits [432, 36, 324, 324]; total facets 1116; positivity orbit 36 (= 4d^2: True); double-counting violations 0
+(B) vertices of NS(2,2,d): exact DD of the polar conv{q_i}, q_i = -d^2 A_i
+  DD done: 1161 vertices, all verified exactly; max |ray entry| 18 (no-overflow bound certified)  [0s]
+  1161 vertices (each verified exactly): {'deterministic': 81, 'PR_2': 648, 'PR_3': 432}; unrecognised: 0  [0s]
+  predicted (d^4 and C(d,k)^4 (k!)^3 (k-1)!): {'deterministic': 81, 'PR_2': 648, 'PR_3': 432}; match: True
+(B') closure of the vertex types under NS-adjacency (tangent-cone DD at one representative per type)
+  deterministic: 400 NS-edges, neighbour types {'deterministic': 72, 'PR_2': 264, 'PR_3': 64}; max |ray entry| 3  [0s]
+  PR_2: 73 NS-edges, neighbour types {'deterministic': 33, 'PR_2': 32, 'PR_3': 8}; max |ray entry| 3  [0s]
+  PR_3: 24 NS-edges, neighbour types {'PR_2': 12, 'deterministic': 12}; max |ray entry| 3  [0s]
+  vertex types closed under NS-adjacency: True
+(C) every non-local vertex type violates a listed facet
+  PR_2: violates a facet of class 2 (tight 45) by h.x - h0 = 1/2 (exact; explicit relabelling onto the representative found)
+  PR_3: violates a facet of class 0 (tight 30) by h.x - h0 = 2/3 (exact; explicit relabelling onto the representative found)
+THEOREM V HYPOTHESES VERIFIED: the list of 4 classes (1116 facets) is COMPLETE
+[total 1s]
