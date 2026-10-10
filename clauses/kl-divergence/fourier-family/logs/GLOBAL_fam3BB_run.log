@@ -1,0 +1,4 @@
+local cube at [1, 3, 3] (pi/6 units): rho = 0.001; Hessian at the copy (float) eigenvalues [-0.44666 -0.11173 -0.11173]
+local cube at [3, 1, 1] (pi/6 units): rho = 0.001; Hessian at the copy (float) eigenvalues [-0.44666 -0.11173 -0.11173]
+  processed 40000, stack 522, certified 19995 + 0 in cubes, volume 0.000054  [219s]
+STOPPED by hand (first version of the bound too weak near deterministic-like points; replaced by per-cell bounds)

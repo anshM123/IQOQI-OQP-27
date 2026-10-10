@@ -1,0 +1,14 @@
+d=   3  status=0  eps*=0.897011  mean-(d-1)/4=+0.00e+00  Q(top half)=0.178633
+d=   4  status=0  eps*=0.496551  mean-(d-1)/4=+0.00e+00  Q(top half)=0.247073
+d=   5  status=0  eps*=0.464271  mean-(d-1)/4=+0.00e+00  Q(top half)=0.209128
+d=   6  status=0  eps*=0.385174  mean-(d-1)/4=-4.44e-16  Q(top half)=0.247302
+d=   7  status=0  eps*=0.360463  mean-(d-1)/4=-4.44e-16  Q(top half)=0.221431
+d=   8  status=0  eps*=0.314926  mean-(d-1)/4=-6.66e-16  Q(top half)=0.247687
+d=  10  status=0  eps*=0.266749  mean-(d-1)/4=+0.00e+00  Q(top half)=0.248010
+d=  15  status=0  eps*=0.195785  mean-(d-1)/4=-8.88e-16  Q(top half)=0.237064
+d=  20  status=0  eps*=0.152629  mean-(d-1)/4=+8.88e-16  Q(top half)=0.248864
+d=  30  status=0  eps*=0.107607  mean-(d-1)/4=-7.11e-15  Q(top half)=0.249211
+d=  50  status=0  eps*=0.068062  mean-(d-1)/4=-4.44e-14  Q(top half)=0.249512
+d=  80  status=0  eps*=0.044057  mean-(d-1)/4=+4.97e-14  Q(top half)=0.249689
+d= 120  status=0  eps*=0.030035  mean-(d-1)/4=-1.78e-13  Q(top half)=0.249791
+d= 200  status=0  eps*=0.018390  mean-(d-1)/4=-6.04e-13  Q(top half)=0.249874

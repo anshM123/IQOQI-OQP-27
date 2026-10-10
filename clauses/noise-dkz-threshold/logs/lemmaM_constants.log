@@ -1,0 +1,14 @@
+kappa_inf = 16C/pi^2 = [1.48490749084 +/- 3.09e-12]
+C - 8/9 = [0.0270767052883 +/- 3.02e-14]
+sum_{t>=1} t phi(t) in [0.04679156880 +/- 3.26e-12] + tail <= [3.3333e-7 +/- 3.34e-12]
+d=3: closed form [1.43646702559 +/- 3.84e-12]  identity [1.43646702594 +/- 2.07e-12]  (truncation of Phi at k<4000: error < 1e-7/d^2)
+d=4: closed form [1.44812160923 +/- 6.47e-13]  identity [1.44812160943 +/- 2.78e-12]  (truncation of Phi at k<4000: error < 1e-7/d^2)
+d=7: closed form [1.46358047121 +/- 2.28e-12]  identity [1.46358047128 +/- 3.12e-12]  (truncation of Phi at k<4000: error < 1e-7/d^2)
+d=50: closed form [1.48187934569 +/- 3.09e-12]  identity [1.48187934569 +/- 1.82e-12]  (truncation of Phi at k<4000: error < 1e-7/d^2)
+d=333: closed form [1.48445203367 +/- 3.48e-13]  identity [1.48445203367 +/- 3.20e-13]  (truncation of Phi at k<4000: error < 1e-7/d^2)
+for S >= 2001: kappa >= kappa_inf - 32*Dmax/(pi^2 S) = [1.484831673 +/- 4.23e-10]
+A' = 8/(pi^2 kappa) <= [0.5458999051 +/- 7.37e-12] ; c*d = 1 - 1/kappa >= [0.3265229868 +/- 3.21e-11]
+(P3) 2 Q(0) - 1 >= 16/(pi^2 kappa_inf) - 1 = [0.09174406370 +/- 3.91e-12]
+gamma = [0.2450495050 +/- 4.96e-11]  z1/S <= [0.2549504950 +/- 4.96e-11]
+regime E: (S/(S+3)) * RHS/gamma >= [7.3922786 +/- 4.41e-8] ; gamma*(main - bad) = [1.8114742 +/- 2.22e-8] (> 1 needed)
+(P2): 4.04*A'*(C-8/9) = [0.059715930 +/- 2.23e-10]  < c*d >= [0.32652299 +/- 3.24e-9]

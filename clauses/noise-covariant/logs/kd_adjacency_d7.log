@@ -1,0 +1,16 @@
+d=7: 343 vertices, group 16464 [2s]
+   new class 2: tight 31
+   new class 3: tight 44
+   new class 4: tight 62
+   new class 5: tight 59
+   new class 6: tight 31
+   new class 7: tight 51
+class 1: tight 84, 299 ridges, neighbour classes {2: 16, 3: 68, 4: 40, 1: 80, 5: 40, 6: 8, 7: 23, 0: 24} [6s, total 7s]
+class 2: tight 31, 31 ridges, neighbour classes {1: 6, 3: 3, 0: 19, 5: 3} [1s, total 8s]
+class 3: tight 44, 55 ridges, neighbour classes {5: 4, 4: 4, 1: 17, 7: 1, 0: 23, 3: 3, 2: 2, 6: 1} [1s, total 9s]
+class 4: tight 62, 113 ridges, neighbour classes {1: 40, 4: 16, 7: 10, 5: 7, 3: 16, 0: 24} [2s, total 11s]
+class 5: tight 59, 120 ridges, neighbour classes {1: 40, 3: 16, 4: 7, 5: 16, 7: 5, 2: 8, 0: 24, 6: 4} [2s, total 13s]
+class 6: tight 31, 31 ridges, neighbour classes {3: 3, 1: 6, 0: 19, 5: 3} [1s, total 14s]
+class 7: tight 51, 70 ridges, neighbour classes {4: 10, 1: 23, 0: 24, 7: 4, 3: 4, 5: 5} [1s, total 15s]
+classes 8 (sizes [28, 2058, 5488, 8232, 2058, 2058, 2744, 2058], total 24724); positivity class 0 not expanded; Delta-vertices outside K_d violating no listed facet: 0
+COMPLETE (Theorem V)

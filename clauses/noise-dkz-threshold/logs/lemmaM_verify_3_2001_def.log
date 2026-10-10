@@ -1,0 +1,2 @@
+  ... d <= 2001: failures so far []; worst (Dt-T)/Dt = [0.802137 +/- 3.02e-7] (d=2001), worst rho/Q = [0.909498 +/- 3.73e-7] (d=2001)  [6s]
+RESULT d = 3..2001: ALL VERIFIED

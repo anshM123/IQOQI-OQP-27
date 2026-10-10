@@ -1,0 +1,13 @@
+d=    4  min w=5.854e-03  max tail/Dt=0.0000  core residual=0.0e+00  max usage m_I/Q=0.0539  | z=0.3944 marg err 0.0e+00 sym err 2.2e-16 min pi/(QQ) on T 4.97e-01 outside 0e+00 asym 0e+00
+d=    5  min w=5.086e-03  max tail/Dt=0.0000  core residual=0.0e+00  max usage m_I/Q=0.0663  | z=0.3742 marg err 1.4e-17 sym err 0.0e+00 min pi/(QQ) on T 4.00e-04 outside 0e+00 asym 0e+00
+d=    6  min w=7.340e-04  max tail/Dt=0.0696  core residual=4.3e-19  max usage m_I/Q=0.0732  | z=0.3608 marg err 0.0e+00 sym err 4.4e-16 min pi/(QQ) on T 2.78e-04 outside 0e+00 asym 0e+00
+d=    7  min w=7.595e-04  max tail/Dt=0.0711  core residual=0.0e+00  max usage m_I/Q=0.0778  | z=0.3514 marg err 1.4e-17 sym err 2.8e-16 min pi/(QQ) on T 2.04e-04 outside 0e+00 asym 0e+00
+d=    8  min w=1.756e-04  max tail/Dt=0.0850  core residual=1.7e-18  max usage m_I/Q=0.0800  | z=0.3444 marg err 0.0e+00 sym err 2.8e-16 min pi/(QQ) on T 1.56e-04 outside 0e+00 asym 0e+00
+d=   12  min w=2.381e-05  max tail/Dt=0.1227  core residual=4.3e-19  max usage m_I/Q=0.0849  | z=0.3280 marg err 3.5e-18 sym err 1.1e-16 min pi/(QQ) on T 6.94e-05 outside 0e+00 asym 0e+00
+d=   20  min w=1.925e-06  max tail/Dt=0.1514  core residual=2.2e-19  max usage m_I/Q=0.0878  | z=0.3151 marg err 3.5e-18 sym err 1.1e-16 min pi/(QQ) on T 2.50e-05 outside 0e+00 asym 0e+00
+d=   40  min w=6.269e-08  max tail/Dt=0.1741  core residual=1.7e-18  max usage m_I/Q=0.0893  | z=0.3055 marg err 1.7e-18 sym err 3.3e-15 min pi/(QQ) on T 6.25e-06 outside 0e+00 asym 0e+00
+d=   80  min w=2.020e-09  max tail/Dt=0.1859  core residual=1.7e-18  max usage m_I/Q=0.0900  | z=0.3007 marg err 1.1e-16 sym err 1.8e-15 min pi/(QQ) on T 1.56e-06 outside 0e+00 asym 0e+00
+d=  160  min w=6.503e-11  max tail/Dt=0.1922  core residual=3.5e-18  max usage m_I/Q=0.0903  | z=0.2983 marg err 1.0e-17 sym err 1.1e-14 min pi/(QQ) on T 3.91e-07 outside 0e+00 asym 0e+00
+d=  320  min w=2.120e-12  max tail/Dt=0.1953  core residual=4.3e-19  max usage m_I/Q=0.0904  | z=0.2971 marg err 1.1e-16 sym err 1.5e-14 min pi/(QQ) on T 9.06e-08 outside 0e+00 asym 0e+00
+d=  640  min w=7.119e-14  max tail/Dt=0.1968  core residual=1.7e-18  max usage m_I/Q=0.0905  | z=0.2965 marg err 1.1e-16 sym err 3.1e-15 min pi/(QQ) on T 6.23e-09 outside 0e+00 asym 0e+00
+d= 1280  min w=2.525e-15  max tail/Dt=0.1976  core residual=1.7e-18  max usage m_I/Q=0.0905  | z=0.2962 marg err 1.1e-16 sym err 1.8e-14 min pi/(QQ) on T 4.48e-10 outside 0e+00 asym 0e+00

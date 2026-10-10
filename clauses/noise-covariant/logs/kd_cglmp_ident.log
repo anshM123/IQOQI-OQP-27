@@ -1,0 +1,18 @@
+d=6
+class 0 (size 864, tight 34): orbit size 864; contains the CGLMP Pi-form facet: False
+class 1 (size 432, tight 44): orbit size 432; contains the CGLMP Pi-form facet: False
+class 2 (size 432, tight 41): orbit size 432; contains the CGLMP Pi-form facet: False
+class 3 (size 432, tight 56): orbit size 432; contains the CGLMP Pi-form facet: True
+class 4 (size 216, tight 36): orbit size 216; contains the CGLMP Pi-form facet: False
+class 5 (size 54, tight 80): orbit size 54; contains the CGLMP Pi-form facet: False
+class 6 (size 24, tight 180): orbit size 24; contains the CGLMP Pi-form facet: False
+class 7 (size 8, tight 108): orbit size 8; contains the CGLMP Pi-form facet: False
+d=7
+class 0 (size 28, tight 294): orbit size 28; contains the CGLMP Pi-form facet: False
+class 1 (size 2058, tight 84): orbit size 2058; contains the CGLMP Pi-form facet: True
+class 2 (size 5488, tight 31): orbit size 5488; contains the CGLMP Pi-form facet: False
+class 3 (size 8232, tight 44): orbit size 8232; contains the CGLMP Pi-form facet: False
+class 4 (size 2058, tight 62): orbit size 2058; contains the CGLMP Pi-form facet: False
+class 5 (size 2058, tight 59): orbit size 2058; contains the CGLMP Pi-form facet: False
+class 6 (size 2744, tight 31): orbit size 2744; contains the CGLMP Pi-form facet: False
+class 7 (size 2058, tight 51): orbit size 2058; contains the CGLMP Pi-form facet: False

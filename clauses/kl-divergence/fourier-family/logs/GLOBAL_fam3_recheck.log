@@ -1,0 +1,4 @@
+(1) tiling: 37863 leaves, all used exactly once: True; tree nodes 74997; total volume 729/64 = (9/4)^3: True  [1s]
+(2) local cubes re-certified: radii [np.float64(0.001), np.float64(0.001)]
+(3) bounds re-checked (stride 1): by method {0: 7, 1: 3517, 2: 18503, 3: 15836} (0 cube, 1 copy-Taylor, 2 EM-Taylor, 3 separable); smallest gap S0 - UB 2.281e-09 nats  [34s]
+CERTIFICATE OF THEOREM F3 RE-CHECKED

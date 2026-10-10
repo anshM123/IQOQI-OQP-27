@@ -1,0 +1,5 @@
+d=3 kappa_d=1.4364670256
+  class size    54 tight   10 c=[[0, -2, -1], [0, -2, -1], [0, -2, -1], [0, 1, 2]]
+     F(u)=-2.000000  ratio: level-1 UB 2.00000000   DFT+phase LB 1.43646703   general LB 1.43646703   kappa_d 1.43646703
+  class size    12 tight   18 c=[[0, -1, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
+     F(u)=-0.333333  ratio: level-1 UB 2.00000000   DFT+phase LB 1.00000000   general LB 1.00000000   kappa_d 1.43646703

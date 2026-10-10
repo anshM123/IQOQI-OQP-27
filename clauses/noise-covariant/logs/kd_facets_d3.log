@@ -1,0 +1,5 @@
+K_3: 27 vertices in R^8, affine rank 8
+facets: 66
+physical classes: 2
+  class size    54  tight   10  c0=0  c=[[0, -2, -1], [0, -2, -1], [0, -2, -1], [0, 1, 2]]
+  class size    12  tight   18  c0=0  c=[[0, -1, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]

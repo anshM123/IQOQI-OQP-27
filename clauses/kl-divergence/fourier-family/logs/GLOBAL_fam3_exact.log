@@ -1,0 +1,9 @@
+﻿lattice points of (pi/6)Z^3 in [0, 2pi/3)^3: 64; with four DKZ-type link laws: 8; DKZ copies (CGLMP level sum 2 attained by exactly 10 strategies): 2
+  non-copy DKZ-type point (1, 1, 1): min level sum 0 attained 1 times
+  non-copy DKZ-type point (1, 1, 3): min level sum 0 attained 1 times
+  non-copy DKZ-type point (1, 3, 1): min level sum 0 attained 1 times
+  copy at (1, 3, 3) (units pi/6): types {'A': 4, 'B': 4, 'C': 2}, criticality exact: True, KKT model exact: True
+  copy at (3, 1, 1) (units pi/6): types {'A': 4, 'B': 4, 'C': 2}, criticality exact: True, KKT model exact: True
+  non-copy DKZ-type point (3, 1, 3): min level sum 0 attained 1 times
+  non-copy DKZ-type point (3, 3, 1): min level sum 0 attained 1 times
+  non-copy DKZ-type point (3, 3, 3): min level sum 0 attained 1 times

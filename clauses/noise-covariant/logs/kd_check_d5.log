@@ -1,0 +1,3 @@
+(a) naive exact DD: K_5 has 1020 facets [13s]
+    listed classes: 3, total 1020
+(b) class 1: projector-word relaxation float max F = 2.583557661, float ratio 1.430592944; EXACT rational UB ratio = 1.431662956117 (kappa_d in [1.4552724040360387362568209341960162089008062511452104676662029061, 1.4552724040360387362568209341960162089008062511452104676662038395]) -> CERTIFIED < kappa_d [8396 moment classes, N = 321, 14s]

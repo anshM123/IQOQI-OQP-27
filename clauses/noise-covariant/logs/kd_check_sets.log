@@ -1,0 +1,2 @@
+d=4: naive DD 216 facets, IND_dd 216 facets, identical sets: True  [0s]
+d=5: naive DD 1020 facets, IND_dd 1020 facets, identical sets: True  [13s]

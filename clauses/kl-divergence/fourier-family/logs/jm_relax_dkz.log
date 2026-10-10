@@ -1,0 +1,110 @@
+T1: min over JM of (1/12) sum_{y,b} J(phi*_yb) = 0.040114311186664704 nats = 0.05787271781767784 bits;  S0 = 0.05778302549332865
+   D_0, D_1 at steered state 0 0 0.05787245630878782 0.05787546756203145
+   D_0, D_1 at steered state 0 1 0.05787284771918717 0.05787966509703485
+   D_0, D_1 at steered state 0 2 0.05787106714577287 0.05787065843836072
+   D_0, D_1 at steered state 1 0 0.05787146098259526 0.05787153562648196
+   D_0, D_1 at steered state 1 1 0.05787182849133811 0.057873348581309436
+   D_0, D_1 at steered state 1 2 0.05787353653326521 0.0578687413259699
+   with this E: max_phi (1/2)J = 0.24422145977871307 bits
+T2 (uni): cutting plane
+  round 0: lower (cut LP) 0.057872735 bits, upper (max over phi) 0.244229213 bits, #states 6
+  round 1: lower (cut LP) 0.078833817 bits, upper (max over phi) 0.302935369 bits, #states 7
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 2: lower (cut LP) 0.102882293 bits, upper (max over phi) 0.370316200 bits, #states 8
+  round 3: lower (cut LP) 0.125958852 bits, upper (max over phi) 0.233468063 bits, #states 9
+  round 4: lower (cut LP) 0.133653558 bits, upper (max over phi) 0.286482674 bits, #states 10
+  round 5: lower (cut LP) 0.145469753 bits, upper (max over phi) 0.275098462 bits, #states 11
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 6: lower (cut LP) 0.156473729 bits, upper (max over phi) 0.300845093 bits, #states 12
+  round 7: lower (cut LP) 0.165978189 bits, upper (max over phi) 0.187679016 bits, #states 13
+  round 8: lower (cut LP) 0.166276710 bits, upper (max over phi) 0.199610408 bits, #states 14
+  round 9: lower (cut LP) 0.167353200 bits, upper (max over phi) 0.198019293 bits, #states 15
+  round 10: lower (cut LP) 0.167917437 bits, upper (max over phi) 0.219831590 bits, #states 16
+  round 11: lower (cut LP) 0.170780731 bits, upper (max over phi) 0.180428545 bits, #states 17
+  round 12: lower (cut LP) 0.171541941 bits, upper (max over phi) 0.178659018 bits, #states 18
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 13: lower (cut LP) 0.172125060 bits, upper (max over phi) 0.172856714 bits, #states 19
+  round 14: lower (cut LP) 0.172228861 bits, upper (max over phi) 0.172275325 bits, #states 20
+  round 15: lower (cut LP) 0.172232991 bits, upper (max over phi) 0.172267134 bits, #states 21
+  round 16: lower (cut LP) 0.172236059 bits, upper (max over phi) 0.172268036 bits, #states 22
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 17: lower (cut LP) 0.172238854 bits, upper (max over phi) 0.172265571 bits, #states 23
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 18: lower (cut LP) 0.172241184 bits, upper (max over phi) 0.172260810 bits, #states 24
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 19: lower (cut LP) 0.172242921 bits, upper (max over phi) 0.172251861 bits, #states 25
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 20: lower (cut LP) 0.172243714 bits, upper (max over phi) 0.172244011 bits, #states 26
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 21: lower (cut LP) 0.172243760 bits, upper (max over phi) 0.172243852 bits, #states 27
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 22: lower (cut LP) 0.172243776 bits, upper (max over phi) 0.172243850 bits, #states 28
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 23: lower (cut LP) 0.172243785 bits, upper (max over phi) 0.172243818 bits, #states 29
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 24: lower (cut LP) 0.172243796 bits, upper (max over phi) 0.172243802 bits, #states 30
+T2 (cor): cutting plane
+  round 0: lower (cut LP) 0.057872718 bits, upper (max over phi) 0.280236822 bits, #states 6
+  round 1: lower (cut LP) 0.080089366 bits, upper (max over phi) 0.359367944 bits, #states 7
+  round 2: lower (cut LP) 0.111288002 bits, upper (max over phi) 0.426587015 bits, #states 8
+  round 3: lower (cut LP) 0.137341081 bits, upper (max over phi) 0.444529261 bits, #states 9
+  round 4: lower (cut LP) 0.168466529 bits, upper (max over phi) 0.535610690 bits, #states 10
+  round 5: lower (cut LP) 0.201235759 bits, upper (max over phi) 0.522188666 bits, #states 11
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 6: lower (cut LP) 0.227548264 bits, upper (max over phi) 0.562251788 bits, #states 12
+  round 7: lower (cut LP) 0.247454518 bits, upper (max over phi) 0.540370399 bits, #states 13
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 8: lower (cut LP) 0.260435390 bits, upper (max over phi) 0.488918559 bits, #states 14
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 9: lower (cut LP) 0.269085285 bits, upper (max over phi) 0.279632641 bits, #states 15
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 10: lower (cut LP) 0.269111168 bits, upper (max over phi) 0.278280274 bits, #states 16
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 11: lower (cut LP) 0.269466178 bits, upper (max over phi) 0.275926595 bits, #states 17
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 12: lower (cut LP) 0.270007095 bits, upper (max over phi) 0.271492099 bits, #states 18
+  round 13: lower (cut LP) 0.270246014 bits, upper (max over phi) 0.271973408 bits, #states 19
+  round 14: lower (cut LP) 0.270522548 bits, upper (max over phi) 0.272276492 bits, #states 20
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 15: lower (cut LP) 0.270532198 bits, upper (max over phi) 0.271327402 bits, #states 21
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 16: lower (cut LP) 0.270654852 bits, upper (max over phi) 0.271418631 bits, #states 22
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 17: lower (cut LP) 0.270682367 bits, upper (max over phi) 0.271321945 bits, #states 23
+  round 18: lower (cut LP) 0.270781646 bits, upper (max over phi) 0.271265043 bits, #states 24
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 19: lower (cut LP) 0.270807479 bits, upper (max over phi) 0.270966228 bits, #states 25
+  round 20: lower (cut LP) 0.270829142 bits, upper (max over phi) 0.270951566 bits, #states 26
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 21: lower (cut LP) 0.270835705 bits, upper (max over phi) 0.270885572 bits, #states 27
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 22: lower (cut LP) 0.270843637 bits, upper (max over phi) 0.270884084 bits, #states 28
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 23: lower (cut LP) 0.270850219 bits, upper (max over phi) 0.270880647 bits, #states 29
+jm_relax.py:108: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=solver)
+  round 24: lower (cut LP) 0.270852436 bits, upper (max over phi) 0.270907208 bits, #states 30

@@ -1,0 +1,29 @@
+d=  3: CLAIM_d VERIFIED (min basic weight >= 2.855e-01); I(DKZ) in [2.872934051172, 2.872934051172]; DKZ adapted link laws = G up to 4.4e-16; CGLMP tight set 30, affine rank 23 (facet iff 23)
+d=  4: CLAIM_d VERIFIED (min basic weight >= 1.171e-02); I(DKZ) in [2.896243218459, 2.896243218459]; DKZ adapted link laws = G up to 3.3e-16; CGLMP tight set 80, affine rank 47 (facet iff 47)
+d=  5: CLAIM_d VERIFIED (min basic weight >= 6.783e-03); I(DKZ) in [2.910544808072, 2.910544808072]; DKZ adapted link laws = G up to 1.1e-16
+d=  6: CLAIM_d VERIFIED (min basic weight >= 5.396e-03); I(DKZ) in [2.920203606379, 2.920203606379]; DKZ adapted link laws = G up to 3.3e-16
+d=  7: CLAIM_d VERIFIED (min basic weight >= 3.219e-03); I(DKZ) in [2.927160942425, 2.927160942425]; DKZ adapted link laws = G up to 3.3e-16
+d=  8: CLAIM_d VERIFIED (min basic weight >= 2.313e-03); I(DKZ) in [2.932409608704, 2.932409608704]; DKZ adapted link laws = G up to 6.7e-16
+d=  9: CLAIM_d VERIFIED (min basic weight >= 1.535e-03); I(DKZ) in [2.936509531681, 2.936509531681]; DKZ adapted link laws = G up to 5.6e-16
+d= 10: CLAIM_d VERIFIED (min basic weight >= 1.137e-03); I(DKZ) in [2.939800297928, 2.939800297928]; DKZ adapted link laws = G up to 6.7e-16
+d= 11: CLAIM_d VERIFIED (min basic weight >= 8.185e-04); I(DKZ) in [2.942499751147, 2.942499751147]; DKZ adapted link laws = G up to 4.4e-16
+d= 12: CLAIM_d VERIFIED (min basic weight >= 6.316e-04); I(DKZ) in [2.944754026851, 2.944754026851]; DKZ adapted link laws = G up to 6.7e-16
+d= 13: CLAIM_d VERIFIED (min basic weight >= 4.639e-04); I(DKZ) in [2.946664798230, 2.946664798230]; DKZ adapted link laws = G up to 6.7e-16
+d= 14: CLAIM_d VERIFIED (min basic weight >= 3.842e-04); I(DKZ) in [2.948304982559, 2.948304982559]; DKZ adapted link laws = G up to 1.3e-15
+d= 15: CLAIM_d VERIFIED (min basic weight >= 2.971e-04); I(DKZ) in [2.949728231748, 2.949728231748]; DKZ adapted link laws = G up to 1.2e-15
+d= 16: CLAIM_d VERIFIED (min basic weight >= 2.393e-04); I(DKZ) in [2.950974898321, 2.950974898321]; DKZ adapted link laws = G up to 2.2e-16
+d= 17: CLAIM_d VERIFIED (min basic weight >= 1.898e-04); I(DKZ) in [2.952075914430, 2.952075914430]; DKZ adapted link laws = G up to 8.9e-16
+d= 18: CLAIM_d VERIFIED (min basic weight >= 1.607e-04); I(DKZ) in [2.953055388437, 2.953055388437]; DKZ adapted link laws = G up to 8.9e-16
+d= 19: CLAIM_d VERIFIED (min basic weight >= 1.300e-04); I(DKZ) in [2.953932387751, 2.953932387751]; DKZ adapted link laws = G up to 8.9e-16
+d= 20: CLAIM_d VERIFIED (min basic weight >= 1.109e-04); I(DKZ) in [2.954722190606, 2.954722190606]; DKZ adapted link laws = G up to 1.0e-15
+d= 21: CLAIM_d VERIFIED (min basic weight >= 9.158e-05); I(DKZ) in [2.955437182549, 2.955437182549]; DKZ adapted link laws = G up to 4.4e-16
+d= 22: CLAIM_d VERIFIED (min basic weight >= 7.884e-05); I(DKZ) in [2.956087509968, 2.956087509968]; DKZ adapted link laws = G up to 1.2e-15
+d= 23: CLAIM_d VERIFIED (min basic weight >= 6.634e-05); I(DKZ) in [2.956681564131, 2.956681564131]; DKZ adapted link laws = G up to 1.0e-15
+d= 24: CLAIM_d VERIFIED (min basic weight >= 5.770e-05); I(DKZ) in [2.957226344885, 2.957226344885]; DKZ adapted link laws = G up to 6.7e-16
+d= 25: CLAIM_d VERIFIED (min basic weight >= 4.901e-05); I(DKZ) in [2.957727737538, 2.957727737538]; DKZ adapted link laws = G up to 7.8e-16
+d= 26: CLAIM_d VERIFIED (min basic weight >= 4.333e-05); I(DKZ) in [2.958190726155, 2.958190726155]; DKZ adapted link laws = G up to 7.8e-16
+d= 27: CLAIM_d VERIFIED (min basic weight >= 3.735e-05); I(DKZ) in [2.958619559689, 2.958619559689]; DKZ adapted link laws = G up to 5.6e-16
+d= 28: CLAIM_d VERIFIED (min basic weight >= 3.296e-05); I(DKZ) in [2.959017882675, 2.959017882675]; DKZ adapted link laws = G up to 8.3e-16
+d= 29: CLAIM_d VERIFIED (min basic weight >= 2.867e-05); I(DKZ) in [2.959388838996, 2.959388838996]; DKZ adapted link laws = G up to 8.9e-16
+d= 30: CLAIM_d VERIFIED (min basic weight >= 2.566e-05); I(DKZ) in [2.959735154990, 2.959735154990]; DKZ adapted link laws = G up to 4.4e-16
+ALL VERIFIED

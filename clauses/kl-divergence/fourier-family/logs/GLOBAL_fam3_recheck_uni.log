@@ -1,0 +1,4 @@
+﻿[uni] (1) tiling: 37863 leaves, all used exactly once: True; tree nodes 74997; total volume 729/64 = (9/4)^3: True  [1s]
+[uni] (2) local cubes re-certified: radii [0.001, 0.001]
+[uni] (3) bounds re-checked (stride 1): by method {0: 7, 1: 3517, 2: 18503, 3: 15836} (0 cube, 1 copy model, 2 Taylor, 3 separable); smallest gap S0 - UB 2.281e-09 nats  [26s]
+[uni] CERTIFICATE RE-CHECKED

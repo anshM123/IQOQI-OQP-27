@@ -1,0 +1,9 @@
+d=    6  max_y r(y) = 0.4350 (at y=2, L=2)   max core usage m_I/Q = 0.1304   d^3 * min nu = 5.7111   iterations 599
+d=   10  max_y r(y) = 0.5518 (at y=4, L=4)   max core usage m_I/Q = 0.1945   d^3 * min nu = 7.6141   iterations 599
+d=   20  max_y r(y) = 0.6584 (at y=9, L=9)   max core usage m_I/Q = 0.2799   d^3 * min nu = 12.5018   iterations 89
+d=   40  max_y r(y) = 0.7273 (at y=19, L=19)   max core usage m_I/Q = 0.3564   d^3 * min nu = 22.0760   iterations 134
+d=   80  max_y r(y) = 0.7741 (at y=39, L=39)   max core usage m_I/Q = 0.4126   d^3 * min nu = 40.6568   iterations 197
+d=  160  max_y r(y) = 0.8074 (at y=79, L=79)   max core usage m_I/Q = 0.4791   d^3 * min nu = 76.4451   iterations 263
+d=  320  max_y r(y) = 0.8323 (at y=159, L=159)   max core usage m_I/Q = 0.5497   d^3 * min nu = 143.7769   iterations 370
+d=  640  max_y r(y) = 0.8516 (at y=319, L=319)   max core usage m_I/Q = 0.6338   d^3 * min nu = 262.2900   iterations 524
+d= 1280  max_y r(y) = 0.8677 (at y=639, L=639)   max core usage m_I/Q = 0.7307   d^3 * min nu = 429.2351   iterations 599

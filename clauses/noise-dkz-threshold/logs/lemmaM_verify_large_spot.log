@@ -1,0 +1,3 @@
+5000 mean True P1 True P2 True P3 True  min (Dt-T)/Dt [0.80183695 +/- 4.57e-9]  min rho/Q [0.90948546 +/- 1.84e-9] 0.0s
+10000 mean True P1 True P2 True P3 True  min (Dt-T)/Dt [0.80173687 +/- 6.97e-10]  min rho/Q [0.90948141 +/- 3.51e-9] 0.0s
+40000 mean True P1 True P2 True P3 True  min (Dt-T)/Dt [0.80166180 +/- 2.10e-9]  min rho/Q [0.90947838 +/- 5.80e-10] 0.1s

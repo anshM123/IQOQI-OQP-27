@@ -1,0 +1,8 @@
+d=3: LP v_c(DKZ_d) = 0.6961524227   2/I_ME(d) = 0.6961524227   difference -2.2e-16
+d=4: LP v_c(DKZ_d) = 0.6905497395   2/I_ME(d) = 0.6905497395   difference -1.1e-16
+d=5: LP v_c(DKZ_d) = 0.6871565744   2/I_ME(d) = 0.6871565744   difference +1.1e-16
+d=6: LP v_c(DKZ_d) = 0.6848837511   2/I_ME(d) = 0.6848837511   difference -2.2e-16
+d=7: LP v_c(DKZ_d) = 0.6832559054   2/I_ME(d) = 0.6832559054   difference +0.0e+00
+d=8: LP v_c(DKZ_d) = 0.6820329582   2/I_ME(d) = 0.6820329582   difference -6.7e-16
+d=9: LP v_c(DKZ_d) = 0.6810807111   2/I_ME(d) = 0.6810807111   difference +7.8e-16
+d=10: LP v_c(DKZ_d) = 0.6803183201   2/I_ME(d) = 0.6803183201   difference -6.7e-16

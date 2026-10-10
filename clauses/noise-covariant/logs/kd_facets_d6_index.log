@@ -1,0 +1,11 @@
+K_6: 216 vertices in R^20, affine rank 20
+    [K6_index] step 10: |R+| 3 |R-| 1 |R0| 22 -> 26 rays (max entry 6)  [0s]
+    [K6_index] step 20: |R+| 7 |R-| 6 |R0| 58 -> 81 rays (max entry 9)  [0s]
+    [K6_index] step 30: |R+| 315 |R-| 26 |R0| 195 -> 550 rays (max entry 26)  [0s]
+    [K6_index] step 40: |R+| 1318 |R-| 454 |R0| 1406 -> 4057 rays (max entry 39)  [0s]
+    [K6_index] step 50: |R+| 11927 |R-| 2578 |R0| 4284 -> 19409 rays (max entry 72)  [4s]
+    [K6_index] step 60: |R+| 47816 |R-| 8258 |R0| 9801 -> 68878 rays (max entry 76)  [37s]
+    [K6_index] step 70: |R+| 88087 |R-| 11711 |R0| 12969 -> 116044 rays (max entry 134)  [115s]
+    [K6_index] step 80: |R+| 92888 |R-| 14130 |R0| 20036 -> 126305 rays (max entry 96)  [285s]
+    [K6_index] step 90: |R+| 79358 |R-| 10626 |R0| 18038 -> 107692 rays (max entry 82)  [473s]
+    [K6_index] step 100: |R+| 88912 |R-| 12647 |R0| 15015 -> 118410 rays (max entry 102)  [641s]

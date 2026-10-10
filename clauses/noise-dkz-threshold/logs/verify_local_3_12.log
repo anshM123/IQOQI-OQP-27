@@ -1,0 +1,3 @@
+d=  3: CLAIM_d VERIFIED (min basic weight >= 2.855e-01); I(DKZ) in [2.872934051172, 2.872934051172]; DKZ adapted link laws = G up to 4.4e-16; CGLMP tight set 30, affine rank 23 (facet iff 23)
+d=  4: CLAIM_d VERIFIED (min basic weight >= 1.171e-02); I(DKZ) in [2.896243218459, 2.896243218459]; DKZ adapted link laws = G up to 3.3e-16; CGLMP tight set 80, affine rank 47 (facet iff 47)
+d=  5: CLAIM_d VERIFIED (min basic weight >= 6.783e-03); I(DKZ) in [2.910544808072, 2.910544808072]; DKZ adapted link laws = G up to 1.1e-16; CGLMP tight set 175, affine rank 79 (facet iff 79)

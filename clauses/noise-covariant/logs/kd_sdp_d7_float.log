@@ -1,0 +1,7 @@
+d=7 class 1 size 2058 tight 84: SDP ratio 1.463580  (kappa_d 1.463580)  2388 vars 22s
+d=7 class 2 size 5488 tight 31: SDP ratio 1.241624  (kappa_d 1.463580)  2388 vars 24s
+d=7 class 3 size 8232 tight 44: SDP ratio 1.389819  (kappa_d 1.463580)  2388 vars 26s
+d=7 class 4 size 2058 tight 62: SDP ratio 1.443794  (kappa_d 1.463580)  2388 vars 37s
+d=7 class 5 size 2058 tight 59: SDP ratio 1.441937  (kappa_d 1.463580)  2388 vars 23s
+d=7 class 6 size 2744 tight 31: SDP ratio 1.241625  (kappa_d 1.463580)  2388 vars 26s
+d=7 class 7 size 2058 tight 51: SDP ratio 1.427084  (kappa_d 1.463580)  2388 vars 34s

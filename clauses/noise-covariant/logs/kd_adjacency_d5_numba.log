@@ -1,0 +1,6 @@
+d=5: 125 vertices, group 4000 [0s]
+   new class 2: tight 26
+class 1: tight 35, 51 ridges, neighbour classes {0: 16, 1: 24, 2: 11} [0s, total 0s]
+class 2: tight 26, 31 ridges, neighbour classes {0: 16, 1: 11, 2: 4} [0s, total 0s]
+classes 3 (sizes [20, 500, 500], total 1020); positivity class 0 not expanded; Delta-vertices outside K_d violating no listed facet: 0
+COMPLETE (Theorem V)

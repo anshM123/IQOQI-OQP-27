@@ -1,0 +1,3 @@
+d=5 class 0 (size 500, tight 35): SDP value F-F(u) = 5.8210896164, ratio 1.45527240 (kappa_d 1.45527240), 732 vars, 6.9s
+d=5 class 1 (size 500, tight 26): SDP value F-F(u) = 8.5835576609, ratio 1.43059294 (kappa_d 1.45527240), 732 vars, 6.7s
+d=5 class 2 (size 20, tight 100): SDP value F-F(u) = 0.2000000000, ratio 1.00000000 (kappa_d 1.45527240), 732 vars, 3.2s

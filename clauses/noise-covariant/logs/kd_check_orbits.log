@@ -1,0 +1,13 @@
+d=4
+class 0: orbit size 128 (listed 128), all in naive DD list: True
+class 1: orbit size 64 (listed 64), all in naive DD list: True
+class 2: orbit size 16 (listed 16), all in naive DD list: True
+class 3: orbit size 8 (listed 8), all in naive DD list: True
+union of orbits == naive DD facet set: True  (216 / 216)
+class 0 functional == (d-1) - Pi_CGLMP on all 256 deterministic points: True
+d=5
+class 0: orbit size 500 (listed 500), all in naive DD list: True
+class 1: orbit size 500 (listed 500), all in naive DD list: True
+class 2: orbit size 20 (listed 20), all in naive DD list: True
+union of orbits == naive DD facet set: True  (1020 / 1020)
+class 0 functional == (d-1) - Pi_CGLMP on all 625 deterministic points: True

@@ -1,0 +1,6 @@
+K_7: 343 vertices in R^24, affine rank 24
+    [K7] step 10: |R+| 7 |R-| 1 |R0| 30 -> 44 rays (max entry 41)  [0s]
+    [K7] step 20: |R+| 98 |R-| 16 |R0| 178 -> 449 rays (max entry 45)  [0s]
+    [K7] step 30: |R+| 1086 |R-| 480 |R0| 2739 -> 6666 rays (max entry 81)  [1s]
+    [K7] step 40: |R+| 48438 |R-| 11557 |R0| 26514 -> 104179 rays (max entry 146)  [101s]
+    [K7] step 50: |R+| 194771 |R-| 28680 |R0| 63118 -> 311997 rays (max entry 184)  [1510s]

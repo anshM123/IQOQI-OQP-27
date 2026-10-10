@@ -22,7 +22,8 @@ discrimination. This repository contains:
   ([`formal-conjectures-27/`](formal-conjectures-27/));
 - results on the other two statements of Part B, which are only partly settled: the noise statement is proved for the
   CGLMP violation; for the violation of local realism with complete von Neumann measurements it holds for d ≤ 4 and is
-  open for d ≥ 5; and the
+  open for d ≥ 5 (for every d, DKZ's own threshold against all Bell inequalities is exactly 2/I_ME(d), and DKZ is a strict
+  local optimum; for d = 5, 6, 7 it is optimal among covariant strategies); and the
   Kullback–Leibler statement is false for d ≥ 4 and open for d = 3 (see [the status table](#status-of-the-clauses-of-oqp-27)).
 
 The clause-by-clause status, with the exact wording of the problem, is in [`clauses/LEDGER.md`](clauses/LEDGER.md).
@@ -74,8 +75,8 @@ Theorems 3 and 4 are proved analytically; Theorems 1 and 2 use them together wit
 |---|---|---|
 | 27A: every face of the (2,2,d) local polytope that is not contained in a face of the no-signalling polytope is of CGLMP type | **false** (prior work) | Bancal, Gisin, Pironio, J. Phys. A 43, 385303 (2010) |
 | 27B: the measurements that maximally violate CGLMP on a maximally entangled state are necessarily the DKZ measurements | **proved for every d**: optimal, and unique up to local unitaries u ⊗ ū (projective measurements, every local dimension; computer-assisted for d ≥ 21) | Theorems 1 and 2; `papers/`, `lean/`, `formal-conjectures-27/` |
-| 27B: they give the highest resistance of the violation to noise | **Violation of the CGLMP inequality, white noise on Φ_d** (the formulation of issue #3444): **proved for every d**, with DKZ the unique optimum. This follows from Theorems 1 and 2, because white noise scales the CGLMP value. **Violation of local realism (all Bell inequalities), complete von Neumann measurements on Φ_d: proved for d = 2, 3, 4, open for d ≥ 5** (d = 4: complete facet list of the (2,2,4) local polytope, computer-assisted and independently re-implemented; DKZ optimal in all our numerical searches up to d = 8). | `clauses/noise-cglmp/` (Lean-checked), `clauses/noise-literal/`, `clauses/noise-complete-vn/` |
-| 27B: they give the best Kullback–Leibler discrimination | **false for every d ≥ 4**: explicit complete von Neumann measurements on Φ_d have a larger statistical strength than DKZ, for all three strengths of van Dam, Grünwald and Gill. **Open for d = 3** (DKZ is a strict local maximum). | `clauses/kl-divergence/` (d = 4 first by Y. Zhang, Zenodo 2026, doi:10.5281/zenodo.23022433) |
+| 27B: they give the highest resistance of the violation to noise | **Violation of the CGLMP inequality, white noise on Φ_d** (the formulation of issue #3444): **proved for every d**, with DKZ the unique optimum. This follows from Theorems 1 and 2, because white noise scales the CGLMP value. **Violation of local realism (all Bell inequalities), complete von Neumann measurements on Φ_d: proved for d = 2, 3, 4, open for d ≥ 5** (d = 4: complete facet list of the (2,2,4) local polytope, computer-assisted and independently re-implemented; DKZ optimal in all our numerical searches up to d = 8). Proved for d ≥ 5: DKZ's threshold is exactly 2/I_ME(d) for every d, with strict local optimality; and DKZ is optimal among covariant strategies for d = 5, 6, 7. | `clauses/noise-cglmp/` (Lean-checked), `clauses/noise-literal/`, `clauses/noise-complete-vn/`, `clauses/noise-dkz-threshold/`, `clauses/noise-covariant/` |
+| 27B: they give the best Kullback–Leibler discrimination | **false for every d ≥ 4**: explicit complete von Neumann measurements on Φ_d have a larger statistical strength than DKZ, for all three strengths of van Dam, Grünwald and Gill. **Open for d = 3** (DKZ is a strict local maximum, and the global maximum inside the Fourier-shift family F3). | `clauses/kl-divergence/` (d = 4 first by Y. Zhang, Zenodo 2026, doi:10.5281/zenodo.23022433) |
 
 "Proved" means proved by us, with the checks described under [Verification](#verification). None of these results has yet
 been reviewed by outside experts.
