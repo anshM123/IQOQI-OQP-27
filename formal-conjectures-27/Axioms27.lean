@@ -21,8 +21,8 @@ import FormalConjectures.OpenQuantumProblems.«27»
 #print axioms OpenQuantumProblem27.cglmpFunctional_deterministicBehaviour_zero
 #print axioms OpenQuantumProblem27.cglmpFunctional_computationalBasis
 #print axioms OpenQuantumProblem27.bornProb_maxEntangledState
-#print axioms OpenQuantumProblem27.isProjectiveMeasurement_vonNeumannMeasurement
-#print axioms OpenQuantumProblem27.trace_vonNeumannMeasurement
+#print axioms Matrix.isProjectiveMeasurement_vonNeumannMeasurement
+#print axioms Matrix.trace_vonNeumannMeasurement
 #print axioms OpenQuantumProblem27.kronecker_mulVec_maxEntangledState_eq_iff
 #print axioms OpenQuantumProblem27.dkzUnitaryA_mem_unitaryGroup
 #print axioms OpenQuantumProblem27.dkzUnitaryB_mem_unitaryGroup

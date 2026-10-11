@@ -19,10 +19,8 @@
  Quot.sound]
 'OpenQuantumProblem27.cglmpFunctional_computationalBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
 'OpenQuantumProblem27.bornProb_maxEntangledState' depends on axioms: [propext, Classical.choice, Quot.sound]
-'OpenQuantumProblem27.isProjectiveMeasurement_vonNeumannMeasurement' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'OpenQuantumProblem27.trace_vonNeumannMeasurement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Matrix.isProjectiveMeasurement_vonNeumannMeasurement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Matrix.trace_vonNeumannMeasurement' depends on axioms: [propext, Classical.choice, Quot.sound]
 'OpenQuantumProblem27.kronecker_mulVec_maxEntangledState_eq_iff' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

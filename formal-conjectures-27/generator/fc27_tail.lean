@@ -119,7 +119,7 @@ theorem vonNeumannMeasurement_dkzUnitaryB' [NeZero d] (y : Fin 2) (l : Fin d) :
 lemma sum_vonNeumannMeasurement (U : Matrix (Fin d) (Fin d) ℂ) :
     ∑ a, vonNeumannMeasurement U a = U * Uᴴ := by
   unfold vonNeumannMeasurement
-  rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_self_one, Matrix.mul_one]
+  rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_one, Matrix.mul_one]
 
 /-- The DKZ bases are orthonormal: Alice's DKZ matrices are unitary. -/
 @[category test, AMS 15 81]

@@ -77,18 +77,6 @@ noncomputable def quantumBehaviour {d D : ℕ} (ρ : Matrix (Fin D × Fin D) (Fi
     (A B : Fin 2 → Fin d → Matrix (Fin D) (Fin D) ℂ) : Behaviour d :=
   fun x y a b => bornProb ρ (A x a) (B y b)
 
-/-- `P` is a projective measurement with outcomes `Fin m` on $\mathbb{C}^D$: every `P a` is an
-orthogonal projection (Hermitian and idempotent), and $\sum_a P_a = 1$. -/
-def IsProjectiveMeasurement {m D : ℕ} (P : Fin m → Matrix (Fin D) (Fin D) ℂ) : Prop :=
-  (∀ a, (P a).IsHermitian ∧ P a * P a = P a) ∧ ∑ a, P a = 1
-
-/-- The complete von Neumann measurement in the orthonormal basis formed by the columns
-$u_0, \dots, u_{d-1}$ of a unitary `U`: outcome `a` has the rank-one projection
-$|u_a\rangle\langle u_a| = U |a\rangle\langle a| U^{\dagger}$. -/
-noncomputable def vonNeumannMeasurement {d : ℕ} (U : Matrix (Fin d) (Fin d) ℂ) (a : Fin d) :
-    Matrix (Fin d) (Fin d) ℂ :=
-  U * single a a 1 * Uᴴ
-
 /-- The behaviour of complete von Neumann measurements in the bases `UA x` (Alice) and `UB y` (Bob)
 on the maximally entangled state $\Phi_d$ of two qudits. -/
 noncomputable def vonNeumannBehaviour (d : ℕ) (UA UB : Fin 2 → Matrix (Fin d) (Fin d) ℂ) :

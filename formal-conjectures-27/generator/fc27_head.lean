@@ -43,9 +43,10 @@ Mathlib only:
   $m(t) = t \bmod d$; local models give at least $d - 1$, smaller values are violations;
 - `maxEntangledState`, `densityMatrix`, `bornProb`, `quantumBehaviour`: the state $\Phi_d$ and the
   quantum behaviours $p(a,b \mid x,y) = \operatorname{Tr}[\rho (A_{x,a} \otimes B_{y,b})]$;
-- `vonNeumannMeasurement`, `vonNeumannBehaviour`: the complete von Neumann measurement in the
-  orthonormal basis given by the columns of a unitary $U$, with rank-one projections
-  $U |a\rangle\langle a| U^{\dagger}$;
+- `vonNeumannBehaviour`: complete von Neumann measurements in the orthonormal bases given by the
+  columns of unitaries, with rank-one projections $U |a\rangle\langle a| U^{\dagger}$. The
+  measurements `Matrix.vonNeumannMeasurement` and the predicate `Matrix.IsProjectiveMeasurement`
+  come from `FormalConjecturesForMathlib/LinearAlgebra/Matrix/ProjectiveMeasurement.lean`;
 - `dftMatrix`, `phaseDiagonal`, `dkzUnitaryA`, `dkzUnitaryB`: the DKZ measurements, i.e. the
   computational basis transformed by the discrete Fourier transform and diagonal phase unitaries;
 - `whiteNoiseState`, `noisyVonNeumannBehaviour`: the state
@@ -81,8 +82,9 @@ that preserves the functional) therefore maps the DKZ measurements to measuremen
   $d - 1$, no violation;
 - `bornProb_maxEntangledState`: $\operatorname{Tr}[|\Phi_D\rangle\langle\Phi_D| (A \otimes B)] =
   \operatorname{Tr}(A^{T} B)/D$;
-- `isProjectiveMeasurement_vonNeumannMeasurement`, `trace_vonNeumannMeasurement`: complete von
-  Neumann measurements are projective with rank-one outcomes; `dkzUnitaryA_mem_unitaryGroup`,
+- `Matrix.isProjectiveMeasurement_vonNeumannMeasurement`, `Matrix.trace_vonNeumannMeasurement`
+  (in `FormalConjecturesForMathlib`): complete von Neumann measurements are projective with
+  rank-one outcomes; `dkzUnitaryA_mem_unitaryGroup`,
   `dkzUnitaryB_mem_unitaryGroup` (Part 87): the DKZ bases are orthonormal;
 - `kronecker_mulVec_maxEntangledState_eq_iff`: for a unitary $u$, $(u \otimes v) \Phi_d = \Phi_d$
   if and only if $v = \bar u$;

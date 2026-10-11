@@ -43,9 +43,10 @@ Mathlib only:
   $m(t) = t \bmod d$; local models give at least $d - 1$, smaller values are violations;
 - `maxEntangledState`, `densityMatrix`, `bornProb`, `quantumBehaviour`: the state $\Phi_d$ and the
   quantum behaviours $p(a,b \mid x,y) = \operatorname{Tr}[\rho (A_{x,a} \otimes B_{y,b})]$;
-- `vonNeumannMeasurement`, `vonNeumannBehaviour`: the complete von Neumann measurement in the
-  orthonormal basis given by the columns of a unitary $U$, with rank-one projections
-  $U |a\rangle\langle a| U^{\dagger}$;
+- `vonNeumannBehaviour`: complete von Neumann measurements in the orthonormal bases given by the
+  columns of unitaries, with rank-one projections $U |a\rangle\langle a| U^{\dagger}$. The
+  measurements `Matrix.vonNeumannMeasurement` and the predicate `Matrix.IsProjectiveMeasurement`
+  come from `FormalConjecturesForMathlib/LinearAlgebra/Matrix/ProjectiveMeasurement.lean`;
 - `dftMatrix`, `phaseDiagonal`, `dkzUnitaryA`, `dkzUnitaryB`: the DKZ measurements, i.e. the
   computational basis transformed by the discrete Fourier transform and diagonal phase unitaries;
 - `whiteNoiseState`, `noisyVonNeumannBehaviour`: the state
@@ -81,8 +82,9 @@ that preserves the functional) therefore maps the DKZ measurements to measuremen
   $d - 1$, no violation;
 - `bornProb_maxEntangledState`: $\operatorname{Tr}[|\Phi_D\rangle\langle\Phi_D| (A \otimes B)] =
   \operatorname{Tr}(A^{T} B)/D$;
-- `isProjectiveMeasurement_vonNeumannMeasurement`, `trace_vonNeumannMeasurement`: complete von
-  Neumann measurements are projective with rank-one outcomes; `dkzUnitaryA_mem_unitaryGroup`,
+- `Matrix.isProjectiveMeasurement_vonNeumannMeasurement`, `Matrix.trace_vonNeumannMeasurement`
+  (in `FormalConjecturesForMathlib`): complete von Neumann measurements are projective with
+  rank-one outcomes; `dkzUnitaryA_mem_unitaryGroup`,
   `dkzUnitaryB_mem_unitaryGroup` (Part 87): the DKZ bases are orthonormal;
 - `kronecker_mulVec_maxEntangledState_eq_iff`: for a unitary $u$, $(u \otimes v) \Phi_d = \Phi_d$
   if and only if $v = \bar u$;
@@ -234,18 +236,6 @@ Alice measures `A x` and Bob measures `B y` on the state `ρ`. -/
 noncomputable def quantumBehaviour {d D : ℕ} (ρ : Matrix (Fin D × Fin D) (Fin D × Fin D) ℂ)
     (A B : Fin 2 → Fin d → Matrix (Fin D) (Fin D) ℂ) : Behaviour d :=
   fun x y a b => bornProb ρ (A x a) (B y b)
-
-/-- `P` is a projective measurement with outcomes `Fin m` on $\mathbb{C}^D$: every `P a` is an
-orthogonal projection (Hermitian and idempotent), and $\sum_a P_a = 1$. -/
-def IsProjectiveMeasurement {m D : ℕ} (P : Fin m → Matrix (Fin D) (Fin D) ℂ) : Prop :=
-  (∀ a, (P a).IsHermitian ∧ P a * P a = P a) ∧ ∑ a, P a = 1
-
-/-- The complete von Neumann measurement in the orthonormal basis formed by the columns
-$u_0, \dots, u_{d-1}$ of a unitary `U`: outcome `a` has the rank-one projection
-$|u_a\rangle\langle u_a| = U |a\rangle\langle a| U^{\dagger}$. -/
-noncomputable def vonNeumannMeasurement {d : ℕ} (U : Matrix (Fin d) (Fin d) ℂ) (a : Fin d) :
-    Matrix (Fin d) (Fin d) ℂ :=
-  U * single a a 1 * Uᴴ
 
 /-- The behaviour of complete von Neumann measurements in the bases `UA x` (Alice) and `UB y` (Bob)
 on the maximally entangled state $\Phi_d$ of two qudits. -/
@@ -435,40 +425,6 @@ lemma unitary_mul_conjTranspose {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
     (hU : U ∈ unitaryGroup (Fin d) ℂ) : U * Uᴴ = 1 := by
   have h := mem_unitaryGroup_iff.1 hU
   rwa [star_eq_conjTranspose] at h
-
-@[category API, AMS 15 81]
-lemma sum_single_self_one (d : ℕ) : ∑ a : Fin d, single a a (1 : ℂ) = 1 := by
-  ext i j
-  rw [Matrix.sum_apply, Finset.sum_eq_single i]
-  · by_cases hij : i = j <;> simp [one_apply, hij]
-  · intro b _ hbi
-    simp [hbi]
-  · simp
-
-/-- A complete von Neumann measurement is a projective measurement. -/
-@[category test, AMS 15 81]
-theorem isProjectiveMeasurement_vonNeumannMeasurement {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
-    (hU : U ∈ unitaryGroup (Fin d) ℂ) : IsProjectiveMeasurement (vonNeumannMeasurement U) := by
-  have h1 := unitary_conjTranspose_mul hU
-  have h2 := unitary_mul_conjTranspose hU
-  refine ⟨fun a => ⟨?_, ?_⟩, ?_⟩
-  · unfold vonNeumannMeasurement
-    rw [IsHermitian, conjTranspose_mul, conjTranspose_mul, conjTranspose_conjTranspose,
-      conjTranspose_single, star_one, Matrix.mul_assoc]
-  · unfold vonNeumannMeasurement
-    calc U * single a a 1 * Uᴴ * (U * single a a 1 * Uᴴ)
-        = U * (single a a 1 * (Uᴴ * U) * single a a 1) * Uᴴ := by simp only [Matrix.mul_assoc]
-      _ = U * single a a 1 * Uᴴ := by
-          rw [h1, Matrix.mul_one, single_mul_single_same, mul_one, Matrix.mul_assoc]
-  · unfold vonNeumannMeasurement
-    rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_self_one, Matrix.mul_one, h2]
-
-/-- The projections of a complete von Neumann measurement have rank one (trace $1$). -/
-@[category test, AMS 15 81]
-theorem trace_vonNeumannMeasurement {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
-    (hU : U ∈ unitaryGroup (Fin d) ℂ) (a : Fin d) : (vonNeumannMeasurement U a).trace = 1 := by
-  rw [vonNeumannMeasurement, trace_mul_comm, ← Matrix.mul_assoc, unitary_conjTranspose_mul hU,
-    Matrix.one_mul, trace_single_eq_same]
 
 /- #### The local unitaries that fix $\Phi_d$ -/
 
@@ -665,10 +621,6 @@ theorem bornProb_maxEntangledState_single {D : ℕ} (a b : Fin D) :
     simp
   · rw [if_neg h]
     simp [h]
-
-@[category API, AMS 15 81]
-lemma vonNeumannMeasurement_one {d : ℕ} (a : Fin d) : vonNeumannMeasurement 1 a = single a a 1 := by
-  simp [vonNeumannMeasurement]
 
 /-- On $\Phi_d$, measuring both systems in the computational basis for both inputs gives exactly
 the local bound $d - 1$: there is no violation without the Fourier-phase bases. -/
@@ -34723,7 +34675,7 @@ theorem vonNeumannMeasurement_dkzUnitaryB' [NeZero d] (y : Fin 2) (l : Fin d) :
 lemma sum_vonNeumannMeasurement (U : Matrix (Fin d) (Fin d) ℂ) :
     ∑ a, vonNeumannMeasurement U a = U * Uᴴ := by
   unfold vonNeumannMeasurement
-  rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_self_one, Matrix.mul_one]
+  rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_one, Matrix.mul_one]
 
 /-- The DKZ bases are orthonormal: Alice's DKZ matrices are unitary. -/
 @[category test, AMS 15 81]

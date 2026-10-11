@@ -5,7 +5,7 @@
 of IQOQI Vienna Open Quantum Problem 27 from scratch, in the formulation of
 [issue #3444](https://github.com/google-deepmind/formal-conjectures/issues/3444), and proves its main statement. It builds
 inside that repository with the repository's own Lake configuration, Mathlib and continuous-integration flag `--wfail`,
-and imports only `FormalConjecturesUtil` (Mathlib and the repository's attributes).
+and imports only `FormalConjecturesUtil` (Mathlib, the repository's shared definitions and its attributes).
 
 The file is not a contribution to formal-conjectures: that repository's guidelines do not accept long proofs (this one has
 about 35,000 lines). It is provided so that the statement can be checked against the repository's conventions and the
@@ -17,7 +17,9 @@ proof can be built with its toolchain.
 definitions of Part 0 and the full statements of the main results, copied verbatim from `27.lean`. The proofs (Parts
 1–86) are checked by Lean and need not be read to validate the statement.
 
-**Part 0, the problem** (Mathlib only, written from scratch):
+**Part 0, the problem** (written from scratch with Mathlib; the two measurement definitions below are the shared
+definitions `Matrix.IsProjectiveMeasurement` and `Matrix.vonNeumannMeasurement` of
+`FormalConjecturesForMathlib/LinearAlgebra/Matrix/ProjectiveMeasurement.lean`, added by PR #7069):
 - behaviours p(a,b|x,y), deterministic strategies and the local polytope;
 - the CGLMP functional of the problem page, E[m(A₁−B₁)] + E[m(B₁−A₂)] + E[m(A₂−B₂)] + E[m(B₂−A₁−1)] with m(t) = t mod d,
   whose local bound is d − 1 (smaller values are violations);
@@ -66,15 +68,16 @@ are not projective.
 ```bash
 git clone https://github.com/google-deepmind/formal-conjectures.git
 cd formal-conjectures
-git checkout df3f12d7
+git fetch origin pull/7069/head
+git checkout 79c88b09    # PR #7069: adds FormalConjecturesForMathlib/LinearAlgebra/Matrix/ProjectiveMeasurement.lean
 lake exe cache get
 cp <this folder>/27.lean FormalConjectures/OpenQuantumProblems/27.lean
 lake --wfail build 'FormalConjectures.OpenQuantumProblems.«27»'
 ```
 
-SHA-256 of `27.lean`: `a67878c530a1aab9680c78225f094bb5a5a94ae2f04345af070f5dd1716f89d5`.
+SHA-256 of `27.lean`: `28b7713c84554a8b889161a6e2e80b5f77537921a7d239a6f6d834ce5dd29c31`.
 
-Our build of this file ([`build.log`](build.log)): exit 0, no warnings. It took about 50 minutes and up to about 12 GB of
+Our build of this file ([`build.log`](build.log)): exit 0, no warnings. It took about 41 minutes and up to about 12 GB of
 memory (committed; peak resident 7–9 GB in our runs) on one machine; the kernel-checked certificates for d ≤ 20 dominate
 both. The file sets `Elab.async false` and removes the heartbeat limit (`maxHeartbeats 0`) only for the certificate
 theorems, which keeps the memory bounded.

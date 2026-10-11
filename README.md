@@ -126,8 +126,9 @@ certificates in the Lean kernel itself (`decide +kernel`).
    `bash check.sh` in `lean/` repeats it ([`lean/README.md`](lean/README.md)).
 2. [`formal-conjectures-27/`](formal-conjectures-27/) is a single file, `27.lean` (about 35,300 lines), written for the
    [google-deepmind/formal-conjectures](https://github.com/google-deepmind/formal-conjectures) repository. It builds
-   inside that repository (commit df3f12d7) with its own Lake configuration, Mathlib and CI flag `--wfail`. Its Part 0
-   states the problem from scratch, with Mathlib only, in the formulation of issue #3444: the state Φ_d of C^d ⊗ C^d,
+   inside that repository (at commit 79c88b09 of PR #7069, which adds the shared measurement definitions it uses) with
+   its own Lake configuration, Mathlib and CI flag `--wfail`. Its Part 0 states the problem from scratch, with Mathlib
+   and two shared definitions of that repository, in the formulation of issue #3444: the state Φ_d of C^d ⊗ C^d,
    complete von Neumann d-outcome measurements, the Born rule Tr[ρ (A ⊗ B)], the CGLMP functional of the problem page
    (local bound d − 1), the DKZ measurements and white noise. It checks these definitions on special cases: the local
    bound, no violation in the computational basis, the case d = 2 (Tsirelson's bound), and a counterexample to a related

@@ -100,40 +100,6 @@ lemma unitary_mul_conjTranspose {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
   have h := mem_unitaryGroup_iff.1 hU
   rwa [star_eq_conjTranspose] at h
 
-@[category API, AMS 15 81]
-lemma sum_single_self_one (d : ℕ) : ∑ a : Fin d, single a a (1 : ℂ) = 1 := by
-  ext i j
-  rw [Matrix.sum_apply, Finset.sum_eq_single i]
-  · by_cases hij : i = j <;> simp [one_apply, hij]
-  · intro b _ hbi
-    simp [hbi]
-  · simp
-
-/-- A complete von Neumann measurement is a projective measurement. -/
-@[category test, AMS 15 81]
-theorem isProjectiveMeasurement_vonNeumannMeasurement {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
-    (hU : U ∈ unitaryGroup (Fin d) ℂ) : IsProjectiveMeasurement (vonNeumannMeasurement U) := by
-  have h1 := unitary_conjTranspose_mul hU
-  have h2 := unitary_mul_conjTranspose hU
-  refine ⟨fun a => ⟨?_, ?_⟩, ?_⟩
-  · unfold vonNeumannMeasurement
-    rw [IsHermitian, conjTranspose_mul, conjTranspose_mul, conjTranspose_conjTranspose,
-      conjTranspose_single, star_one, Matrix.mul_assoc]
-  · unfold vonNeumannMeasurement
-    calc U * single a a 1 * Uᴴ * (U * single a a 1 * Uᴴ)
-        = U * (single a a 1 * (Uᴴ * U) * single a a 1) * Uᴴ := by simp only [Matrix.mul_assoc]
-      _ = U * single a a 1 * Uᴴ := by
-          rw [h1, Matrix.mul_one, single_mul_single_same, mul_one, Matrix.mul_assoc]
-  · unfold vonNeumannMeasurement
-    rw [← Finset.sum_mul, ← Finset.mul_sum, sum_single_self_one, Matrix.mul_one, h2]
-
-/-- The projections of a complete von Neumann measurement have rank one (trace $1$). -/
-@[category test, AMS 15 81]
-theorem trace_vonNeumannMeasurement {d : ℕ} {U : Matrix (Fin d) (Fin d) ℂ}
-    (hU : U ∈ unitaryGroup (Fin d) ℂ) (a : Fin d) : (vonNeumannMeasurement U a).trace = 1 := by
-  rw [vonNeumannMeasurement, trace_mul_comm, ← Matrix.mul_assoc, unitary_conjTranspose_mul hU,
-    Matrix.one_mul, trace_single_eq_same]
-
 /- #### The local unitaries that fix $\Phi_d$ -/
 
 /-- $(u \otimes v) \Phi_d$ has the coordinates of $d^{-1/2} \, u v^{T}$. -/
@@ -329,10 +295,6 @@ theorem bornProb_maxEntangledState_single {D : ℕ} (a b : Fin D) :
     simp
   · rw [if_neg h]
     simp [h]
-
-@[category API, AMS 15 81]
-lemma vonNeumannMeasurement_one {d : ℕ} (a : Fin d) : vonNeumannMeasurement 1 a = single a a 1 := by
-  simp [vonNeumannMeasurement]
 
 /-- On $\Phi_d$, measuring both systems in the computational basis for both inputs gives exactly
 the local bound $d - 1$: there is no violation without the Fourier-phase bases. -/

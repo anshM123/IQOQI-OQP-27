@@ -3,13 +3,33 @@
 This digest contains only what a reviewer must check: the definitions (Part 0 of `27.lean`, Mathlib only)
 and the full statements of the main results (Part 87), copied verbatim. The proofs (Parts 1-86, about 34,000 lines) are
 checked by Lean and do not need to be read to validate the statement. File:
-`FormalConjectures/OpenQuantumProblems/27.lean` in google-deepmind/formal-conjectures (upstream df3f12d7).
+`FormalConjectures/OpenQuantumProblems/27.lean` in google-deepmind/formal-conjectures (PR #7069, commit 79c88b09).
 
 The formulation follows Formal Conjectures issue #3444: the maximally entangled state Phi_d of
 C^d (x) C^d, complete von Neumann d-outcome measurements, the CGLMP functional of the OQP page
 (local bound d-1, violation = smaller value), Born rule Tr[rho (A (x) B)], white noise on the state.
 
 ## 1. Definitions (Part 0)
+
+Two definitions are shared definitions of formal-conjectures, in
+`FormalConjecturesForMathlib/LinearAlgebra/Matrix/ProjectiveMeasurement.lean` (namespace `Matrix`; Part 0 has
+`open Matrix`):
+
+```lean
+/-- `P` is a projective measurement with outcomes `Fin m` on $\mathbb{C}^D$: every `P a` is an
+orthogonal projection (Hermitian and idempotent), and $\sum_a P_a = 1$. -/
+def IsProjectiveMeasurement {m D : ℕ} (P : Fin m → Matrix (Fin D) (Fin D) ℂ) : Prop :=
+  (∀ a, (P a).IsHermitian ∧ P a * P a = P a) ∧ ∑ a, P a = 1
+
+/-- The complete von Neumann measurement in the orthonormal basis formed by the columns
+$u_0, \dots, u_{d-1}$ of a unitary `U`: outcome `a` has the rank-one projection
+$|u_a\rangle\langle u_a| = U |a\rangle\langle a| U^{\dagger}$. -/
+noncomputable def vonNeumannMeasurement {d : ℕ} (U : Matrix (Fin d) (Fin d) ℂ) (a : Fin d) :
+    Matrix (Fin d) (Fin d) ℂ :=
+  U * single a a 1 * Uᴴ
+```
+
+The rest of Part 0, verbatim:
 
 ```lean
 /- ## Part 0: the problem
@@ -90,18 +110,6 @@ Alice measures `A x` and Bob measures `B y` on the state `ρ`. -/
 noncomputable def quantumBehaviour {d D : ℕ} (ρ : Matrix (Fin D × Fin D) (Fin D × Fin D) ℂ)
     (A B : Fin 2 → Fin d → Matrix (Fin D) (Fin D) ℂ) : Behaviour d :=
   fun x y a b => bornProb ρ (A x a) (B y b)
-
-/-- `P` is a projective measurement with outcomes `Fin m` on $\mathbb{C}^D$: every `P a` is an
-orthogonal projection (Hermitian and idempotent), and $\sum_a P_a = 1$. -/
-def IsProjectiveMeasurement {m D : ℕ} (P : Fin m → Matrix (Fin D) (Fin D) ℂ) : Prop :=
-  (∀ a, (P a).IsHermitian ∧ P a * P a = P a) ∧ ∑ a, P a = 1
-
-/-- The complete von Neumann measurement in the orthonormal basis formed by the columns
-$u_0, \dots, u_{d-1}$ of a unitary `U`: outcome `a` has the rank-one projection
-$|u_a\rangle\langle u_a| = U |a\rangle\langle a| U^{\dagger}$. -/
-noncomputable def vonNeumannMeasurement {d : ℕ} (U : Matrix (Fin d) (Fin d) ℂ) (a : Fin d) :
-    Matrix (Fin d) (Fin d) ℂ :=
-  U * single a a 1 * Uᴴ
 
 /-- The behaviour of complete von Neumann measurements in the bases `UA x` (Alice) and `UB y` (Bob)
 on the maximally entangled state $\Phi_d$ of two qudits. -/
