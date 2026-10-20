@@ -52,7 +52,7 @@ false for every d >= 4 and open for d = 3. None of these results has yet been re
 | Variant | Status |
 |---|---|
 | 27B(ii) with white noise on the state, CGLMP witness, projective measurements whose outcomes have unequal ranks (the noise is then the product of the marginals, not uniform) | OPEN; no counterexample in rank-pattern searches for d = 3..6 (exhaustive for d = 3 with local dimension <= 9 and d = 4 with local dimension <= 8; largest value 1.98569 < 2) |
-| 27B(iii) at d = 3 | DKZ_3 is a strict local maximiser of the strength (PROVED, re-checked); global optimum inside the three-parameter Fourier-shift family F3, for all three strengths (PROVED, computer-assisted, `kl-divergence/fourier-family/`); global optimality over all PVMs NUMERICAL |
+| 27B(iii) at d = 3 | DKZ_3 is a strict local maximiser of the strength (PROVED, re-checked); global optimum inside the three-parameter Fourier-shift family F3, for all three strengths (PROVED, computer-assisted, `kl-divergence/fourier-family/`); DKZ_3 is a Nash equilibrium of the uniform-setting strength, i.e. optimal against all unilateral deviations (PROVED, computer-assisted, `kl-divergence/nash/`); global optimality over all PVMs (joint deviations) NUMERICAL |
 
 ## C. Strengthenings (not asked by the problem)
 

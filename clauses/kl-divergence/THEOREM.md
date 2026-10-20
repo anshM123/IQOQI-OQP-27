@@ -13,6 +13,9 @@ Main results.
   S(DKZ_3) = 0.05778302549332865 bits in closed form.
   Global optimality at d = 3 remains OPEN (numerically true). Inside the three-parameter Fourier-shift family it is
   proved (computer-assisted) in [`fourier-family/`](fourier-family/THEOREM.md), Theorems F3 and F3'.
+* **Theorem N** (2026-10-20, [`nash/`](nash/THEOREM.md); computer-assisted). For the uniform-setting strength, DKZ_3 is
+  a Nash equilibrium: neither party can increase S^UNI by changing only its own measurements. This concerns unilateral
+  deviations only; the d = 3 clause needs joint deviations and remains OPEN.
 
 Natural logarithms are used in the proofs and bits in the tables.
 

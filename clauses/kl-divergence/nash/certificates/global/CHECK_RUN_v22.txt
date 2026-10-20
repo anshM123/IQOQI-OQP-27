@@ -1,0 +1,5 @@
+initial boxes to cover: 4224 (of 9216; the rest are rigorously outside R)
+missing: 0  unresolved: 0  volume mismatch: 0  wrong engine: 0
+totals: {'evals': 73881732, 'cert': 51580895, 'outside': 4448541, 'local': 18983}; worst certified ub / S0.lo = 1.000000; min margin S0.lo - ub = 3.951e-10
+engines: {'numba-track-v2.2 (audit 1+2 fixes: DHI up, safe_face, E rounding, sincos radius, NaN guards; freeze model)': 4224}
+COMPLETE
