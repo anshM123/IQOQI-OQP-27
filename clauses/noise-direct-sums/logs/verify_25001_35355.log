@@ -1,0 +1,12 @@
+[25001..26000] all_pass=True worst_ratio=0.7862 (n=26000) min_Qrel=6.615e-01 (n=26000) min_a=0.294492  t=30s
+[26001..27000] all_pass=True worst_ratio=0.7862 (n=27000) min_Qrel=6.612e-01 (n=27000) min_a=0.294493  t=62s
+[27001..28000] all_pass=True worst_ratio=0.7863 (n=28000) min_Qrel=6.610e-01 (n=28000) min_a=0.294495  t=94s
+[28001..29000] all_pass=True worst_ratio=0.7864 (n=29000) min_Qrel=6.608e-01 (n=29000) min_a=0.294496  t=127s
+[29001..30000] all_pass=True worst_ratio=0.7864 (n=30000) min_Qrel=6.606e-01 (n=30000) min_a=0.294498  t=160s
+[30001..31000] all_pass=True worst_ratio=0.7865 (n=31000) min_Qrel=6.604e-01 (n=31000) min_a=0.294499  t=193s
+[31001..32000] all_pass=True worst_ratio=0.7865 (n=32000) min_Qrel=6.603e-01 (n=32000) min_a=0.294500  t=228s
+[32001..33000] all_pass=True worst_ratio=0.7866 (n=33000) min_Qrel=6.601e-01 (n=33000) min_a=0.294501  t=277s
+[33001..34000] all_pass=True worst_ratio=0.7866 (n=34000) min_Qrel=6.600e-01 (n=34000) min_a=0.294502  t=342s
+[34001..35000] all_pass=True worst_ratio=0.7866 (n=35000) min_Qrel=6.598e-01 (n=35000) min_a=0.294503  t=407s
+[35001..35355] all_pass=True worst_ratio=0.7867 (n=35355) min_Qrel=6.598e-01 (n=35354) min_a=0.294504  t=431s
+RANGE 25001..35355: ALL PASS  total time 431s

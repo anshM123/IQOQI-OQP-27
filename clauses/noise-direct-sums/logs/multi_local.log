@@ -1,0 +1,7 @@
+blocks (2, 2) + L_1: d=5  R = 1.345177969  naive avg 1.331370850  kappa_d 1.455272
+blocks (3, 2) + L_1: d=6  R = 1.366484835  naive avg 1.356304700  kappa_d 1.460102
+blocks (2, 2) + L_2: d=6  R = 1.310660172  naive avg 1.276142375  kappa_d 1.460102
+blocks (3, 3) + L_1: d=7  R = 1.381908647  naive avg 1.374114593  kappa_d 1.463580
+blocks (4, 2) + L_1: d=7  R = 1.382216561  naive avg 1.374416223  kappa_d 1.463580
+blocks (3, 2) + L_2: d=7  R = 1.332551054  naive avg 1.305404029  kappa_d 1.463580
+blocks (2, 2, 2) + L_1: d=7  R = 1.362436867  naive avg 1.355040196  kappa_d 1.463580

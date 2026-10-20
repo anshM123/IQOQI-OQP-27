@@ -1,0 +1,16 @@
+blocks (2, 2) d=4: v_ds = 0.7071067812  min t_ij = 1.464e-01  |Z err| = 0.0e+00  total weight = 1.000000000000  max|model - P_v| = 2.78e-17  LP v_c = 0.7071067812
+blocks (3, 2) d=5: v_ds = 0.7004931835  min t_ij = 1.363e-01  |Z err| = 2.8e-17  total weight = 1.000000000000  max|model - P_v| = 1.39e-16  LP v_c = 0.7004931835
+blocks (2, 2, 2) d=6: v_ds = 0.7071067812  min t_ij = 6.509e-02  |Z err| = 1.4e-17  total weight = 1.000000000000  max|model - P_v| = 4.16e-17  LP v_c = 0.7071067812
+blocks (3, 2, 2) d=7: v_ds = 0.7023701251  min t_ij = 4.859e-02  |Z err| = 4.2e-17  total weight = 1.000000000000  max|model - P_v| = 8.33e-17  LP v_c = 0.7023701251
+blocks (3, 3, 2) d=8: v_ds = 0.6988590693  min t_ij = 5.355e-02  |Z err| = 1.4e-17  total weight = 1.000000000000  max|model - P_v| = 8.33e-17  LP v_c = 0.6988590693
+blocks (4, 2, 2) d=8: v_ds = 0.6987301906  min t_ij = 3.766e-02  |Z err| = 2.8e-17  total weight = 1.000000000000  max|model - P_v| = 1.11e-16  LP v_c = 0.6987301906
+blocks (2, 2, 2, 2) d=8: v_ds = 0.7071067812  min t_ij = 3.661e-02  |Z err| = 0.0e+00  total weight = 1.000000000000  max|model - P_v| = 2.78e-17  LP v_c = 0.7071067812
+blocks (4, 3, 2) d=9: v_ds = 0.6960387471  min t_ij = 4.274e-02  |Z err| = 1.4e-17  total weight = 1.000000000000  max|model - P_v| = 6.77e-17  LP v_c = 0.6960387471
+blocks (5, 2, 2) d=9: v_ds = 0.6958825873  min t_ij = 3.004e-02  |Z err| = 2.8e-17  total weight = 1.000000000000  max|model - P_v| = 9.71e-17  LP v_c = 0.6958825873
+blocks (3, 3, 3) d=9: v_ds = 0.6961524227  min t_ij = 6.752e-02  |Z err| = 1.4e-17  total weight = 1.000000000000  max|model - P_v| = 5.55e-17  LP v_c = 0.6961524227
+blocks (5, 3, 2) d=10: v_ds = 0.6937607903  min t_ij = 3.490e-02  |Z err| = 1.4e-17  total weight = 1.000000000000  max|model - P_v| = 1.18e-16
+blocks (4, 4, 2) d=10: v_ds = 0.6937988262  min t_ij = 4.523e-02  |Z err| = 4.2e-17  total weight = 1.000000000000  max|model - P_v| = 8.33e-17
+blocks (3, 2, 2, 2) d=9: v_ds = 0.7034172231  min t_ij = 2.929e-02  |Z err| = 6.9e-18  total weight = 1.000000000000  max|model - P_v| = 6.94e-17  LP v_c = 0.7034172231
+blocks (6, 3, 2) d=11: v_ds = 0.6918918257  min t_ij = 2.903e-02  |Z err| = 2.8e-17  total weight = 1.000000000000  max|model - P_v| = 9.71e-17
+blocks (2, 2, 2, 2, 2) d=10: v_ds = 0.7071067812  min t_ij = 2.343e-02  |Z err| = 6.9e-18  total weight = 1.000000000000  max|model - P_v| = 8.33e-17
+blocks (7, 4, 3, 2) d=16: v_ds = 0.6903878782  min t_ij = 1.379e-02  |Z err| = 8.3e-17  total weight = 1.000000000000  max|model - P_v| = 6.25e-17

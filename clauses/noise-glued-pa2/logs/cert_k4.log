@@ -1,0 +1,2 @@
+k=4: n=36/sector, classes=544; dual bound = 11.5849735397 target 11.5849728738 ratio-1 = +5.75e-08 (optimal_inaccurate, 60s)
+k=4: RIGOROUS  S <= 11.5849761591953   (D(Z) <= 11.5849736026748, sum|r| <= 2.55e-6, mu = 2^-34, mu k n = 8.38e-9);  k I_ME(k) >= 11.5849728738348;  excess <= 3.29e-6   (64s)

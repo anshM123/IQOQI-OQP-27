@@ -1,0 +1,15 @@
+d=3: 30 random uniform-marginal behaviours with entries >= 1/(2d^2): failures 0
+d=4: 30 random uniform-marginal behaviours with entries >= 1/(2d^2): failures 0
+d=5: 30 random uniform-marginal behaviours with entries >= 1/(2d^2): failures 0
+d=6: 30 random uniform-marginal behaviours with entries >= 1/(2d^2): failures 0
+DKZ_3 (+) DKZ_2: v_c = 0.7004932, v* = 0.6871566, guaranteed radius in max|dP| = 5.541e-04
+  perturbation s=0.01: max|dP| = 4.21e-03 (outside radius), v_c = 0.701052 (>= v* True)
+  perturbation s=0.01: max|dP| = 3.24e-03 (outside radius), v_c = 0.701216 (>= v* True)
+  perturbation s=0.01: max|dP| = 3.20e-03 (outside radius), v_c = 0.701305 (>= v* True)
+  perturbation s=0.01: max|dP| = 3.03e-03 (outside radius), v_c = 0.701250 (>= v* True)
+  perturbation s=0.01: max|dP| = 2.50e-03 (outside radius), v_c = 0.701029 (>= v* True)
+  perturbation s=0.01: max|dP| = 2.55e-03 (outside radius), v_c = 0.700924 (>= v* True)
+  perturbation s=0.01: max|dP| = 2.97e-03 (outside radius), v_c = 0.701149 (>= v* True)
+  perturbation s=0.01: max|dP| = 2.73e-03 (outside radius), v_c = 0.701272 (>= v* True)
+  perturbation s=0.01: max|dP| = 3.20e-03 (outside radius), v_c = 0.701184 (>= v* True)
+  perturbation s=0.01: max|dP| = 2.42e-03 (outside radius), v_c = 0.701530 (>= v* True)

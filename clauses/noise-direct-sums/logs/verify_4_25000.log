@@ -1,0 +1,26 @@
+[4..1003] all_pass=True worst_ratio=0.7659 (n=1003) min_Qrel=8.097e-01 (n=1002) min_a=0.122882  t=1s
+[1004..2003] all_pass=True worst_ratio=0.7744 (n=2003) min_Qrel=7.361e-01 (n=2002) min_a=0.293483  t=3s
+[2004..3003] all_pass=True worst_ratio=0.7778 (n=3003) min_Qrel=7.099e-01 (n=3002) min_a=0.294007  t=6s
+[3004..4003] all_pass=True worst_ratio=0.7797 (n=4003) min_Qrel=6.965e-01 (n=4002) min_a=0.294182  t=10s
+[4004..5003] all_pass=True worst_ratio=0.7810 (n=5003) min_Qrel=6.884e-01 (n=5002) min_a=0.294270  t=15s
+[5004..6003] all_pass=True worst_ratio=0.7819 (n=6003) min_Qrel=6.829e-01 (n=6002) min_a=0.294323  t=21s
+[6004..7003] all_pass=True worst_ratio=0.7826 (n=7003) min_Qrel=6.790e-01 (n=7002) min_a=0.294358  t=28s
+[7004..8003] all_pass=True worst_ratio=0.7831 (n=8003) min_Qrel=6.760e-01 (n=8002) min_a=0.294383  t=36s
+[8004..9003] all_pass=True worst_ratio=0.7835 (n=9003) min_Qrel=6.737e-01 (n=9002) min_a=0.294402  t=46s
+[9004..10003] all_pass=True worst_ratio=0.7839 (n=10003) min_Qrel=6.718e-01 (n=10002) min_a=0.294417  t=57s
+[10004..11003] all_pass=True worst_ratio=0.7842 (n=11003) min_Qrel=6.703e-01 (n=11002) min_a=0.294428  t=68s
+[11004..12003] all_pass=True worst_ratio=0.7844 (n=12003) min_Qrel=6.691e-01 (n=12002) min_a=0.294438  t=80s
+[12004..13003] all_pass=True worst_ratio=0.7847 (n=13003) min_Qrel=6.680e-01 (n=13002) min_a=0.294446  t=95s
+[13004..14003] all_pass=True worst_ratio=0.7849 (n=14003) min_Qrel=6.671e-01 (n=14002) min_a=0.294453  t=112s
+[14004..15003] all_pass=True worst_ratio=0.7850 (n=15003) min_Qrel=6.663e-01 (n=15002) min_a=0.294459  t=130s
+[15004..16003] all_pass=True worst_ratio=0.7852 (n=16003) min_Qrel=6.655e-01 (n=16002) min_a=0.294464  t=148s
+[16004..17003] all_pass=True worst_ratio=0.7853 (n=17003) min_Qrel=6.649e-01 (n=17002) min_a=0.294468  t=169s
+[17004..18003] all_pass=True worst_ratio=0.7855 (n=18003) min_Qrel=6.644e-01 (n=18002) min_a=0.294472  t=189s
+[18004..19003] all_pass=True worst_ratio=0.7856 (n=19003) min_Qrel=6.639e-01 (n=19002) min_a=0.294475  t=210s
+[19004..20003] all_pass=True worst_ratio=0.7857 (n=20003) min_Qrel=6.634e-01 (n=20002) min_a=0.294478  t=232s
+[20004..21003] all_pass=True worst_ratio=0.7858 (n=21003) min_Qrel=6.630e-01 (n=21002) min_a=0.294481  t=256s
+[21004..22003] all_pass=True worst_ratio=0.7859 (n=22003) min_Qrel=6.627e-01 (n=22002) min_a=0.294484  t=285s
+[22004..23003] all_pass=True worst_ratio=0.7860 (n=23003) min_Qrel=6.623e-01 (n=23002) min_a=0.294486  t=320s
+[23004..24003] all_pass=True worst_ratio=0.7860 (n=24003) min_Qrel=6.620e-01 (n=24002) min_a=0.294488  t=354s
+[24004..25000] all_pass=True worst_ratio=0.7861 (n=25000) min_Qrel=6.617e-01 (n=25000) min_a=0.294490  t=387s
+RANGE 4..25000: ALL PASS  total time 387s

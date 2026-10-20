@@ -1,0 +1,9 @@
+mode A blocks (3,) + C_2 (random U,V; d=5): v=0.7623333174 v0=0.7623333174 total=1.00000000000000 max|model-P_v|=1.4e-16 min weight=0.00e+00  LP v_c=0.7623333174 (diff +0.0e+00)  OK
+mode A blocks (2, 2) + C_2 (random U,V; d=6): v=0.7629742793 v0=0.7629742793 total=1.00000000000000 max|model-P_v|=1.1e-16 min weight=0.00e+00  LP v_c=0.7629742793 (diff +1.1e-16)  OK
+mode A blocks (3, 2) + C_1 (random U,V; d=6): v=0.7318046821 v0=0.7318046821 total=1.00000000000000 max|model-P_v|=1.4e-16 min weight=0.00e+00  LP v_c=0.7318046821 (diff +0.0e+00)  OK
+mode A blocks (4,) + C_3 (random U,V; d=7): v=0.7612174180 v0=0.7612174180 total=1.00000000000000 max|model-P_v|=1.5e-16 min weight=0.00e+00  LP v_c=0.7612174180 (diff +2.2e-16)  OK
+mode A blocks (5, 3) + C_4 (random U,V; d=12): v=0.7484104004 v0=0.7484104004 total=1.00000000000000 max|model-P_v|=6.9e-17 min weight=0.00e+00  OK
+mode A blocks (2, 3, 4) + C_5 (random U,V; d=14): v=0.7565554704 v0=0.7565554704 total=1.00000000000000 max|model-P_v|=5.6e-17 min weight=0.00e+00  OK
+mode B blocks (3, 2) + C_15 (random U,V; d=20): v=0.6768825869 v0=0.8036497121 total=1.00000000000000 max|model-P_v|=5.9e-17 min weight=8.10e-04  OK
+mode B blocks (2, 2) + C_9 (random U,V; d=13): v=0.6787334620 v0=0.8033660655 total=1.00000000000000 max|model-P_v|=5.6e-17 min weight=1.91e-03  OK
+mode B blocks (4, 3) + C_20 (random U,V; d=27): v=0.6759909342 v0=0.7970908116 total=1.00000000000000 max|model-P_v|=3.5e-17 min weight=4.45e-04  OK
